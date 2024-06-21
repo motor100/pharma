@@ -5061,6 +5061,7 @@ body {
 p {
   margin-bottom: 0;
 }
+
 .link-button,
 .wpb-pcf-btn {
   border-radius: 60px;
@@ -5400,10 +5401,10 @@ footer .menu .menu-item a:hover {
   color: #fafafa;
   text-decoration: none;
 }
-.footer-phone {
+/*.footer-phone {
   margin-bottom: 13px;
   margin-top: 25px;
-}
+}*/
 @media (max-width: 991.98px) {
   .with-menu-footer {
     -webkit-box-ordinal-group: 2;
@@ -5809,10 +5810,6 @@ footer .menu .menu-item a:hover {
   margin-top: 20px;
 }
 
-.has-subcategories .m-select {
-  margin: 20px 0 80px 0;
-}
-
 @media (max-width: 767.98px) {
   .m-select {
     display: block;
@@ -5825,12 +5822,13 @@ footer .menu .menu-item a:hover {
   width: 100%;
 }
 
-.has-subcategories .subcategories {
+.subcategories {
   display: flex;
+  margin: 80px 0 0 0;
   justify-content: space-between;
 }
 
-.has-subcategories .subcategories .subcategories-item {
+.subcategories .subcategories-item {
   position: relative;
   display: flex;
   width: 150px;
@@ -5842,13 +5840,13 @@ footer .menu .menu-item a:hover {
   justify-content: center;
 }
 
-.has-subcategories .subcategories .subcategories-item .subcategories-item__title {
+.subcategories .subcategories-item .subcategories-item__title {
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
 }
 
-.has-subcategories .subcategories .subcategories-item .subcategories-item__link {
+.subcategories .subcategories-item .subcategories-item__link {
   position: absolute;
   top: 0;
   left: 0;
@@ -7458,6 +7456,16 @@ a:focus {
   background: #c2d279;
   border: 0;
   border-radius: 30px;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.quantity .qty::-webkit-inner-spin-button,
+.quantity .qty::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
 }
 .summary.entry-summary .cart button {
   background: #c2d279;

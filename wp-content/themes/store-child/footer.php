@@ -35,7 +35,7 @@
 					<div class="flex align-items-center m-t-50">
 						<div class="icon phone">
 						</div>
-						<a class="white" class="footer-phone" href="tel:<?php echo $truephone ?>"><?php echo $phone ?></a>
+						<a class="white footer-phone" href="tel:<?php echo $truephone; ?>"><?php echo $phone; ?></a>
 					</div>
 				<?php } ?>
 				<?php if ($email) { ?>
