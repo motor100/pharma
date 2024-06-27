@@ -10,9 +10,9 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see https://docs.woocommerce.com/document/template-structure/
+ * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 3.4.0
+ * @version 8.6.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -97,25 +97,28 @@ do_action( 'woocommerce_before_main_content' ); ?>
             ?>
           </div>
 
-          <?php if ($term_childs) { ?>
-            <?php
+          <?php if ($term_childs) {
+
             // Вывод подкатегорий
             $args = array(
               'parent' => $parentid, // id родительской категории
-              'hide_empty' => false // скрывать категории без товаров
+              'hide_empty' => true // скрывать категории без товаров
             );
-
-            $subcats = get_terms( 'product_cat', $args );
             ?>
 
+            <?php $subcats = get_terms( 'product_cat', $args ); ?>
+
             <div class="subcategories">
+              <div class="subcategories-item">
+                <div class="subcategories-item__title" onclick="location.reload()">Все</div>
+              </div>
               <?php foreach($subcats as $subcat) { ?>
-                <div class="subcategories-item">
+                <div class="subcategories-item filter-btn" data-term-id="<?php echo $subcat->term_id; ?>">
                   <div class="subcategories-item__title"><?php echo $subcat->name; ?></div>
-                  <a href="<?php echo get_category_link($subcat->term_id); ?>" class="subcategories-item__link"></a>
                 </div>
               <?php } ?>
             </div>
+
           <?php } ?>
 
           <div class="col-3" style="display:none;">
@@ -140,20 +143,15 @@ do_action( 'woocommerce_before_main_content' ); ?>
                 );
                 ?>
                 <?php $all_categories = get_categories( $args );
-                // print_r($all_categories);
+
                 foreach ($all_categories as $cat) {
-                  // print_r($cat);
+
                   if($cat->category_parent == 0) {
                     $category_id = $cat->term_id;
 
-                    ?>
-
-                    <?php
                     echo '<div class="cat_item">';
-                    echo '<a class="cat_name" href="'. get_term_link($cat->slug, 'product_cat') .'">'. $cat->name .'</a>'; ?>
+                    echo '<a class="cat_name" href="'. get_term_link($cat->slug, 'product_cat') .'">'. $cat->name .'</a>';
 
-
-                    <?php
                     $args2 = array(
                       'taxonomy'     => $taxonomy,
                       'child_of'     => 0,
@@ -315,6 +313,16 @@ do_action( 'woocommerce_before_main_content' ); ?>
     </div>
   </div>
 </section>
+
+<div id="to-top" class="to-top hidden-mobile">
+  <div class="container">
+    <div class="circle">
+      <div class="image">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/arrow-top.svg" class="arrow-top" alt="">
+      </div>
+    </div>
+  </div>
+</div>
 
 <?php
 /**

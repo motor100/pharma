@@ -152,7 +152,7 @@ jQuery(document).ready(function($) {
 						<div class="children__item">
 							<div class="children__image">
 								<a href="<?php echo get_permalink( $loop->post->ID ) ?>">
-									<img class="ww100" src="<? echo get_the_post_thumbnail_url($loop->post->ID); ?>">
+									<img class="ww100" src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>">
 								</a>
 							</div>
 							<a class="subcat__link" href="<?php echo get_permalink( $loop->post->ID ) ?>"><?php the_title(); ?></a>
@@ -183,7 +183,7 @@ jQuery(document).ready(function($) {
 						<div class="children__item">
 							<div class="children__image">
 								<a href="<?php echo get_permalink( $loop->post->ID ) ?>">
-									<img class="ww100" src="<? echo get_the_post_thumbnail_url($loop->post->ID); ?>">
+									<img class="ww100" src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>">
 								</a>
 							</div>
 							<a class="subcat__link" href="<?php echo get_permalink( $loop->post->ID ) ?>"><?php the_title(); ?></a>
@@ -228,7 +228,7 @@ jQuery(document).ready(function($) {
 						<div class="children__image">
 							<div class="circle-green favorite"></div>
 							<a href="<?php echo get_permalink( $loop->post->ID ) ?>">
-								<img src="<? echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="<?php the_title(); ?>">
+								<img src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="<?php the_title(); ?>">
 							</a>
 						</div>
 						<a class="subcat__link m-b-10" href="<?php echo get_permalink( $loop->post->ID ) ?>"><?php the_title(); ?></a>
@@ -260,7 +260,7 @@ jQuery(document).ready(function($) {
 						$full_price = get_post_meta( get_the_ID(), '_regular_price', true);
 					?>
 					<div style="max-height:630px;">
-						<a href="<?php echo get_permalink( $loop->post->ID ) ?>"><img src="<? echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="<?php the_title(); ?>"></a>
+						<a href="<?php echo get_permalink( $loop->post->ID ) ?>"><img src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="<?php the_title(); ?>"></a>
 					</div>
 					<div class="info">
 						<a href="<?php echo get_permalink( $loop->post->ID ) ?>"><div class="m-b-10"><?php the_title(); ?></div></a>

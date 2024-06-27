@@ -1,3 +1,17 @@
+/*!
+Theme Name:   Storefront Child Theme
+Theme URI:    https://woocommerce.com/products/storefront/
+Author:       Natura Pharma
+Author URI:   https://natura-pharma.ru/
+Description:  Storefront is the perfect theme for your next WooCommerce project. Designed and developed by WooCommerce Core developers, it features a bespoke integration with WooCommerce itself plus many of the most popular customer facing WooCommerce extensions. There are several layout & color options to personalise your shop, multiple widget regions, a responsive design and much more. Developers will love its lean and extensible codebase making it a joy to customize and extend. Looking for a WooCommerce theme? Look no further!
+Version:      1.0.2
+Tested up to: 6.5
+Requires PHP: 5.6.0
+License:      GNU General Public License v3 or later
+License URI:  https://www.gnu.org/licenses/gpl-3.0.html
+Text Domain:  storefront
+*/
+
 *,
 :after,
 :before {
@@ -5037,6 +5051,8 @@ progress {
     display: none !important;
   }
 }
+
+
 @font-face {
   font-display: fallback;
   font-family: Roboto;
@@ -5824,36 +5840,98 @@ footer .menu .menu-item a:hover {
 
 .subcategories {
   display: flex;
-  margin: 80px 0 0 0;
-  justify-content: space-between;
+  margin: 30px 0 0 0;
+  flex-wrap: wrap;
 }
 
 .subcategories .subcategories-item {
-  position: relative;
   display: flex;
-  width: 150px;
-  height: 140px;
+  width: max-content;
+  min-width: 155px;
+  height: 63px;
+  margin: 0 10px 0 0;
+  padding: 0 15px;
+  border: 1px solid #44324C;
+  background-color: #fff;
   border-radius: 40px;
-  background-color: #C2D279;
-  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
+  transition: background-color .2s , border .1s;
+}
+
+.subcategories .subcategories-item:hover {
+  border: 1px solid #C2D279;
+  background-color: #C2D279;
 }
 
 .subcategories .subcategories-item .subcategories-item__title {
+  font-family: "Roboto";
   font-size: 20px;
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: 300;
+  text-decoration: none;
 }
 
-.subcategories .subcategories-item .subcategories-item__link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+.subcategories .subcategories-item:hover .subcategories-item__title {
+  color: var(--bs-body-color);
 }
+
+.subcategories .subcategories-item.active {
+  border: 1px solid #e7edc9;
+  background-color: #e7edc9;
+}
+
+
+
+@media only screen and (max-width : 1400px) {
+  .subcategories .subcategories-item {
+    height: 53px;
+  }
+}
+
+/*@media only screen and (max-width : 1200px) {
+
+}*/
+
+@media only screen and (max-width : 992px) {
+  .subcategories .subcategories-item {
+    min-width: 135px;
+  }
+  .subcategories .subcategories-item .subcategories-item__title {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width : 768px) {
+  .subcategories {
+    margin: 0;
+  }
+  .subcategories .subcategories-item {
+    min-width: 110px;
+    height: 40px;
+  }
+  .subcategories .subcategories-item .subcategories-item__title {
+    font-size: 16px;
+  }
+}
+
+/*@media only screen and (max-width : 576px) {
+
+}
+
+@media only screen and (max-width : 480px) {
+
+}
+
+@media only screen and (max-width : 360px) {
+
+}*/
+
+
+
+
+
 
 @media (max-width: 767.98px) {
   .products {
@@ -7070,6 +7148,14 @@ ul.products li.product .button {
   height: 15px;
   margin-top: 20px;
 }
+
+@media only screen and (max-width : 768px) {
+  ul.products {
+    margin-top: 25px;
+  }
+}
+
+
 @media (max-width: 576px) {
   .main-header .main-top {
     grid-template-columns: auto;
@@ -7850,14 +7936,66 @@ table.cart .product-quantity .minus {
   padding-top: 290px;
 }
 
-
-
-
-
 .elementor-widget-image-carousel .swiper-slide{
   text-align: -webkit-center !important;
 }
 
 h1.sec-title{
   display: block;
+}
+
+/* to top */
+.to-top {
+  position: fixed;
+  left: 0;
+  bottom: 80px;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 5;
+  transition: visibility .5s, opacity .5s;
+}
+.to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+.to-top .circle {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  left: -100px;
+  bottom: 0px;
+}
+.to-top .image {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  left: -0;
+  bottom: 0px;
+  cursor: pointer;
+}
+.to-top .arrow-top {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media only screen and (max-width : 1550px) {
+  .to-top .circle {
+    position: relative;
+    width: 50px;
+    height: 50px;
+  }
+  .to-top .image {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: -60px;
+  }
+}
+
+@media only screen and (max-width : 992px) {
+  .to-top {
+    display: none;
+  }
 }

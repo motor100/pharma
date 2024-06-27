@@ -17,20 +17,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
 
   <?php wp_head(); ?>
-  <link rel='stylesheet' id='storefront-child-style-css' href='/wp-content/themes/store-child/style.css?ver=6.6.7' type='text/css' media='all' />
-  <script type="text/javascript">
-    ! function() {
-      var t = document.createElement("script");
-      t.type = "text/javascript", t.async = !0, t.src = 'https://vk.com/js/api/openapi.js?169', t.onload = function() {
-        VK.Retargeting.Init("VK-RTRG-1527673-1t4wP"), VK.Retargeting.Hit()
-      }, document.head.appendChild(t)
-    }();
-  </script><noscript><img src="https://vk.com/rtrg?p=VK-RTRG-1527673-1t4wP" style="position:fixed; left:-999px;" alt="" /></noscript>
-  <script src="/wp-content/themes/store-child/includes/js/jquery-ui.min.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -51,7 +39,7 @@
               wp_nav_menu(
                 array(
                   'menu' => 'header_menu',
-                  'menu_id'        => 'header_menu',
+                  'menu_id' => 'header_menu',
                 )
               );
               ?>
@@ -65,33 +53,23 @@
             <div class="main-top">
               <div class="align-self-center">
                 <div class="logo">
-                  <?php
-                  if (is_front_page()) :
-                  ?>
+                  <?php if (is_front_page()) : ?>
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/logo.svg" alt="NaturaPharma">
-                  <?php
-                  else :
-                  ?>
+                  <?php else : ?>
                     <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                       <img src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/logo.svg" alt="NaturaPharma">
                     </a>
-                  <?php
-                  endif;
-                  ?>
+                  <?php endif; ?>
                 </div>
               </div>
               <div class="align-self-center with-links">
                 <div class="header-links" style=" font-size: 14px; ">г. Москва, ул. Алма-Атинская, д. 9, корп. 2 | Пн-Пт: 10:00 до 20:00, Сб-Вс: выходной<br></div>
                 <div class="header-links">
                   <?php
-                  // $vk = get_field('link_vk', 2);
-                  $vk = 'link_vk';
-                  // $tg = get_field('link_telegram', 2);
-                  $tg = 'link_telegram';
-                  // $phone = get_field('nomer_telefona', 2);
-                  $phone = 'nomer_telefona';
-                  // $truephone = str_replace($vowels, "", $phone);
-                  $truephone = '111';
+                  $vk = get_field('link_vk', 2);
+                  $tg = get_field('link_telegram', 2);
+                  $phone = get_field('nomer_telefona', 2);
+                  $truephone = str_replace($vowels, "", $phone);
                   if ($vk) { ?>
                     <a href="<?php echo $vk ?>" target="_blank" rel="nofollow noopener">
                       <div class="circle-green vk"></div>
@@ -185,9 +163,6 @@
               header.classList.remove("sticky");
             }
           }
-
-
-
 
         } else {
           //не выполнять

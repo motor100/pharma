@@ -10,7 +10,7 @@
 
 ?>
 
-</div><!-- #content -->
+</div>
 
 <footer>
 	<div class="curved m-b-30">
@@ -22,7 +22,7 @@
 		<div class="row">
 			<div class="col-lg-4 align-self-center with-logo">
 				<div class="logo-side">
-					<img src="<?php //the_field('logotip_v_futere', 2); ?>" alt="logo">
+					<img src="<?php the_field('logotip_v_futere', 2); ?>" alt="logo">
 					<p>Производственная натуропатическая аптека: натуральные препараты и лекарства, гомеопатия, капли Баха, гидролаты, витамины, соли Шюсслера</p>
 					<p>© Общество с ограниченной <br /> ответственностью «Здоровье»</p>
 				</div>
@@ -57,7 +57,7 @@
 				wp_nav_menu(
 					array(
 						'menu' => 'footer_menu',
-						'menu_id'        => 'footer_menu',
+						'menu_id' => 'footer_menu',
 					)
 				);
 				?>
@@ -88,7 +88,6 @@
 	</div>
 </footer>
 
-
 <div id="contact-form" style="display:none;max-width: calc(100vw - 50px);">
 	<?php echo do_shortcode('[contact-form-7 id="5357fd9" title="Заказать звонок"]');  ?>
 </div>
@@ -100,9 +99,19 @@
 </div>
 
 
-</div><!-- #page -->
+</div>
 
 <?php wp_footer(); ?>
+
+<script>
+  ! function() {
+    var t = document.createElement("script");
+    t.type = "text/javascript", t.async = !0, t.src = 'https://vk.com/js/api/openapi.js?169', t.onload = function() {
+      VK.Retargeting.Init("VK-RTRG-1527673-1t4wP"), VK.Retargeting.Hit()
+    }, document.head.appendChild(t)
+  }();
+</script>
+<noscript><img src="https://vk.com/rtrg?p=VK-RTRG-1527673-1t4wP" style="position:fixed; left:-999px;" alt="" /></noscript>
 
 
 </body>

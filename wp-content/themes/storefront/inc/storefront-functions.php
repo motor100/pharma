@@ -224,3 +224,19 @@ function storefront_sanitize_choices( $input, $setting ) {
 function storefront_sanitize_checkbox( $checked ) {
 	return ( ( isset( $checked ) && true === $checked ) ? true : false );
 }
+
+
+
+
+
+add_action( 'wp_enqueue_scripts', 'myajax_data', 99 );
+function myajax_data(){
+
+    wp_localize_script( 'twentyfifteen-script', 'myajax',
+        array(
+            'url' => admin_url('admin-ajax.php')
+        )
+    );
+
+}
+

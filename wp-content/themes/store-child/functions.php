@@ -23,19 +23,37 @@ function sf_child_theme_dequeue_style() {
  * Note: DO NOT! alter or remove the code above this text and only add your custom PHP functions below this text.
  */
 
+// Scripts
 add_action( 'wp_enqueue_scripts', 'artabr_script' );
 
 function artabr_script() {
+    wp_enqueue_script( 'jquery-ui', get_stylesheet_directory_uri() . '/includes/js/jquery-ui.min.js' );
 	wp_enqueue_script( 'fancy', get_stylesheet_directory_uri() . '/includes/js/fancy.js' );
 	wp_enqueue_script( 'isotope', get_stylesheet_directory_uri() . '/includes/js/isotope.js' );
-  wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/includes/js/app.min.js' );
+    wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/includes/js/app.min.js' );
 	wp_enqueue_script( 'iso', get_stylesheet_directory_uri() . '/includes/js/iso.js' );
-}
-add_action( 'wp_enqueue_scripts', 'dequeue_storefront_child_theme_style',9999);
+    wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/includes/js/main.js');
 
-function dequeue_storefront_child_theme_style() {
-    wp_dequeue_style('storefront-child-style');
+    // включение файла admin-ajax.php для front
+    wp_localize_script('main', 'Myscrt', array(
+        'ajaxurl' => admin_url('admin-ajax.php')
+    ));
 }
+
+// Styles
+add_action('wp_print_styles', 'add_styles');
+
+function add_styles() {
+    wp_enqueue_style( 'bootstrap-icons', get_stylesheet_directory_uri() . '/includes/css/bootstrap-icons.css' );
+    wp_enqueue_style( 'fancybox', get_stylesheet_directory_uri() . '/includes/css/fancybox.min.css' );
+}
+
+// add_action( 'wp_enqueue_scripts', 'dequeue_storefront_child_theme_style',9999);
+
+// function dequeue_storefront_child_theme_style() {
+//     wp_dequeue_style('storefront-child-style');
+// }
+
 //Каталог продукции
 function render_parents_catalog() {
   $taxonomy     = 'product_cat';
@@ -71,7 +89,7 @@ function render_parents_catalog() {
 			</div>
 			<div class="item__info">
 				<div class="item__border">
-					<a href="<?php echo get_term_link($cat->term_id); ?>" class="item__title"><?php echo $cat->name ?></a>
+					<a href="<?php echo get_term_link($cat->term_id); ?>" class="item__title"><?php echo $cat->name; ?></a>
 				</div>
 			</div>
         </div>
@@ -130,12 +148,12 @@ function render_catalog() {
                         <img src="<?php echo $image ?>" alt="catImage">
                     </a>
                 </div>
-                <a class="subcat__link" href="<?php echo get_term_link($sub_category); ?>"><?php echo $sub_category->name ?></a>
+                <a class="subcat__link" href="<?php echo get_term_link($sub_category); ?>"><?php echo $sub_category->name; ?></a>
             </div>
 
         <?php }
-      } ?>
-    <?php }
+      }
+    }
   }
 }
 
@@ -174,10 +192,10 @@ function render__catalog($id_gr) {
 			<div class="children__item">
                 <div class="children__image">
                     <a href="<?php echo get_term_link($cat->term_id); ?>">
-                        <img class="<?echo $css_w?>" src="<?php echo $image ?>" alt="<?php echo $cat->name ?>">
+                        <img class="<?php echo $css_w ;?>" src="<?php echo $image ?>" alt="<?php echo $cat->name; ?>">
                     </a>
                 </div>
-                <a class="subcat__link" href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name ?></a>
+                <a class="subcat__link" href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a>
             </div>
     <?php
   }
@@ -475,21 +493,21 @@ function wc_products_from_cat_dropdown( $atts ) {
                 'terms'    => wp_get_post_terms( $product_id, 'product_cat', array( 'fields' => 'ids' ) ) ,
         ) ),
     ) );
-//print_r($query);
+
     if ( $query->have_posts() ) :
 
-    echo '<div class="products-dropdown"><select name="products-select" id="products-select">
-    <option value="">'.__('Choose a related product').'</option>';
+        echo '<div class="products-dropdown"><select name="products-select" id="products-select">
+        <option value="">'.__('Choose a related product').'</option>';
 
-    while ( $query->have_posts() ) : $query->the_post();
+        while ( $query->have_posts() ) : $query->the_post();
 
-    echo '<option value="'.get_permalink().'">'.get_the_title().'</option>';
+            echo '<option value="'.get_permalink().'">'.get_the_title().'</option>';
 
-    endwhile;
+        endwhile;
 
-    echo '</select> <button type="button" style="padding:2px 10px; margin-left:10px;">'._("Go").'</button></div>';
+        echo '</select> <button type="button" style="padding:2px 10px; margin-left:10px;">'._("Go").'</button></div>';
 
-    wp_reset_postdata();
+        wp_reset_postdata();
 
     endif;
 
@@ -523,3 +541,48 @@ function change_relatedproducts_text($new_text, $related_text, $source)
 }
 
 
+// AJAX получить товары из подкатегории
+add_action( 'wp_ajax_get_subcat', 'get_subcat_products' ); // хук wp_ajax
+add_action( 'wp_ajax_nopriv_get_subcat', 'get_subcat_products' ); // хук wp_ajax для незалогиненных пользователей
+
+function get_subcat_products() {
+
+    // Получение id подкатегории из запроса
+    $subcat_id = ! empty( $_POST['subcat_id'] ) ? esc_attr( $_POST['subcat_id'] ) : false;
+
+    // Получение подкатегории
+    $subcat = get_term_by( 'id', $subcat_id, 'product_cat' );
+
+    // Если нет подкатегории, то return false
+    if ( ! $subcat ) {
+        return false;
+    }
+
+    // Запрос
+    $query = new WP_Query( array (
+        'post_type'      => 'product',
+        'post_status'    => 'publish',
+        'posts_per_page' => '-1',
+        'tax_query' => array( array (
+                'taxonomy' => 'product_cat',
+                'field'    => 'term_id',
+                'terms'    => $subcat_id,
+        ) ),
+    ) );
+
+    // Вывод записей
+    if ( $query->have_posts() ) {
+
+        while ( $query->have_posts() ) {
+            $query->the_post();
+
+            // Подключение шаблона product loop
+            require ( get_stylesheet_directory() . '/woocommerce/content-product.php' );
+        }
+
+        wp_reset_postdata();
+
+    }
+    
+    wp_die(); // выход нужен для того, чтобы в ответе не было ничего лишнего (0), только то что возвращает функция
+}

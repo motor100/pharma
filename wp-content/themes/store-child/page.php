@@ -37,7 +37,7 @@ get_header(); ?>
 			</div>
 			<div class="container mycart">
 				<div class="row">
-					<? the_content();?>
+					<?php the_content();?>
 				</div>
 			</div>
 		<?php }

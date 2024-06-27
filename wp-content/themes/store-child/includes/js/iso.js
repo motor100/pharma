@@ -1,10 +1,10 @@
 jQuery(document).ready(function($) {
 
-var $grid = $('.termbox-18').isotope({
-  itemSelector: '.product',
-	layoutMode: 'fitRows',
-	percentPosition: true,
-})
+  var $grid = $('.termbox-18').isotope({
+    itemSelector: '.product',
+  	layoutMode: 'fitRows',
+  	percentPosition: true,
+  })
 	
 	$('.filters-button-group').on( 'click', '.filtered-button', function() {
 		var filterValue = $(this).attr('data-filter');
