@@ -59,10 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // вставка в ul.products
       .then((response) => response.text())
       .then((html) => {
-        // если пришел html, то вставляю
-        if (html) {
-          products.innerHTML = html;
-        }
+        // если пришел html, то вставляю, иначе "Товаров не найдено"
+        products.innerHTML = (html ? html : '<div class="no-found-product-text">Товаров не найдено</div>');
       })
       .catch((error) => {
         console.log(error);

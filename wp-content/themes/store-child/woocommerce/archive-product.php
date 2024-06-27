@@ -109,8 +109,8 @@ do_action( 'woocommerce_before_main_content' ); ?>
             <?php $subcats = get_terms( 'product_cat', $args ); ?>
 
             <div class="subcategories">
-              <div class="subcategories-item">
-                <div class="subcategories-item__title" onclick="location.reload()">Все</div>
+              <div class="subcategories-item" onclick="location.reload()">
+                <div class="subcategories-item__title">Все</div>
               </div>
               <?php foreach($subcats as $subcat) { ?>
                 <div class="subcategories-item filter-btn" data-term-id="<?php echo $subcat->term_id; ?>">

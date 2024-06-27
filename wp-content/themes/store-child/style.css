@@ -4,7 +4,7 @@ Theme URI:    https://woocommerce.com/products/storefront/
 Author:       Natura Pharma
 Author URI:   https://natura-pharma.ru/
 Description:  Storefront is the perfect theme for your next WooCommerce project. Designed and developed by WooCommerce Core developers, it features a bespoke integration with WooCommerce itself plus many of the most popular customer facing WooCommerce extensions. There are several layout & color options to personalise your shop, multiple widget regions, a responsive design and much more. Developers will love its lean and extensible codebase making it a joy to customize and extend. Looking for a WooCommerce theme? Look no further!
-Version:      1.0.2
+Version:      1.0.3
 Tested up to: 6.5
 Requires PHP: 5.6.0
 License:      GNU General Public License v3 or later
@@ -5849,7 +5849,7 @@ footer .menu .menu-item a:hover {
   width: max-content;
   min-width: 155px;
   height: 63px;
-  margin: 0 10px 0 0;
+  margin: 0 10px 20px 0;
   padding: 0 15px;
   border: 1px solid #44324C;
   background-color: #fff;
@@ -5897,6 +5897,7 @@ footer .menu .menu-item a:hover {
 @media only screen and (max-width : 992px) {
   .subcategories .subcategories-item {
     min-width: 135px;
+    margin: 0 10px 15px 0;
   }
   .subcategories .subcategories-item .subcategories-item__title {
     font-size: 18px;
@@ -5910,27 +5911,22 @@ footer .menu .menu-item a:hover {
   .subcategories .subcategories-item {
     min-width: 110px;
     height: 40px;
+    margin: 0 10px 10px 0;
   }
   .subcategories .subcategories-item .subcategories-item__title {
     font-size: 16px;
   }
 }
 
-/*@media only screen and (max-width : 576px) {
-
-}
-
-@media only screen and (max-width : 480px) {
-
-}
-
 @media only screen and (max-width : 360px) {
-
-}*/
-
-
-
-
+  .subcategories .subcategories-item {
+    min-width: 100px;
+    height: 34px;
+  }
+  .subcategories .subcategories-item .subcategories-item__title {
+    font-size: 15px;
+  }
+}
 
 
 @media (max-width: 767.98px) {
@@ -7037,6 +7033,17 @@ ul.clear {
   padding: 30px 15%;
   color: #4f424f;
 }
+
+@media only screen and (max-width : 576px) {
+  .catalog_inside.desc {
+    padding: 30px 12px;
+  }
+  .catalog_inside .term-description p:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+
 ul.products {
   padding-left: 0;
   margin-top: 70px;
