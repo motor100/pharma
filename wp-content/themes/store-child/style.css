@@ -4,7 +4,7 @@ Theme URI:    https://woocommerce.com/products/storefront/
 Author:       Natura Pharma
 Author URI:   https://natura-pharma.ru/
 Description:  Storefront is the perfect theme for your next WooCommerce project. Designed and developed by WooCommerce Core developers, it features a bespoke integration with WooCommerce itself plus many of the most popular customer facing WooCommerce extensions. There are several layout & color options to personalise your shop, multiple widget regions, a responsive design and much more. Developers will love its lean and extensible codebase making it a joy to customize and extend. Looking for a WooCommerce theme? Look no further!
-Version:      1.1.6
+Version:      1.1.8
 Tested up to: 6.5
 Requires PHP: 5.6.0
 License:      GNU General Public License v3 or later
@@ -5367,7 +5367,7 @@ header.woocommerce-products-header {
 
 .footer {
   background: #43314b;
-  padding: 45px;
+  padding: 45px 0;
   padding-top: 0;
   margin-top: 100px;
 }
@@ -5847,6 +5847,7 @@ header.woocommerce-products-header {
 .site-content p:not(:last-child) {
   margin-bottom: 20px;
 }
+/*
 @media (max-width: 767.98px) {
   .single__prod .col-9 {
     -webkit-box-flex: 0;
@@ -5858,6 +5859,7 @@ header.woocommerce-products-header {
     display: none;
   }
 }
+*/
 
 .m-select {
   margin-top: 20px;
@@ -5903,13 +5905,12 @@ header.woocommerce-products-header {
   background-color: #C2D279;
 }
 
-.subcategories .subcategories-item .subcategories-item__title {
-  font-family: "Roboto";
+/*.subcategories .subcategories-item .subcategories-item__title {
   font-size: 16px;
   font-weight: 300;
   text-decoration: none;
 }
-
+*/
 .subcategories .subcategories-item:hover .subcategories-item__title {
   color: var(--bs-body-color);
 }
@@ -5961,7 +5962,6 @@ header.woocommerce-products-header {
   .subcategories .subcategories-item {
     margin: 0 10px 15px 0;
   }
-
 }
 
 @media only screen and (max-width : 768px) {
@@ -7087,16 +7087,13 @@ ul.clear {
   padding: 0px 0px 30px;
 }
 .catalog_inside.desc {
-  background: #c2d279;
   margin-top: 10px;
-  padding: 30px 15%;
+  padding: 30px 0;
+  background-color: #c2d279;
   color: #4f424f;
 }
 
 @media only screen and (max-width : 576px) {
-  .catalog_inside.desc {
-    padding: 30px 12px;
-  }
   .catalog_inside .term-description p:not(:last-child) {
     margin-bottom: 10px;
   }
@@ -8091,4 +8088,39 @@ h1.sec-title{
 /* Из плагина Simple Custom CSS and JS */
 .text-page .entry-content ul li::before{
   display:none;
+}
+
+/* Page 404 */
+.page-404 {
+  width: 80%;
+  margin: 0 auto;
+}
+.page-404 .page-404-image {
+  margin: 50px 0 20px 0;
+}
+.page-404 .page-404-image img {
+  width: 100%;
+}
+.page-404 .page-404-text {
+  margin-bottom: 50px;
+  font-size: 28px;
+  text-align: center;
+  font-weight: 700;
+}
+.page-404 .to-catalog-btn {
+  display: block;
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto;
+  text-decoration: none;
+}
+@media only screen and (max-width : 992px) {
+  .page-404 .page-404-text {
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width : 768px) {
+  .page-404 .page-404-text {
+    font-size: 18px;
+  }
 }

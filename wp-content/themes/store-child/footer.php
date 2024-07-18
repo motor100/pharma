@@ -205,7 +205,7 @@
 <script>
   ! function() {
     var t = document.createElement("script");
-    t.type = "text/javascript", t.async = !0, t.src = 'https://vk.com/js/api/openapi.js?169', t.onload = function() {
+    t.async = !0, t.src = 'https://vk.com/js/api/openapi.js?169', t.onload = function() {
       VK.Retargeting.Init("VK-RTRG-1527673-1t4wP"), VK.Retargeting.Hit()
     }, document.head.appendChild(t)
   }();
@@ -216,7 +216,7 @@
 <script>
   ! function() {
     var t = document.createElement("script");
-    t.type = "text/javascript", t.async = !0, t.src = 'https://vk.com/js/api/openapi.js?169', t.onload = function() {
+    t.async = !0, t.src = 'https://vk.com/js/api/openapi.js?169', t.onload = function() {
       VK.Retargeting.Init("VK-RTRG-1413699-2ZbwQ"), VK.Retargeting.Hit()
     }, document.head.appendChild(t)
   }();
@@ -234,7 +234,6 @@
   (function(d, w, id) {
     if (d.getElementById(id)) return;
     var ts = d.createElement("script");
-    ts.type = "text/javascript";
     ts.async = true;
     ts.id = id;
     ts.src = "https://top-fwz1.mail.ru/js/code.js";
@@ -250,7 +249,7 @@
   })(document, window, "tmr-code");
 </script>
 <noscript>
-  <div><img src="https://top-fwz1.mail.ru/counter?id=3474743;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div>
+  <div><img src="https://top-fwz1.mail.ru/counter?id=3474743;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru"></div>
 </noscript>
 <!-- /Top.Mail.Ru counter -->
 
@@ -270,7 +269,6 @@
       f = function() {
         n.parentNode.insertBefore(s, n);
       };
-    s.type = "text/javascript";
     s.async = true;
     s.src =
       (d.location.protocol == "https:" ? "https:" : "http:") +
@@ -284,7 +282,7 @@
   })(window, document, "_top100q");
 </script>
 <noscript>
-  <img src="//counter.rambler.ru/top100.cnt?pid=7728152" alt="Топ-100" />
+  <img src="//counter.rambler.ru/top100.cnt?pid=7728152" alt="Топ-100">
 </noscript>
 <!-- END Top100 (Kraken) Counter -->
 

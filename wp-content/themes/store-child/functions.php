@@ -625,3 +625,6 @@ function woocommerce_change_rub_symbol( $valyuta_symbol, $valyuta_code ) {
     return $valyuta_symbol;
 }
 add_filter('woocommerce_currency_symbol', 'woocommerce_change_rub_symbol', 9999, 2);
+
+
+
