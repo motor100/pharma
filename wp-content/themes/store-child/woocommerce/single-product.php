@@ -40,7 +40,7 @@ get_header( 'shop' ); ?>
 			<div class="three"></div>
 		</div>
 		<div class="catalog_inside title">
-			<? //echo woocommerce_page_title();?>
+			<?php //echo woocommerce_page_title();?>
 		</div>
 	</div>
 		<?php while ( have_posts() ) : ?>

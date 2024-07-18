@@ -615,3 +615,13 @@ function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
   }
   return $urls;
 }
+
+
+// Замена символа рубля на букву Р
+function woocommerce_change_rub_symbol( $valyuta_symbol, $valyuta_code ) {
+    if( $valyuta_code === 'RUB' ) {
+        return 'Р';
+    }
+    return $valyuta_symbol;
+}
+add_filter('woocommerce_currency_symbol', 'woocommerce_change_rub_symbol', 9999, 2);
