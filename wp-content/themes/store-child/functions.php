@@ -44,15 +44,9 @@ function artabr_script() {
 add_action('wp_print_styles', 'add_styles');
 
 function add_styles() {
-    // wp_enqueue_style( 'bootstrap-icons', get_stylesheet_directory_uri() . '/includes/css/bootstrap-icons.css' );
     wp_enqueue_style( 'fancybox', get_stylesheet_directory_uri() . '/includes/css/fancybox.min.css' );
 }
 
-// add_action( 'wp_enqueue_scripts', 'dequeue_storefront_child_theme_style',9999);
-
-// function dequeue_storefront_child_theme_style() {
-//     wp_dequeue_style('storefront-child-style');
-// }
 
 //Каталог продукции
 function render_parents_catalog() {
@@ -588,14 +582,36 @@ function get_subcat_products() {
 }
 
 
-// удалить атрибут type у scripts
+// Удалить атрибут type у scripts
 add_filter('script_loader_tag', 'clean_script_tag');
 function clean_script_tag($src) {
   return str_replace("type='text/javascript'", '', $src);
 }
 
-// удалить атрибут type у style
+// Удалить атрибут type у style
 add_filter('style_loader_tag', 'clean_css_tag', 10, 2);
 function clean_css_tag($tag, $handle) {
   return preg_replace( "/type=['\"]text\/(css)['\"]/", '', $tag );
+}
+
+// Disable the emoji's
+function disable_emojis() {
+  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+  remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+  remove_action( 'wp_print_styles', 'print_emoji_styles' );
+  remove_action( 'admin_print_styles', 'print_emoji_styles' ); 
+  remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+  remove_filter( 'comment_text_rss', 'wp_staticize_emoji' ); 
+  remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+  add_filter( 'wp_resource_hints', 'disable_emojis_remove_dns_prefetch', 10, 2 );
+}
+add_action( 'init', 'disable_emojis' );
+
+function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
+  if ( 'dns-prefetch' == $relation_type ) {
+    /** This filter is documented in wp-includes/formatting.php */
+    $emoji_svg_url = apply_filters( 'emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/' );
+    $urls = array_diff( $urls, array( $emoji_svg_url ) );
+  }
+  return $urls;
 }
