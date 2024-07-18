@@ -49,6 +49,8 @@ get_header( 'shop' ); ?>
 		<?php endwhile; // end of the loop. ?>
 </section>
 
+<?php get_template_part( 'templates/content', 'contraindications' ); ?>
+
 	<?php
 		/**
 		 * woocommerce_after_main_content hook.
