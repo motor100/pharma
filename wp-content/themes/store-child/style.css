@@ -4,7 +4,7 @@ Theme URI:    https://woocommerce.com/products/storefront/
 Author:       Natura Pharma
 Author URI:   https://natura-pharma.ru/
 Description:  Storefront is the perfect theme for your next WooCommerce project. Designed and developed by WooCommerce Core developers, it features a bespoke integration with WooCommerce itself plus many of the most popular customer facing WooCommerce extensions. There are several layout & color options to personalise your shop, multiple widget regions, a responsive design and much more. Developers will love its lean and extensible codebase making it a joy to customize and extend. Looking for a WooCommerce theme? Look no further!
-Version:      1.1.1
+Version:      1.1.2
 Tested up to: 6.5
 Requires PHP: 5.6.0
 License:      GNU General Public License v3 or later
@@ -5356,13 +5356,15 @@ header.woocommerce-products-header {
 .dgwt-wcas-search-wrapp {
   max-width: 100% !important;
 }
-footer {
+
+
+.footer {
   background: #43314b;
   padding: 45px;
   padding-top: 0;
   margin-top: 100px;
 }
-footer .menu {
+.footer .menu {
   -webkit-columns: 2;
   -moz-columns: 2;
   column-count: 2;
@@ -5375,13 +5377,13 @@ footer .menu {
   padding: 0; /*text-align:center*/
 }
 @media (max-width: 991.98px) {
-  footer .menu {
+  .footer .menu {
     margin-top: 20px;
     text-align: center;
   }
 }
 @media (max-width: 575.98px) {
-  footer .menu {
+  .footer .menu {
     -webkit-columns: 1;
     -moz-columns: 1;
     column-count: 1;
@@ -5391,19 +5393,19 @@ footer .menu {
     margin-top: 0;
   }
 }
-footer .menu li:not(:last-child) {
+.footer .menu li:not(:last-child) {
   margin-bottom: 22px;
 }
-footer .menu .menu-item a {
+.footer .menu .menu-item a {
   color: #fff;
   font-size: 18px;
   line-height: 25px;
   text-decoration: none;
 }
-footer .menu .menu-item a:hover {
+.footer .menu .menu-item a:hover {
   color: #c2d279;
 }
-.logo-side img {
+.footer .logo-side img {
   margin-bottom: 17px;
 }
 .logo-side p {
@@ -5441,6 +5443,14 @@ footer .menu .menu-item a:hover {
   margin-bottom: 13px;
   margin-top: 25px;
 }*/
+.footer .search-content-wrapper {
+  width: max-content;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.footer .search-lens {
+  margin-right: 5px;
+}
 @media (max-width: 991.98px) {
   .with-menu-footer {
     -webkit-box-ordinal-group: 2;
@@ -6438,45 +6448,45 @@ footer .menu .menu-item a:hover {
   grid-template-rows: auto;
   grid-template-columns: 25% 50% 25%;
 }
-footer .with-logo p {
+.footer .with-logo p {
   color: #fff;
 }
-footer .icon {
+.footer .icon {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin-right: 10px;
 }
-footer .icon.phone {
+.footer .icon.phone {
   background: #c2d279 url("includes/images/svg/phone.svg") 50% 50% no-repeat;
   background-size: 45px;
 }
-footer .icon.mail {
+.footer .icon.mail {
   background: #c2d279 url("includes/images/svg/mail.svg") 50% 50% no-repeat;
   background-size: 45px;
 }
-footer .search {
+.footer .search {
   display: inline-block;
   text-align: center;
   color: #fff;
   font-weight: 500;
 }
-footer .pay_icons {
+.footer .pay_icons {
   background-image: url("/wp-content/uploads/pay.png");
   height: 30px;
   opacity: 0.5;
 }
-footer .icon-visa {
+.footer .icon-visa {
   background-position: -41px -37px;
   width: 45px;
   margin-right: 20px;
 }
-footer .icon-mastercard {
+.footer .icon-mastercard {
   background-position: -123px -37px;
   width: 31px;
   margin-right: 20px;
 }
-footer .icon-mir {
+.footer .icon-mir {
   background-position: -42px -168px;
   width: 44px;
 }
@@ -7138,7 +7148,7 @@ ul.products li.product .button {
   .advantages .advantage-title {
     font-size: 1.6em;
   }
-  footer .menu .menu-item a {
+  .footer .menu .menu-item a {
     font-size: 16px;
   }
 }
@@ -7156,7 +7166,7 @@ ul.products li.product .button {
     font-size: 1.4em;
     min-height: 150px;
   }
-  footer .menu .menu-item a {
+  .footer .menu .menu-item a {
     font-size: 14px;
   }
 }
@@ -7335,14 +7345,14 @@ ul.products li.product .button {
   .advantages .advantage-n {
     margin: 0;
   }
-  footer {
+  .footer {
     margin-top: 50px;
   }
 
-  footer .col-lg-4.txt_r.flex.f-d-column.j-content-sb.a-items-fe {
+  .footer .col-lg-4.txt_r.flex.f-d-column.j-content-sb.a-items-fe {
     text-align: center;
   }
-  footer .pay_box {
+  .footer .pay_box {
     margin: 0 auto;
   }
   #footer_menu li {

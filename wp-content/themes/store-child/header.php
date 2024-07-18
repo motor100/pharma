@@ -53,13 +53,9 @@
             <div class="main-top">
               <div class="align-self-center">
                 <div class="logo">
-                  <?php if (is_front_page()) : ?>
+                  <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/logo.svg" alt="NaturaPharma">
-                  <?php else : ?>
-                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-                      <img src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/logo.svg" alt="NaturaPharma">
-                    </a>
-                  <?php endif; ?>
+                  </a>
                 </div>
               </div>
               <div class="align-self-center with-links">

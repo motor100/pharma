@@ -44,7 +44,7 @@ function artabr_script() {
 add_action('wp_print_styles', 'add_styles');
 
 function add_styles() {
-    wp_enqueue_style( 'bootstrap-icons', get_stylesheet_directory_uri() . '/includes/css/bootstrap-icons.css' );
+    // wp_enqueue_style( 'bootstrap-icons', get_stylesheet_directory_uri() . '/includes/css/bootstrap-icons.css' );
     wp_enqueue_style( 'fancybox', get_stylesheet_directory_uri() . '/includes/css/fancybox.min.css' );
 }
 
