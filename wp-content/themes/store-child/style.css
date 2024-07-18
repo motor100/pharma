@@ -4,7 +4,7 @@ Theme URI:    https://woocommerce.com/products/storefront/
 Author:       Natura Pharma
 Author URI:   https://natura-pharma.ru/
 Description:  Storefront is the perfect theme for your next WooCommerce project. Designed and developed by WooCommerce Core developers, it features a bespoke integration with WooCommerce itself plus many of the most popular customer facing WooCommerce extensions. There are several layout & color options to personalise your shop, multiple widget regions, a responsive design and much more. Developers will love its lean and extensible codebase making it a joy to customize and extend. Looking for a WooCommerce theme? Look no further!
-Version:      1.1.8
+Version:      1.2.2
 Tested up to: 6.5
 Requires PHP: 5.6.0
 License:      GNU General Public License v3 or later
@@ -5366,8 +5366,8 @@ header.woocommerce-products-header {
 
 
 .footer {
-  background: #43314b;
-  padding: 45px 0;
+  background-color: #43314b;
+  padding: 45px 0 0 0;
   padding-top: 0;
   margin-top: 100px;
 }
@@ -6522,18 +6522,18 @@ header.woocommerce-products-header {
   width: 44px;
 }
 .footer-end {
-  margin: -45px;
+  margin: -45px 0 0 0;
   margin-top: 45px;
   background: #efe7da;
   text-align: center;
   padding: 30px 0 60px 0;
   color: #43314b;
+  line-height: 2;
 }
-.footer-end a {
-  font-family: Akrobat;
-  font-size: 2.5em;
+.footer-end .footer-end-item__link {
   text-transform: uppercase;
   font-weight: 500;
+  text-decoration: underline;
 }
 
 .curved {
@@ -7402,9 +7402,6 @@ ul.products li.product .button {
   .footer-end {
     padding-bottom: 70px;
     font-size: 14px;
-  }
-  .footer-end a {
-    font-size: 1.5em;
   }
 
   .curved .two {

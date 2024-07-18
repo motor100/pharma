@@ -101,7 +101,7 @@ do_action( 'woocommerce_before_main_content' ); ?>
           // Вывод подкатегорий
           $args = array(
             'parent' => $parentid, // id родительской категории
-            'hide_empty' => false // скрывать категории без товаров
+            'hide_empty' => true // скрывать категории без товаров
           );
           ?>
 
