@@ -586,3 +586,16 @@ function get_subcat_products() {
     
     wp_die(); // выход нужен для того, чтобы в ответе не было ничего лишнего (0), только то что возвращает функция
 }
+
+
+// удалить атрибут type у scripts
+add_filter('script_loader_tag', 'clean_script_tag');
+function clean_script_tag($src) {
+  return str_replace("type='text/javascript'", '', $src);
+}
+
+// удалить атрибут type у style
+add_filter('style_loader_tag', 'clean_css_tag', 10, 2);
+function clean_css_tag($tag, $handle) {
+  return preg_replace( "/type=['\"]text\/(css)['\"]/", '', $tag );
+}

@@ -4,7 +4,7 @@ Theme URI:    https://woocommerce.com/products/storefront/
 Author:       Natura Pharma
 Author URI:   https://natura-pharma.ru/
 Description:  Storefront is the perfect theme for your next WooCommerce project. Designed and developed by WooCommerce Core developers, it features a bespoke integration with WooCommerce itself plus many of the most popular customer facing WooCommerce extensions. There are several layout & color options to personalise your shop, multiple widget regions, a responsive design and much more. Developers will love its lean and extensible codebase making it a joy to customize and extend. Looking for a WooCommerce theme? Look no further!
-Version:      1.0.9
+Version:      1.1.1
 Tested up to: 6.5
 Requires PHP: 5.6.0
 License:      GNU General Public License v3 or later
@@ -5054,23 +5054,43 @@ progress {
 
 
 @font-face {
-  font-display: fallback;
-  font-family: Roboto;
+  font-display: swap;
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: url(includes/fonts/Roboto-Light.woff2);
   src: url(includes/fonts/Roboto-Light.woff2) format("woff2");
 }
 @font-face {
-  font-display: fallback;
-  font-family: Uni;
+  font-display: swap;
+  font-family: 'Uni';
   font-style: normal;
   font-weight: 400;
-  src: url(includes/fonts/UniNeueLight.woff2);
   src: url(includes/fonts/UniNeueLight.woff2) format("woff2");
 }
+@font-face {
+  font-display: swap;
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url(includes/fonts/SourceSansPro-Regular.woff2) format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Akrobat';
+  font-style: normal;
+  font-weight: 400;
+  src: url(includes/fonts/Akrobat-Black.woff) format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Chianti';
+  font-style: normal;
+  font-weight: 400;
+  src: url(includes/fonts/TT1211C.woff) format("woff");
+}
+
 body {
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 400;
 }
@@ -5935,14 +5955,7 @@ footer .menu .menu-item a:hover {
   background-color: #d1dfd8;
   color: #184e66;
 }
-@font-face {
-  font-family: "Akrobat";
-  src: url(includes/fonts/Akrobat-Black.woff);
-}
-@font-face {
-  font-family: "Chianti";
-  src: url(includes/fonts/TT1211C.woff);
-}
+
 .blog .catalog__item {
   display: flex;
 }
@@ -8032,4 +8045,9 @@ h1.sec-title{
 /* Cекция elementor слайдер */
 .elementor-element-fddb202 {
   display: none !important;
+}
+
+/* Из плагина Simple Custom CSS and JS */
+.text-page .entry-content ul li::before{
+  display:none;
 }

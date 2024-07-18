@@ -80,7 +80,7 @@
                       <div class="circle-green tg"></div>
                     </a>
                   <?php } ?>
-                  <a href="tel:<?php echo $truephone ?>">
+                  <a href="tel:+74959274928">
                     <div class="circle-green phone"></div>
                   </a>
                   <div>
@@ -89,29 +89,12 @@
                   </div>
                 </div>
                 <?php echo do_shortcode('[fibosearch]'); ?>
-                <!--<div class="p-lr-10">
-					<a href="#" class="green-b w100"><i class="bi bi-star"></i>Персональный рецепт</a>
-				</div>-->
-                <!--<div class="work-plan">-->
-                <?php //the_field('rezhim_raboty', 2); 
-                ?>
-                <!--</div>-->
               </div>
               <div class="align-self-center with-menu">
                 <div class="header-navigation">
-                  <div class="head-nav">
-                    <?php /*
-                          wp_nav_menu(
-                            array(
-                              'menu' => 'header_menu',
-                              'menu_id'        => 'header_menu',
-                            )
-                          );*/
-                    ?>
-                  </div>
+                  <div class="head-nav"></div>
                   <?php global $woocommerce; ?>
                   <div class="woo-customs">
-                    <!--<div><div class="circle-green lk"></div></div>-->
                     <div><a href="<?php echo $woocommerce->cart->get_cart_url() ?>">
                         <div class="circle-green basket"></div>
                         <div class="count"><?php echo sprintf($woocommerce->cart->cart_contents_count); ?></div>
@@ -120,15 +103,6 @@
                       <div class="circle-green favorite"></div>
                       <div class="count">0</div>
                     </div>
-                    <?php
-                    /* wp_nav_menu(
-                                array(
-                                  'menu' => 'cart_menu',
-                                  'menu_id'        => 'cart_menu',
-                                  'fallback_cb'        => true,
-                                )
-                              );*/
-                    ?>
                   </div>
                 </div>
               </div>

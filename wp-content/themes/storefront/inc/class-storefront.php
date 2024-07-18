@@ -339,7 +339,7 @@ if ( ! class_exists( 'Storefront' ) ) :
 			/**
 			 * Fonts
 			 */
-			wp_enqueue_style( 'storefront-fonts', $this->google_fonts(), array(), $storefront_version );
+			// wp_enqueue_style( 'storefront-fonts', $this->google_fonts(), array(), $storefront_version );
 
 			/**
 			 * Scripts
@@ -501,7 +501,7 @@ if ( ! class_exists( 'Storefront' ) ) :
 		public function print_embed_styles() {
 			global $storefront_version;
 
-			wp_enqueue_style( 'source-sans-pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700,900', array(), $storefront_version );
+			// wp_enqueue_style( 'source-sans-pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700,900', array(), $storefront_version );
 			$accent_color     = get_theme_mod( 'storefront_accent_color' );
 			$background_color = storefront_get_content_background_color();
 			?>

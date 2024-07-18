@@ -18,9 +18,7 @@
 			  do_action( 'storefront_page' );
 			  
 			  ?>
-			  
-		  
-			  
+
 			</article> 
 		</div>
 	</div>
@@ -90,7 +88,7 @@
 						<div class="children__item">
 							<div class="children__image">
 								<a href="<?php echo get_permalink( $loop->post->ID ) ?>">
-									<img class="ww100" src="<? echo get_the_post_thumbnail_url($loop->post->ID); ?>">
+									<img class="ww100" src="<? echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="">
 								</a>
 							</div>
 							<a class="subcat__link" href="<?php echo get_permalink( $loop->post->ID ) ?>"><?php the_title(); ?></a>
@@ -121,7 +119,7 @@
 						<div class="children__item">
 							<div class="children__image">
 								<a href="<?php echo get_permalink( $loop->post->ID ) ?>">
-									<img class="ww100" src="<? echo get_the_post_thumbnail_url($loop->post->ID); ?>">
+									<img class="ww100" src="<? echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="">
 								</a>
 							</div>
 							<a class="subcat__link" href="<?php echo get_permalink( $loop->post->ID ) ?>"><?php the_title(); ?></a>

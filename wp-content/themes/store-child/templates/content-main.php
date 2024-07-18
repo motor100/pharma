@@ -3,68 +3,8 @@ jQuery(document).ready(function($) {
 	$('.catalog-tabs').tabs({active:0});
 });
 </script>
-<!--<main class="main-page">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h1>ПЕРВАЯ ПРОИЗВОДСТВЕННАЯ НАТУРОПАТИЧЕСКАЯ АПТЕКА</h1>
-                <p class="under">
-                    Природные лекарства для здоровой и осознанной жизни<br>
-                    Готовые комплексы и индивидуальные рецепты
-                </p>-->
-				<?php //echo do_shortcode('[wpb-pcf-button]'); ?>
-<!--                 <a href="#shop" class="link-button red to-anchor">Перейти в каталог</a> -->
-            <!--</div>
-        </div>
-    </div>
-    <div class="arrow">
-        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="24" viewBox="0 0 38 24" fill="none">
-            <path d="M37.5344 1.36889C36.9135 0.744874 35.9062 0.744874 35.2854 1.36889L19.0009 19.2373L2.71472 1.36889C2.09386 0.744874 1.08649 0.744874 0.46564 1.36889C-0.155213 1.99291 -0.155213 3.00501 0.46564 3.62896L17.7956 22.6439C18.1266 22.9766 18.5669 23.1191 18.9993 23.097C19.4332 23.1191 19.872 22.9766 20.203 22.6439L37.5344 3.62729C38.1552 3.00339 38.1552 1.99291 37.5344 1.36889Z" fill="#184E66"/>
-        </svg>
-    </div>
-</main>-->
-<!--
-<section class="catalog-shop" id="shop">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <p class="sec-title" id="catalog">Каталог продукции</p>
-            </div>
-            <div class="tax-wrapper">
-              <?php //render_parents_catalog(); ?>
-            </div>
-        </div>
-    </div>
-</section>
--->
-<!--
-<section class="about-shop">
-    <img class="about-fly" src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/paprika.png" alt="fly">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5">
-                <div class="img-box">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/about.jpg" alt="about">
-                </div>
-            </div>
-            <div class="col-lg-7">
-                <div class="about-side">
-                    <p class="sec-title">О НАС</p>
-                    <div class="about-text">
-                        <p>Мы команда врачей и фармацевтов, специализирующихся на естественных методах оздоровления и восстановления здоровья.</p>
-                        <p>Мы создаем новую культуру здорового образа жизни и осознанного отношения к своему здоровью и здоровью окружающей среды.</p>
-                        <p>Мы считаем, что болезнь – это не случайность, а возможность увидеть себя по-новому, что-то изменить в своей жизни, трансформировать негативное в прогрессивное и эволюционное.</p>
-                    </div>
-                    <a href="<?php //the_permalink('37'); ?>" class="link-button green">Подробнее</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
--->
 
-
-<section class="banner">
+<div class="banner">
 	<div class="title">
 		от природы к человеку
 	</div>
@@ -89,9 +29,9 @@ jQuery(document).ready(function($) {
 			</div>
 		</div>
 	</div>
-</section>
+</div>
 
-<section class="catalog">
+<div class="catalog">
 	<div class="title">
 		Каталог
 	</div>
@@ -152,7 +92,7 @@ jQuery(document).ready(function($) {
 						<div class="children__item">
 							<div class="children__image">
 								<a href="<?php echo get_permalink( $loop->post->ID ) ?>">
-									<img class="ww100" src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>">
+									<img class="ww100" src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="">
 								</a>
 							</div>
 							<a class="subcat__link" href="<?php echo get_permalink( $loop->post->ID ) ?>"><?php the_title(); ?></a>
@@ -183,7 +123,7 @@ jQuery(document).ready(function($) {
 						<div class="children__item">
 							<div class="children__image">
 								<a href="<?php echo get_permalink( $loop->post->ID ) ?>">
-									<img class="ww100" src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>">
+									<img class="ww100" src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="">
 								</a>
 							</div>
 							<a class="subcat__link" href="<?php echo get_permalink( $loop->post->ID ) ?>"><?php the_title(); ?></a>
@@ -195,12 +135,10 @@ jQuery(document).ready(function($) {
 			</div>
 		</div>
 	</div>
-</section>
+</div>
 
-<section class="offer m-b-200">
-	<div class="title">
-		Предложение недели
-	</div>
+<div class="offer m-b-200">
+	<div class="title">Предложение недели</div>
 	<div class="container">
         <div class="row">
 			<div class="all-offer">
@@ -327,9 +265,9 @@ jQuery(document).ready(function($) {
 			</div>
 		</div>
 	</div>
-</section>
+</div>
 
-<section class="advantages">
+<div class="advantages">
 	<div class="curved transparent m-b-30">
 		<div class="one"></div>
 		<div class="two"></div>
@@ -399,13 +337,13 @@ jQuery(document).ready(function($) {
 			</div>
         </div>
     </div>
-</section>
+</div>
 
-<section class="offer">
+<div class="offer">
 	<div class="container">
         <div class="row">
 			<?php the_content(); ?>
         </div>
     </div>
-</section>
+</div>
 
