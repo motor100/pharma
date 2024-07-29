@@ -31,18 +31,17 @@
     <?php do_action('storefront_before_header'); ?>
 
     <div class="header" id="myHeader">
+      <!-- <div class="main_menu hidden-mobile"> -->
       <div class="main_menu">
         <div class="container">
-          <div class="head-nav">
-            <?php
-            wp_nav_menu(
-              array(
-                'menu' => 'header_menu',
-                'menu_id' => 'header_menu',
-              )
-            );
-            ?>
-          </div>
+          <?php
+          wp_nav_menu(
+            array(
+              'menu' => 'header_menu',
+              'menu_id' => 'header_menu',
+            )
+          );
+          ?>
         </div>
       </div>
       <header class="main-header">
@@ -50,13 +49,13 @@
           <div class="main-top">
             <div class="align-self-center">
               <div class="logo">
-                <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/logo.svg" alt="NaturaPharma">
+                <a href="/" class="main-header-logo-link" rel="home">
+                  <img src="/wp-content/themes/store-child/includes/images/logo.svg" class="logo-image" alt="NaturaPharma">
                 </a>
               </div>
             </div>
             <div class="align-self-center with-links">
-              <div class="header-links" style=" font-size: 14px; ">г. Москва, ул. Алма-Атинская, д. 9, корп. 2 | Пн-Пт: 10:00 до 20:00, Сб-Вс: выходной<br></div>
+              <div class="header-links header-address">г. Москва, ул. Алма-Атинская, д. 9, корп. 2 | Пн-Пт: 10:00 до 20:00, Сб-Вс: выходной</div>
               <div class="header-links">
                 <?php
                 $vk = get_field('link_vk', 2);
@@ -64,37 +63,40 @@
                 $phone = get_field('nomer_telefona', 2);
                 $truephone = str_replace($vowels, "", $phone);
                 if ($vk) { ?>
-                  <a href="<?php echo $vk ?>" target="_blank" rel="nofollow noopener">
+                  <a href="<?php echo $vk; ?>" rel="nofollow noopener" target="_blank">
                     <div class="circle-green vk"></div>
                   </a>
                 <?php } ?>
                 <?php if ($tg) { ?>
-                  <a href="<?php echo $tg ?>" target="_blank" rel="nofollow noopener">
+                  <a href="<?php echo $tg; ?>" rel="nofollow noopener" target="_blank">
                     <div class="circle-green tg"></div>
                   </a>
                 <?php } ?>
                 <a href="tel:+74959274928">
                   <div class="circle-green phone"></div>
                 </a>
-                <div>
-                  <a href="tel:+74959274928" style="font-size: 18px;">+7 (495) 927-4-928</a>
-                  <a href="mailto:info@naturapharma.ru" style="font-size: 18px;">info@naturapharma.ru</a>
+                <div class="header-contacts">
+                  <a href="tel:+74959274928" class="header-contacts__phone">+7 (495) 927-4-928</a>
+                  <a href="mailto:info@naturapharma.ru" class="header-contacts__email">info@naturapharma.ru</a>
                 </div>
               </div>
               <?php echo do_shortcode('[fibosearch]'); ?>
             </div>
             <div class="align-self-center with-menu">
               <div class="header-navigation">
-                <div class="head-nav"></div>
                 <?php global $woocommerce; ?>
                 <div class="woo-customs">
-                  <div><a href="<?php echo $woocommerce->cart->get_cart_url() ?>">
-                      <div class="circle-green basket"></div>
-                      <div class="count"><?php echo sprintf($woocommerce->cart->cart_contents_count); ?></div>
-                    </a></div>
-                  <div>
-                    <div class="circle-green favorite"></div>
-                    <div class="count">0</div>
+                  <div class="header-navigation__favourite">
+                    <a href="#" class="header-navigation__link">
+                      <img src="/wp-content/themes/store-child/includes/images/svg/favourite-with-circle.svg" class="header-navigation__favourite-image" alt="">
+                      <span class="count header-navigation__count">0</span>
+                    </a>
+                  </div>
+                  <div class="header-navigation__cart">
+                    <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-navigation__link">
+                      <img src="/wp-content/themes/store-child/includes/images/svg/basket.svg" class="header-navigation__cart-image" alt="">
+                      <span class="count header-navigation__count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -105,35 +107,6 @@
     </div>
 
     <div id="content" class="site-content" tabindex="-1">
-
-      <script>
-        if (window.innerWidth >= 991) {
-
-
-          // When the user scrolls the page, execute myFunction
-          window.onscroll = function() {
-            myFunction()
-          };
-
-          // Get the header
-          var header = document.getElementById("myHeader");
-
-          // Get the offset position of the navbar
-          var sticky = header.offsetTop;
-
-          // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-          function myFunction() {
-            if (window.pageYOffset > sticky) {
-              header.classList.add("sticky");
-            } else {
-              header.classList.remove("sticky");
-            }
-          }
-
-        } else {
-          //не выполнять
-        }
-      </script>
 
       <?php if (!is_front_page()) { ?>
         <div class="h_green_line"></div>

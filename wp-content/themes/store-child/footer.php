@@ -99,6 +99,74 @@
   </div>
 </footer>
 
+<div class="burger-menu-wrapper hidden">
+  <div class="burger-menu">
+    <span class="span"></span>
+  </div>
+</div>
+
+<div class="mobile-menu">
+  <?php
+  wp_nav_menu(
+    array(
+      'menu' => 'header_menu',
+      'menu_id' => 'mobile_menu',
+    )
+  );
+  ?>
+</div>
+
+<!-- <div class="fixed-bottom-menu hidden-desktop "> -->
+<div class="fixed-bottom-menu hidden">
+  <div class="menu-wrapper">
+    <div class="menu-item">
+      <div class="menu-item__image">
+        <img src="/wp-content/themes/store-child/includes/images/svg/favourite-with-circle.svg" alt="">
+      </div>
+      <div class="menu-item__title">Главная</div>
+      <a href="/" class="full-link"></a>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item__image">
+        <img src="/wp-content/themes/store-child/includes/images/svg/favourite-with-circle.svg" alt="">
+      </div>
+      <div class="menu-item__title">Каталог</div>
+      <a href="/catalog" class="full-link"></a>
+    </div>
+    <div class="menu-item cart-menu-item">
+      <div class="menu-item__image">
+        <img src="/wp-content/themes/store-child/includes/images/svg/basket.svg" alt="">
+      </div>
+      <div class="menu-item__title">Корзина</div>
+      <div id="mobile-cart-counter" class="badge-counter"><?php echo WC()->cart->get_cart_contents_count(); ?></div>
+      <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="full-link"></a>
+    </div>
+    <div class="menu-item cart-menu-item">
+      <div class="menu-item__image">
+        <img src="/wp-content/themes/store-child/includes/images/svg/favourite-with-circle.svg" alt="">
+      </div>
+      <div class="menu-item__title">Избранное</div>
+      <div id="mobile-favourites-counter" class="badge-counter">0</div>
+      <a href="/favourites" class="full-link"></a>
+    </div>
+    <div class="menu-item cart-menu-item">
+      <div class="menu-item__image">
+        <img src="/wp-content/themes/store-child/includes/images/svg/favourite-with-circle.svg" alt="">
+      </div>
+      <div class="menu-item__title">Сравнение</div>
+      <div id="mobile-comparison-counter" class="badge-counter">0</div>
+      <a href="/comparison" class="full-link"></a>
+    </div>
+  </div>
+</div>
+
+<div id="cookie_note" class="we-use-cookie hidden">
+  <div class="we-use-cookie-wrapper">
+    <div class="we-use-cookie-text">Этот сайт использует cookie-файлы и другие технологии для улучшения его работы. Продолжая работу с сайтом, вы разрешаете использование cookie-файлов. Вы всегда можете отключить файлы cookie в настройках Вашего браузера.</div>
+    <button id="cookie_accept" class="we-use-cookie-close">ХОРОШО</button>
+  </div>
+</div>
+
 <div id="contact-form" style="display:none;max-width: calc(100vw - 50px);">
   <?php echo do_shortcode('[contact-form-7 id="5357fd9" title="Заказать звонок"]');  ?>
 </div>
@@ -108,7 +176,6 @@
 <div id="contact-form3" style="display:none;max-width: calc(100vw - 50px);">
   <?php echo do_shortcode('[contact-form-7 id="b528218" title="Сотрудничество"]');  ?>
 </div>
-
 
 </div>
 
@@ -172,37 +239,6 @@
     }
   })()
 </script>
-<!-- /Yandex.Metrika counter -->
-
-<!-- Yandex.Metrika counter -->
-<!-- 
-<script>
-  (function(m, e, t, r, i, k, a) {
-    m[i] = m[i] || function() {
-      (m[i].a = m[i].a || []).push(arguments)
-    };
-    m[i].l = 1 * new Date();
-    for (var j = 0; j < document.scripts.length; j++) {
-      if (document.scripts[j].src === r) {
-        return;
-      }
-    }
-    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-  })
-  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-  ym(95353045, "init", {
-    clickmap: true,
-    trackLinks: true,
-    accurateTrackBounce: true,
-    webvisor: true,
-    ecommerce: "dataLayer"
-  });
-</script>
-<noscript>
-  <div><img src="https://mc.yandex.ru/watch/95353045" style="position:absolute; left:-9999px;" alt="" /></div>
-</noscript>
- -->
 <!-- /Yandex.Metrika counter -->
 
 <!-- VK-pixel-->

@@ -214,7 +214,7 @@ if ( ! class_exists( 'Storefront' ) ) :
 			/**
 			 * Enqueue editor styles.
 			 */
-			add_editor_style( array( 'assets/css/base/gutenberg-editor.css', $this->google_fonts() ) );
+			// add_editor_style( array( 'assets/css/base/gutenberg-editor.css', $this->google_fonts() ) );
 
 			/**
 			 * Add support for responsive embedded content.
@@ -374,6 +374,7 @@ if ( ! class_exists( 'Storefront' ) ) :
 		 * @since 2.4.0
 		 * @return string Google fonts URL for the theme.
 		 */
+		/*
 		public function google_fonts() {
 			$google_fonts = apply_filters(
 				'storefront_google_font_families',
@@ -391,6 +392,7 @@ if ( ! class_exists( 'Storefront' ) ) :
 
 			return $fonts_url;
 		}
+		*/
 
 		/**
 		 * Enqueue block assets.

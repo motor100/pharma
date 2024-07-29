@@ -5,7 +5,6 @@ jQuery(document).ready(function($) {
 </script>
 
 <div class="banner">
-  <div class="title">от природы к человеку</div>
   <div class="all-ban">
     <div class="relative">
       <div class="about">
@@ -20,9 +19,6 @@ jQuery(document).ready(function($) {
       <div class="bn">
         <div class="img">
           <?php echo do_shortcode('[slick-slider image_fit="true"]'); ?>
-        </div>
-        <div class="name">
-          <!--акция или новость-->
         </div>
       </div>
     </div>
@@ -43,28 +39,28 @@ jQuery(document).ready(function($) {
           <li class="catalog-tabs-item">
             <a href="#tabs-1">
               <div class="img">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/catalog-groups/1.png" alt="">
+                <img src="/wp-content/themes/store-child/includes/images/catalog-groups/1.png" alt="">
               </div>по сериям
             </a>
           </li>
           <li class="catalog-tabs-item">
             <a href="#tabs-2">
               <div class="img">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/catalog-groups/2.png" alt="">
+                <img src="/wp-content/themes/store-child/includes/images/catalog-groups/2.png" alt="">
               </div>по направлениям
             </a>
           </li>
           <li class="catalog-tabs-item">
             <a href="#tabs-3">
               <div class="img">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/catalog-groups/3.png" alt="">
+                <img src="/wp-content/themes/store-child/includes/images/catalog-groups/3.png" alt="">
               </div>подбор
             </a>
           </li>
           <li class="catalog-tabs-item">
             <a href="#tabs-4">
               <div class="img">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/catalog-groups/4.png" alt="">
+                <img src="/wp-content/themes/store-child/includes/images/catalog-groups/4.png" alt="">
               </div>обучение
             </a>
           </li>
@@ -160,22 +156,23 @@ jQuery(document).ready(function($) {
       <div class="items">
         <?php
           $args = array(
-          'tax_query' => array(
-          'relation' => 'AND',
-          array(
-          'taxonomy' => 'product_cat',
-          'field' => 'slug',
-          'terms' => 'predlozhenie-4'
-          )),
-          'posts_per_page' => 4, 
-          'post_type' => 'product', 
-          'orderby' => 'title',
+            'tax_query' => array(
+              'relation' => 'AND',
+              array(
+                'taxonomy' => 'product_cat',
+                'field' => 'slug',
+                'terms' => 'predlozhenie-4'
+              )
+            ),
+            'posts_per_page' => 4, 
+            'post_type' => 'product',
+            'orderby' => 'title',
           );
           $loop = new WP_Query( $args );
           while ( $loop->have_posts() ) : $loop->the_post();
-          global $product;
-          if (get_post_meta( get_the_ID(), '_sale_price', true)) {$price = get_post_meta( get_the_ID(), '_sale_price', true); } else
-            {$price = get_post_meta( get_the_ID(), '_regular_price', true);}
+            global $product;
+            if (get_post_meta( get_the_ID(), '_sale_price', true)) {$price = get_post_meta( get_the_ID(), '_sale_price', true); } else
+              {$price = get_post_meta( get_the_ID(), '_regular_price', true);}
         ?>
         <div class="children__item">
           <div class="children__image">
@@ -185,7 +182,9 @@ jQuery(document).ready(function($) {
             </a>
           </div>
           <a class="subcat__link m-b-10" href="<?php echo get_permalink( $loop->post->ID ) ?>"><?php the_title(); ?></a>
-          <div class="price black"><span><? echo $price; ?> &#8381;</span></div>
+          <div class="price black">
+            <span><?php echo $price; ?> Р</span>
+          </div>
           
         </div>
         <?php endwhile; ?>
@@ -194,13 +193,14 @@ jQuery(document).ready(function($) {
       <div class="item">
         <?php
           $args = array(
-          'tax_query' => array(
-          'relation' => 'AND',
-          array(
-          'taxonomy' => 'product_cat',
-          'field' => 'slug',
-          'terms' => 'promo'
-          )),
+            'tax_query' => array(
+            'relation' => 'AND',
+            array(
+              'taxonomy' => 'product_cat',
+              'field' => 'slug',
+              'terms' => 'promo'
+            )
+          ),
           'posts_per_page' => 1, 
           'post_type' => 'product', 
           'orderby' => 'title',
@@ -212,15 +212,22 @@ jQuery(document).ready(function($) {
             {$price = get_post_meta( get_the_ID(), '_regular_price', true);}
           $full_price = get_post_meta( get_the_ID(), '_regular_price', true);
         ?>
-        <div style="max-height:630px;">
-          <a href="<?php echo get_permalink( $loop->post->ID ) ?>"><img src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="<?php the_title(); ?>"></a>
+        <div class="item__image">
+          <a href="<?php echo get_permalink( $loop->post->ID ) ?>">
+            <img src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="<?php the_title(); ?>">
+          </a>
         </div>
         <div class="info">
-          <a href="<?php echo get_permalink( $loop->post->ID ) ?>"><div class="m-b-10"><?php the_title(); ?></div></a>
-          <? if ($full_price != $price) {?>
-          <div class="full_price"><span><? echo $full_price; ?> &#8381;</span></div>
-          <?}?>
-          <div class="price"><span><? echo $price; ?> &#8381;</span><div class="circle-green favorite"></div></div>
+          <a href="<?php echo get_permalink( $loop->post->ID ) ?>" class="info-title m-b-10"><?php the_title(); ?></a>
+          <?php if ($full_price != $price) {?>
+            <div class="full_price">
+              <span><?php echo $full_price; ?> Р</span>
+            </div>
+          <?php } ?>
+            <div class="price">
+              <span><?php echo $price; ?> Р</span>
+              <div class="circle-green favorite"></div>
+            </div>
         </div>
         <?php endwhile; ?>
         <?php wp_reset_query(); ?>
@@ -236,64 +243,47 @@ jQuery(document).ready(function($) {
     <div class="three"></div>
   </div>
     <div class="container">
-        <div class="title">Наши<br/>преимущества:</div>
+      <div class="title">Наши<br/>преимущества:</div>
     <div class="items">
       <div>
-        <div>
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/advantage/01.png" alt="">
+        <div class="advantage-image">
+          <img src="/wp-content/themes/store-child/includes/images/advantage/01.png" alt="">
         </div>
-        <div class="advantage-title">
-          Единственный специализированный компаундинг в России
-        </div>
+        <div class="advantage-title">Единственный специализированный компаундинг в России</div>
         <div class="advantage-n">
-          <i>1</i>
+          <span class="advantage-number">1</span>
         </div>
-        <div class="advantage-desc">
-          Природа уже создала все необходимое для здоровья и благополучия.
-          Мы производим лекарства нового поколения "для здоровья", а не "от болезней".
-        </div>
+        <div class="advantage-desc">Природа уже создала все необходимое для здоровья и благополучия. Мы производим лекарства нового поколения "для здоровья", а не "от болезней".</div>
       </div>
       <div>
-        <div>
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/advantage/02.png" alt="">
+        <div class="advantage-image">
+          <img src="/wp-content/themes/store-child/includes/images/advantage/02.png" alt="">
         </div>
-        <div class="advantage-title">
-           Фармацевтическая производственная лицензия
-        </div>
+        <div class="advantage-title">Фармацевтическая производственная лицензия</div>
         <div class="advantage-n">
-          <i>2</i>
+          <span class="advantage-number">2</span>
         </div>
-        <div class="advantage-desc">
-          Для Вас работает команда опытных врачей и фармацевтов. Для нас важно качество наших препаратов, мы аптека полного цикла - от заготовки сырья до производства персонального лекарства.
-        </div>
+        <div class="advantage-desc">Для Вас работает команда опытных врачей и фармацевтов. Для нас важно качество наших препаратов, мы аптека полного цикла - от заготовки сырья до производства персонального лекарства.</div>
       </div>
       <div>
-        <div>
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/advantage/03.png" alt="">
+        <div class="advantage-image">
+          <img src="/wp-content/themes/store-child/includes/images/advantage/03.png" alt="">
         </div>
-        <div class="advantage-title">
-          Персонализированные натуральные лекарства
-        </div>
+        <div class="advantage-title">Персонализированные натуральные лекарства</div>
         <div class="advantage-n">
-          <i>3</i>
+          <span class="advantage-number">3</span>
         </div>
-        <div class="advantage-desc">
-          Мы придерживаемся принципа персонального изготовления препаратов под каждого пациента с его особыми потребностями. У каждого своя причина заболеть - и лекарство должно быть персональным.
-        </div>
+        <div class="advantage-desc">Мы придерживаемся принципа персонального изготовления препаратов под каждого пациента с его особыми потребностями. У каждого своя причина заболеть - и лекарство должно быть персональным.</div>
       </div>
       <div>
-        <div>
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/advantage/04.png" alt="">
+        <div class="advantage-image">
+          <img src="/wp-content/themes/store-child/includes/images/advantage/04.png" alt="">
         </div>
-        <div class="advantage-title">
-          Удобная доставка
-        </div>
+        <div class="advantage-title">Удобная доставка</div>
         <div class="advantage-n">
-          <i>4</i>
+          <span class="advantage-number">4</span>
         </div>
-        <div class="advantage-desc">
-          Аптека имеет официальное разрешение на диcтанционную продажу лекарственных средств. Мы осуществляем доставку по всем городам России, Казахстана, Белоруссии аккредитованной компанией Boxberry.
-        </div>
+        <div class="advantage-desc">Аптека имеет официальное разрешение на диcтанционную продажу лекарственных средств. Мы осуществляем доставку по всем городам России, Казахстана, Белоруссии аккредитованной компанией Boxberry.</div>
       </div>
     </div>
     </div>

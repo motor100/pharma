@@ -79,21 +79,21 @@ do_action( 'woocommerce_before_main_content' ); ?>
         
           $posts = get_posts($args);
         
-          if ($posts) {
-            echo '<div class="">';
-            echo '<select class="category-posts-dropdown" onchange="location = this.value;">';
-            echo '<option value="">Быстрый переход '. $product_cat . '</option>';
+          if ($posts) { ?>
+            <div class="">
+            <select class="category-posts-dropdown" onchange="location = this.value;">
+              <option value="">Быстрый переход</option>
             
-            foreach ($posts as $post) {
+            <?php foreach ($posts as $post) { ?>
             
-              echo '<option value="' . get_permalink($post->ID) . '">' . $post->post_title . '</option>';
+              <option value="<?php echo get_permalink($post->ID); ?>"><?php echo $post->post_title; ?></option>
 
-            }
+            <?php } ?>
               
-            echo '</select>';
-          }
-          echo '</div>';
-          ?>
+            </select>
+          <?php } ?>
+          </div>
+          
         </div>
 
         <?php if ($term_childs) {

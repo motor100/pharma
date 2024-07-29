@@ -627,4 +627,8 @@ function woocommerce_change_rub_symbol( $valyuta_symbol, $valyuta_code ) {
 add_filter('woocommerce_currency_symbol', 'woocommerce_change_rub_symbol', 9999, 2);
 
 
-
+// Override theme default specification for product # per row
+// function loop_columns() {
+//    return 4; // 5 products per row
+//  }
+// add_filter('loop_shop_columns', 'loop_columns', 999);

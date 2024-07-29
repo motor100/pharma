@@ -68,4 +68,107 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+
+  // Sticky top menu
+  if (window.innerWidth >= 991) {
+
+    // Get the header
+    var header = document.getElementById("myHeader");
+
+    // Get the offset position of the navbar
+    var sticky = header.offsetTop;
+
+    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function setStickyMenu() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+
+    // When the user scrolls the page, execute setStickyMenu function
+    window.onscroll = function() {
+      setStickyMenu();
+    };
+
+  }
+
+
+  // Mobile menu
+  // mobile menu
+  const body = document.querySelector('body');
+  const burgerMenuWrapper = document.querySelector('.burger-menu-wrapper');
+  const mobileMenu = document.querySelector('.mobile-menu');
+
+  function openMobileMenu() {
+    body.classList.add('overflow-hidden');
+    mobileMenu.classList.add('active');
+    burgerMenuWrapper.classList.add('menu-is-open');
+  }
+
+  function closeMobileMenu() {
+    body.classList.remove('overflow-hidden');
+    burgerMenuWrapper.classList.remove('menu-is-open');
+    mobileMenu.classList.remove('active');
+  }
+
+  /*
+  burgerMenuWrapper.onclick = function() {
+    if (burgerMenuWrapper.classList.contains('menu-is-open')) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+  }
+  */
+
+  const listParentClick = document.querySelectorAll('.mobile-menu li.menu-item a');
+
+  for (let i=0; i < listParentClick.length; i++) {
+    listParentClick[i].onclick = function (event) {
+      event.preventDefault();
+      closeMobileMenu();
+      let hrefClick = this.href;
+      setTimeout(function() {
+        location.href = hrefClick
+      }, 500);
+    }
+  }
+
+
+  // Set cookie
+  function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+      let date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/" + "; sameSite=Lax;";
+  }
+
+  function getCookie(name) {
+    let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+  }
+
+  function checkCookies() {
+    let cookieNote = document.querySelector('#cookie_note');
+    let cookieBtnAccept = cookieNote.querySelector('#cookie_accept');
+
+    // Если куки we-use-cookie нет или она просрочена, то показываем уведомление
+    if (!getCookie('we-use-cookie')) {
+      cookieNote.classList.add('show');
+    }
+
+    // При клике на кнопку устанавливаем куку we-use-cookie на один год
+    cookieBtnAccept.addEventListener('click', function () {
+      setCookie('we-use-cookie', 'true', 365);
+      cookieNote.classList.remove('show');
+    });
+  }
+
+  checkCookies();
+
 });

@@ -1,8 +1,3 @@
-<!--<div class="curved m-b-30">
-		<div class="one"></div>
-		<div class="two"></div>
-		<div class="three"></div>
-	</div>-->
 <section class="text-page" style="padding-bottom: 80px;">
 	<div class="container">
 		<div class="row">
