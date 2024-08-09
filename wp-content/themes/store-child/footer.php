@@ -160,10 +160,10 @@
   </div>
 </div>
 
-<div id="cookie_note" class="we-use-cookie hidden">
+<div id="cookie_note" class="we-use-cookie">
   <div class="we-use-cookie-wrapper">
     <div class="we-use-cookie-text">Этот сайт использует cookie-файлы и другие технологии для улучшения его работы. Продолжая работу с сайтом, вы разрешаете использование cookie-файлов. Вы всегда можете отключить файлы cookie в настройках Вашего браузера.</div>
-    <button id="cookie_accept" class="we-use-cookie-close">ХОРОШО</button>
+    <button id="cookie_accept" class="we-use-cookie-close">ОК</button>
   </div>
 </div>
 

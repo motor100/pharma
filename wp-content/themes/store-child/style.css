@@ -8274,41 +8274,39 @@ h1.sec-title {
 
 .we-use-cookie {
   position: fixed;
-  right: 25px;
+  right: 25%;
   bottom: 47px;
-  left: 0;
   display: none;
-  width: 100%;
-  margin: 0 auto;
   z-index: 10;
 }
-.we-use-cookie.show {
+.we-use-cookie.active {
   display: block;
 }
 .we-use-cookie .we-use-cookie-wrapper {
   display: flex;
   max-width: 715px;
   padding: 34px;
-  border: 1px solid green;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #484848;
   align-items: center;
 }
 .we-use-cookie .we-use-cookie-text {
   padding: 0 10px 0 0;
   font-size: 14px;
+  color: #E8E8E8;
 }
 .we-use-cookie .we-use-cookie-close {
   display: block;
-  width: 93px;
-  height: 45px;
+  width: 70px;
+  height: 40px;
   padding: 0;
-  border: none;
-  border-radius: 4px;
-  background-color: green;
+  border: 1px solid #E8E8E8;
+  border-radius: 25px;
+  background-color: #484848;
   font-family: inherit;
-  font-size: 18px;
-  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  color: #E8E8E8;
   flex-shrink: 0;
   cursor: pointer;
 }
@@ -8354,16 +8352,16 @@ h1.sec-title {
 }
 
 @media only screen and (min-width : 1400px) {
-  .storefront-full-width-content .site-main ul.products.columns-3 li.product {
-    width: 22%;
-    margin-right: 3%;
+  .storefront-full-width-content .site-main ul.products.columns-3 li.product {*/
+    /*width: 22%;
+    margin-right: 3%;*/
   }
   /*.tax-product_cat ul.products {
     justify-content: space-between;
   }*/
-  .tax-product_cat ul.products li.product.last {
+  /*.tax-product_cat ul.products li.product.last {
     margin-right: 3% !important;
-  }
+  }*/
   /*.tax-product_cat ul.products::before {
     content: none;
   }*/
@@ -8373,6 +8371,20 @@ h1.sec-title {
   }
 }
 
+@media only screen and (max-width : 1200px) {
+  .we-use-cookie {
+    right: 20%;
+  }
+  .we-use-cookie .we-use-cookie-wrapper {
+    padding: 24px;
+  }
+}
+
+@media only screen and (max-width : 992px) {
+  .we-use-cookie-wrapper {
+    margin: 0 0 0 12px;
+  }
+}
 
 @media only screen and (max-width : 768px) {
   .hidden-mobile {
@@ -8390,4 +8402,24 @@ h1.sec-title {
     display: block;
   }
 
+  .we-use-cookie {
+    right: 20%;
+  }
+  .we-use-cookie .we-use-cookie-wrapper {
+    padding: 12px 15px;
+  }
+  .we-use-cookie .we-use-cookie-text {
+    margin: 0 0 10px 0;
+    font-size: 12px;
+  }
+
+}
+
+@media only screen and (max-width : 480px) {
+  .we-use-cookie {
+    right: 30%;
+  }
+  .we-use-cookie .we-use-cookie-wrapper {
+    display: block;
+  }
 }

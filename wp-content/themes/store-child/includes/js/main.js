@@ -159,16 +159,63 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Если куки we-use-cookie нет или она просрочена, то показываем уведомление
     if (!getCookie('we-use-cookie')) {
-      cookieNote.classList.add('show');
+      cookieNote.classList.add('active');
     }
 
     // При клике на кнопку устанавливаем куку we-use-cookie на один год
     cookieBtnAccept.addEventListener('click', function () {
       setCookie('we-use-cookie', 'true', 365);
-      cookieNote.classList.remove('show');
+      cookieNote.classList.remove('active');
     });
   }
 
   checkCookies();
+
+
+  // Замена селекторов при ширине более 1400px
+  const ulProducts = document.querySelector('.single__prod ul.products');
+
+  if (ulProducts) {
+
+    /**
+     * Функция замены селекторов
+    */
+    function replaceColumnClass() {
+      const liProducts = ulProducts.querySelectorAll('li.product');
+
+      if (window.innerWidth > 1400) {
+        // Замена селектора columns-3 на columns-4
+        if (ulProducts.classList.contains('columns-3')) {
+          ulProducts.classList.replace('columns-3', 'columns-4');
+        }
+
+        // Удаление селектора last
+        for (let i = 0; i < liProducts.length; i++) {
+          liProducts[i].classList.remove('last');
+          if (i % 4 == 3) {
+            liProducts[i].classList.add('last');
+          }
+        }
+
+      } else {
+        // Замена селектора columns-4 на columns-3
+        if (ulProducts.classList.contains('columns-4')) {
+          ulProducts.classList.replace('columns-4', 'columns-3');
+        }
+
+        // Добавление селектора last
+        for (let i = 0; i < liProducts.length; i++) {
+          liProducts[i].classList.remove('last');
+          if (i % 3 == 2) {
+            liProducts[i].classList.add('last');
+          }
+        }
+      }
+    }
+
+    replaceColumnClass();
+
+    window.addEventListener('resize', replaceColumnClass);
+  }
 
 });
