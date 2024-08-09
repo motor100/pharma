@@ -64,6 +64,42 @@
           </div>
         </div>
       </div>
+      <div class="header-content">
+        <div class="container">
+          <div class="flex-container">
+            <div class="header-logo">
+              <img src="/wp-content/themes/store-child/includes/images/svg/header-logo.svg" alt="лого">
+            </div>
+            <div class="catalog-btn">
+              <img src="/wp-content/themes/store-child/includes/images/svg/catalog-rectangle.svg" class="catalog-btn__image" alt="">
+              <span class="catalog-btn__text">Каталог</span>
+            </div>
+            <div class="header-search">
+              <?php echo do_shortcode('[fibosearch]'); ?>
+            </div>
+            <div class="header-favourites">
+              <img src="/wp-content/themes/store-child/includes/images/svg/circle-heart.svg" class="header-favourites__image" alt="">
+              <span class="header-favourites__counter">0</span>
+            </div>
+            <div class="header-cart">
+              <img src="/wp-content/themes/store-child/includes/images/svg/basket.svg" class="header-cart__basket" alt="корзина">
+              <div class="header-cart__content">
+                <div class="header-cart__counter">
+                  <span class="text">Количество товаров: </span>
+                  <span class="counter"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                </div>
+                <div class="header-cart__total">
+                  <span class="text">Сумма: </span>
+                  <span class="counter"><?php echo WC()->cart->get_cart_contents_total(); ?></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-nav">
+        
+        </div>
     </header>
 
     <!-- 
