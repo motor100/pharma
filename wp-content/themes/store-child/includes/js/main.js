@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // Sticky top menu
+  /*
   if (window.innerWidth >= 991) {
 
     // Get the header
@@ -93,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
   }
+  */
 
 
   // Mobile menu

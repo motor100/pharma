@@ -236,57 +236,61 @@ jQuery(document).ready(function($) {
   </div>
 </div>
 
-<div class="advantages">
-  <div class="curved transparent m-b-30">
+<div class="advantages-section">
+  <div class="curved transparent">
     <div class="one"></div>
     <div class="two"></div>
     <div class="three"></div>
   </div>
-    <div class="container">
-      <div class="title">Наши<br/>преимущества:</div>
-    <div class="items">
-      <div>
-        <div class="advantage-image">
-          <img src="/wp-content/themes/store-child/includes/images/advantage/01.png" alt="">
+  <div class="container">
+    <div class="section-title">Наши<br/>преимущества</div>
+    <div class="row">
+      <div class="col-xl-3 col-sm-6">
+        <div class="advantages-item">
+          <div class="advantage-flex-container">
+            <div class="advantage-image">
+              <img src="/wp-content/themes/store-child/includes/images/advantage/01.png" alt="">
+            </div>
+            <div class="advantage-title">Единственный специализированный компаундинг в России</div>
+          </div>
+          <div class="advantage-description">Природа уже создала все необходимое для здоровья и благополучия. Мы производим лекарства нового поколения "для здоровья", а не "от болезней".</div>
         </div>
-        <div class="advantage-title">Единственный специализированный компаундинг в России</div>
-        <div class="advantage-n">
-          <span class="advantage-number">1</span>
-        </div>
-        <div class="advantage-desc">Природа уже создала все необходимое для здоровья и благополучия. Мы производим лекарства нового поколения "для здоровья", а не "от болезней".</div>
       </div>
-      <div>
-        <div class="advantage-image">
-          <img src="/wp-content/themes/store-child/includes/images/advantage/02.png" alt="">
+      <div class="col-xl-3 col-sm-6">
+        <div class="advantages-item">
+          <div class="advantage-flex-container">
+            <div class="advantage-image">
+              <img src="/wp-content/themes/store-child/includes/images/advantage/02.png" alt="">
+            </div>
+            <div class="advantage-title">Фармацевтическая производственная лицензия</div>
+          </div>
+          <div class="advantage-description">Для Вас работает команда опытных врачей и фармацевтов. Для нас важно качество наших препаратов, мы аптека полного цикла - от заготовки сырья до производства персонального лекарства.</div>
         </div>
-        <div class="advantage-title">Фармацевтическая производственная лицензия</div>
-        <div class="advantage-n">
-          <span class="advantage-number">2</span>
-        </div>
-        <div class="advantage-desc">Для Вас работает команда опытных врачей и фармацевтов. Для нас важно качество наших препаратов, мы аптека полного цикла - от заготовки сырья до производства персонального лекарства.</div>
       </div>
-      <div>
-        <div class="advantage-image">
-          <img src="/wp-content/themes/store-child/includes/images/advantage/03.png" alt="">
+      <div class="col-xl-3 col-sm-6">
+        <div class="advantages-item">
+          <div class="advantage-flex-container">
+            <div class="advantage-image">
+              <img src="/wp-content/themes/store-child/includes/images/advantage/03.png" alt="">
+            </div>
+            <div class="advantage-title">Персонализированные натуральные лекарства</div>
+          </div>
+          <div class="advantage-description">Мы придерживаемся принципа персонального изготовления препаратов под каждого пациента с его особыми потребностями. У каждого своя причина заболеть - и лекарство должно быть персональным.</div>
         </div>
-        <div class="advantage-title">Персонализированные натуральные лекарства</div>
-        <div class="advantage-n">
-          <span class="advantage-number">3</span>
-        </div>
-        <div class="advantage-desc">Мы придерживаемся принципа персонального изготовления препаратов под каждого пациента с его особыми потребностями. У каждого своя причина заболеть - и лекарство должно быть персональным.</div>
       </div>
-      <div>
-        <div class="advantage-image">
-          <img src="/wp-content/themes/store-child/includes/images/advantage/04.png" alt="">
+      <div class="col-xl-3 col-sm-6">
+        <div class="advantages-item">
+          <div class="advantage-flex-container">
+            <div class="advantage-image">
+              <img src="/wp-content/themes/store-child/includes/images/advantage/04.png" alt="">
+            </div>
+            <div class="advantage-title">Удобная доставка</div>
+          </div>
+          <div class="advantage-description">Аптека имеет официальное разрешение на диcтанционную продажу лекарственных средств. Мы осуществляем доставку по всем городам России, Казахстана, Белоруссии аккредитованной компанией Boxberry.</div>
         </div>
-        <div class="advantage-title">Удобная доставка</div>
-        <div class="advantage-n">
-          <span class="advantage-number">4</span>
-        </div>
-        <div class="advantage-desc">Аптека имеет официальное разрешение на диcтанционную продажу лекарственных средств. Мы осуществляем доставку по всем городам России, Казахстана, Белоруссии аккредитованной компанией Boxberry.</div>
       </div>
     </div>
-    </div>
+  </div>
 </div>
 
 <div class="offer">
