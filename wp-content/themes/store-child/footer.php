@@ -99,7 +99,7 @@
   </div>
 </footer>
 
-<div class="burger-menu-wrapper hidden">
+<div class="burger-menu-wrapper">
   <div class="burger-menu">
     <span class="span"></span>
   </div>

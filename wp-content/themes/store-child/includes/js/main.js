@@ -96,7 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // Mobile menu
-  // mobile menu
   const body = document.querySelector('body');
   const burgerMenuWrapper = document.querySelector('.burger-menu-wrapper');
   const mobileMenu = document.querySelector('.mobile-menu');
@@ -113,7 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileMenu.classList.remove('active');
   }
 
-  /*
   burgerMenuWrapper.onclick = function() {
     if (burgerMenuWrapper.classList.contains('menu-is-open')) {
       closeMobileMenu();
@@ -121,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
       openMobileMenu();
     }
   }
-  */
 
   const listParentClick = document.querySelectorAll('.mobile-menu li.menu-item a');
 
