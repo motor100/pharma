@@ -75,17 +75,19 @@ Colors
 #43314B Voodoo
 #ffffff Nero
 #333333 Mine Shaft
+#EDE8D9 White Rock
 
 
 */
 :root {
   --voodoo-color: #43314B;
-  --nero-color: #fff;
+  --nero-color: #ffffff;
   --wild-willow-color: #C2D279;
   --shark-color: #212529;
   --rare-beige-color: #DFE9B2;
   --rare-grey-color: #677482;
-  --mine-shaft-color: #333;
+  --mine-shaft-color: #333333;
+  --white-rock-color: #EDE8D9;
 }
 
 body {
@@ -182,8 +184,6 @@ a {
   font-size: 36px;
   line-height: 49px;
 }
-
-
 
 
 
@@ -380,6 +380,39 @@ a {
   top: 0 !important;
   bottom: 0;
   margin: auto 0;
+}
+
+/* main section */
+.main-section {
+  height: 500px;
+  margin: 53px 0 0 0;
+  border-radius: 30px;
+  background-color: var(--wild-willow-color);
+}
+.main-section .about {
+  position: relative;
+  height: 500px;
+  padding: 50px 0 0 0;
+  background-color: var(--white-rock-color);
+  text-align: center;
+}
+.main-section .about .company-title {
+  width: 404px;
+  margin: 0 0 30px 0;
+}
+.main-section .about .fl-text {
+  font-family: 'Roboto-Condensed';
+  font-size: 42px;
+  font-weight: 700;
+}
+.main-section .about .m-text {
+  font-size: 24px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.1;
+}
+.main-section .about .about-bg {
+  position: absolute;
 }
 
 

@@ -4,6 +4,36 @@ jQuery(document).ready(function($) {
 });
 </script>
 
+<div class="main-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="about">
+          <img src="/wp-content/themes/store-child/includes/images/svg/company-title.svg" class="company-title" alt="">
+          <div class="fl-text">ПЕРВАЯ</div>
+          <div class="m-text">производственная</div>
+          <div class="m-text">натуропатическая</div>
+          <div class="fl-text">АПТЕКА</div>
+          <div class="about-bg">
+            <img src="" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="slider">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<p></p>
+<p></p>
+<p></p>
+<br>
+
 <div class="banner">
   <div class="all-ban">
     <div class="relative">
