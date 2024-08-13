@@ -1,9 +1,3 @@
-<script>
-jQuery(document).ready(function($) {
-  $('.catalog-tabs').tabs({active:0});
-});
-</script>
-
 <div class="main-section">
   <div class="container">
     <div class="flex-container">
@@ -61,166 +55,130 @@ jQuery(document).ready(function($) {
   </div>
 </div>
 
-
-<p></p>
-<p></p>
-<p></p>
-<br>
-<p></p>
-<p></p>
-<p></p>
-<br>
-<p></p>
-<p></p>
-<p></p>
-<br>
-<p></p>
-<p></p>
-<p></p>
-<br>
-
-<div class="banner">
-  <div class="all-ban">
-    <div class="relative">
-      <div class="about">
-        <div class="v1">Первая</div>
-        <div class="v2">производственная</div>
-        <div class="v2">натуропатическая</div>
-        <div class="v1">Аптека</div>
-        <div class="btm-img"></div>
-      </div>
-    </div>
-    <div class="var-banner">
-      <div class="bn">
-        <div class="img">
-          <?php echo do_shortcode('[slick-slider image_fit="true"]'); ?>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="catalog-section" class="catalog">
-  <div class="title">Каталог</div>
+<div id="catalog-section" class="catalog-section">
+  <div class="catalog-section-title">Каталог</div>
   <div class="curved violet v2">
     <div class="one"></div>
     <div class="two"></div>
     <div class="three"></div>
   </div>
+
   <div class="catalog-tabs">
-    <div class="groups">
+
+    <div class="catalog-tabs-buttons">
       <div class="container">
-        <ul class="clear">
-          <li class="catalog-tabs-item">
-            <a href="#tabs-1">
-              <div class="img">
-                <img src="/wp-content/themes/store-child/includes/images/catalog-groups/1.png" alt="">
-              </div>по сериям
-            </a>
-          </li>
-          <li class="catalog-tabs-item">
-            <a href="#tabs-2">
-              <div class="img">
-                <img src="/wp-content/themes/store-child/includes/images/catalog-groups/2.png" alt="">
-              </div>по направлениям
-            </a>
-          </li>
-          <li class="catalog-tabs-item">
-            <a href="#tabs-3">
-              <div class="img">
-                <img src="/wp-content/themes/store-child/includes/images/catalog-groups/3.png" alt="">
-              </div>подбор
-            </a>
-          </li>
-          <li class="catalog-tabs-item">
-            <a href="#tabs-4">
-              <div class="img">
-                <img src="/wp-content/themes/store-child/includes/images/catalog-groups/4.png" alt="">
-              </div>обучение
-            </a>
-          </li>
-        </ul>
+        <div class="flex-container">
+          <div class="catalog-tabs-button active">
+            <div class="catalog-tabs-button__image">
+              <img src="/wp-content/themes/store-child/includes/images/catalog-groups/1.png" alt="">
+            </div>
+            <div class="catalog-tabs-button__title">По сериям</div>
+          </div>
+          <div class="catalog-tabs-button">
+            <div class="catalog-tabs-item__image">
+              <img src="/wp-content/themes/store-child/includes/images/catalog-groups/2.png" alt="">
+            </div>
+            <div class="catalog-tabs-button__title">По<br>направлениям</div>
+          </div>
+          <div class="catalog-tabs-button">
+            <div class="catalog-tabs-item__image">
+              <img src="/wp-content/themes/store-child/includes/images/catalog-groups/3.png" alt="">
+            </div>
+            <div class="catalog-tabs-button__title">Подбор</div>
+          </div>
+          <div class="catalog-tabs-button">
+            <div class="catalog-tabs-button__image">
+              <img src="/wp-content/themes/store-child/includes/images/catalog-groups/4.png" alt="">
+            </div>
+            <div class="catalog-tabs-button__title">Обучение</div>
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="curved green v2">
       <div class="one"></div>
       <div class="two"></div>
       <div class="three"></div>
     </div>
-    <div class="container">
-      <div id="tabs-1">
-        <div class="cat-wrapper">
-          <?php render__catalog('183'); ?>
-        </div>
-      </div>
-      <div id="tabs-2">
-        <div class="cat-wrapper">
-          <?php render__catalog('96'); ?>
-        </div>
-      </div>
-      <div id="tabs-3">
-        <div class="cat-wrapper">
-          <?php
-          $args = array(
-          'tax_query' => array(
-          'relation' => 'AND',
-          array(
-          'taxonomy' => 'product_cat',
-          'field' => 'slug',
-          'terms' => 'klasternii_analiz'
-          )),
-          'posts_per_page' => 20, 
-          'post_type' => 'product', 
-          'orderby' => 'title',
-          );
-          $loop = new WP_Query( $args );
-          while ( $loop->have_posts() ) : $loop->the_post();
-          global $product;
-          ?>
-          <div class="children__item">
-            <div class="children__image">
-              <a href="<?php echo get_permalink( $loop->post->ID ) ?>">
-                <img class="ww100" src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="">
-              </a>
-            </div>
-            <a class="subcat__link" href="<?php echo get_permalink( $loop->post->ID ) ?>"><?php the_title(); ?></a>
+
+    <div class="catalog-tabs-contents">
+      <div class="container">
+        <div class="catalog-tabs-content active">
+          <div class="cat-wrapper">
+            <?php render__catalog('183'); ?>
           </div>
-          <?php endwhile; ?>
-          <?php wp_reset_query(); ?>
         </div>
-      </div>
-      <div id="tabs-4">
-        <div class="cat-wrapper">
-          <?php
-          $args = array(
-          'tax_query' => array(
-          'relation' => 'AND',
-          array(
-          'taxonomy' => 'product_cat',
-          'field' => 'slug',
-          'terms' => 'vebinary'
-          )),
-          'posts_per_page' => 20, 
-          'post_type' => 'product', 
-          'orderby' => 'title',
-          );
-          $loop = new WP_Query( $args );
-          while ( $loop->have_posts() ) : $loop->the_post();
-          global $product;
-          ?>
-          <div class="children__item">
-            <div class="children__image">
-              <a href="<?php echo get_permalink( $loop->post->ID ) ?>">
-                <img class="ww100" src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="">
-              </a>
-            </div>
-            <a class="subcat__link" href="<?php echo get_permalink( $loop->post->ID ) ?>"><?php the_title(); ?></a>
+        <div class="catalog-tabs-content">
+          <div class="cat-wrapper">
+            <?php render__catalog('96'); ?>
           </div>
-          <?php endwhile; ?>
-          <?php wp_reset_query(); ?>
+        </div>
+        <div class="catalog-tabs-content">
+          <div class="cat-wrapper">
+            <?php
+            $args = array(
+            'tax_query' => array(
+            'relation' => 'AND',
+            array(
+            'taxonomy' => 'product_cat',
+            'field' => 'slug',
+            'terms' => 'klasternii_analiz'
+            )),
+            'posts_per_page' => 20, 
+            'post_type' => 'product', 
+            'orderby' => 'title',
+            );
+            $loop = new WP_Query( $args );
+            while ( $loop->have_posts() ) : $loop->the_post();
+            global $product;
+            ?>
+            <div class="children__item">
+              <div class="children__image">
+                <a href="<?php echo get_permalink( $loop->post->ID ) ?>">
+                  <img class="ww100" src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="">
+                </a>
+              </div>
+              <a class="subcat__link" href="<?php echo get_permalink( $loop->post->ID ) ?>"><?php the_title(); ?></a>
+            </div>
+            <?php endwhile; ?>
+            <?php wp_reset_query(); ?>
+          </div>
+        </div>
+        <div class="catalog-tabs-content">
+          <div class="cat-wrapper">
+            <?php
+            $args = array(
+            'tax_query' => array(
+            'relation' => 'AND',
+            array(
+            'taxonomy' => 'product_cat',
+            'field' => 'slug',
+            'terms' => 'vebinary'
+            )),
+            'posts_per_page' => 20, 
+            'post_type' => 'product', 
+            'orderby' => 'title',
+            );
+            $loop = new WP_Query( $args );
+            while ( $loop->have_posts() ) : $loop->the_post();
+            global $product;
+            ?>
+            <div class="children__item">
+              <div class="children__image">
+                <a href="<?php echo get_permalink( $loop->post->ID ) ?>">
+                  <img class="ww100" src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="">
+                </a>
+              </div>
+              <a class="subcat__link" href="<?php echo get_permalink( $loop->post->ID ) ?>"><?php the_title(); ?></a>
+            </div>
+            <?php endwhile; ?>
+            <?php wp_reset_query(); ?>
+          </div>
         </div>
       </div>
     </div>
+
   </div>
 </div>
 
@@ -258,7 +216,7 @@ jQuery(document).ready(function($) {
           </div>
           <a class="subcat__link m-b-10" href="<?php echo get_permalink( $loop->post->ID ) ?>"><?php the_title(); ?></a>
           <div class="price black">
-            <span><?php echo $price; ?> Р</span>
+            <span><?php echo ($price . " " . get_woocommerce_currency_symbol()); ?></span>
           </div>
           
         </div>
@@ -296,11 +254,11 @@ jQuery(document).ready(function($) {
           <a href="<?php echo get_permalink( $loop->post->ID ) ?>" class="info-title m-b-10"><?php the_title(); ?></a>
           <?php if ($full_price != $price) {?>
             <div class="full_price">
-              <span><?php echo $full_price; ?> Р</span>
+              <span><?php echo ($full_price . " " . get_woocommerce_currency_symbol()); ?></span>
             </div>
           <?php } ?>
             <div class="price">
-              <span><?php echo $price; ?> Р</span>
+              <span><?php echo ($price . " " . get_woocommerce_currency_symbol()); ?></span>
               <div class="circle-green favorite"></div>
             </div>
         </div>

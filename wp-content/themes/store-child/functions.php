@@ -9,7 +9,7 @@
  * If you don't plan to dequeue the Storefront Core CSS you can remove the subsequent line and as well
  * as the sf_child_theme_dequeue_style() function declaration.
  */
-//add_action( 'wp_enqueue_scripts', 'sf_child_theme_dequeue_style', 999 );
+add_action( 'wp_enqueue_scripts', 'sf_child_theme_dequeue_style', 999 );
 
 /**
  * Dequeue the Storefront Parent theme core CSS
@@ -23,11 +23,19 @@ function sf_child_theme_dequeue_style() {
  * Note: DO NOT! alter or remove the code above this text and only add your custom PHP functions below this text.
  */
 
+add_action( 'wp_enqueue_scripts', 'my_dequeue_style', 99 );
+
+function my_dequeue_style(){
+    wp_dequeue_style( 'storefront-child-style' ); // отключение файла /store-child/style.css
+}
+
+
+
 // Scripts
 add_action( 'wp_enqueue_scripts', 'artabr_script' );
 
 function artabr_script() {
-    wp_enqueue_script( 'jquery-ui', get_stylesheet_directory_uri() . '/includes/js/jquery-ui.min.js' );
+    // wp_enqueue_script( 'jquery-ui', get_stylesheet_directory_uri() . '/includes/js/jquery-ui.min.js' );
 	wp_enqueue_script( 'fancy', get_stylesheet_directory_uri() . '/includes/js/fancy.js' );
 	wp_enqueue_script( 'isotope', get_stylesheet_directory_uri() . '/includes/js/isotope.js' );
     wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/includes/js/app.min.js' );
@@ -48,6 +56,7 @@ function add_styles() {
     wp_enqueue_style( 'bootstrap-grid', get_stylesheet_directory_uri() . '/includes/css/bootstrap-grid.min.css' );
     wp_enqueue_style( 'swiper', get_stylesheet_directory_uri() . '/includes/css/swiper-bundle.min.css' );
     wp_enqueue_style( 'fancybox', get_stylesheet_directory_uri() . '/includes/css/fancybox.min.css' );
+    wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/includes/css/style.css' );
 }
 
 

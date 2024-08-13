@@ -115,6 +115,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+  // Сatalog tabs. Home page and catalog page
+  const catalogTabs = document.querySelectorAll('.catalog-tabs-button');
+
+  if (catalogTabs) {
+    const catalogTabsContent = document.querySelectorAll('.catalog-tabs-content');
+
+    for (let i = 0; i < catalogTabs.length; i++) {
+      catalogTabs[i].onclick = function() {
+        for (let j = 0; j < catalogTabs.length; j++) {
+          catalogTabs[j].classList.remove('active');
+          catalogTabsContent[j].classList.remove('active');
+        }
+        catalogTabs[i].classList.add('active');
+        catalogTabsContent[i].classList.add('active');
+      }
+    }
+  }
+
+
   // Mobile menu
   const body = document.querySelector('body');
   const burgerMenuWrapper = document.querySelector('.burger-menu-wrapper');
