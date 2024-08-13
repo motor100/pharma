@@ -8,19 +8,19 @@ jQuery(document).ready(function($) {
   <div class="container">
     <div class="row">
       <div class="col-md-5">
-        <div class="about">
+        <div class="main-section-about">
           <img src="/wp-content/themes/store-child/includes/images/svg/company-title.svg" class="company-title" alt="">
           <div class="fl-text">ПЕРВАЯ</div>
           <div class="m-text">производственная</div>
           <div class="m-text">натуропатическая</div>
           <div class="fl-text">АПТЕКА</div>
           <div class="about-bg">
-            <img src="" alt="">
+            <img src="/wp-content/themes/store-child/includes/images/about-bg.png" alt="">
           </div>
         </div>
       </div>
       <div class="col-md-7">
-        <div class="slider">
+        <div class="main-section-slider">
           
         </div>
       </div>
@@ -29,6 +29,18 @@ jQuery(document).ready(function($) {
 </div>
 
 
+<p></p>
+<p></p>
+<p></p>
+<br>
+<p></p>
+<p></p>
+<p></p>
+<br>
+<p></p>
+<p></p>
+<p></p>
+<br>
 <p></p>
 <p></p>
 <p></p>

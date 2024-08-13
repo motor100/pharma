@@ -342,12 +342,19 @@ a {
 }
 .header-desktop .header-nav .menu .menu-item {
   margin: 0 16px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--nero-color);
+  transition: border-bottom-color .3s;
+}
+.header-desktop .header-nav .menu .menu-item:hover {
+  border-bottom-color: var(--voodoo-color);
 }
 .header-desktop .header-nav .menu .menu-item a {
+  display: block;
   font-family: 'Roboto-Medium';
   font-size: 20px;
   color: var(--voodoo-color);
-  text-decoration: none;
 }
 
 /* header mobile */
@@ -389,31 +396,39 @@ a {
   border-radius: 30px;
   background-color: var(--wild-willow-color);
 }
-.main-section .about {
+.main-section .main-section-about {
   position: relative;
   height: 500px;
   padding: 50px 0 0 0;
   background-color: var(--white-rock-color);
   text-align: center;
 }
-.main-section .about .company-title {
+.main-section .main-section-about .company-title {
   width: 404px;
   margin: 0 0 30px 0;
 }
-.main-section .about .fl-text {
+.main-section .main-section-about .fl-text {
   font-family: 'Roboto-Condensed';
   font-size: 42px;
   font-weight: 700;
 }
-.main-section .about .m-text {
+.main-section .main-section-about .m-text {
   font-size: 24px;
   font-weight: 300;
   font-style: italic;
   line-height: 1.1;
 }
-.main-section .about .about-bg {
+.main-section .main-section-about .about-bg {
   position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
 }
+.main-section .main-section-about .about-bg img {
+  width: 100%;
+}
+
 
 
 /* footer */
@@ -2233,7 +2248,7 @@ ul.products li.product .button {
 
 /* advantages section */
 .advantages-section {
-  background: #c2d279 url("includes/images/advantages-background.jpg") top no-repeat;
+  background: #c2d279 url("includes/images/advantages-bg.jpg") top no-repeat;
   background-size: cover;
   padding: 0 0 50px 0;
 }
