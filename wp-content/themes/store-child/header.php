@@ -63,7 +63,9 @@
           <div class="container">
             <div class="flex-container">
               <div class="header-logo">
-                <img src="/wp-content/themes/store-child/includes/images/svg/header-logo.svg" alt="лого">
+                <a href="/" class="header-logo__link">
+                  <img src="/wp-content/themes/store-child/includes/images/svg/header-logo.svg" alt="лого">
+                </a>
               </div>
               <div class="catalog-btn">
                 <img src="/wp-content/themes/store-child/includes/images/svg/catalog-rectangle.svg" class="catalog-btn__image" alt="">
