@@ -134,14 +134,12 @@
       </div>
     </header>
 
-
-
     <div id="content" class="site-content" tabindex="-1">
 
       <?php if (!is_front_page()) { ?>
         <div class="h_green_line"></div>
       <?php } ?>
-      <div class="container">
+      <!-- <div class="container"> -->
         <?php
         /**
          * Functions hooked in to storefront_before_content
@@ -149,8 +147,8 @@
          * @hooked storefront_header_widget_region - 10
          * @hooked woocommerce_breadcrumb - 10
          */
-        do_action('storefront_before_content');
+        // do_action('storefront_before_content');
         ?>
-      </div>
+      <!-- </div> -->
 
-      <?php do_action('storefront_content_top');
+      <?php // do_action('storefront_content_top'); ?>

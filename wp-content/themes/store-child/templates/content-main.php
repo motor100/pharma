@@ -6,61 +6,56 @@ jQuery(document).ready(function($) {
 
 <div class="main-section">
   <div class="container">
-    <div class="row">
-      <div class="col-md-5">
-        <div class="main-section-about">
-          <img src="/wp-content/themes/store-child/includes/images/svg/company-title.svg" class="company-title" alt="">
-          <div class="fl-text fl-text-first">ПЕРВАЯ</div>
-          <div class="m-text">производственная</div>
-          <div class="m-text m-text-last">натуропатическая</div>
-          <div class="fl-text">АПТЕКА</div>
-          <div class="about-bg">
-            <img src="/wp-content/themes/store-child/includes/images/about-bg.jpg" alt="">
-          </div>
+    <div class="flex-container">
+      <div class="main-section-about">
+        <img src="/wp-content/themes/store-child/includes/images/svg/company-title.svg" class="company-title" alt="">
+        <div class="fl-text fl-text-first">ПЕРВАЯ</div>
+        <div class="m-text">производственная</div>
+        <div class="m-text m-text-last">натуропатическая</div>
+        <div class="fl-text">АПТЕКА</div>
+        <div class="about-bg">
+          <img src="/wp-content/themes/store-child/includes/images/about-bg.jpg" alt="">
         </div>
       </div>
-      <div class="col-md-7">
-        <div class="main-section-slider">
 
-          <div class="main-slider swiper">
-            <div class="swiper-wrapper">
-              <div class="main-slider-item swiper-slide">
-                <div class="slider-item-image">
-                  <img src="/wp-content/themes/store-child/includes/images/main-slide1.jpg" alt="">
-                </div>
-                <a href="#" class="slider-item-link"></a>
+      <div class="main-section-slider">
+        <div class="main-slider swiper">
+          <div class="swiper-wrapper">
+            <div class="main-slider-item swiper-slide">
+              <div class="slider-item-image">
+                <img src="/wp-content/themes/store-child/includes/images/main-slide1.jpg" alt="">
               </div>
-              <div class="main-slider-item swiper-slide">
-                <div class="slider-item-image">
-                  <img src="/wp-content/themes/store-child/includes/images/main-slide2.jpg" alt="">
-                </div>
-                <a href="#" class="slider-item-link"></a>
-              </div>
-              <div class="main-slider-item swiper-slide">
-                <div class="slider-item-image">
-                  <img src="/wp-content/themes/store-child/includes/images/main-slide3.jpg" alt="">
-                </div>
-                <a href="#" class="slider-item-link"></a>
-              </div>
-              <div class="main-slider-item swiper-slide">
-                <div class="slider-item-image">
-                  <img src="/wp-content/themes/store-child/includes/images/main-slide4.jpg" alt="">
-                </div>
-                <a href="#" class="slider-item-link"></a>
-              </div>
-              <div class="main-slider-item swiper-slide">
-                <div class="slider-item-image">
-                  <img src="/wp-content/themes/store-child/includes/images/main-slide5.jpg" alt="">
-                </div>
-                <a href="#" class="slider-item-link"></a>
-              </div>
+              <a href="#" class="slider-item-link"></a>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
+            <div class="main-slider-item swiper-slide">
+              <div class="slider-item-image">
+                <img src="/wp-content/themes/store-child/includes/images/main-slide2.jpg" alt="">
+              </div>
+              <a href="#" class="slider-item-link"></a>
+            </div>
+            <div class="main-slider-item swiper-slide">
+              <div class="slider-item-image">
+                <img src="/wp-content/themes/store-child/includes/images/main-slide3.jpg" alt="">
+              </div>
+              <a href="#" class="slider-item-link"></a>
+            </div>
+            <div class="main-slider-item swiper-slide">
+              <div class="slider-item-image">
+                <img src="/wp-content/themes/store-child/includes/images/main-slide4.jpg" alt="">
+              </div>
+              <a href="#" class="slider-item-link"></a>
+            </div>
+            <div class="main-slider-item swiper-slide">
+              <div class="slider-item-image">
+                <img src="/wp-content/themes/store-child/includes/images/main-slide5.jpg" alt="">
+              </div>
+              <a href="#" class="slider-item-link"></a>
+            </div>
           </div>
-
         </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </div>

@@ -83,7 +83,7 @@ Colors
 #ffffff Nero
 #333333 Mine Shaft
 #EDE8D9 White Rock
-
+#E06752 Terracota
 
 */
 :root {
@@ -95,6 +95,7 @@ Colors
   --rare-grey-color: #677482;
   --mine-shaft-color: #333333;
   --white-rock-color: #EDE8D9;
+  --terracota-color: #E06752;
 }
 
 body {
@@ -407,8 +408,12 @@ a {
   border-radius: 30px;
   background-color: var(--wild-willow-color);
 }
+.main-section .flex-container {
+  display: flex;
+}
 .main-section .main-section-about {
   position: relative;
+  width: 41%;
   height: 500px;
   padding: 50px 0 0 0;
   background-color: var(--white-rock-color);
@@ -447,6 +452,10 @@ a {
 .main-section .main-section-about .about-bg img {
   width: 100%;
 }
+.main-section .main-section-slider {
+  position: relative;
+  width: 59%;
+}
 .main-section .main-section-slider .main-slider-item {
   position: relative;
   height: 500px;
@@ -460,6 +469,45 @@ a {
   z-index: 1;
 }
 
+/* swiper slider */
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: -40px;
+  left: 60%;
+  width: auto;
+}
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  background-color: var(--wild-willow-color);
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background-color: var(--terracota-color);
+}
+.swiper-button-next {
+  top: auto;
+  right: 400px;
+  bottom: -50px;
+  left: auto;
+  width: 42px;
+  height: 42px;
+  background: url(includes/images/svg/arrow-circle-right.svg) center no-repeat;
+}
+.swiper-button-prev {
+  top: auto;
+  right: auto;
+  bottom: -50px;
+  left: 270px;
+  width: 42px;
+  height: 42px;
+  background: url(includes/images/svg/arrow-circle-left.svg) center no-repeat;
+}
+.swiper-button-next::after, .swiper-rtl .swiper-button-prev::after {
+  content: '';
+}
+.swiper-button-prev::after, .swiper-rtl .swiper-button-next::after {
+  content: '';
+}
 
 
 /* footer */
