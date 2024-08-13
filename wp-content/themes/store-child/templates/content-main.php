@@ -56,7 +56,7 @@
 </div>
 
 <div id="catalog-section" class="catalog-section">
-  <div class="catalog-section-title">Каталог</div>
+  <div class="section-title">Каталог</div>
   <div class="curved violet v2">
     <div class="one"></div>
     <div class="two"></div>
@@ -182,88 +182,102 @@
   </div>
 </div>
 
-<div class="offer m-b-200">
-  <div class="title">Предложение недели</div>
-  <div class="container">
-    <div class="all-offer">
-      <div class="items">
-        <?php
-          $args = array(
-            'tax_query' => array(
-              'relation' => 'AND',
-              array(
-                'taxonomy' => 'product_cat',
-                'field' => 'slug',
-                'terms' => 'predlozhenie-4'
-              )
-            ),
-            'posts_per_page' => 4, 
-            'post_type' => 'product',
-            'orderby' => 'title',
-          );
-          $loop = new WP_Query( $args );
-          while ( $loop->have_posts() ) : $loop->the_post();
-            global $product;
-            if (get_post_meta( get_the_ID(), '_sale_price', true)) {$price = get_post_meta( get_the_ID(), '_sale_price', true); } else
-              {$price = get_post_meta( get_the_ID(), '_regular_price', true);}
-        ?>
-        <div class="children__item">
-          <div class="children__image">
-            <div class="circle-green favorite"></div>
-            <a href="<?php echo get_permalink( $loop->post->ID ) ?>">
-              <img src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="<?php the_title(); ?>">
-            </a>
-          </div>
-          <a class="subcat__link m-b-10" href="<?php echo get_permalink( $loop->post->ID ) ?>"><?php the_title(); ?></a>
-          <div class="price black">
-            <span><?php echo ($price . " " . get_woocommerce_currency_symbol()); ?></span>
-          </div>
-          
-        </div>
-        <?php endwhile; ?>
-        <?php wp_reset_query(); ?>
-      </div>
-      <div class="item">
-        <?php
-          $args = array(
-            'tax_query' => array(
-            'relation' => 'AND',
-            array(
-              'taxonomy' => 'product_cat',
-              'field' => 'slug',
-              'terms' => 'promo'
-            )
-          ),
-          'posts_per_page' => 1, 
-          'post_type' => 'product', 
-          'orderby' => 'title',
-          );
-          $loop = new WP_Query( $args );
-          while ( $loop->have_posts() ) : $loop->the_post();
-          global $product;
-          if (get_post_meta( get_the_ID(), '_sale_price', true)) {$price = get_post_meta( get_the_ID(), '_sale_price', true); } else
-            {$price = get_post_meta( get_the_ID(), '_regular_price', true);}
-          $full_price = get_post_meta( get_the_ID(), '_regular_price', true);
-        ?>
-        <div class="item__image">
-          <a href="<?php echo get_permalink( $loop->post->ID ) ?>">
-            <img src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="<?php the_title(); ?>">
-          </a>
-        </div>
-        <div class="info">
-          <a href="<?php echo get_permalink( $loop->post->ID ) ?>" class="info-title m-b-10"><?php the_title(); ?></a>
-          <?php if ($full_price != $price) {?>
-            <div class="full_price">
-              <span><?php echo ($full_price . " " . get_woocommerce_currency_symbol()); ?></span>
+<div class="offer-of-week-section">
+  <div class="section-title">Предложение недели</div>
+  <div class="offers">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="big-offer">
+            <div class="big-offer-frame">
+              <?php
+                $args = array(
+                  'tax_query' => array(
+                  'relation' => 'AND',
+                  array(
+                    'taxonomy' => 'product_cat',
+                    'field' => 'slug',
+                    'terms' => 'promo'
+                  )
+                ),
+                'posts_per_page' => 1, 
+                'post_type' => 'product', 
+                'orderby' => 'title',
+                );
+                $loop = new WP_Query( $args );
+                while ( $loop->have_posts() ) : $loop->the_post();
+                global $product;
+                if (get_post_meta( get_the_ID(), '_sale_price', true)) {$price = get_post_meta( get_the_ID(), '_sale_price', true); } else
+                  {$price = get_post_meta( get_the_ID(), '_regular_price', true);}
+                $full_price = get_post_meta( get_the_ID(), '_regular_price', true);
+              ?>
+              <div class="item__image">
+                <a href="<?php echo get_permalink( $loop->post->ID ) ?>">
+                  <img src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="<?php the_title(); ?>">
+                </a>
+              </div>
+              <div class="info">
+                <a href="<?php echo get_permalink( $loop->post->ID ) ?>" class="info-title m-b-10"><?php the_title(); ?></a>
+                <?php if ($full_price != $price) {?>
+                  <div class="full_price">
+                    <span><?php echo ($full_price . " " . get_woocommerce_currency_symbol()); ?></span>
+                  </div>
+                <?php } ?>
+                  <div class="price">
+                    <span><?php echo ($price . " " . get_woocommerce_currency_symbol()); ?></span>
+                    <div class="circle-green favorite"></div>
+                  </div>
+              </div>
+              <?php endwhile; ?>
+              <?php wp_reset_query(); ?>
             </div>
-          <?php } ?>
-            <div class="price">
-              <span><?php echo ($price . " " . get_woocommerce_currency_symbol()); ?></span>
-              <div class="circle-green favorite"></div>
-            </div>
+          </div>
         </div>
-        <?php endwhile; ?>
-        <?php wp_reset_query(); ?>
+        <div class="col-md-6">
+          <div class="small-offers">
+            <div class="row">
+              <?php
+              $args = array(
+                'tax_query' => array(
+                  'relation' => 'AND',
+                  array(
+                    'taxonomy' => 'product_cat',
+                    'field' => 'slug',
+                    'terms' => 'predlozhenie-4'
+                  )
+                ),
+                'posts_per_page' => 4, 
+                'post_type' => 'product',
+                'orderby' => 'title',
+              );
+              ?>
+              <?php
+              $loop = new WP_Query( $args );
+              while ( $loop->have_posts() ) : $loop->the_post();
+                global $product;
+                if (get_post_meta( get_the_ID(), '_sale_price', true)) {
+                  $price = get_post_meta( get_the_ID(), '_sale_price', true);
+                } else {
+                  $price = get_post_meta( get_the_ID(), '_regular_price', true);
+                }
+              ?>
+              <div class="col-md-6">
+                <div class="offer-item">
+                  <div class="offer-image">
+                    <a href="<?php echo get_permalink( $loop->post->ID ) ?>">
+                      <img src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="<?php the_title(); ?>">
+                    </a>
+                  </div>
+                  <a class="offer-title" href="<?php echo get_permalink( $loop->post->ID ); ?>"><?php the_title(); ?></a>
+                  <div class="offer-price"><?php echo ($price . " " . get_woocommerce_currency_symbol()); ?></div>
+                </div>
+              </div>
+
+              <?php endwhile; ?>
+              <?php wp_reset_query(); ?>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
