@@ -64,7 +64,6 @@
   </div>
 
   <div class="catalog-tabs">
-
     <div class="catalog-tabs-buttons">
       <div class="container">
         <div class="flex-container">
@@ -95,13 +94,11 @@
         </div>
       </div>
     </div>
-
     <div class="curved green v2">
       <div class="one"></div>
       <div class="two"></div>
       <div class="three"></div>
     </div>
-
     <div class="catalog-tabs-contents">
       <div class="container">
         <div class="catalog-tabs-content active">
@@ -178,7 +175,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
