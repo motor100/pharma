@@ -274,7 +274,7 @@
   </div>
 </div>
 
-<div class="advantages-section">
+<div class="advantages-section green-bg-section">
   <div class="curved transparent">
     <div class="one"></div>
     <div class="two"></div>
