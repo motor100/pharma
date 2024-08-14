@@ -211,22 +211,17 @@
                   {$price = get_post_meta( get_the_ID(), '_regular_price', true);}
                 $full_price = get_post_meta( get_the_ID(), '_regular_price', true);
               ?>
-              <div class="item__image">
+              <div class="big-offer-image">
                 <a href="<?php echo get_permalink( $loop->post->ID ) ?>">
                   <img src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="<?php the_title(); ?>">
                 </a>
               </div>
-              <div class="info">
-                <a href="<?php echo get_permalink( $loop->post->ID ) ?>" class="info-title m-b-10"><?php the_title(); ?></a>
-                <?php if ($full_price != $price) {?>
-                  <div class="full_price">
-                    <span><?php echo ($full_price . " " . get_woocommerce_currency_symbol()); ?></span>
-                  </div>
+              <div class="big-offer-info">
+                <a href="<?php echo get_permalink( $loop->post->ID ); ?>" class="info-title"><?php the_title(); ?></a>
+                <?php if ($full_price != $price) { ?>
+                  <div class="full-price"><?php echo ($full_price . " " . get_woocommerce_currency_symbol()); ?></div>
                 <?php } ?>
-                  <div class="price">
-                    <span><?php echo ($price . " " . get_woocommerce_currency_symbol()); ?></span>
-                    <div class="circle-green favorite"></div>
-                  </div>
+                  <div class="price"><?php echo ($price . " " . get_woocommerce_currency_symbol()); ?></div>
               </div>
               <?php endwhile; ?>
               <?php wp_reset_query(); ?>
