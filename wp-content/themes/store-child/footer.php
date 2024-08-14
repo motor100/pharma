@@ -18,54 +18,59 @@
     <div class="two"></div>
     <div class="three"></div>
   </div>
-  <div class="container">
-    <div class="footer-logo">
-      <img src="/wp-content/themes/store-child/includes/images/svg/footer-logo.svg" alt="logo">
-    </div>
-    <div class="row">
-
-      <div class="col-lg-4">
-        <div class="company-info">Производственная натуропатическая аптека: натуральные препараты и лекарства, гомеопатия, капли Баха, гидролаты, витамины, соли Шюсслера</div>
-        <div class="company-info">© Общество с ограниченной <br> ответственностью «Здоровье»</div>
-        <div class="company-info company-info-last">ИНН 7724488603</div>
-        <div class="footer-phone footer-pe">
-          <img src="/wp-content/themes/store-child/includes/images/svg/circle-call.svg" class="footer-phone-image footer-pe-image" alt="phone call">
-          <a class="footer-phone-link footer-pe-link" href="tel:+74959274928">+7 (495) 927-4-928</a>
-        </div>
-        <div class="working-time">Пн, Вт, Ср, Чт, Пт: С 10:00 до 20:00<br>Сб, Вс: выходной</div>
-        <div class="footer-email footer-pe">
-          <img src="/wp-content/themes/store-child/includes/images/svg/circle-email.svg" class="footer-phone-image footer-pe-image" alt="phone call">
-          <a class="footer-email-link footer-pe-link" href="mailto:info@naturapharma.ru">info@naturapharma.ru</a>
-        </div>
-        <div class="footer-address">г. Москва, ул. Алма-Атинская, д. 9, корп. 2</div>
-        <a href="/politika-v-otnoshenii-obrabotki-personalnyh-dannyh" class="privacy-policy footer-pa">Политика конфиденциальности</a>
-        <a href="/soglasie-posetitelya-sajta-na-obrabotku-personalnyh-dannyh" class="agreement footer-pa">Согласие на обработку персональных данных</a>
-        <div class="copyright">© 2016—<?php echo date("Y"); ?> Все права принадлежат ООО «Здоровье»</div>
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-logo">
+        <img src="/wp-content/themes/store-child/includes/images/svg/footer-logo.svg" alt="logo">
       </div>
-      <div class="col-lg-2"><?php echo custom_nav_menu(0, 4); ?></div>
-      <div class="col-lg-3"><?php echo custom_nav_menu(5); ?></div>
-      <div class="col-lg-3">
-        <div class="flex-container">
-          <div class="footer-buttons">
-            <a href="#" class="callback-form-btn" data-fancybox="dialog-form1" data-src="#contact-form">
-              <img src="/wp-content/themes/store-child/includes/images/svg/circle-call.svg" class="callback-form-btn__image" alt="">
-              <span class="callback-form-btn__text">Заказать звонок</span>
-            </a>
-            <div class="search-btn" onclick="window.scrollTo(0,0)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="search-btn__image" viewBox="0 0 16 16">
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-              </svg>
-              <span class="search-btn__text">Поиск препаратов</span>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="company-info">Производственная натуропатическая аптека: натуральные препараты и лекарства, гомеопатия, капли Баха, гидролаты, витамины, соли Шюсслера</div>
+          <div class="company-info">© Общество с ограниченной <br> ответственностью «Здоровье»</div>
+          <div class="company-info company-info-last">ИНН 7724488603</div>
+          <div class="footer-phone footer-pe">
+            <img src="/wp-content/themes/store-child/includes/images/svg/circle-call.svg" class="footer-phone-image footer-pe-image" alt="phone call">
+            <a class="footer-phone-link footer-pe-link" href="tel:+74959274928">+7 (495) 927-4-928</a>
+          </div>
+          <div class="working-time">Пн, Вт, Ср, Чт, Пт: С 10:00 до 20:00<br>Сб, Вс: выходной</div>
+          <div class="footer-email footer-pe">
+            <img src="/wp-content/themes/store-child/includes/images/svg/circle-email.svg" class="footer-phone-image footer-pe-image" alt="phone call">
+            <a class="footer-email-link footer-pe-link" href="mailto:info@naturapharma.ru">info@naturapharma.ru</a>
+          </div>
+          <div class="footer-address">г. Москва, ул. Алма-Атинская, д. 9, корп. 2</div>
+          <a href="/politika-v-otnoshenii-obrabotki-personalnyh-dannyh" class="privacy-policy footer-pa">Политика конфиденциальности</a>
+          <a href="/soglasie-posetitelya-sajta-na-obrabotku-personalnyh-dannyh" class="agreement footer-pa">Согласие на обработку персональных данных</a>
+          <div class="copyright">© 2016—<?php echo date("Y"); ?> Все права принадлежат ООО «Здоровье»</div>
+        </div>
+        <div class="col-lg-2"><?php echo custom_nav_menu(0, 4); ?></div>
+        <div class="col-lg-3"><?php echo custom_nav_menu(5); ?></div>
+        <div class="col-lg-3">
+          <div class="flex-container">
+            <div class="footer-buttons">
+              <a href="#" class="callback-form-btn" data-fancybox="dialog-form1" data-src="#contact-form">
+                <img src="/wp-content/themes/store-child/includes/images/svg/circle-call.svg" class="callback-form-btn__image" alt="">
+                <span class="callback-form-btn__text">Заказать звонок</span>
+              </a>
+              <div class="search-btn" onclick="window.scrollTo(0,0)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="search-btn__image" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+                <span class="search-btn__text">Поиск препаратов</span>
+              </div>
+            </div>
+            <div class="payment-system">
+              <img src="/wp-content/themes/store-child/includes/images/visa.png" class="payment-system__icon icon-visa" alt="visa">
+              <img src="/wp-content/themes/store-child/includes/images/mastercard.png" class="payment-system__icon icon-mastercard" alt="mastercard">
+              <img src="/wp-content/themes/store-child/includes/images/mir.png" class="payment-system__icon icon-mir" alt="mir">
             </div>
           </div>
-          <div class="payment-system">
-            <img src="/wp-content/themes/store-child/includes/images/visa.png" class="payment-system__icon icon-visa" alt="visa">
-            <img src="/wp-content/themes/store-child/includes/images/mastercard.png" class="payment-system__icon icon-mastercard" alt="mastercard">
-            <img src="/wp-content/themes/store-child/includes/images/mir.png" class="payment-system__icon icon-mir" alt="mir">
-          </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom__text">все что представлено на сайте не является рекомендациями и мы не отвечаем за самоназначения, где то правильно написанная фраза у нас была</div>
   </div>
 </footer>
 

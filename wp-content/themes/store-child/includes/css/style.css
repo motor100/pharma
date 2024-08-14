@@ -714,9 +714,11 @@ a {
 /* footer */
 .footer {
   margin: 100px 0 0 0;
-  padding: 0 0 20px 0;
   background-color: #43314b;
   color: var(--nero-color);
+}
+.footer .footer-top {
+  padding: 0 0 20px 0;
 }
 .footer .menu {
   display: block;
@@ -836,6 +838,15 @@ a {
 }
 .footer .payment-system__icon {
   width: 45px;
+}
+.footer .footer-bottom {
+  padding: 25px 0;
+  background-color: var(--nero-color);
+  text-align: center;
+}
+.footer .footer-bottom .footer-bottom__text {
+  color: var(--mine-shaft-color);
+  text-transform: uppercase;
 }
 /*
 .footer .social-links {
