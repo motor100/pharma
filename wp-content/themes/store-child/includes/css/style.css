@@ -15,10 +15,17 @@ Text Domain:  storefront
 
 @font-face {
   font-display: swap;
-  font-family: 'Roboto';
+  font-family: 'Roboto-Light';
   font-style: normal;
   font-weight: 400;
   src: url(../fonts/Roboto-Light.woff2) format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Roboto-Regular.woff2) format("woff2");
 }
 @font-face {
   font-display: swap;
@@ -92,9 +99,10 @@ body {
   max-width: 1920px;
   min-width: 320px;
   margin: 0 auto;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto-Regular', sans-serif;
   font-size: 16px;
   color: var(--voodoo-color);
+  line-height: 1.4;
   font-weight: 400;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -423,16 +431,16 @@ a {
   font-size: 42px;
 }
 .main-section .main-section-about .fl-text-first {
-  margin: 0 0 15px 0;
+  margin: 0 0 10px 0;
 }
 .main-section .main-section-about .m-text {
   font-size: 24px;
-  font-weight: 300;
+  font-family: 'Roboto-light';
   font-style: italic;
   line-height: 1.1;
 }
 .main-section .main-section-about .m-text-last {
-  margin: 0 0 15px 0;
+  margin: 0 0 10px 0;
 }
 .main-section .main-section-about .about-bg {
   position: absolute;
@@ -502,7 +510,6 @@ a {
 .swiper-button-prev::after, .swiper-rtl .swiper-button-next::after {
   content: '';
 }
-
 
 .home .section-title {
 /*  margin: 50px 0;*/
@@ -585,12 +592,10 @@ a {
   padding: 30px 20px 20px;
 }
 .catalog-section .children__image {
-  /*min-height: 250px;*/
   margin-bottom: 20px;
   border-radius: 50px;
   box-shadow: 0px 0px 30px 5px rgba(34, 60, 80, 0.2);
   overflow: hidden;
-  /*min-width: 250px;*/
   position: relative;
   outline: 3px solid #fff;
 }
@@ -607,8 +612,6 @@ a {
   z-index: 1;
   transform: translate(-50%, -50%); /*mix-blend-mode:multiply;*/
 }
-
-
 
 /* offer of the week section */
 .offer-of-week-section .section-title {
@@ -654,15 +657,15 @@ a {
 .offer-of-week-section .big-offer .big-offer-info .info-title {
   display: block;
   margin: 0 0 16px 0;
+  font-family: 'Roboto-light';
   font-size: 18px;
   color: var(--mine-shaft-color);
-  font-weight: 200;
   text-decoration: underline;
 }
 .offer-of-week-section .big-offer .big-offer-info .full-price {
   margin: 0 0 16px 0;
+  font-family: 'Roboto-light';
   font-size: 18px;
-  font-weight: 200;
   text-decoration: line-through;
 }
 .offer-of-week-section .big-offer .big-offer-info .price {
@@ -670,8 +673,6 @@ a {
   font-size: 18px;
   font-weight: 600;
 }
-
-
 .offer-of-week-section .small-offers .offer-item {
   margin: 0 0 35px 0;
 }
@@ -710,21 +711,14 @@ a {
   color: var(--voodoo-color);
 }
 
-
 /* footer */
 .footer {
+  margin: 100px 0 0 0;
+  padding: 0 0 20px 0;
   background-color: #43314b;
-  padding: 45px 0 0 0;
-  padding-top: 0;
-  margin-top: 100px;
+  color: var(--nero-color);
 }
 .footer .menu {
-  -webkit-columns: 2;
-  -moz-columns: 2;
-  column-count: 2;
-  -webkit-column-gap: 40px;
-  -moz-column-gap: 40px;
-  column-gap: 40px;
   display: block;
   list-style: none;
   margin: 0;
@@ -742,26 +736,110 @@ a {
 .footer .menu .menu-item a:hover {
   color: var(--wild-willow-color);
 }
-.footer .logo-side img {
-  margin-bottom: 17px;
+.footer .footer-logo {
+  width: 200px;
+  margin: 0 0 17px 0;
 }
-.footer .logo-side p {
-  color: #fafafa;
-  font-size: 14px;
-  line-height: 16px;
+.footer .footer-logo img {
+  width: 100%;
 }
-.footer .social-links {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
+.footer .company-info {
+  margin: 0 0 5px 0;
+}
+.footer .company-info-last {
+  margin: 0 0 20px 0;
+}
+.footer .footer-pe {
   display: flex;
-  -ms-flex-direction: column;
+  margin: 0 0 16px 0;
+  align-items: center;
+}
+.footer .footer-pe .footer-pe-image {
+  width: 38px;
+  margin: 0 10px 0 0;
+}
+.footer .footer-pe .footer-pe-link {
+  font-size: 24px;
+  color: var(--nero-color);
+}
+.footer .footer-pe .footer-phone-link {
+  color: var(--nero-color);
+}
+.footer .footer-pe .footer-email-link {
+  color: var(--wild-willow-color);
+}
+.footer .footer-address {
+  margin: 0 0 40px 0;
+  font-size: 18px;
+}
+.footer .footer-pa {
+  display: block;
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: var(--nero-color);
+}
+.footer .footer-pa:hover {
+  text-decoration: underline;
+}
+.footer .working-time {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  color: var(--nero-color);
+}
+.footer .agreement {
+  margin: 0 0 40px 0;
+}
+.footer .copyright {
+  font-size: 14px;
+}
+.footer .flex-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footer .callback-form-btn {
+  display: flex;
+  height: 68px;
+  margin: 0 0 20px 0;
+  border-radius: 34px;
+  background-color: var(--wild-willow-color);
+  gap: 15px;
+  align-items: center;
+  justify-content: center;  
+}
+.footer .callback-form-btn .callback-form-btn__text {
+  font-size: 24px;
+  color: var(--mine-shaft-color);
+}
+.footer .search-btn {
+  display: flex;
+  height: 68px;
+  margin: 0 auto;
+  border: 1px solid var(--wild-willow-color);
+  border-radius: 34px;
+  cursor: pointer;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+.footer .search-btn .search-btn__image {
+  margin: 0 7px 0 0;
+}
+.footer .search-btn .search-btn__text {
+  font-size: 24px;
+  color: var(--nero-color);
+}
+.footer .payment-system {
+  width: 143px;
+  margin-left: auto;
+}
+.footer .payment-system__icon {
+  width: 45px;
+}
+/*
+.footer .social-links {
+  display: flex;
   flex-direction: column;
   justify-content: center;
 }
@@ -776,37 +854,23 @@ a {
   color: #fafafa;
   text-decoration: none;
 }
-.footer .search-content-wrapper {
-  width: max-content;
-  margin: 0 auto;
-  cursor: pointer;
-}
-.footer .search-lens {
-  margin-right: 5px;
-}
-.footer .with-logo p {
-  color: #fff;
-}
-.footer .icon {
+
+*/
+/*.footer .icon {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin-right: 10px;
-}
-.footer .icon.phone {
-  background: var(--wild-willow-color) url(../images/svg/phone.svg) 50% 50% no-repeat;
-  background-size: 45px;
-}
-.footer .icon.mail {
-  background: var(--wild-willow-color) url(../images/svg/mail.svg) 50% 50% no-repeat;
-  background-size: 45px;
-}
+}*/
+/*
 .footer .search {
   display: inline-block;
   text-align: center;
   color: #fff;
   font-weight: 500;
 }
+*/
+/*
 .footer .pay_icons {
   background-image: url(../images/pay.png);
   height: 30px;
@@ -826,29 +890,17 @@ a {
   background-position: -42px -168px;
   width: 44px;
 }
-.footer .footer-end {
-  margin: -45px 0 0 0;
-  margin-top: 45px;
-  background-color: #efe7da;
-  text-align: center;
-  padding: 30px 0 60px 0;
-  color: #43314b;
-  line-height: 2;
-}
-.footer .footer-end .footer-end-item__link {
-  text-transform: uppercase;
-  font-weight: 500;
-  text-decoration: underline;
-}
+
+*/
 
 
-.main-page {
+/*.main-page {
   background: #f2f5f3 url(../images/main_leafs.png) 82% -100px no-repeat;
   padding-bottom: 171px;
   padding-top: 82px;
   position: relative;
-}
-@media (max-width: 1399.98px) {
+}*/
+/*@media (max-width: 1399.98px) {
   .main-page {
     background-position-x: 100%;
   }
@@ -860,7 +912,7 @@ a {
   .main-page .col-lg-6 {
     text-align: center;
   }
-}
+}*/
 .main-page h1 {
   color: #184e66;
   font-family: Uni, sans-serif;
@@ -1199,8 +1251,8 @@ a {
 }
 
 /*.subcategories .subcategories-item .subcategories-item__title {
+  font-family: 'Roboto-light';
   font-size: 16px;
-  font-weight: 300;
   text-decoration: none;
 }
 */
@@ -1387,7 +1439,7 @@ a {
 }
 
 .text-page .entry-content ol li {
-  font-weight: 300;
+  font-family: 'Roboto-light';
   font-size: 18px;
   line-height: 30px;
   color: #222222;
@@ -2232,7 +2284,7 @@ ul.products li.product .button {
 }
 .advantages-section .advantage-description {
   min-height: 146px;
-  font-weight: 300;
+  font-family: 'Roboto-light';
   line-height: 1.3;
 }
 
@@ -3475,10 +3527,6 @@ h1.sec-title {
   }
   .footer .with-menu-footer {
     order: unset;
-  }
-  .footer .footer-end {
-    padding-bottom: 70px;
-    font-size: 14px;
   }
 
   /* curved */

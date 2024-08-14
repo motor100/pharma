@@ -258,7 +258,7 @@ function woo_product_categories_dropdown( $atts ) {
   ) ) );
 
   ?>
-    <script type='text/javascript'>
+    <script>
         jQuery(function($){
             var product_cat_dropdown = $(".dropdown_product_cat");
             function onProductCatChange() {
@@ -591,6 +591,42 @@ function get_subcat_products() {
     }
     
     wp_die(); // выход нужен для того, чтобы в ответе не было ничего лишнего (0), только то что возвращает функция
+}
+
+
+// Вывод кастомного нижнего меню
+function custom_nav_menu($start = 0, $end = NULL) {
+
+  $menu_name = 'secondary'; // поставить галочку Дополнительное меню для footer_menu
+  $locations = get_nav_menu_locations();
+
+  if( $locations && isset( $locations[ $menu_name ] ) ) {
+
+    // получаю элементы меню
+    $menu_items = wp_get_nav_menu_items( $locations[ $menu_name ] );
+
+    // создаю список
+    $menu_list = '<ul class="menu">';
+
+    if (!$end) {
+      $end = count($menu_items);
+    }
+
+    foreach ( $menu_items as $key => $menu_item ){
+      
+      if ($key >= $start && $key <= $end) {
+        $menu_list .= '<li class="menu-item"><a href="' . $menu_item->url . '">' . $menu_item->title . '</a></li>';
+      }
+    }
+
+    $menu_list .= '</ul>';
+    
+  } else {
+    $menu_list = '<p>Меню "' . $menu_name . '" не определено.</p>';
+  }
+  
+  return $menu_list;
+
 }
 
 

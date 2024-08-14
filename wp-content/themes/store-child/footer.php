@@ -19,82 +19,52 @@
     <div class="three"></div>
   </div>
   <div class="container">
+    <div class="footer-logo">
+      <img src="/wp-content/themes/store-child/includes/images/svg/footer-logo.svg" alt="logo">
+    </div>
     <div class="row">
-      <div class="col-lg-4 align-self-center with-logo">
-        <div class="logo-side">
-          <img src="<?php the_field('logotip_v_futere', 2); ?>" alt="logo">
-          <p>Производственная натуропатическая аптека: натуральные препараты и лекарства, гомеопатия, капли Баха, гидролаты, витамины, соли Шюсслера</p>
-          <p>© Общество с ограниченной <br> ответственностью «Здоровье»</p>
+
+      <div class="col-lg-4">
+        <div class="company-info">Производственная натуропатическая аптека: натуральные препараты и лекарства, гомеопатия, капли Баха, гидролаты, витамины, соли Шюсслера</div>
+        <div class="company-info">© Общество с ограниченной <br> ответственностью «Здоровье»</div>
+        <div class="company-info company-info-last">ИНН 7724488603</div>
+        <div class="footer-phone footer-pe">
+          <img src="/wp-content/themes/store-child/includes/images/svg/circle-call.svg" class="footer-phone-image footer-pe-image" alt="phone call">
+          <a class="footer-phone-link footer-pe-link" href="tel:+74959274928">+7 (495) 927-4-928</a>
         </div>
-        <?php
-        $phone = get_field('nomer_telefona', 2);
-        $email = get_field('email', 2);
-        $vowels = array("+", "(", ")", " ", "-", "_");
-        $truephone = str_replace($vowels, "", $phone); ?>
-        <?php if ($phone) { ?>
-          <div class="flex align-items-center m-t-50">
-            <div class="icon phone">
-            </div>
-            <a class="white footer-phone" href="tel:<?php echo $truephone; ?>"><?php echo $phone; ?></a>
-          </div>
-        <?php } ?>
-        <?php if ($email) { ?>
-          <div class="flex align-items-center m-t-30">
-            <div class="icon mail">
-            </div>
-            <a class="white" href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
-          </div>
-        <?php } ?>
-        <div class="m-t-30">
-          <p>г. Москва, ул. Алма-Атинская, д. 9, корп. 2</p><br>
-          <p>Пн, Вт, Ср, Чт, Пт:</p>
-          <p>С 10:00 до 20:00</p>
-          <p>Сб, Вс: выходной</p>
+        <div class="working-time">Пн, Вт, Ср, Чт, Пт: С 10:00 до 20:00<br>Сб, Вс: выходной</div>
+        <div class="footer-email footer-pe">
+          <img src="/wp-content/themes/store-child/includes/images/svg/circle-email.svg" class="footer-phone-image footer-pe-image" alt="phone call">
+          <a class="footer-email-link footer-pe-link" href="mailto:info@naturapharma.ru">info@naturapharma.ru</a>
         </div>
+        <div class="footer-address">г. Москва, ул. Алма-Атинская, д. 9, корп. 2</div>
+        <a href="/politika-v-otnoshenii-obrabotki-personalnyh-dannyh" class="privacy-policy footer-pa">Политика конфиденциальности</a>
+        <a href="/soglasie-posetitelya-sajta-na-obrabotku-personalnyh-dannyh" class="agreement footer-pa">Согласие на обработку персональных данных</a>
+        <div class="copyright">© 2016—<?php echo date("Y"); ?> Все права принадлежат ООО «Здоровье»</div>
       </div>
-      <div class="col-lg-4 align-self-center with-menu-footer">
-        <?php
-        wp_nav_menu(
-          array(
-            'menu' => 'footer_menu',
-            'menu_id' => 'footer_menu',
-          )
-        );
-        ?>
-      </div>
-      <div class="col-lg-4 txt_r flex f-d-column j-content-sb a-items-fe">
-        <div class="">
-          <a href="#" class="green-b m-b-30 w70" data-fancybox="dialog-form1" data-src="#contact-form">Заказать звонок</a>
-          <a href="#" class="green-b m-b-30 w70" data-fancybox="dialog-form2" data-src="#contact-form2">Подписаться на рассылку</a>
-          <div class="search w70 m-b-30">
-            <div class="search-content-wrapper" onclick="window.scrollTo(0,0)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="search-lens" viewBox="0 0 16 16">
+      <div class="col-lg-2"><?php echo custom_nav_menu(0, 4); ?></div>
+      <div class="col-lg-3"><?php echo custom_nav_menu(5); ?></div>
+      <div class="col-lg-3">
+        <div class="flex-container">
+          <div class="footer-buttons">
+            <a href="#" class="callback-form-btn" data-fancybox="dialog-form1" data-src="#contact-form">
+              <img src="/wp-content/themes/store-child/includes/images/svg/circle-call.svg" class="callback-form-btn__image" alt="">
+              <span class="callback-form-btn__text">Заказать звонок</span>
+            </a>
+            <div class="search-btn" onclick="window.scrollTo(0,0)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="search-btn__image" viewBox="0 0 16 16">
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
               </svg>
-              <span class="search-text">Поиск по сайту</span>
+              <span class="search-btn__text">Поиск препаратов</span>
             </div>
           </div>
-        </div>
-        <div class="w70 pay_box">
-          <div class="flex j-content-c">
-            <div class="pay_icons icon-visa" title="Visa"></div>
-            <div class="pay_icons icon-mastercard" title="MasterCard"></div>
-            <div class="pay_icons icon-mir" title="МИР"></div>
+          <div class="payment-system">
+            <img src="/wp-content/themes/store-child/includes/images/visa.png" class="payment-system__icon icon-visa" alt="visa">
+            <img src="/wp-content/themes/store-child/includes/images/mastercard.png" class="payment-system__icon icon-mastercard" alt="mastercard">
+            <img src="/wp-content/themes/store-child/includes/images/mir.png" class="payment-system__icon icon-mir" alt="mir">
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="footer-end">
-    <div class="container">
-      <div class="footer-end-item">
-        <a href="/politika-v-otnoshenii-obrabotki-personalnyh-dannyh/" class="footer-end-item__link">Политика конфиденциальности</a>
-      </div>
-      <div class="footer-end-item">
-        <a href="/soglasie-posetitelya-sajta-na-obrabotku-personalnyh-dannyh/" class="footer-end-item__link">Согласие на обработку персональных данных</a>
-      </div>
-      <div class="copyright">© 2016&mdash;<?php echo date('Y') ?> Все права принадлежат ООО «Здоровье»</div>
-      <div class="footer-end-text">Производственная натуропатическая аптека: натуральные препараты и лекарства, гомеопатия, капли Баха, гидролаты, витамины, соли Шюсслера</div>
     </div>
   </div>
 </footer>
