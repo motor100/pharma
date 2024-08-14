@@ -67,10 +67,10 @@
                   <img src="/wp-content/themes/store-child/includes/images/svg/header-logo.svg" alt="лого">
                 </a>
               </div>
-              <div class="catalog-btn">
+              <a href="/catalog" class="catalog-btn">
                 <img src="/wp-content/themes/store-child/includes/images/svg/catalog-rectangle.svg" class="catalog-btn__image" alt="">
                 <span class="catalog-btn__text">Каталог</span>
-              </div>
+              </a>
               <div class="header-search">
                 <?php echo do_shortcode('[fibosearch]'); ?>
               </div>

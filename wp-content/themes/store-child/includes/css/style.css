@@ -276,6 +276,7 @@ a {
   height: 62px;
   border-radius: 10px;
   background-color: var(--wild-willow-color);
+  color: var(--mine-shaft-color);
   gap: 15px;
   align-items: center;
   justify-content: center;
@@ -848,6 +849,49 @@ a {
   color: var(--mine-shaft-color);
   text-transform: uppercase;
 }
+
+/* o nas page */
+.o-nas-page .page-title {
+  margin: 0 0 40px 0;
+  font-family: "Roboto-CondensedSemiBold";
+  font-size: 56px;
+  text-transform: uppercase;
+}
+.o-nas-page .team {
+  margin: 0 0 40px 0;
+}
+.o-nas-page .team .about {
+  padding: 90px 0 0 0;
+}
+.o-nas-page .team .about-subtitle {
+  margin: 0 0 30px 0;
+  font-size: 42px;
+}
+.o-nas-page .team .about-name {
+  margin: 0 0 10px 0;
+  font-size: 26px;
+}
+.o-nas-page .team .about-description {
+  margin: 0 0 30px 0;
+  font-size: 18px;
+}
+.o-nas-page .description .description-subtitle,
+.o-nas-page .company-info .company-info-subtitle {
+  margin: 0 0 20px 0;
+  font-size: 42px;
+}
+.o-nas-page .description .p-last {
+  margin: 0 0 40px 0;
+}
+.o-nas-page .description .description-logo {
+  margin: 90px 0 0 0;
+}
+
+
+
+
+
+
 /*
 .footer .social-links {
   display: flex;
