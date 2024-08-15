@@ -1,12 +1,13 @@
  <?
 /**
  * @package WordPress
- * @subpackage Classic_Theme
+ * @subpackage Store CHild Theme
  * Template Name: Шаблон блога
  */
- get_header();
 
 ?>
+
+<?php get_header(); ?>
 
 <section class="text-page" style="padding-bottom: 80px;">
 	<div class="container blog">
@@ -28,4 +29,4 @@
 		</div>
 	</div>
 </section>
-<?php get_footer();?>
+<?php get_footer(); ?>

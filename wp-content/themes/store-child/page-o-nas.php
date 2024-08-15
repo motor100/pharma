@@ -10,7 +10,7 @@
 
 <?php get_header(); ?>
   
-<div class="o-nas-page">
+<div class="o-nas-page custom-page">
   <div class="container">
     <div class="storefront-breadcrumb">
       <nav class="woocommerce-breadcrumb">
@@ -68,7 +68,6 @@
       <span class="company-info-text">Юр. адрес: Россия, г. Москва, г.Москва, ул. Алма-Атинская, дом 9 корпус 2, 1 этаж, пом V ком 23</span>
     </div>
   </div>
-    
 
   </div>
 </div>
