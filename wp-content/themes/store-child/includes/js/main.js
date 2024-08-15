@@ -69,6 +69,49 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
+  // AJAX получение специалистов по городу
+  const cityBtns = document.querySelectorAll('.js-city-btn');
+
+  cityBtns.forEach((item) => {
+    item.onclick = function() {
+
+      // удаление active у всех кнопок
+      const citiesItems = document.querySelectorAll('.cities-item');
+      for (var i = 0; i < citiesItems.length; i++) {
+        citiesItems[i].classList.remove('active');
+      }
+
+      // добавление active у текущей кнопки
+      item.classList.add('active');
+
+      // удаление пагинации
+      const pagination = document.querySelector('.specialisty-page .pagination');
+      pagination.innerHTML = '';
+
+      const specialists = document.querySelector('.specialisty-page .js-insert-specialists');
+      
+      // лоадер. селекторы от плагина load more products
+      specialists.innerHTML = '<span class="lmp_products_loading"><i class="fa fa-spinner lmp_rotate"></i></span>';    
+
+      fetch(Myscrt.ajaxurl, {
+        method: 'POST',
+        headers: {'Content-Type':'application/x-www-form-urlencoded'},
+        cache: 'no-cache',
+        body: 'action=get_specialists&cat_id=' + item.dataset.termId,
+      })
+      // вставка в specialists
+      .then((response) => response.text())
+      .then((html) => {
+        // если пришел html, то вставляю, иначе "Товаров не найдено"
+        specialists.innerHTML = (html ? html : '<div class="no-specialists-text">Специалистов не найдено</div>');
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+    }
+  });
+
+
   // Sticky top menu
   /*
   if (window.innerWidth >= 991) {

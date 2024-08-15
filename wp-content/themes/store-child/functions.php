@@ -30,7 +30,6 @@ function my_dequeue_style(){
 }
 
 
-
 // Scripts
 add_action( 'wp_enqueue_scripts', 'artabr_script' );
 
@@ -208,6 +207,7 @@ function render__catalog($id_gr) {
 }
 
 // обертка для категорий
+/*
 add_action('woocommerce_before_main_content', 'add_wrapper_to_product', 30);
 add_action('woocommerce_after_main_content', 'add_close_wrapper_to_product', 20);
 
@@ -217,6 +217,7 @@ function add_wrapper_to_product() {
 function add_close_wrapper_to_product() {
 
 }
+*/
 
 
 // откл сортировку
@@ -518,12 +519,11 @@ function wc_products_from_cat_dropdown( $atts ) {
     endif;
 
     ?>
-    <script type='text/javascript'>
+    <script>
         jQuery(function($){
             var a = '.products-dropdown', b = a+' button', c = a+' select', s = '';
             $(c).change(function(){
                 s = $(this).val();
-                console.log(s); // just for testing (to be removed)
             });
              $(b).click(function(){
                 if( s != '' ) location.href = s;
@@ -547,7 +547,7 @@ function change_relatedproducts_text($new_text, $related_text, $source)
 }
 
 
-// AJAX получить товары из подкатегории
+// AJAX получить товары из подкатегории на странице Соли Щюсслера
 add_action( 'wp_ajax_get_subcat', 'get_subcat_products' ); // хук wp_ajax
 add_action( 'wp_ajax_nopriv_get_subcat', 'get_subcat_products' ); // хук wp_ajax для незалогиненных пользователей
 
@@ -594,7 +594,50 @@ function get_subcat_products() {
 }
 
 
-// Вывод кастомного нижнего меню
+// AJAX получить специалистов по городу на странице Специалисты
+add_action( 'wp_ajax_get_specialists', 'get_specialists_from_city' ); // хук wp_ajax
+add_action( 'wp_ajax_nopriv_get_specialists', 'get_specialists_from_city' ); // хук wp_ajax для незалогиненных пользователей
+
+function get_specialists_from_city() {
+    
+    // Получение id подкатегории из запроса
+    $cat_id = ! empty( $_POST['cat_id'] ) ? esc_attr( $_POST['cat_id'] ) : false;
+    
+    // Получение подкатегории
+    $cat = get_term_by( 'id', $cat_id, 'category' );
+
+    // Если нет категории, то return false
+    if ( ! $cat ) {
+        return false;
+    }
+
+    // Запрос
+    $query = new WP_Query( array (
+        'cat' => $cat_id,
+        'post_status'    => 'publish',
+        'nopaging' => true,
+        'posts_per_page' => '-1',
+    ) );
+
+    // Вывод записей
+    if ( $query->have_posts() ) {
+
+        while ( $query->have_posts() ) {
+            $query->the_post();
+
+            // Подключение шаблона content-specialists
+            require ( get_stylesheet_directory() . '/templates/content-specialists.php' );
+        }
+
+        wp_reset_postdata();
+
+    }
+    
+    wp_die(); // выход нужен для того, чтобы в ответе не было ничего лишнего (0), только то что возвращает функция
+}
+
+
+// Вывод кастомного нижнего меню. Разделение на части
 function custom_nav_menu($start = 0, $end = NULL) {
 
   $menu_name = 'secondary'; // поставить галочку Дополнительное меню для footer_menu
@@ -626,7 +669,6 @@ function custom_nav_menu($start = 0, $end = NULL) {
   }
   
   return $menu_list;
-
 }
 
 
@@ -673,6 +715,27 @@ function woocommerce_change_rub_symbol( $valyuta_symbol, $valyuta_code ) {
     return $valyuta_symbol;
 }
 add_filter('woocommerce_currency_symbol', 'woocommerce_change_rub_symbol', 9999, 2);
+
+
+// Ограничение количества выводимых символов в тексте на странице специалисты
+function the_excerpt_max_charlength( $charlength ){
+    $excerpt = get_the_excerpt();
+    $charlength++;
+
+    if ( mb_strlen( $excerpt ) > $charlength ) {
+        $subex = mb_substr( $excerpt, 0, $charlength - 5 );
+        $exwords = explode( ' ', $subex );
+        $excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+        if ( $excut < 0 ) {
+            echo mb_substr( $subex, 0, $excut );
+        } else {
+            echo $subex;
+        }
+        echo '...';
+    } else {
+        echo $excerpt;
+    }
+}
 
 
 // Override theme default specification for product # per row
