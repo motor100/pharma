@@ -1140,6 +1140,102 @@ a {
   text-align: center;
 }
 
+/* sotrudnichestvo page */
+.sotrudnichestvo-page .description-section .text-bold {
+  font-family: 'Roboto-Medium';
+  font-size: 24px;
+}
+.sotrudnichestvo-page .description-section {
+  margin: 0 0 60px 0;
+}
+.sotrudnichestvo-page .description-section .p-last {
+  margin: 0 0 60px 0;
+}
+.sotrudnichestvo-page .description-section .sotrudnichestvo-subtitle {
+  margin: 0 0 20px 0;
+  font-family: "Roboto-CondensedSemiBold";
+  font-size: 42px;
+}
+.sotrudnichestvo-page .description-section .list {
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+.sotrudnichestvo-page .description-section .list-item {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+}
+.sotrudnichestvo-page .frames-section .frames-item {
+  height: 146px;
+  margin: 0 0 12px 0;
+  padding: 30px;
+  border: 2px solid var(--white-rock-color);
+  border-radius: 30px;
+}
+.sotrudnichestvo-page .frames-section .frames-item__title {
+  font-family: "Roboto-CondensedSemiBold";
+  font-size: 20px;
+  line-height: 1.1;
+}
+.sotrudnichestvo-page .frames-section .frames-item__text {
+  margin: 15px 0 0 0;
+  font-family: "Roboto-Light";
+}
+.sotrudnichestvo-page .partnership-section .partnership-text {
+  font-family: "Roboto-CondensedSemiBold";
+  font-size: 42px;
+}
+.sotrudnichestvo-page .partnership-section .partnership-btn {
+  height: 46px;
+  padding: 5px 0;
+  border-radius: 23px;
+  font-family: "Roboto-Medium";
+  font-size: 20px;
+  text-align: center;
+}
+
+/* kontakty page */
+.kontakty-page .contacts-section {
+  margin: 0 0 40px 0;
+}
+.kontakty-page .contacts-section .phone-wrapper {
+  margin: 0 0 40px 0;
+}
+.kontakty-page .contacts-section .contacts-section-subtitle {
+  margin: 0 0 20px 0;
+  font-family: "Roboto-Medium";
+  font-size: 32px;
+  color: var(--mine-shaft-color);
+}
+.kontakty-page .contacts-section .contacts-section__phone {
+  margin: 0 10px 0 0;
+  font-family: "Roboto-Medium";
+  font-size: 32px;
+  color: var(--voodoo-color);
+  text-decoration: underline;
+}
+.kontakty-page .contacts-section .contacts-section__text {
+  font-size: 24px;
+}
+.kontakty-page .contacts-section .contacts-section__address,
+.kontakty-page .contacts-section .contacts-section__email {
+  font-size: 24px;
+}
+.kontakty-page .contacts-section .contacts-section__email {
+  margin: 0 0 40px 0;
+}
+.kontakty-page .contacts-section .contacts-section__email .text-underline {
+  text-decoration: underline;
+}
+.kontakty-page .contacts-section .working-time-item {
+  margin: 0 0 16px 0;
+  font-size: 24px;
+}
+.kontakty-page .map-section .map {
+  height: 410px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
 
 /* pagination */
 .pagination {
