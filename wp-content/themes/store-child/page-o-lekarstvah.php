@@ -47,7 +47,9 @@
                 <a href="<?php echo the_permalink(); ?>" class="o-lekarstvah-item__link">читать</a>
               </div>
               <div class="o-lekarstvah-item__image">
-                <?php the_post_thumbnail(); ?>
+                <a href="<?php echo the_permalink(); ?>">
+                  <?php the_post_thumbnail(); ?>
+                </a>
               </div>
             </div>
           </div>
