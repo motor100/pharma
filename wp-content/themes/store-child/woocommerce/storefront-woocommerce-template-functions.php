@@ -788,6 +788,7 @@ if ( ! function_exists( 'storefront_single_product_pagination' ) ) {
 		</nav><!-- .storefront-product-pagination -->
 		<?php
 	}
+
 }
 
 if ( ! function_exists( 'storefront_sticky_single_add_to_cart' ) ) {

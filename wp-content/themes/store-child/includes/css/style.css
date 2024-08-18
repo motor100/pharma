@@ -2684,51 +2684,91 @@ ul.clear {
 }
 */
 
+/* products card ul.products */
 ul.products {
+  display: flex;
   padding-left: 0;
   margin-top: 50px;
+  flex-wrap: wrap;
 }
 ul.products li.product {
-  padding: 16px 0 12px;
+  display: flex;
+  width: 100%;
+  margin-bottom: 60px;
+  padding: 16px 12px;
+  text-align: center;
+  list-style: none;
+  flex-direction: column;
 }
 ul.products li.product:hover {
   outline: 2px solid var(--wild-willow-color);
   border-radius: 50px;
 }
 ul.products li.product img {
+  width: 100%;
   border-radius: 50px;
-  outline: 3px solid #fff;
+  border: 3px solid #fff;
   box-shadow: 0px 0px 30px 5px rgba(34, 60, 80, 0.2);
   position: relative;
 }
+/*
+ul.products li.product .price ins {
+  margin-left: 0;
+}
+ul.products li.product .price del {
+  opacity: 0.5;
+  font-weight: 400;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  font-size: 0.8em;
+}
+*/
+ul.products li.product .woocommerce-loop-product__title {
+  display: -webkit-box;
+  height: 59px;
+  padding: 0;
+  font-size: 16px;
+  color: #333333;
+  line-height: 1.2;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
 ul.products li.product .price {
   position: relative;
-  font-weight: 600;
-  color: #000;
+  display: block;
+  margin: 20px;
   font-size: 18px;
-  margin: 20px 35px;
-}
-ul.products li.product .price .amount {
-  background-color: #fff;
-  position: relative;
-  padding: 0 10px;
+  color: #000;
+  font-weight: 600;
 }
 ul.products li.product .price:before {
   content: "";
   position: absolute;
   top: 45%;
   left: 0;
+  display: block;
   width: 100%;
   height: 3px;
   background-color: #000;
 }
+ul.products li.product .price .amount {
+  background-color: #fff;
+  position: relative;
+  padding: 0 10px;
+}
 ul.products li.product .button {
-  background-color: var(--wild-willow-color);
-  border-radius: 30px;
-  text-transform: lowercase;
-  padding: 10px 50px;
   width: max-content;
   margin: 0 auto;
+  padding: 10px 50px;
+  border-radius: 30px;
+  background-color: var(--wild-willow-color);
+  text-transform: lowercase;
+  color: var(--voodoo-color);
 }
 
 
@@ -2909,16 +2949,7 @@ ul.products li.product .button {
 a:focus {
   outline-color: transparent !important;
 }
-.related > h2:first-child,
-.upsells > h2:first-child {
-  font-size: 2em;
-  margin-bottom: 1em;
-  background-color: #44324c;
-  color: #fff;
-  padding: 20px 0;
-  font-family: "Roboto-CondensedSemiBold";
-  text-transform: uppercase;
-}
+
 
 /* single product page */
 .single-product .single-product-content {
@@ -3074,6 +3105,28 @@ a:focus {
   font-size: 18px;
   line-height: 1;
 }
+/*
+.related > h2:first-child,
+.upsells > h2:first-child {
+  font-size: 2em;
+  margin-bottom: 1em;
+  background-color: #44324c;
+  color: #fff;
+  padding: 20px 0;
+  font-family: "Roboto-CondensedSemiBold";
+  text-transform: uppercase;
+}
+*/
+.single-product .related .related-products-title {
+  font-size: 2em;
+  margin-bottom: 1em;
+  background-color: #44324c;
+  color: #fff;
+  padding: 20px 0;
+  font-family: "Roboto-CondensedSemiBold";
+  text-transform: uppercase;
+  text-align: center;
+}
 
 /* https://stackoverflow.com/questions/14144426/remove-outline-from-active-jquery-ui-tab */
 .single-product .product .wc-tabs li a:focus,
@@ -3116,20 +3169,7 @@ a:focus {
   o-object-fit: contain;
 }
 
-ul.products {
-  display: flex;
-  flex-wrap: wrap;
-}
 
-ul.products li.product {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-}
-
-ul.products li.product .button {
-  margin-top: auto;
-}
 .wc-block-grid__product-onsale,
 .onsale {
   position: absolute;
@@ -3149,21 +3189,7 @@ ul.products li.product .button {
 .single-product .onsale {
   display: none;
 }
-ul.products li.product .woocommerce-loop-product__title {
-  padding-bottom: 10px;
-}
-ul.products li.product .price ins {
-  margin-left: 0;
-}
-ul.products li.product .price del {
-  opacity: 0.5;
-  font-weight: 400;
-  position: absolute;
-  top: -20px;
-  left: 0;
-  right: 0;
-  font-size: 0.8em;
-}
+
 /*  
 .single-prod-tab-bg {
 background-color: #edeadb;
@@ -3689,9 +3715,10 @@ h1.sec-title {
 
 
 
-  .storefront-full-width-content .site-main ul.products.columns-3 li.product {*/
-    /*width: 22%;
-    margin-right: 3%;*/
+/*  .storefront-full-width-content .site-main ul.products.columns-3 li.product {*/
+  ul.products.columns-3 li.product {
+    width: 22%;
+    margin-right: 3%;
   }
   /*.tax-product_cat ul.products {
     justify-content: space-between;
@@ -3702,10 +3729,12 @@ h1.sec-title {
   /*.tax-product_cat ul.products::before {
     content: none;
   }*/
+  /*
   .tax-product_cat ul.products li.product {
     padding-left: 8px;
     padding-right: 8px;
   }
+  */
 }
 
 @media only screen and (max-width : 1400px) {

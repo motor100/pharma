@@ -752,3 +752,10 @@ function the_excerpt_max_charlength( $charlength ){
 
 // Второе событие отвечает за отображение товара
 // add_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
+
+
+/*
+* Disable pagination
+* Priority=11 to go after the Storefront's hook.
+*/
+add_filter( 'theme_mod_storefront_product_pagination', '__return_false', 11 );

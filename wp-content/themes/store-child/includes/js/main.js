@@ -252,6 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // Замена селекторов при ширине более 1400px
+  /*
   const ulProducts = document.querySelector('.single__prod ul.products');
 
   if (ulProducts) {
@@ -259,6 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /**
      * Функция замены селекторов
     */
+  /*
     function replaceColumnClass() {
       const liProducts = ulProducts.querySelectorAll('li.product');
 
@@ -296,5 +298,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener('resize', replaceColumnClass);
   }
+  */
 
 });
