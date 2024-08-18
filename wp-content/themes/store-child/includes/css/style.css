@@ -1327,6 +1327,9 @@ a {
   background-color: #EEEEEE;
   font-size: 20px;
 }
+.dostavka-i-oplata-page .dio-section {
+  margin: 0 0 80px 0;
+}
 .dostavka-i-oplata-page .dostavka-i-oplata-list {
   margin: 0;
   padding: 0 0 0 30px;
@@ -1349,7 +1352,9 @@ a {
 .dostavka-i-oplata-page .price-section .price-section-frame {
   margin: 0 0 20px 0;
 }
-
+.dostavka-i-oplata-page .official-info .official-info-title {
+  text-transform: uppercase;
+}
 
 
 

@@ -42,7 +42,7 @@
       <div class="working-time-item"><strong>Сб, Вс:</strong> выходной</div>
     </div>
   </div>
-  <div class="map-section">
+  <div id="map-section" class="map-section">
     <div class="container">
       <div class="map">
         <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A031a0b6256d1d2ec52e827b39594e15e4572c27bb05415c6a40851ea3d4d4027&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
