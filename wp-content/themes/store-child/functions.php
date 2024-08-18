@@ -743,3 +743,12 @@ function the_excerpt_max_charlength( $charlength ){
 //    return 4; // 5 products per row
 //  }
 // add_filter('loop_shop_columns', 'loop_columns', 999);
+
+// add_action( 'woocommerce_before_single_product_summary', 'wpbl_favourite_hook', 15);
+// function wpbl_favourite_hook(){
+//     echo '<span class="wpbl_favourite">555</span>';
+// } 
+
+
+// Второе событие отвечает за отображение товара
+// add_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
