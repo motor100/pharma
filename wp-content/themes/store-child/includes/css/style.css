@@ -79,8 +79,9 @@ Colors
 #EDE8D9 White Rock
 #E06752 Terracota
 #777777 Builder
-
+#7C8B8D Oslo Grey
 */
+
 :root {
   --voodoo-color: #43314B;
   --nero-color: #FFFFFF;
@@ -92,6 +93,7 @@ Colors
   --white-rock-color: #EDE8D9;
   --terracota-color: #E06752;
   --builder-color: #777777;
+  --oslo-grey-color: #7C8B8D;
 }
 
 body {
@@ -346,7 +348,7 @@ a {
   background-color: #f0f0f0;
 }
 .header-desktop .header-nav .menu-header_menu-container {
-  padding: 27px 0;
+  padding: 27px 0 40px 0;
 }
 .header-desktop .header-nav .menu {
   display: flex;
@@ -407,7 +409,7 @@ a {
 /* main section */
 .main-section {
   height: 500px;
-  margin: 53px 0 148px 0;
+  margin: 40px 0 148px 0;
   border-radius: 30px;
   background-color: var(--wild-willow-color);
 }
@@ -620,8 +622,9 @@ a {
 
 /* offer of the week section */
 .offer-of-week-section .section-title {
+  padding: 36px 0;
   background-color: var(--wild-willow-color);
-  padding: 37px 0;
+  color: var(--voodoo-color);
 }
 .offer-of-week-section .offers {
   padding: 46px 0 81px 0;
@@ -1712,14 +1715,59 @@ a {
 .woocommerce-Tabs-panel--description {
   line-height: 2;
 }
+
+
+
+
+/* breadcrumb */
 .storefront-breadcrumb {
   margin-bottom: 0;
 }
-
 .storefront-breadcrumb .col-full {
   margin-left: 0;
   padding: 0;
 }
+.storefront-breadcrumb .woocommerce-breadcrumb a {
+  font-family: 'Roboto-light';
+  color: var(--oslo-grey-color);
+  text-decoration: underline;
+}
+.storefront-breadcrumb .woocommerce-breadcrumb a:first-of-type::before {
+  content: '';
+  display: inline-block;
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+  background: url(../images/breadcrumb-home.png) center no-repeat;
+  vertical-align: bottom;
+}
+.storefront-breadcrumb .woocommerce-breadcrumb .breadcrumb-separator {
+  position: relative;
+  display: inline-block;
+  padding: 0 8px;
+  width: 14px;
+  height: 12px;
+  overflow: hidden;
+}
+.storefront-breadcrumb .woocommerce-breadcrumb .breadcrumb-separator::after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  vertical-align: baseline;
+  content: '';
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  background: url(../images/breadcrumb-arrow-right.jpg) center no-repeat;
+  color: var(--oslo-grey-color);
+}
+
+
+
+
 /*.site-content p:not(:last-child) {
   margin-bottom: 20px;
 }*/
@@ -1797,6 +1845,7 @@ a {
 }
 
 
+/* have contraindications полоса имеются противопоказания */
 .have-contraindications {
   position: fixed;
   left: 0;
@@ -1807,7 +1856,6 @@ a {
   border: solid 1px rgba(0, 0, 0, 0.4);
   background-color: #fff;
   z-index: 100;
-  
 }
 .have-contraindications .have-contraindications__text {
   font-size: 18px;
@@ -1815,16 +1863,6 @@ a {
   text-align: center;
   text-transform: uppercase;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2706,6 +2744,7 @@ ul.products li.product:hover {
 }
 ul.products li.product img {
   width: 100%;
+  height: auto;
   border-radius: 50px;
   border: 3px solid #fff;
   box-shadow: 0px 0px 30px 5px rgba(34, 60, 80, 0.2);
@@ -2781,10 +2820,12 @@ ul.products li.product .button {
   display: inline;
 }
 */
-.h_green_line {
-  background-color: var(--wild-willow-color);
-  height: 15px;
-  margin-top: 20px;
+
+/* grey line серая полоса */
+.grey-line .h_grey_line {
+  background-color: #EEEEEE;
+  height: 1px;
+  margin: 20px 0 40px 0;
 }
 
 /*
@@ -2829,7 +2870,8 @@ ul.products li.product .button {
   padding: 0 0 50px 0;
 }
 .green-bg-section .section-title {
-  padding: 50px 0;
+  padding: 45px 0;
+  color: var(--voodoo-color);
 }
 
 
@@ -2877,7 +2919,7 @@ ul.products li.product .button {
 
 /* text section */
 .text-section {
-  padding: 80px 0 0 0;
+  padding: 70px 0 0 0;
   color: var(--voodoo-color);
 }
 .text-section .text-section-title {
@@ -2942,12 +2984,13 @@ ul.products li.product .button {
 }
 
 
-
-
-
 :focus,
 a:focus {
   outline-color: transparent !important;
+}
+.ui-tabs-anchor:active,
+.ui-tabs-anchor:focus {
+  outline: none;
 }
 
 
@@ -3134,13 +3177,6 @@ a:focus {
   outline: none !important;
 }
 
-.ui-tabs-anchor:active,
-.ui-tabs-anchor:focus {
-  outline: none;
-}
-
-
-
 .quantity .qty {
   width: 4.235801032em;
   text-align: center;
@@ -3221,6 +3257,15 @@ background-color: #edeadb;
 }
 .single-product .woocommerce-product-details__short-description {
   margin-top: 30px;
+}
+
+
+/* archive product страница категории */
+.archive-product .archive-product-content {
+  padding: 40px 0 0 0;
+}
+.archive-product .category-title {
+  font-size: 30px;
 }
 
 .woocommerce-cart .woocommerce {
@@ -4049,7 +4094,7 @@ h1.sec-title {
     font-size: 12px;
   }
 
-
+  /* breadcrumb */
   .storefront-breadcrumb {
     margin-bottom: 5px;
   }

@@ -28,22 +28,28 @@ get_header( 'shop' );
  */
 do_action( 'woocommerce_before_main_content' ); ?>
 
-<div class="single__prod">
+<div class="archive-product single__prod">
   <div class="catalog inside">
-    <div class="title">Каталог</div>
-    <div class="curved violet v2">
+    <div class="catalog-section-title">Каталог</div>
+    <div class="curved violet violet-white v2">
       <div class="one"></div>
       <div class="two"></div>
       <div class="three"></div>
     </div>
-    <div class="catalog_inside title">
-      <?php echo woocommerce_page_title();?>
-    </div>
-    <div class="catalog_inside desc">
-      <div class="container">
-        <?php do_action( 'woocommerce_archive_description' );?>
+
+    <div class="archive-product-content">
+      <div class="catalog_inside">
+        <div class="container">
+          <div class="category-title"><?php echo woocommerce_page_title(); ?></div>        
+        </div>
+      </div>
+      <div class="catalog_inside desc">
+        <div class="container">
+          <?php do_action( 'woocommerce_archive_description' );?>
+        </div>
       </div>
     </div>
+
   </div>
 
   <div class="container">

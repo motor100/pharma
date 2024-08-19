@@ -11,14 +11,7 @@
 <?php get_header(); ?>
   
 <div class="sotrudnichestvo-page custom-page">
-  <div class="container">
-    <div class="storefront-breadcrumb">
-      <nav class="woocommerce-breadcrumb">
-        <a href="/">Главная</a>
-        <span class="breadcrumb-separator">></span>
-      </nav>
-    </div>
-  </div>
+
   <div class="container">
     <div class="page-title">Сотрудничество</div>
   </div>

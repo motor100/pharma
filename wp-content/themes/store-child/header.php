@@ -137,18 +137,25 @@
     <div id="content" class="site-content" tabindex="-1">
 
       <?php if (!is_front_page()) { ?>
-        <div class="h_green_line"></div>
+
+        <div class="breadcrumbs-wrapper">
+          <div class="container">
+            <?php
+            /**
+             * Functions hooked in to storefront_before_content
+             *
+             * @hooked storefront_header_widget_region - 10
+             * @hooked woocommerce_breadcrumb - 10
+             */
+            do_action('storefront_before_content');
+            ?>
+          </div>
+        </div>
+        <div class="grey-line">
+          <div class="container">
+            <div class="h_grey_line"></div>
+          </div>
+        </div>
       <?php } ?>
-      <!-- <div class="container"> -->
-        <?php
-        /**
-         * Functions hooked in to storefront_before_content
-         *
-         * @hooked storefront_header_widget_region - 10
-         * @hooked woocommerce_breadcrumb - 10
-         */
-        // do_action('storefront_before_content');
-        ?>
-      <!-- </div> -->
 
       <?php // do_action('storefront_content_top'); ?>

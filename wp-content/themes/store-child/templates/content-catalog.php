@@ -3,21 +3,19 @@
 
   <section class="text-page">
     <div class="container">
-      <div class="row">
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-          <?php
-          /**
-           * Functions hooked in to storefront_page add_action
-           *
-           * @hooked storefront_page_header          - 10
-           * @hooked storefront_page_content         - 20
-           */
-          do_action( 'storefront_page' );
-          
-          ?>
+      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <?php
+        /**
+         * Functions hooked in to storefront_page add_action
+         *
+         * @hooked storefront_page_header          - 10
+         * @hooked storefront_page_content         - 20
+         */
+        do_action( 'storefront_page' );
+        
+        ?>
 
-        </article> 
-      </div>
+      </article>
     </div>
   </section>
 
