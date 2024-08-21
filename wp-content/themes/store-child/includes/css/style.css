@@ -1362,7 +1362,6 @@ a {
   text-transform: uppercase;
 }
 
-
 /* partnery page */
 .partnery-page .partners-section .partner-item {
   margin: 0 0 40px 0;
@@ -1391,6 +1390,56 @@ a {
   font-size: 24px;
   color: var(--mine-shaft-color);
   text-decoration: underline;
+}
+
+/* razreshitelnaya dokumentaciya page */
+.razreshitelnaya-dokumentaciya-page .text-medium {
+  margin: 0 0 20px 0;
+  font-family: 'roboto-medium';
+  font-size: 24px;
+  color: var(--mine-shaft-color);
+  line-height: 1.3;
+}
+.razreshitelnaya-dokumentaciya-page .rd-section {
+  margin: 0 0 40px 0;
+}
+.razreshitelnaya-dokumentaciya-page .razreshitelnaya-dokumentaciya-subtitle-big {
+  margin: 0 0 20px 0;
+  font-family: 'Roboto-CondensedBold';
+  font-size: 42px;
+  color: var(--voodoo-color);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.razreshitelnaya-dokumentaciya-page .razreshitelnaya-dokumentaciya-subtitle-small {
+  margin: 0 0 20px 0;
+  font-family: 'roboto-medium';
+  font-size: 32px;
+  color: var(--mine-shaft-color);
+  line-height: 1.3;
+}
+.razreshitelnaya-dokumentaciya-page .official-info-section .company-info {
+  font-size: 24px;
+  line-height: 1.3;
+}
+.razreshitelnaya-dokumentaciya-page .services-section .list {
+  padding: 0 0 0 30px;
+}
+.razreshitelnaya-dokumentaciya-page .services-section .list-item {
+  margin: 0 0 20px 0;
+  font-size: 24px;
+}
+.razreshitelnaya-dokumentaciya-page .documents-section .download-btn {
+  display: block;
+  width: 418px;
+  height: 66px;
+  padding: 18px 0;
+  border-radius: 33px;
+  background-color: var(--wild-willow-color);
+  font-family: 'roboto-medium';
+  font-size: 20px;
+  color: var(--mine-shaft-color);
+  text-align: center;
 }
 
 

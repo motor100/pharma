@@ -30,17 +30,31 @@ function my_dequeue_style(){
 }
 
 
+// Добавление версии в css и js
+/*
+* $temp_debug = true добавляется версия на основе даты и времени
+* $temp_debug = false добавляется версия wp
+*/
+
+$temp_debug = true;
+$ver = '';
+if ($temp_debug) {
+  $ver = date('dis');
+}
+
+
 // Scripts
 add_action( 'wp_enqueue_scripts', 'artabr_script' );
 
 function artabr_script() {
+    global $ver;
     // wp_enqueue_script( 'jquery-ui', get_stylesheet_directory_uri() . '/includes/js/jquery-ui.min.js' );
 	wp_enqueue_script( 'fancy', get_stylesheet_directory_uri() . '/includes/js/fancy.js' );
 	// wp_enqueue_script( 'isotope', get_stylesheet_directory_uri() . '/includes/js/isotope.js' );
     wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/includes/js/app.min.js' );
 	// wp_enqueue_script( 'iso', get_stylesheet_directory_uri() . '/includes/js/iso.js' );
     wp_enqueue_script( 'swiper', get_stylesheet_directory_uri() . '/includes/js/swiper-bundle.min.js' );
-    wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/includes/js/main.js');
+    wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/includes/js/main.js','',$ver);
 
     // включение файла admin-ajax.php для front
     wp_localize_script('main', 'Myscrt', array(
@@ -52,10 +66,11 @@ function artabr_script() {
 add_action('wp_print_styles', 'add_styles');
 
 function add_styles() {
+    global $ver;
     wp_enqueue_style( 'bootstrap-grid', get_stylesheet_directory_uri() . '/includes/css/bootstrap-grid.min.css' );
     wp_enqueue_style( 'swiper', get_stylesheet_directory_uri() . '/includes/css/swiper-bundle.min.css' );
     wp_enqueue_style( 'fancybox', get_stylesheet_directory_uri() . '/includes/css/fancybox.min.css' );
-    wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/includes/css/style.css' );
+    wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/includes/css/style.css','',$ver );
 }
 
 
