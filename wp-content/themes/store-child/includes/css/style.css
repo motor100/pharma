@@ -1047,8 +1047,8 @@ a {
   margin: 90px 0 0 0;
 }
 
-/* o lekarstvah page */
-.o-lekarstvah-page .o-lekarstvah-item {
+/* bo page страницы блог и о лекарствах */
+.bo-page .bo-item {
   display: flex;
   height: 172px;
   margin: 0 0 40px 0;
@@ -1056,26 +1056,25 @@ a {
   border-radius: 30px;
   overflow: hidden;
 }
-.o-lekarstvah-page .o-lekarstvah-item .o-lekarstvah-item__content {
+.bo-page .bo-item .bo-item__content {
   width: 40%;
   padding: 30px 20px;
   background-color: var(--voodoo-color);
   color: var(--nero-color);
 }
-.o-lekarstvah-page .o-lekarstvah-item .o-lekarstvah-item__title {
+.bo-page .bo-item .bo-item__title {
   margin: 0 0 40px 0;
   font-family: "Roboto-Medium";
   line-height: 1.3;
 }
-.o-lekarstvah-page .o-lekarstvah-item .o-lekarstvah-item__link {
+.bo-page .bo-item .bo-item__link {
   color: var(--nero-color);
   text-decoration: underline;
 }
-
-.o-lekarstvah-page .o-lekarstvah-item .o-lekarstvah-item__image {
+.bo-page .bo-item .bo-item__image {
   width: 60%;
 }
-.o-lekarstvah-page .o-lekarstvah-item .o-lekarstvah-item__image img {
+.bo-page .bo-item .bo-item__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1959,6 +1958,7 @@ a {
   color: #184e66;
 }
 
+/*
 .blog .catalog__item {
   display: flex;
 }
@@ -1991,21 +1991,23 @@ a {
   text-align: left;
   padding-left: 30px;
 }
+*/
 
-.text-page .blog h2 {
+/*.text-page .blog h2 {
   margin: 20px 0 10px 0;
-}
+}*/
 
-.blog .catalog__item .item__info {
+/*.blog .catalog__item .item__info {
   width: 200px;
   padding: 0;
   margin: 15px 0 15px;
-}
-.text-page .blog h2 a {
+}*/
+/*.text-page .blog h2 a {
   text-decoration: none;
   color: #222;
-}
+}*/
 
+/*
 .blog .tax-wrapper {
   margin-top: 0px;
 }
@@ -2126,7 +2128,6 @@ a {
 .text-page .entry-content ul li::before {
   content: "";
   position: absolute;
-  /*background-color: #D1DFD8;*/
   display: inline-block;
   width: 14px;
   height: 14px;
@@ -2135,7 +2136,6 @@ a {
 }
 
 .text-page p {
-  /*font-weight: 300;*/
   font-size: 18px;
   line-height: 30px;
   color: #222222;
@@ -2202,6 +2202,7 @@ a {
 .text-page .entry-content .wp-block-preformatted {
   background-color: #f2f2f2;
 }
+*/
 
 .shipping-calculator-form {
   display: flex;
@@ -3612,9 +3613,11 @@ h1.sec-title {
 }
 
 /* Из плагина Simple Custom CSS and JS */
+/*
 .text-page .entry-content ul li::before{
   display:none;
 }
+*/
 
 /* Page 404 */
 .page-404 {
@@ -4136,6 +4139,7 @@ h1.sec-title {
     margin-top: 0;
   }
 
+  /*
   .blog .catalog__item {
     display: block;
     padding: 0 30px 0 0;
@@ -4153,6 +4157,7 @@ h1.sec-title {
   .blog .catalog__item .item__info {
     width: auto;
   }
+  */
 
   .burger-menu-wrapper {
     display: block;

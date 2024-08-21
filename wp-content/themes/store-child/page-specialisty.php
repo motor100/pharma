@@ -29,6 +29,7 @@
       </div>
     </div>
   </div>
+
   <div class="specialists">
     <div class="container">
       <div class="row js-insert-specialists">
@@ -67,17 +68,23 @@
 
       </div>
     </div>
-  <div class="pagination">
-    <?php 
-    echo wp_kses_post(
-      paginate_links(
-        [
-          'total'   => $query->max_num_pages, // количество берем из дефолтной опции запроса
-          'current' => $current, // текущая страница
-        ]
-      )
-    );
-    ?>
+  </div>
+
+  <div class="pagination-section">
+    <div class="container">
+      <div class="pagination">
+        <?php 
+        echo wp_kses_post(
+          paginate_links(
+            [
+              'total'   => $query->max_num_pages, // количество берем из дефолтной опции запроса
+              'current' => $current, // текущая страница
+            ]
+          )
+        );
+        ?>
+      </div>
+    </div>
   </div>
 </div>
 

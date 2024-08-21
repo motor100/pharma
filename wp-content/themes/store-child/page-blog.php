@@ -1,6 +1,6 @@
 <?php
 /**
- * O lekarstvah page
+ * Blog page
  *
  * @package WordPress
  * @subpackage Store-Child Theme
@@ -10,13 +10,13 @@
 
 <?php get_header(); ?>
   
-<div class="o-lekarstvah-page bo-page custom-page">
+<div class="blog-page bo-page custom-page">
 
   <div class="container">
-    <div class="page-title">О лекарствах</div>
+    <div class="page-title">Блог</div>
   </div>
 
-  <div class="o-lekarstvah-content bo-content">
+  <div class="blog-content bo-content">
     <div class="container">
       <div class="row">
         
@@ -24,7 +24,7 @@
       // получаем номер страницы пагинации
       $current = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
       $args = array(
-        'cat' => 102, // о лекарствах
+        'cat' => 105, // блог
         'posts_per_page' => 9,
         'nopaging' => false,
         'paged' => $current,
