@@ -439,7 +439,7 @@ function my_quantity_plus_minus() {
  
    if ( ! is_product() && ! is_cart() ) return;
    ?>
-      <script type="text/javascript">
+      <script>
  
       jQuery( function( $ ) {   
  
@@ -774,3 +774,50 @@ function the_excerpt_max_charlength( $charlength ){
 * Priority=11 to go after the Storefront's hook.
 */
 add_filter( 'theme_mod_storefront_product_pagination', '__return_false', 11 );
+
+
+// Регистрация нового типа поста home_page_slider для слайдера на главной странице
+add_action( 'init', 'slider_register_cpt' );
+
+function slider_register_cpt() {
+    $args = array(
+        'labels' => array(
+            'menu_name' => 'Слайдер'
+        ),
+        'public' => true,
+        'menu_icon' => 'dashicons-airplane',
+        'publicly_queryable' => false,
+    );
+    register_post_type( 'home_page_slider', $args );
+}
+
+
+// Добавление галереи для типа поста home_page_slider
+add_post_type_support( 'home_page_slider', 'thumbnail' );
+
+
+// Добавление кастомных полей
+add_filter( 'rwmb_meta_boxes', 'register_meta_boxes' );
+
+function register_meta_boxes( $meta_boxes ) {
+    $meta_boxes = [
+        array(
+          'id'       => 'file_pdf',
+          'title'    => 'Документы PDF',
+          'post_type' => 'home_page_slider',
+          'context'  => 'normal',
+          'priority' => 'high',
+          'fields' => array(
+            array(
+              'name'  => 'pdf',
+              'id'    => 'file_pdf',
+              'type'  => 'file_advanced',
+              'max_file_uploads' => 1,
+              'mime_type' => 'application/pdf',
+            )
+          )
+        )
+    ];
+
+  return $meta_boxes;
+}

@@ -12,28 +12,25 @@
 
 <div class="single-page custom-page">
 
-  <?php if( in_category( [393, 392, 391, 186, 187, 188, 190, 128, 122, 124, 123, 125, 126] ) ) { // специалисты ?>
     <div class="single-section">
-
       <div class="container">
         <div class="page-title"><?php the_title(); ?></div>
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-md-5">
+          <div class="col-md-5 mx-auto">
             <div class="single-image">
               <?php the_post_thumbnail(''); ?>
             </div>
           </div>
-          <div class="col-md-7">
-            <div class="single-content">
-              <?php the_content(); ?>
-            </div>
-          </div>
+        </div>
+        <div class="single-content">
+          <?php the_content(); ?>
         </div>
       </div>
     </div>
     
+    <?php if( in_category( [393, 392, 391, 186, 187, 188, 190, 128, 122, 124, 123, 125, 126] ) ) { // специалисты ?>
     <div class="lead-form-section">
       <div class="container">
         <div class="lead-form-section-title">ЗАПИСАТЬСЯ НА КОНСУЛЬТАЦИЮ</div> 
@@ -66,23 +63,6 @@
             <span>Нажимая кнопку вы соглашаетесь с <a href="/politika-v-otnoshenii-obrabotki-personalnyh-dannyh">политикой обработки данных</a></span>
           </div>
         </form>
-      </div>
-    </div>
-
-  <?php } else { // blog ?>
-
-    <div class="single-section">
-
-      <div class="container">
-        <div class="page-title"><?php the_title(); ?></div>
-      </div>
-      <div class="container">
-        <div class="single-image">
-          <?php the_post_thumbnail(''); ?>
-        </div>
-        <div class="single-content">
-          <?php the_content(); ?>
-        </div>
       </div>
     </div>
 

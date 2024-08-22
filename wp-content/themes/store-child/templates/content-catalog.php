@@ -220,7 +220,7 @@
     </div>
 
     <div class="learning-materials-section green-bg-section">
-      <div class="curved transparent">
+      <div class="curved green">
         <div class="one"></div>
         <div class="two"></div>
         <div class="three"></div>
@@ -261,6 +261,12 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="left-bg">
+        <img src="/wp-content/themes/store-child/includes/images/left-bg.png" alt="">
+      </div>
+      <div class="right-bg">
+        <img src="/wp-content/themes/store-child/includes/images/right-bg.png" alt="">
       </div>
     </div>
 

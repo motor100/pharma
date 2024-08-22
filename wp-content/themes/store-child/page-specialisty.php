@@ -10,7 +10,7 @@
 
 <?php get_header(); ?>
   
-<div class="specialisty-page custom-page">
+<div class="specialisty-page sw-page custom-page">
 
   <div class="container">
     <div class="page-title">Специалисты</div>

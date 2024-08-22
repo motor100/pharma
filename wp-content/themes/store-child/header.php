@@ -89,6 +89,7 @@
                     <span class="text">Сумма: </span>
                     <span class="counter"><?php echo WC()->cart->get_cart_contents_total(); ?></span>
                   </div>
+                  <a href="/cart" class="full-link"></a>
                 </div>
               </div>
             </div>

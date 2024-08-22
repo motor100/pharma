@@ -300,4 +300,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   */
 
+  // Фильтр городов на странице Где купить
+  const wherebuyPage = document.querySelector('.wherebuy-page');
+
+  if (wherebuyPage) {
+    const cityBtns = document.querySelectorAll('.js-city-btn');
+    const addressesItems = document.querySelectorAll('.col-md-3');
+
+    cityBtns.forEach((item) => {
+      item.onclick = function() {
+        for (var i = 0; i < addressesItems.length; i++) {
+          addressesItems[i].classList.remove('hidden');
+          if (item.dataset.name !== addressesItems[i].dataset.name) {
+            addressesItems[i].classList.add('hidden');
+          }
+        }
+      }
+    });
+  }
+
 });
