@@ -35,32 +35,52 @@
       <div class="container">
         <div class="lead-form-section-title">ЗАПИСАТЬСЯ НА КОНСУЛЬТАЦИЮ</div> 
         <form class="form">
-          <div class="form-group">
-            <input type="text" name="name" id="lfs-name" class="input-field" required>
-            <label for="lfs-name" class="label">имя<span class="red-color">*</span></label>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" name="name" id="lfs-name" class="input-field" required>
+                    <label for="lfs-name" class="label">Имя<span class="terracota-color">*</span></label>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="telegram" id="lfs-telegram" class="input-field js-input-telegram-mask" placeholder="формат @name">
+                    <label for="lfs-telegram" class="label">Телеграм</label>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="phone" id="lfs-phone" class="input-field js-input-phone-mask" placeholder="+7 (000) 000 00 00" required>
+                    <label for="lfs-phone" class="label">Телефон<span class="terracota-color">*</span></label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" name="surname" id="lfs-surname" class="input-field" required>
+                    <label for="lfs-surname" class="label">Фамилия<span class="terracota-color">*</span></label>
+                  </div>
+                  
+                  <div class="form-group">
+                    <input type="email" name="email" id="lfs-email" class="input-field" required>
+                    <label for="lfs-email" class="label">Эл. почта<span class="terracota-color">*</span></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <textarea name="message" id="lfs-message" class="input-field textarea"></textarea>
+                <label for="lfs-telegram" class="label">Комментарий</label>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <input type="text" name="surname" id="lfs-surname" class="input-field">
-            <label for="lfs-surname" class="label">фамилия</label>
-          </div>
-          <div class="form-group">
-            <input type="text" name="phone" id="lfs-phone" class="input-field" placeholder="+7 (000) 000 00 00">
-            <label for="lfs-phone" class="label">телефон<span class="red-color">*</span></label>
-          </div>
-          <div class="form-group">
-            <input type="email" name="email" id="lfs-email" class="input-field">
-            <label for="lfs-email" class="label">эл. почта<span class="red-color">*</span></label>
-          </div>
-          <div class="form-group">
-            <input type="text" name="telegram" id="lfs-telegram" class="input-field" placeholder="формат @name">
-            <label for="lfs-telegram" class="label">телеграм<span class="red-color">*</span></label>
-          </div>
-
-          <button type="button" id="lfs-submit" class="submit-btn">Отправить</button>
-          <div class="agreement-text">
-            <input type="checkbox" name="checkbox" class="custom-checkbox" checked onchange="document.getElementById('lfs-submit').disabled = !this.checked;">
-            <label for="lfs-checkbox-form" class="custom-checkbox-label"></label>
-            <span>Нажимая кнопку вы соглашаетесь с <a href="/politika-v-otnoshenii-obrabotki-personalnyh-dannyh">политикой обработки данных</a></span>
+          <div class="row">
+            <div class="col-md-6">
+              <button type="button" id="lfs-submit" class="submit-btn">Отправить</button>
+              <div class="agreement-text">
+                <input type="checkbox" name="checkbox" class="custom-checkbox" checked onchange="document.getElementById('lfs-submit').disabled = !this.checked;">
+                <label for="lfs-checkbox-form" class="custom-checkbox-label"></label>
+                <span>Нажимая кнопку вы соглашаетесь с <a href="/politika-v-otnoshenii-obrabotki-personalnyh-dannyh">политикой обработки данных</a></span>
+              </div>
+            </div>
           </div>
         </form>
       </div>

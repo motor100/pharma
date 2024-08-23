@@ -300,6 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   */
 
+
   // Фильтр городов на странице Где купить
   const wherebuyPage = document.querySelector('.wherebuy-page');
 
@@ -318,5 +319,21 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+
+  // Input phone mask
+  function inputPhoneMask() {
+    const elementPhone = document.querySelectorAll('.js-input-phone-mask');
+
+    const maskOptionsPhone = {
+      mask: '+{7} (000) 000 00 00'
+    };
+
+    elementPhone.forEach((item) => {
+      const mask = IMask(item, maskOptionsPhone);
+    });
+  }
+
+  inputPhoneMask();
 
 });
