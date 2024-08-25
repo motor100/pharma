@@ -133,10 +133,10 @@
             <div class="children__item">
               <div class="children__image">
                 <a href="<?php echo get_permalink( $loop->post->ID ) ?>">
-                  <img class="ww100" src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="">
+                  <img class="img" src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="">
                 </a>
               </div>
-              <a class="subcat__link" href="<?php echo get_permalink( $loop->post->ID ) ?>"><?php the_title(); ?></a>
+              <a class="children__title" href="<?php echo get_permalink( $loop->post->ID ) ?>"><?php the_title(); ?></a>
             </div>
             <?php endwhile; ?>
             <?php wp_reset_query(); ?>
@@ -164,10 +164,10 @@
             <div class="children__item">
               <div class="children__image">
                 <a href="<?php echo get_permalink( $loop->post->ID ) ?>">
-                  <img class="ww100" src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="">
+                  <img class="img" src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="">
                 </a>
               </div>
-              <a class="subcat__link" href="<?php echo get_permalink( $loop->post->ID ) ?>"><?php the_title(); ?></a>
+              <a class="children__title" href="<?php echo get_permalink( $loop->post->ID ) ?>"><?php the_title(); ?></a>
             </div>
             <?php endwhile; ?>
             <?php wp_reset_query(); ?>
@@ -255,7 +255,7 @@
               <div class="col-md-6">
                 <div class="offer-item">
                   <div class="offer-image">
-                    <a href="<?php echo get_permalink( $loop->post->ID ) ?>">
+                    <a href="<?php echo get_permalink( $loop->post->ID ) ?>" class="offer-link">
                       <img src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" alt="<?php the_title(); ?>">
                     </a>
                   </div>

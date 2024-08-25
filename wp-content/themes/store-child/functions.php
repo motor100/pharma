@@ -175,7 +175,7 @@ function render_catalog() {
                         <img src="<?php echo $image ?>" alt="catImage">
                     </a>
                 </div>
-                <a class="subcat__link" href="<?php echo get_term_link($sub_category); ?>"><?php echo $sub_category->name; ?></a>
+                <a class="children__title" href="<?php echo get_term_link($sub_category); ?>"><?php echo $sub_category->name; ?></a>
             </div>
 
         <?php }
@@ -212,7 +212,7 @@ function render__catalog($id_gr) {
 			$css_w = 'w110px';
 			}
 			else {
-			$css_w = 'ww100';
+			$css_w = 'img';
 		 }
 		 $image = wp_get_attachment_url( $thumbnail_id ); 
           ?>
@@ -222,7 +222,7 @@ function render__catalog($id_gr) {
                         <img class="<?php echo $css_w ;?>" src="<?php echo $image ?>" alt="<?php echo $cat->name; ?>">
                     </a>
                 </div>
-                <a class="subcat__link" href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a>
+                <a class="children__title" href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a>
             </div>
     <?php
   }
