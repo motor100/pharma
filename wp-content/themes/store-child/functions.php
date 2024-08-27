@@ -50,9 +50,14 @@ function artabr_script() {
     global $ver;
     // wp_enqueue_script( 'jquery-ui', get_stylesheet_directory_uri() . '/includes/js/jquery-ui.min.js' );
 	wp_enqueue_script( 'fancy', get_stylesheet_directory_uri() . '/includes/js/fancy.js' );
-	// wp_enqueue_script( 'isotope', get_stylesheet_directory_uri() . '/includes/js/isotope.js' );
     wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/includes/js/app.min.js' );
-	// wp_enqueue_script( 'iso', get_stylesheet_directory_uri() . '/includes/js/iso.js' );
+
+    $cat = get_queried_object();
+    if ( $cat->term_id == 18 ) {
+        wp_enqueue_script( 'isotope', get_stylesheet_directory_uri() . '/includes/js/isotope.js' );
+    	wp_enqueue_script( 'iso', get_stylesheet_directory_uri() . '/includes/js/iso.js' );
+    }
+
     if ( is_front_page() ) {
         wp_enqueue_script( 'swiper', get_stylesheet_directory_uri() . '/includes/js/swiper-bundle.min.js' );
     }
@@ -799,6 +804,32 @@ function slider_register_cpt() {
 }
 
 
+// Добавление post_type post в результаты поска 
+add_filter( 'dgwt/wcas/search_query/args', function ( $args ) {
+    if ( current_user_can( 'manage_options' ) ) {
+        $args['post_status'] = [ 'publish' ];
+        $args['post_type'] = [ 'product', 'post' ];
+    }
+   
+   return $args;
+} );
+
+
+
+/**
+ * This function modifies the main WordPress query to include an array of 
+ * post types instead of the default 'post' post type.
+ *
+ * @param object $query The main WordPress query.
+ */
+function tg_include_custom_post_types_in_search_results( $query ) {
+    if ( $query->is_main_query() && $query->is_search() && ! is_admin() ) {
+        $query->set( 'post_type', array( 'post', 'products' ) );
+    }
+}
+add_action( 'pre_get_posts', 'tg_include_custom_post_types_in_search_results' );
+
+
 // Добавление галереи для типа поста home_page_slider
 add_post_type_support( 'home_page_slider', 'thumbnail' );
 
@@ -808,6 +839,7 @@ add_filter( 'rwmb_meta_boxes', 'register_meta_boxes' );
 
 function register_meta_boxes( $meta_boxes ) {
     $meta_boxes = [
+        /*
         array(
           'id'       => 'file_pdf',
           'title'    => 'Документы PDF',
@@ -823,7 +855,23 @@ function register_meta_boxes( $meta_boxes ) {
               'mime_type' => 'application/pdf',
             )
           )
-        )
+        ),
+        */
+        array(
+          'id'       => 'email',
+          'title'    => 'Email специалиста',
+          'post_type' => 'post',
+          'context'  => 'normal',
+          'priority' => 'high',
+          'fields' => array(
+            array(
+              'name'  => 'Email',
+              'id'    => 'expert_email',
+              'type'  => 'email',
+            )
+          )
+        ),
+
     ];
 
   return $meta_boxes;

@@ -336,4 +336,76 @@ document.addEventListener("DOMContentLoaded", () => {
 
   inputPhoneMask();
 
+
+  // AJAX отправка формы Записаться на консультацию на странице специалиста
+  const lfsForm = document.getElementById('lfs-form');
+  const lfsSubmitBtn = document.getElementById('lfs-submit-btn');
+
+  function ajaxCallback(form) {
+
+    let arr = [];
+
+    const inputName = form.querySelector('.js-required-name');
+    if (inputName.value.length < 3 || inputName.value.length > 20) {
+      inputName.classList.add('required');
+      arr.push(false);
+    } else {
+      inputName.classList.remove('required');
+    }
+
+    const inputSurname = form.querySelector('.js-required-surname');
+    if (inputSurname.value.length < 3 || inputSurname.value.length > 20) {
+      inputSurname.classList.add('required');
+      arr.push(false);
+    } else {
+      inputSurname.classList.remove('required');
+    }
+
+    const inputPhone = form.querySelector('.js-required-phone');
+    if (inputPhone.value.length != 18) {
+      inputPhone.classList.add('required');
+      arr.push(false);
+    } else {
+      inputPhone.classList.remove('required');
+    }
+
+    const inputEmail = form.querySelector('.js-required-email');
+    if (inputEmail.value.length < 3 || inputEmail.value.length > 30) {
+      inputEmail.classList.add('required');
+      arr.push(false);
+    } else {
+      inputEmail.classList.remove('required');
+    }
+
+    const inputCheckbox = form.querySelector('.js-required-checkbox');
+    if (!inputCheckbox.checked) {
+      arr.push(false);
+    }
+
+    if (arr.length == 0) {
+
+      fetch('/wp-content/themes/store-child/phpmailer/mailer.php', {
+        method: 'POST',
+        cache: 'no-cache',
+        body: new FormData(form)
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+
+      alert("Спасибо. Мы свяжемся с вами.");
+
+      form.reset();
+
+    }
+
+    return false;
+  }
+
+  if (lfsSubmitBtn) {
+    lfsSubmitBtn.onclick = function() {
+      ajaxCallback(lfsForm);
+    }
+  }
+
 });

@@ -34,13 +34,13 @@
     <div class="lead-form-section">
       <div class="container">
         <div class="lead-form-section-title">ЗАПИСАТЬСЯ НА КОНСУЛЬТАЦИЮ</div> 
-        <form class="form">
+        <form id="lfs-form" class="form">
           <div class="row">
             <div class="col-md-6">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" name="name" id="lfs-name" class="input-field" required>
+                    <input type="text" name="name" id="lfs-name" class="input-field js-required-name" required>
                     <label for="lfs-name" class="label">Имя<span class="terracota-color">*</span></label>
                   </div>
                   <div class="form-group">
@@ -48,18 +48,18 @@
                     <label for="lfs-telegram" class="label">Телеграм</label>
                   </div>
                   <div class="form-group">
-                    <input type="text" name="phone" id="lfs-phone" class="input-field js-input-phone-mask" placeholder="+7 (000) 000 00 00" required>
+                    <input type="text" name="phone" id="lfs-phone" class="input-field js-required-phone js-input-phone-mask" placeholder="+7 (000) 000 00 00" required>
                     <label for="lfs-phone" class="label">Телефон<span class="terracota-color">*</span></label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" name="surname" id="lfs-surname" class="input-field" required>
+                    <input type="text" name="surname" id="lfs-surname" class="input-field js-required-surname" required>
                     <label for="lfs-surname" class="label">Фамилия<span class="terracota-color">*</span></label>
                   </div>
                   
                   <div class="form-group">
-                    <input type="email" name="email" id="lfs-email" class="input-field" required>
+                    <input type="email" name="email" id="lfs-email" class="input-field js-required-email" required>
                     <label for="lfs-email" class="label">Эл. почта<span class="terracota-color">*</span></label>
                   </div>
                 </div>
@@ -74,14 +74,15 @@
           </div>
           <div class="row">
             <div class="col-md-6">
-              <button type="button" id="lfs-submit" class="submit-btn">Отправить</button>
+              <button type="button" id="lfs-submit-btn" class="submit-btn">Отправить</button>
               <div class="agreement-text">
-                <input type="checkbox" name="checkbox" class="custom-checkbox" checked onchange="document.getElementById('lfs-submit').disabled = !this.checked;">
-                <label for="lfs-checkbox-form" class="custom-checkbox-label"></label>
+                <input type="checkbox" id="lfs-checkbox-input" name="checkbox" class="custom-checkbox js-required-checkbox" checked onchange="document.getElementById('lfs-submit-btn').disabled = !this.checked;">
+                <label for="lfs-checkbox-input" class="custom-checkbox-label"></label>
                 <span>Нажимая кнопку вы соглашаетесь с <a href="/politika-v-otnoshenii-obrabotki-personalnyh-dannyh">политикой обработки данных</a></span>
               </div>
             </div>
           </div>
+          <input type="hidden" name="cc" value="<?php rwmb_the_value( 'expert_email' ) ?></p>">
         </form>
       </div>
     </div>

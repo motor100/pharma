@@ -1272,11 +1272,33 @@ a {
   margin: 0 0 16px 0;
   font-size: 24px;
 }
+.kontakty-page .map-section {
+  margin: 0 0 50px 0;
+}
 .kontakty-page .map-section .map {
   height: 410px;
   border-radius: 30px;
   overflow: hidden;
 }
+.kontakty-page .trace-route-section .trace-route-text {
+  margin: 0 0 20px 0;
+  font-size: 20px;
+}
+.kontakty-page .trace-route-section .map-link {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+.kontakty-page .trace-route-section .twogis-logo {
+  width: 80px;
+}
+.kontakty-page .trace-route-section .yandex-logo {
+  width: 33px;
+}
+.kontakty-page .trace-route-section .google-logo {
+  width: 31px;
+}
+
+
 
 /* single page */
 .single-page .single-image {
@@ -1287,6 +1309,9 @@ a {
 .single-page .single-image img {
   width: 100%;
   height: auto;
+}
+.single-page p br {
+  display: none;
 }
 .single-page .lead-form-section {
   margin: 80px 0 0 0;
@@ -1308,6 +1333,7 @@ a {
   padding: 15px 20px;
   border: 1px solid var(--white-rock-color);
   border-radius: 25px;
+  font-family: inherit;
 }
 .single-page .lead-form-section .label {
   display: block;
@@ -1330,6 +1356,7 @@ a {
   background-color: var(--wild-willow-color);
   font-family: 'roboto-medium';
   font-size: 20px;
+  cursor: pointer;
 }
 
 /* where buy page */
@@ -1489,6 +1516,23 @@ a {
   font-size: 20px;
   color: var(--mine-shaft-color);
   text-align: center;
+}
+
+/* search page */
+.search-page .search-rezult-text {
+  font-size: 24px;
+}
+.search-page .list {
+  padding: 0;
+  list-style: none;
+}
+.search-page .list-item {
+  margin: 0 0 10px 0;
+}
+.search-page .list-item__link {
+  font-size: 18px;
+  color: var(--voodoo-color);
+  text-decoration: underline;
 }
 
 
@@ -3132,15 +3176,15 @@ ul.products li.product .button {
 }
 
 
-:focus,
+/*:focus,
 a:focus {
   outline-color: transparent !important;
-}
-.ui-tabs-anchor:active,
+}*/
+/*.ui-tabs-anchor:active,
 .ui-tabs-anchor:focus {
   outline: none;
 }
-
+*/
 
 /* single product page */
 .single-product .single-product-content {
