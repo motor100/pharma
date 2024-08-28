@@ -77,6 +77,7 @@
               <div class="header-favourites">
                 <img src="/wp-content/themes/store-child/includes/images/svg/circle-heart.svg" class="header-favourites__image" alt="">
                 <span class="header-favourites__counter">0</span>
+                <a href="#" class="full-link"></a>
               </div>
               <div class="header-cart">
                 <img src="/wp-content/themes/store-child/includes/images/svg/basket.svg" class="header-cart__basket" alt="корзина">

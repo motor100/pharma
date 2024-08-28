@@ -124,6 +124,14 @@ a {
 .hidden-desktop {
   display: none;
 }
+.full-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 
 .link-button,
 .wpb-pcf-btn {
@@ -333,14 +341,6 @@ a {
   justify-content: center;
   flex-shrink: 0;
 }
-.header-desktop .header-content .header-cart .full-link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
 .header-desktop .header-content .header-cart__basket {
   width: 32px;
 }
@@ -475,6 +475,14 @@ a {
   position: relative;
   height: 500px;
 }
+.main-section .main-section-slider .slider-item-image {
+  height: 100%;
+}
+.main-section .main-section-slider .slider-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .main-section .main-section-slider .slider-item-link {
   position: absolute;
   top: 0;
@@ -501,9 +509,9 @@ a {
 }
 .swiper-button-next {
   top: auto;
-  right: 400px;
+  right: auto;
   bottom: -50px;
-  left: auto;
+  left: 322px;
   width: 42px;
   height: 42px;
   background: url(../images/svg/arrow-circle-right.svg) center no-repeat;
@@ -729,7 +737,7 @@ a {
   line-height: 1.2;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 .offer-of-week-section .small-offers .offer-price {
@@ -737,6 +745,7 @@ a {
   font-size: 24px;
   color: var(--voodoo-color);
 }
+
 
 /* footer */
 .footer {
@@ -3067,8 +3076,6 @@ ul.products li.product .button {
 
 /* advantages section */
 .advantages-section {
-  /*background: var(--wild-willow-color) url(../images/advantages-bg.jpg) top no-repeat;
-  background-size: cover;*/
   padding: 0 0 60px 0;
 }
 .advantages-section .section-title {
@@ -3992,13 +3999,64 @@ h1.sec-title {
 
 @media only screen and (max-width : 1400px) {
 
+  .home .section-title,
+  .catalog-section-title {
+    font-size: 52px;
+  }
+
   .header-desktop .header-top .header-top__address {
     width: 61%;
   }
 
+  /* swiper slider */
+  .swiper-button-next {
+    left: 272px;
+  }
+  .swiper-button-prev {
+    left: 220px;
+  }
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    left: 55%;
+  }
+
+  /* main section */
+  .main-section {
+    height: 430px;
+  }
+  .main-section .main-section-about {
+    height: 430px;
+    padding: 40px 0 0 0;
+  }
+  .main-section .main-section-about .company-title {
+    width: 350px;
+    margin: 0 0 20px 0;
+  }
+  .main-section .main-section-about .fl-text {
+    font-size: 40px;
+  }
+  .main-section .main-section-about .m-text-last {
+    margin: 0;
+  }
+  .main-section .main-section-slider .main-slider-item {
+    height: 430px;
+  }
+
+  /* catalog section */
+  .catalog-section .catalog-tabs-contents .children__title {
+    font-size: 22px;
+  }
+
+  /* offer of week section */
+  .offer-of-week-section .big-offer {
+    height: 753px;
+  }
+
   /* advantages section */
-  .advantages-section .section-title {
+  /*.advantages-section .section-title {
     font-size: 60px;
+  }*/
+  .advantages-section .advantages-item {
+    padding: 30px 20px 40px 20px;
   }
   .advantages-section .advantage-description {
     min-height: 188px;
@@ -4016,6 +4074,14 @@ h1.sec-title {
     line-height: 1.3;
   }
 
+  /* text section */
+  .text-section {
+    padding: 60px 0 0 0;
+  }
+  .text-section .text-section-title {
+    font-size: 52px;
+  }
+
   /*
   .catalog-tabs .img {
     padding: 58px 0;
@@ -4023,13 +4089,33 @@ h1.sec-title {
   */
 
   /* footer */
+  .footer {
+    margin: 90px 0 0 0;
+  }
   .footer .menu .menu-item a {
     font-size: 16px;
+  }
+  .footer .callback-form-btn .callback-form-btn__text {
+    font-size: 20px;
+  }
+  .footer .callback-form-btn {
+    gap: 8px;
+  }
+  .footer .search-btn {
+    gap: 8px;
+  }
+  .footer .search-btn .search-btn__text {
+    font-size: 20px;
   }
 
 }
 
 @media only screen and (max-width : 1200px) {
+
+  .home .section-title,
+  .catalog-section-title {
+    font-size: 48px;
+  }
 
   /* header desktop */
   .header-desktop .header-top .header-top__address {
@@ -4045,17 +4131,119 @@ h1.sec-title {
     font-size: 18px;
   }
 
+  /* main section */
+  .main-section {
+    height: 361px;
+  }
+  .main-section .main-section-about {
+    height: 361px;
+    padding: 30px 0 0 0;
+  }
+  .main-section .main-section-about .company-title {
+    width: 320px;
+    margin: 0 0 10px 0;
+  }
+  .main-section .main-section-about .fl-text {
+    margin: 0;
+    font-size: 36px;
+  }
+  .main-section .main-section-about .m-text-last {
+    margin: 0;
+  }
+  .main-section .main-section-slider .main-slider-item {
+    height: 361px;
+  }
+
+  /* swiper slider */
+  .swiper-button-next {
+    left: 172px;
+  }
+  .swiper-button-prev {
+    left: 120px;
+  }
+  .swiper-pagination-bullet {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* catalog section  */
+  .catalog-section .catalog-tabs-contents {
+    padding: 50px 0;
+  }
+  .catalog-section .catalog-tabs-buttons .catalog-tabs-button {
+    width: 220px;
+    height: 220px;
+  }
+  .catalog-section .catalog-tabs-buttons .catalog-tabs-button__title {
+    font-size: 20px;
+  }
+  .catalog-section .catalog-tabs-contents .children__title {
+    font-size: 18px;
+  }
+
+  /* offer of week section */
+  .offer-of-week-section .section-title {
+    padding: 26px 0;
+  }
+  .offer-of-week-section .big-offer {
+    height: 654px;
+  }
+  .offer-of-week-section .small-offers .offer-title {
+    height: 46px;
+    margin: 0 0 5px 0;
+    font-size: 18px;
+  }
+  .offer-of-week-section .small-offers .offer-price {
+    font-size: 22px;
+  }
 
   /* advantages section */
+  .advantages-section {
+    padding: 0 0 50px 0;
+  }
   .advantages-section .section-title {
-    margin: 40px 0;
-    font-size: 56px;
+    padding: 30px 0;
+    font-size: 44px;
   }
   .advantages-section .advantage-flex-container {
     margin: 0 0 5px 0;
   }
   .advantages-section .advantage-description {
     min-height: 104px;
+  }
+
+  /* text section */
+  .text-section {
+    padding: 50px 0 0 0;
+  }
+  .text-section .text-section-title {
+    font-size: 48px;
+  }
+  .text-section .text-section-title {
+    margin: 0 0 30px 0;
+  }
+  .text-section .paragraph-wrapper {
+    margin: 0 0 30px 0;
+  }
+  .text-section .paragraph {
+    font-size: 17px;
+  }
+  .text-section .order-phone {
+    font-size: 22px;
+  }
+  .text-section .callback-btn {
+    width: 250px;
+  }
+  .text-section .callback-btn .callback-btn__text {
+    font-size: 18px;
+  }
+  .text-section .detailed-about-us-btn {
+    width: 250px;
+    font-size: 18px;
+  }
+
+  .footer {
+    margin: 80px 0 0 0;
   }
 
   /*
