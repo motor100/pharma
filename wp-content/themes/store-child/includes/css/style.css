@@ -3048,7 +3048,6 @@ ul.products li.product .button {
 */
 
 /* секция с зеленым фоном */
-
 .green-bg-section {
   position: relative;
   background-color: var(--wild-willow-color);
@@ -4193,6 +4192,7 @@ h1.sec-title {
   }
   .offer-of-week-section .big-offer {
     height: 654px;
+    margin: 0 0 20px 0;
   }
   .offer-of-week-section .small-offers .offer-title {
     height: 46px;
@@ -4604,9 +4604,9 @@ h1.sec-title {
 
 
   /* advantages section */
-  .advantages-section .section-title {
+  /*.advantages-section .section-title {
     font-size: 46px;
-  }
+  }*/
   .advantages-section .advantages-item {
     height: 311px;
     margin: 0 0 12px 0;
@@ -4751,6 +4751,21 @@ h1.sec-title {
   .catalog-section .catalog-tabs-contents .cat-wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
+  .text-section .order-phone {
+    font-size: 20px;
+  }
+  .text-section .flex-container {
+    display: block;
+  }
+  .text-section .callback-btn {
+    margin: 0 0 15px 0;
+  }
+
+  /* секция с зеленым фоном */
+  .green-bg-section .left-bg,
+  .green-bg-section .right-bg {
+    display: none;
+  }
 
 
 
@@ -4873,7 +4888,7 @@ h1.sec-title {
 
   .home .section-title,
   .catalog-section-title {
-    font-size: 38px;
+    font-size: 36px;
   }
 
   /* catalog section */
@@ -4893,11 +4908,36 @@ h1.sec-title {
   .offer-of-week-section .section-title {
     padding: 15px 0;
   }
+  .offer-of-week-section .offers {
+    padding: 26px 0;
+  }
+  .offer-of-week-section .big-offer {
+    height: 500px;
+    margin: 0 0 20px 0;
+  }
+  .offer-of-week-section .big-offer .big-offer-frame {
+    padding: 0;
+    border: none;
+  }
+  .offer-of-week-section .small-offers .offer-title {
+    height: 40px;
+    font-size: 16px;
+  }
+  .offer-of-week-section .small-offers .offer-price {
+    font-size: 20px;
+  }
+  .offer-of-week-section .small-offers .offer-item {
+    margin: 0 0 25px 0;
+  }
 
 
   /* advantages section */
+  .advantages-section {
+    padding: 0 0 30px 0;
+  }
   .advantages-section .section-title {
-    font-size: 42px;
+    padding: 20px 0;
+    font-size: 36px;
   }
   .advantages-section .advantage-flex-container {
     height: auto;
@@ -4918,6 +4958,23 @@ h1.sec-title {
     padding: 0;
   }
 
+  /* text section */
+  .text-section {
+    padding: 20px 0 0 0;
+  }
+  .text-section .text-section-title {
+    margin: 0 0 10px 0;
+  }
+  .text-section .callback-btn {
+    width: 100%;
+    gap: 15px;
+    justify-content: center;
+  }
+  .text-section .detailed-about-us-btn {
+    width: 100%;
+  }
+
+
 
   .we-use-cookie {
     right: 30%;
@@ -4928,6 +4985,11 @@ h1.sec-title {
 }
 
 @media only screen and (max-width : 360px) {
+
+  .home .section-title,
+  .catalog-section-title {
+    font-size: 32px;
+  }
 
 
   /* advantages section */

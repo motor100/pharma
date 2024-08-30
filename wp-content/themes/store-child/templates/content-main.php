@@ -252,7 +252,7 @@
                   $price = get_post_meta( get_the_ID(), '_regular_price', true);
                 }
               ?>
-              <div class="col-md-6">
+              <div class="col-6">
                 <div class="offer-item">
                   <div class="offer-image">
                     <a href="<?php echo get_permalink( $loop->post->ID ) ?>" class="offer-link">
