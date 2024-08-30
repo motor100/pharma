@@ -28,6 +28,10 @@
           <div class="company-info">Производственная натуропатическая аптека: натуральные препараты и лекарства, гомеопатия, капли Баха, гидролаты, витамины, соли Шюсслера</div>
           <div class="company-info">© Общество с ограниченной <br> ответственностью «Здоровье»</div>
           <div class="company-info company-info-last">ИНН 7724488603</div>
+          <div class="footer-bottom-mobile-menu">
+            <?php echo custom_nav_menu(0, 4); ?>
+            <?php echo custom_nav_menu(5); ?>
+          </div>
           <div class="footer-phone footer-pe">
             <img src="/wp-content/themes/store-child/includes/images/svg/circle-call.svg" class="footer-phone-image footer-pe-image" alt="phone call">
             <a class="footer-phone-link footer-pe-link" href="tel:+74959274928">+7 (495) 927-4-928</a>
@@ -42,8 +46,8 @@
           <a href="/soglasie-posetitelya-sajta-na-obrabotku-personalnyh-dannyh" class="agreement footer-pa">Согласие на обработку персональных данных</a>
           <div class="copyright">© 2016—<?php echo date("Y"); ?> Все права принадлежат ООО «Здоровье»</div>
         </div>
-        <div class="col-lg-2"><?php echo custom_nav_menu(0, 4); ?></div>
-        <div class="col-lg-3"><?php echo custom_nav_menu(5); ?></div>
+        <div class="col-lg-2 d-lg-block d-none"><?php echo custom_nav_menu(0, 4); ?></div>
+        <div class="col-lg-3 d-lg-block d-none"><?php echo custom_nav_menu(5); ?></div>
         <div class="col-lg-3">
           <div class="flex-container">
             <div class="footer-buttons">

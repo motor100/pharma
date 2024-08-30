@@ -118,7 +118,7 @@
       <div class="header-mobile hidden-desktop">
         <div class="header-top">
           <div class="container">
-            <div class="address-text">г. Москва, ул. Алма-Атинская, д. 9, корп. 2 | Пн-Пт: 10:00 до 20:00, Сб-Вс: выходной</div>
+            <div class="address-text">г. Москва, ул. Алма-Атинская, д. 9, корп. 2 <br> Пн-Пт: 10:00 до 20:00, Сб-Вс: выходной</div>
           </div>
         </div>
         <div class="header-logo">
