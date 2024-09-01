@@ -86,6 +86,10 @@
 </div>
 
 <div class="mobile-menu">
+  <div class="mobile-menu-logo">
+    <img src="/wp-content/themes/store-child/includes/images/svg/full-logo.svg" alt="лого">
+  </div>
+  <div class="working-time">Пн-Пт: 10:00 до 20:00, Сб-Вс: выходной</div>
   <?php
   wp_nav_menu(
     array(
@@ -94,50 +98,71 @@
     )
   );
   ?>
+  <div class="phone-wrapper">
+    <a href="#" class="social-icons__link" rel="nofollow noopener" target="_blank">
+      <img src="/wp-content/themes/store-child/includes/images/svg/circle-wa.svg" class="social-icons__image social-icons__wa" alt="ватсап">
+    </a>
+    <a href="tel:+74959274928" class="social-icons__link" rel="nofollow noopener" target="_blank">
+      <img src="/wp-content/themes/store-child/includes/images/svg/circle-call.svg" class="social-icons__image social-icons__call" alt="звонок">
+    </a>
+    <a href="tel:+74959274928" class="phone-text">+7 (495) 927-4-928</a>
+  </div>
+  <div class="feedback-text">Напишите нам</div>
+  <div class="socials-icons">
+    <a href="https://t.me/naturaproff" class="social-icons__link" rel="nofollow noopener" target="_blank">
+      <img src="/wp-content/themes/store-child/includes/images/svg/circle-tg.svg" class="social-icons__image social-icons__tg" alt="телеграм">
+    </a>
+    <a href="https://vk.com/natura.pharma" class="social-icons__link" rel="nofollow noopener" target="_blank">
+      <img src="/wp-content/themes/store-child/includes/images/svg/circle-vk.svg" class="social-icons__image social-icons__vk" alt="вконтакте">
+    </a>
+  </div>
+  
 </div>
 
-<!-- <div class="fixed-bottom-menu hidden-desktop "> -->
-<div class="fixed-bottom-menu hidden">
+<div class="fixed-bottom-menu hidden-desktop ">
   <div class="menu-wrapper">
     <div class="menu-item">
       <div class="menu-item__image">
-        <img src="/wp-content/themes/store-child/includes/images/svg/favourite-with-circle.svg" alt="">
+        <img src="/wp-content/themes/store-child/includes/images/svg/house.svg" alt="">
       </div>
       <div class="menu-item__title">Главная</div>
       <a href="/" class="full-link"></a>
     </div>
     <div class="menu-item">
       <div class="menu-item__image">
-        <img src="/wp-content/themes/store-child/includes/images/svg/favourite-with-circle.svg" alt="">
+        <img src="/wp-content/themes/store-child/includes/images/svg/catalog-lens.svg" alt="">
       </div>
       <div class="menu-item__title">Каталог</div>
       <a href="/catalog" class="full-link"></a>
     </div>
     <div class="menu-item cart-menu-item">
       <div class="menu-item__image">
-        <img src="/wp-content/themes/store-child/includes/images/svg/basket.svg" alt="">
+        <img src="/wp-content/themes/store-child/includes/images/svg/shopping-cart-white.svg" alt="">
       </div>
       <div class="menu-item__title">Корзина</div>
       <div id="mobile-cart-counter" class="badge-counter"><?php echo WC()->cart->get_cart_contents_count(); ?></div>
       <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="full-link"></a>
     </div>
-    <div class="menu-item cart-menu-item">
+    <div class="menu-item favourite-menu-item">
       <div class="menu-item__image">
-        <img src="/wp-content/themes/store-child/includes/images/svg/favourite-with-circle.svg" alt="">
+        <img src="/wp-content/themes/store-child/includes/images/svg/favourite-heart.svg" alt="">
       </div>
       <div class="menu-item__title">Избранное</div>
       <div id="mobile-favourites-counter" class="badge-counter">0</div>
-      <a href="/favourites" class="full-link"></a>
+      <a href="#" class="full-link"></a>
     </div>
-    <div class="menu-item cart-menu-item">
+    <div class="menu-item">
       <div class="menu-item__image">
-        <img src="/wp-content/themes/store-child/includes/images/svg/favourite-with-circle.svg" alt="">
+        <img src="/wp-content/themes/store-child/includes/images/svg/phone-call-black.svg" alt="">
       </div>
-      <div class="menu-item__title">Сравнение</div>
-      <div id="mobile-comparison-counter" class="badge-counter">0</div>
-      <a href="/comparison" class="full-link"></a>
+      <div class="menu-item__title">Звонок</div>
+      <a href="tel:+74959274928" class="full-link"></a>
     </div>
   </div>
+</div>
+
+<div class="have-contraindications">
+  <div class="have-contraindications__text">ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ. НЕОБХОДИМО ПРОКОНСУЛЬТИРОВАТЬСЯ СО СПЕЦИАЛИСТОМ</div>
 </div>
 
 <div id="cookie_note" class="we-use-cookie">

@@ -242,8 +242,6 @@ do_action( 'woocommerce_before_main_content' ); ?>
 
 </div>
 
-<?php get_template_part( 'templates/content', 'contraindications' ); ?>
-
 <div id="to-top" class="to-top hidden-mobile">
   <div class="container">
     <div class="circle">

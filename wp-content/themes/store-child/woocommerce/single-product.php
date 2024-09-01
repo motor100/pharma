@@ -48,8 +48,6 @@ get_header( 'shop' ); ?>
 
 </div>
 
-<?php get_template_part( 'templates/content', 'contraindications' ); ?>
-
   <?php
     /**
      * woocommerce_after_main_content hook.
