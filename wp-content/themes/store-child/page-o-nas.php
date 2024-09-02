@@ -16,12 +16,12 @@
     <div class="page-title">О нас</div>
     <div class="team">
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-lg-5">
           <div class="team-image">
             <img src="/wp-content/themes/store-child/includes/images/team.jpg" alt="команда">
           </div>
         </div>
-        <div class="col-md-7">
+        <div class="col-lg-7">
           <div class="about">
             <div class="about-subtitle">Основатели</div>
             <div class="about-name">Трушкина Ирина Владимировна</div>

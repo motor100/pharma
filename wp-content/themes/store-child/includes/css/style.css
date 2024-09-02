@@ -1093,6 +1093,21 @@ a {
 .o-nas-page .team {
   margin: 0 0 40px 0;
 }
+.o-nas-page .team-image {
+  position: relative;
+  height: 0;
+  padding: 0 0 123% 0;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.o-nas-page .team-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .o-nas-page .team .about {
   padding: 90px 0 0 0;
 }
@@ -1112,6 +1127,7 @@ a {
 .o-nas-page .company-info .company-info-subtitle {
   margin: 0 0 20px 0;
   font-size: 42px;
+  line-height: 1.2;
 }
 .o-nas-page .description .p-last {
   margin: 0 0 40px 0;
@@ -4118,6 +4134,10 @@ h1.sec-title {
     font-size: 52px;
   }
 
+  .custom-page .page-title {
+    font-size: 54px;
+  }
+
   .header-desktop .header-top .header-top__address {
     width: 61%;
   }
@@ -4254,6 +4274,15 @@ h1.sec-title {
     font-size: 52px;
   }
 
+  /* o nas page */
+  .o-nas-page .team .about {
+    padding: 50px 0 0 0;
+  }
+  .o-nas-page .description .description-subtitle,
+  .o-nas-page .company-info .company-info-subtitle {
+    font-size: 40px;
+  }
+
 }
 
 @media only screen and (max-width : 1200px) {
@@ -4263,6 +4292,10 @@ h1.sec-title {
   .section-title,
   .catalog-section-title {
     font-size: 48px;
+  }
+
+  .custom-page .page-title {
+    font-size: 51px;
   }
 
   /* header desktop */
@@ -4492,7 +4525,30 @@ h1.sec-title {
     font-size: 48px;
   }
 
-
+  /* o nas page */
+  .o-nas-page .team .about {
+    padding: 10px 0 0 0;
+  }
+  .o-nas-page .team .about-subtitle {
+    margin: 0 0 12px 0;
+    font-size: 40px;
+  }
+  .o-nas-page .team .about-description {
+    margin: 0 0 20px 0;
+  }
+  .o-nas-page .team .about-description {
+    margin: 0 0 10px 0;
+  }
+  .o-nas-page .team .about .p {
+    margin: 0 0 10px 0;
+  }
+  .o-nas-page .description .description-subtitle,
+  .o-nas-page .company-info .company-info-subtitle {
+    font-size: 35px;
+  }
+  .o-nas-page .description .description-logo img {
+    width: 100%;
+  }
 
   /* we use cookie */
   .we-use-cookie {
@@ -4510,6 +4566,10 @@ h1.sec-title {
   .section-title,
   .catalog-section-title {
     font-size: 44px;
+  }
+
+  .custom-page .page-title {
+    font-size: 47px;
   }
 
   /* header desktop */
@@ -4756,6 +4816,11 @@ h1.sec-title {
     font-size: 44px;
   }
 
+  /* o nas page */
+  .o-nas-page .description .description-subtitle,
+  .o-nas-page .company-info .company-info-subtitle {
+    font-size: 33px;
+  }
 
   .subcategories .subcategories-item {
     margin: 0 10px 15px 0;
@@ -4799,6 +4864,11 @@ h1.sec-title {
   .section-title,
   .catalog-section-title {
     font-size: 40px;
+  }
+
+  .custom-page .page-title {
+    margin: 0 0 30px 0;
+    font-size: 43px;
   }
 
   /* main section */
@@ -4929,6 +4999,26 @@ h1.sec-title {
   }
   .catalog-page .description-section .description-section-subtitle {
     font-size: 40px;
+  }
+
+  /* o nas page */
+  .o-nas-page .description .description-subtitle,
+  .o-nas-page .company-info .company-info-subtitle {
+    margin: 0 0 10px 0;
+    font-size: 31px;
+  }
+  .o-nas-page .team .about-subtitle {
+    margin: 0 0 7px 0;
+    font-size: 36px;
+  }
+  .o-nas-page .team {
+    margin: 0 0 10px 0;
+  }
+  .o-nas-page .description .description-logo {
+    margin: 20px 0;
+  }
+  .o-nas-page .description .p-last {
+    margin: 0 0 10px 0;
   }
 
 
@@ -5187,6 +5277,10 @@ h1.sec-title {
     font-size: 36px;
   }
 
+  .custom-page .page-title {
+    font-size: 40px;
+  }
+
   /* catalog section */
   .catalog-section .catalog-tabs-buttons .catalog-tabs-button__image {
     width: 80px;
@@ -5280,7 +5374,7 @@ h1.sec-title {
   .catalog-page .catalog-subcategories .flex-container {
     display: block;
   }
- .catalog-page .catalog-subcategories .children__item {
+  .catalog-page .catalog-subcategories .children__item {
     width: 100%;
     height: 60px;
     margin: 0 0 15px 0;
@@ -5305,10 +5399,33 @@ h1.sec-title {
     padding: 30px 0 0 0;
   }
   .catalog-page .description-section .description-section-subtitle {
-    font-size: 36px;
+    font-size: 29px;
   }
   
-
+  /* o nas page */
+  .o-nas-page .team .about-subtitle {
+    margin: 0 0 5px 0;
+    font-size: 30px;
+  }
+  .o-nas-page .team .about-name {
+    margin: 0 0 5px 0;
+    font-size: 22px;
+  }
+  .o-nas-page .team .about-description {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+  }
+  .o-nas-page .team {
+    margin: 0;
+  }
+  .o-nas-page .description .description-subtitle,
+  .o-nas-page .company-info .company-info-subtitle {
+    margin: 0 0 5px 0;
+    font-size: 26px;
+  }
+  .o-nas-page .description .description-logo {
+    width: 250px;
+  }
 
 
   /* we use cookie */
