@@ -1146,13 +1146,15 @@ a {
   overflow: hidden;
 }
 .bo-page .bo-item .bo-item__content {
+  display: flex;
   width: 40%;
   padding: 30px 20px;
   background-color: var(--voodoo-color);
   color: var(--nero-color);
+  flex-direction: column;
+  justify-content: space-between;
 }
 .bo-page .bo-item .bo-item__title {
-  margin: 0 0 40px 0;
   font-family: "Roboto-Medium";
   line-height: 1.3;
 }
@@ -1351,8 +1353,6 @@ a {
 .kontakty-page .trace-route-section .google-logo {
   width: 31px;
 }
-
-
 
 /* single page */
 .single-page .single-image {
@@ -1588,7 +1588,6 @@ a {
   color: var(--voodoo-color);
   text-decoration: underline;
 }
-
 
 /* pagination */
 .pagination {
@@ -4283,6 +4282,17 @@ h1.sec-title {
     font-size: 40px;
   }
 
+  /* bo page страницы блог и о лекарствах */
+  .bo-page .bo-item {
+    height: 152px;
+  }
+  .bo-page .bo-item .bo-item__content {
+    padding: 20px;
+  }
+  .bo-page .bo-item .bo-item__title {
+    font-size: 15px;
+  }
+
 }
 
 @media only screen and (max-width : 1200px) {
@@ -5021,6 +5031,24 @@ h1.sec-title {
     margin: 0 0 10px 0;
   }
 
+  /* bo page страницы блог и о лекарствах */
+  .bo-page .bo-item .bo-item__content {
+    width: 50%;
+  }
+  .bo-page .bo-item .bo-item__image {
+    width: 50%;
+  }
+  .bo-page .bo-item .bo-item__content {
+    padding: 20px 15px;
+  }
+  .bo-page .bo-item {
+    margin: 0 0 20px 0;
+  }
+
+  /* single page */
+  .single-page .single-image {
+    margin: 0 0 20px 0;
+  }
 
   .subcategories {
     margin: 0;
@@ -5425,6 +5453,18 @@ h1.sec-title {
   }
   .o-nas-page .description .description-logo {
     width: 250px;
+  }
+
+  /* single page */
+  .single-page .single-image {
+    margin: 0 0 10px 0;
+  }
+
+  /* pagination */
+  .pagination .page-numbers {
+    min-width: 30px;
+    height: 30px;
+    font-size: 14px;
   }
 
 
