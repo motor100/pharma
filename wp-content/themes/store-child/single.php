@@ -36,7 +36,7 @@
         <div class="lead-form-section-title">ЗАПИСАТЬСЯ НА КОНСУЛЬТАЦИЮ</div> 
         <form id="lfs-form" class="form">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-lg-6">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -65,7 +65,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-lg-6">
               <div class="form-group">
                 <textarea name="message" id="lfs-message" class="input-field textarea"></textarea>
                 <label for="lfs-telegram" class="label">Комментарий</label>
