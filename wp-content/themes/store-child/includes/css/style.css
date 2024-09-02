@@ -533,14 +533,17 @@ a {
 }
 
 /*section title*/
-.home .section-title,
+/*.home .section-title,
+.catalog-section-title {*/
+.section-title,
 .catalog-section-title {
   font-family: "Roboto-CondensedSemiBold";
   font-size: 56px;
   text-align: center;
   text-transform: uppercase;
 }
-.home .section-title {
+/*.home .section-title {*/
+.section-title {
   color: var(--nero-color);
   line-height: 1.2;
 }
@@ -891,13 +894,10 @@ a {
 /* catalog page */
 .catalog-page .csp-section-title {
   padding: 31px 0;
-  font-family: "Roboto-CondensedSemiBold";
-  font-size: 56px;
-  text-transform: uppercase;
-  text-align: center;
 }
 .catalog-page .catalog-subcategory-section-title {
   background-color: var(--wild-willow-color);
+  color: var(--voodoo-color);
 }
 .catalog-page .catalog-subcategories {
   padding: 40px 0 80px 0;
@@ -926,12 +926,12 @@ a {
 .catalog-page .catalog-subcategories .children__item .w110px {
   width: 56px;
 }
-
-
-
-
 .catalog-page .catalog-subcategories .children__item .subcat__link {
   font-size: 24px;
+}
+.catalog-page .catalog-subcategories .children__item .children__title {
+  font-size: 24px;
+  color: var(--shark-color);
 }
 .catalog-page .composition-and-promo-section {
   padding: 0 0 60px 0;
@@ -945,6 +945,7 @@ a {
   margin: 0 0 30px 0;
   font-family: "Roboto-CondensedSemiBold";
   font-size: 42px;
+  line-height: 1.1;
 }
 .catalog-page .composition-and-promo-section .small-products {
   margin: 0 0 50px 0;
@@ -953,37 +954,52 @@ a {
   margin: 0 0 12px 0;
 }
 .catalog-page .composition-and-promo-section .small-products .small-products-item__image {
-  height: 270px;
+  position: relative;
+  height: 0;
   margin: 0 0 20px 0;
+  padding: 0 0 87% 0;
   border: 2px solid var(--white-rock-color);
   border-radius: 30px;
   overflow: hidden;
 }
 .catalog-page .composition-and-promo-section .small-products .small-products-item__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 .catalog-page .composition-and-promo-section .small-products .small-products-item__title {
   font-size: 24px;
+  line-height: 1.1;
 }
 .catalog-page .composition-and-promo-section .certificates {
-  margin: 0 0 50px 0;
+  margin: 0 0 35px 0;
+}
+.catalog-page .composition-and-promo-section .certificates-item {
+  margin: 0 0 15px 0;
 }
 .catalog-page .composition-and-promo-section .certificates .certificates-image {
-  height: 230px;
+  position: relative;
+  height: 0;
   margin: 0 0 20px 0;
+  padding: 0 0 63% 0;
   border: 2px solid var(--white-rock-color);
   border-radius: 30px;
   overflow: hidden;
 }
 .catalog-page .composition-and-promo-section .certificates .certificates-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 .catalog-page .composition-and-promo-section .certificates .certificates-title {
   font-size: 24px;
+  line-height: 1.1;
 }
 .catalog-page .composition-and-promo-section .sets {
   margin: 0 0 50px 0;
@@ -992,19 +1008,25 @@ a {
   margin: 0 0 12px 0;
 }
 .catalog-page .composition-and-promo-section .sets .sets-item__image {
-  height: 410px;
+  position: relative;
+  height: 0;
   margin: 0 0 20px 0;
+  padding: 0 0 97% 0;
   border: 2px solid var(--white-rock-color);
   border-radius: 30px;
   overflow: hidden;
 }
 .catalog-page .composition-and-promo-section .sets .sets-item__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 .catalog-page .composition-and-promo-section .sets .sets-item__title {
   font-size: 24px;
+  line-height: 1.1;
 }
 .catalog-page .learning-materials-section {
   padding: 0 0 80px 0;
@@ -1012,26 +1034,29 @@ a {
 .catalog-page .learning-materials-section .section-title {
   position: relative;
   padding: 45px 0;
-  font-family: "Roboto-CondensedSemiBold";
-  font-size: 56px;
   color: var(--voodoo-color);
-  text-align: center;
-  text-transform: uppercase;
   z-index: 2;
 }
 .catalog-page .learning-materials-section .learning-materials-section-item {
   position: relative;
-  margin: 0 0 12px 0;
+  margin: 0 0 15px 0;
+  z-index: 2;
 }
 .catalog-page .learning-materials-section .learning-materials-section-item__image {
-  height: 270px;
+/*  height: 270px;*/
+  position: relative;
+  height: 0;
   margin: 0 0 20px 0;
+  padding: 0 0 87% 0;
   border: 2px solid var(--white-rock-color);
   border-radius: 30px;
   overflow: hidden;
   z-index: 2;
 }
 .catalog-page .learning-materials-section .learning-materials-section-item__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1047,6 +1072,7 @@ a {
   margin: 0 0 30px 0;
   font-family: "Roboto-CondensedSemiBold";
   font-size: 56px;
+  line-height: 1.2;
 }
 .catalog-page .description-section .text-bold {
   font-weight: 700;
@@ -4068,7 +4094,9 @@ h1.sec-title {
 
 @media only screen and (max-width : 1400px) {
 
-  .home .section-title,
+  /*.home .section-title,
+  .catalog-section-title {*/
+  .section-title,
   .catalog-section-title {
     font-size: 52px;
   }
@@ -4177,11 +4205,45 @@ h1.sec-title {
     font-size: 20px;
   }
 
+  /* catalog page */
+  .catalog-page .catalog-subcategories .children__item .children__title {
+    font-size: 22px;
+  }
+  .catalog-page .composition-and-promo-section .composition-and-promo-section-title {
+    margin: 0 0 50px 0;
+  }
+  .catalog-page .composition-and-promo-section .small-products .small-products-item__title {
+    font-size: 22px;
+  }
+  .catalog-page .composition-and-promo-section .certificates .certificates-title {
+    font-size: 22px;
+  }
+  .catalog-page .composition-and-promo-section .sets .sets-item__title {
+    font-size: 22px;
+  }
+  .catalog-page .learning-materials-section .learning-materials-section-item__title {
+    font-size: 22px;
+  }
+  .catalog-page .learning-materials-section .section-title {
+    padding: 40px 0;
+  }
+  .catalog-page .learning-materials-section {
+    padding: 0 0 70px 0;
+  }
+  .catalog-page .description-section {
+    padding: 70px 0 0 0;
+  }
+  .catalog-page .description-section .description-section-subtitle {
+    font-size: 52px;
+  }
+
 }
 
 @media only screen and (max-width : 1200px) {
 
-  .home .section-title,
+  /*.home .section-title,
+  .catalog-section-title {*/
+  .section-title,
   .catalog-section-title {
     font-size: 48px;
   }
@@ -4315,6 +4377,7 @@ h1.sec-title {
     font-size: 18px;
   }
 
+  /* footer */
   .footer {
     margin: 80px 0 0 0;
   }
@@ -4339,9 +4402,13 @@ h1.sec-title {
   .footer .menu li:not(:last-child) {
     margin-bottom: 16px;
   }
+  .footer .menu .menu-item a {
+    font-size: 14px;
+  }
   .footer .footer-pa {
     font-size: 17px;
   }
+
 
   /*
   .catalog-tabs .img {
@@ -4357,12 +4424,60 @@ h1.sec-title {
     height: 47px;
   }
 
-  /* footer */
-  .footer .menu .menu-item a {
-    font-size: 14px;
+  /* catalog page */
+  .catalog-page .csp-section-title {
+    padding: 26px 0;
+  }
+  .catalog-page .catalog-subcategories {
+    padding: 30px 0 60px 0;
+  }
+  .catalog-page .catalog-subcategories .children__item {
+    height: 90px;
+  }
+  .catalog-page .catalog-subcategories .children__image {
+    margin: 0 10px 0 0;
+  }
+  .catalog-page .catalog-subcategories .children__item .w110px {
+    width: 48px;
+  }
+  .catalog-page .catalog-subcategories .children__item .children__title {
+    font-size: 20px;
+  }
+  .catalog-page .composition-and-promo-section {
+    padding: 0 0 50px 0;
+  }
+  .catalog-page .composition-and-promo-section .composition-and-promo-subtitle {
+    margin: 0 0 25px 0;
+    font-size: 38px;
+  }
+  .catalog-page .composition-and-promo-section .small-products .small-products-item__title {
+    font-size: 20px;
+  }
+  .catalog-page .composition-and-promo-section .certificates .certificates-title {
+    font-size: 20px;
+  }
+  .catalog-page .composition-and-promo-section .sets .sets-item__title {
+    font-size: 20px;
+  }
+  .catalog-page .learning-materials-section .learning-materials-section-item__title {
+    font-size: 20px;
+  }
+  .catalog-page .learning-materials-section .section-title {
+    padding: 35px 0;
+  }
+  .catalog-page .learning-materials-section {
+    padding: 0 0 60px 0;
+  }
+  .catalog-page .description-section {
+    padding: 60px 0 0 0;
+  }
+  .catalog-page .description-section .description-section-subtitle {
+    font-size: 48px;
   }
 
 
+
+  /* we use cookie */
   .we-use-cookie {
     right: 20%;
   }
@@ -4373,7 +4488,9 @@ h1.sec-title {
 
 @media only screen and (max-width : 992px) {
 
-  .home .section-title,
+  /*.home .section-title,
+  .catalog-section-title {*/
+  .section-title,
   .catalog-section-title {
     font-size: 44px;
   }
@@ -4583,6 +4700,46 @@ h1.sec-title {
   }*/
 
 
+  /* catalog page */
+  .catalog-page .catalog-subcategories .flex-container {
+    gap: 15px;
+  }
+  .catalog-page .catalog-subcategories .children__item {
+    height: 80px;
+    padding: 0 20px;
+  }
+  .catalog-page .catalog-subcategories .children__item .w110px {
+    width: 42px;
+  }
+  .catalog-page .catalog-subcategories .children__item .children__title {
+    font-size: 18px;
+  }
+  .catalog-page .composition-and-promo-section {
+    padding: 0 0 40px 0;
+  }
+  .catalog-page .composition-and-promo-section .certificates .certificates-title {
+    font-size: 18px;
+  }
+  .catalog-page .composition-and-promo-section .sets .sets-item__title {
+    font-size: 18px;
+  }
+  .catalog-page .learning-materials-section .learning-materials-section-item__title {
+    font-size: 18px;
+  }
+  .catalog-page .learning-materials-section .section-title {
+    padding: 30px 0;
+  }
+  .catalog-page .learning-materials-section {
+    padding: 0 0 40px 0;
+  }
+  .catalog-page .description-section {
+    padding: 50px 0 0 0;
+  }
+  .catalog-page .description-section .description-section-subtitle {
+    font-size: 44px;
+  }
+
+
   .subcategories .subcategories-item {
     margin: 0 10px 15px 0;
   }
@@ -4613,8 +4770,6 @@ h1.sec-title {
   }
 }
 
-
-
 @media only screen and (max-width : 768px) {
   .hidden-mobile {
     display: none !important;
@@ -4622,6 +4777,11 @@ h1.sec-title {
 
   .hidden-desktop {
     display: block;
+  }
+
+  .section-title,
+  .catalog-section-title {
+    font-size: 40px;
   }
 
   /* main section */
@@ -4709,6 +4869,49 @@ h1.sec-title {
 
   ul.products {
     margin-top: 25px;
+  }
+
+  /* catalog page */
+  .catalog-page .csp-section-title {
+    margin: 0 0 40px 0;
+    padding: 20px 0;
+  }
+  .catalog-page .catalog-subcategories .children__item {
+    height: 70px;
+    padding: 0 15px;
+  }
+  .catalog-page .catalog-subcategories .children__item .children__title {
+    font-size: 16px;
+  }
+  .catalog-page .composition-and-promo-section {
+    padding: 0 0 30px 0;
+  }
+  .catalog-page .composition-and-promo-section .small-products .small-products-item__title {
+    font-size: 18px;
+  }
+  .catalog-page .composition-and-promo-section .certificates .certificates-title {
+    font-size: 16px;
+  }
+  .catalog-page .composition-and-promo-section .sets .sets-item__title {
+    font-size: 16px;
+  }
+  .catalog-page .learning-materials-section .learning-materials-section-item__title {
+    font-size: 16px;
+  }
+  .catalog-page .learning-materials-section {
+    padding: 0 0 30px 0;
+  }
+  .catalog-page .composition-and-promo-section .sets {
+    margin: 0 0 10px 0;
+  }
+  .catalog-page .learning-materials-section .section-title {
+    padding: 25px 0;
+  }
+  .catalog-page .description-section {
+    padding: 40px 0 0 0;
+  }
+  .catalog-page .description-section .description-section-subtitle {
+    font-size: 40px;
   }
 
 
@@ -4960,7 +5163,9 @@ h1.sec-title {
 
 @media only screen and (max-width : 480px) {
 
-  .home .section-title,
+  /*.home .section-title,
+  .catalog-section-title {*/
+  .section-title,
   .catalog-section-title {
     font-size: 36px;
   }
@@ -5048,6 +5253,46 @@ h1.sec-title {
     width: 100%;
   }
 
+  /* catalog page */
+  .catalog-page .csp-section-title {
+    margin: 0 0 20px 0;
+  }
+  .catalog-page .catalog-subcategories {
+    padding: 30px 0;
+  }
+  .catalog-page .catalog-subcategories .flex-container {
+    display: block;
+  }
+ .catalog-page .catalog-subcategories .children__item {
+    width: 100%;
+    height: 60px;
+    margin: 0 0 15px 0;
+    justify-content: center;
+  }
+  .catalog-page .catalog-subcategories .children__item .w110px {
+    width: 35px;
+  }
+  .catalog-page .composition-and-promo-section {
+    padding: 0 0 20px 0;
+  }
+  .catalog-page .composition-and-promo-section .small-products .small-products-item__title {
+    font-size: 16px;
+  }
+  .catalog-page .learning-materials-section .section-title {
+    padding: 20px 0;
+  }
+  .catalog-page .learning-materials-section {
+    padding: 0 0 20px 0;
+  }
+  .catalog-page .description-section {
+    padding: 30px 0 0 0;
+  }
+  .catalog-page .description-section .description-section-subtitle {
+    font-size: 36px;
+  }
+  
+
+
 
   /* we use cookie */
   .we-use-cookie {
@@ -5061,7 +5306,9 @@ h1.sec-title {
 
 @media only screen and (max-width : 360px) {
 
-  .home .section-title,
+  /*.home .section-title,
+  .catalog-section-title {*/
+  .section-title,
   .catalog-section-title {
     font-size: 32px;
   }

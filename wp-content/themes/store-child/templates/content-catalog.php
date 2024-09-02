@@ -146,7 +146,7 @@
     </div>
 
     <div class="catalog-subcategory">
-      <div class="catalog-subcategory-section-title csp-section-title">Подкатегории</div>
+      <div class="catalog-subcategory-section-title csp-section-title section-title">Подкатегории</div>
       <div class="catalog-subcategories">
         <div class="container">
           <div class="flex-container">
@@ -157,12 +157,12 @@
     </div>
 
     <div class="composition-and-promo-section">
-      <div class="composition-and-promo-section-title csp-section-title">Композиции и акции</div>
+      <div class="composition-and-promo-section-title csp-section-title section-title">Композиции и акции</div>
       <div class="container">
         <div class="composition-and-promo-subtitle">Композиции</div>
         <div class="small-products">
           <div class="row">
-            <div class="col-md-3">
+            <div class="col-lg-3 col-sm-4 col-6">
               <div class="small-products-item">
                 <div class="small-products-item__image">
                   <img src="/wp-content/themes/store-child/includes/images/test-image.jpg" alt="">
@@ -170,7 +170,7 @@
                 <div class="small-products-item__title">Персональная композиция эссенций Баха на водно-глицериновой основе</div>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-lg-3 col-sm-4 col-6">
               <div class="small-products-item">
                 <div class="small-products-item__image">
                   <img src="/wp-content/themes/store-child/includes/images/test-image.jpg" alt="">
@@ -183,30 +183,36 @@
         <div class="composition-and-promo-subtitle">Подарочные сертификаты</div>
         <div class="certificates">
           <div class="row">
-            <div class="col-md-4">
-              <div class="certificates-image">
-                <img src="/wp-content/themes/store-child/includes/images/test-certificate.jpg" alt="">
+            <div class="col-md-4 col-6">
+              <div class="certificates-item">
+                <div class="certificates-image">
+                  <img src="/wp-content/themes/store-child/includes/images/test-certificate.jpg" alt="">
+                </div>
+                <div class="certificates-title">Подарочный сертификат на 10 000Р</div>
               </div>
-              <div class="certificates-title">Подарочный сертификат на 10 000Р</div>
             </div>
-            <div class="col-md-4">
-              <div class="certificates-image">
-                <img src="/wp-content/themes/store-child/includes/images/test-certificate.jpg" alt="">
+            <div class="col-md-4 col-6">
+              <div class="certificates-item">
+                <div class="certificates-image">
+                  <img src="/wp-content/themes/store-child/includes/images/test-certificate.jpg" alt="">
+                </div>
+                <div class="certificates-title">Подарочный сертификат на 10 000Р</div>
               </div>
-              <div class="certificates-title">Подарочный сертификат на 10 000Р</div>
             </div>
-            <div class="col-md-4">
-              <div class="certificates-image">
-                <img src="/wp-content/themes/store-child/includes/images/test-certificate.jpg" alt="">
+            <div class="col-md-4 col-6">
+              <div class="certificates-item">
+                <div class="certificates-image">
+                  <img src="/wp-content/themes/store-child/includes/images/test-certificate.jpg" alt="">
+                </div>
+                <div class="certificates-title">Подарочный сертификат на 10 000Р</div>
               </div>
-              <div class="certificates-title">Подарочный сертификат на 10 000Р</div>
             </div>
           </div>
         </div>
         <div class="composition-and-promo-subtitle">Подборы</div>
         <div class="sets">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 col-6">
               <div class="sets-item">
                 <div class="sets-item__image">
                   <img src="/wp-content/themes/store-child/includes/images/test-image.jpg" alt="">
@@ -228,7 +234,7 @@
       <div class="container">
         <div class="section-title">НАШИ обучающие материалы и курсы</div>
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-lg-3 col-sm-4 col-6">
             <div class="learning-materials-section-item">
               <div class="learning-materials-section-item__image">
                 <img src="/wp-content/themes/store-child/includes/images/test-learning-materials1.jpg" alt="">
@@ -236,7 +242,7 @@
               <div class="learning-materials-section-item__title">Базовый курс школы «Natura»</div>              
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-lg-3 col-sm-4 col-6">
             <div class="learning-materials-section-item">
               <div class="learning-materials-section-item__image">
                 <img src="/wp-content/themes/store-child/includes/images/test-learning-materials2.jpg" alt="">
@@ -244,7 +250,7 @@
               <div class="learning-materials-section-item__title">Интегративный подход с использованием клеточных соков и олеолитов</div>              
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-lg-3 col-sm-4 col-6">
             <div class="learning-materials-section-item">
               <div class="learning-materials-section-item__image">
                 <img src="/wp-content/themes/store-child/includes/images/test-learning-materials3.jpg" alt="">
@@ -252,7 +258,7 @@
               <div class="learning-materials-section-item__title">Курс обучения Соли Шюсслера</div>              
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-lg-3 col-sm-4 col-6">
             <div class="learning-materials-section-item">
               <div class="learning-materials-section-item__image">
                 <img src="/wp-content/themes/store-child/includes/images/test-learning-materials4.jpg" alt="">

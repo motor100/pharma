@@ -191,46 +191,42 @@ function render_catalog() {
 
 //Каталог продукции r.kolobaev
 function render__catalog($id_gr) {
-  $taxonomy     = 'product_cat';
-  $orderby      = 'ID';
-  $show_count   = 0;
-  $pad_counts   = 0;
-  $hierarchical = 1;
-  $title        = '';
-  $empty        = 0;
-  $args = array(
-    'taxonomy'     => $taxonomy,
-    'orderby'      => $orderby,
-    'show_count'   => $show_count,
-	'parent'       => $id_gr,
-    'pad_counts'   => $pad_counts,
-    'hierarchical' => $hierarchical,
-    'title_li'     => $title,
-    'exclude'      => '15',
-    'hide_empty'   => $empty
-  );
-  $all_categories = get_categories( $args );
-  foreach ($all_categories as $cat) { ?>
-          <?php
-          $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
-          if ($id_gr == '96') {
-			$css_w = 'w110px';
-			}
-			else {
-			$css_w = 'img';
-		 }
-		 $image = wp_get_attachment_url( $thumbnail_id ); 
-          ?>
-			<div class="children__item">
-                <div class="children__image">
-                    <a href="<?php echo get_term_link($cat->term_id); ?>">
-                        <img class="<?php echo $css_w ;?>" src="<?php echo $image ?>" alt="<?php echo $cat->name; ?>">
-                    </a>
-                </div>
-                <a class="children__title" href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a>
-            </div>
-    <?php
-  }
+    $taxonomy     = 'product_cat';
+    $orderby      = 'ID';
+    $show_count   = 0;
+    $pad_counts   = 0;
+    $hierarchical = 1;
+    $title        = '';
+    $empty        = 0;
+    $args = array(
+        'taxonomy'     => $taxonomy,
+        'orderby'      => $orderby,
+        'show_count'   => $show_count,
+        'parent'       => $id_gr,
+        'pad_counts'   => $pad_counts,
+        'hierarchical' => $hierarchical,
+        'title_li'     => $title,
+        'exclude'      => '15',
+        'hide_empty'   => $empty
+    );
+    $all_categories = get_categories( $args );
+    foreach ($all_categories as $cat) {
+        $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
+        if ($id_gr == '96') {
+            $css_w = 'w110px';
+        } else {
+            $css_w = 'img';
+        }
+        $image = wp_get_attachment_url( $thumbnail_id );
+    	echo '<div class="children__item">';
+        echo '<div class="children__image">';
+        echo '<a href="' . get_term_link($cat->term_id) . '">';
+        echo '<img class="' . $css_w . '" src="' . $image . '" alt="' . $cat->name . '">';
+        echo '</a>';
+        echo '</div>';
+        echo '<a class="children__title" href="' . get_term_link($cat->term_id) . '">' . $cat->name . '</a>';
+        echo '</div>';
+    }
 }
 
 // обертка для категорий
