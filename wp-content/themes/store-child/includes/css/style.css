@@ -2074,10 +2074,6 @@ a {
 .term-description {
   text-align: left;
 }
-.woocommerce-info {
-  background-color: #d1dfd8;
-  color: #184e66;
-}
 
 /*
 .blog .catalog__item {
@@ -3499,7 +3495,6 @@ background-color: #edeadb;
   margin-top: 30px;
 }
 
-
 /* archive product страница категории */
 .archive-product .archive-product-content {
   padding: 40px 0 0 0;
@@ -3508,6 +3503,7 @@ background-color: #edeadb;
   font-size: 30px;
 }
 
+/* cart page */
 .woocommerce-cart .woocommerce {
   display: flex;
 }
@@ -3528,8 +3524,29 @@ background-color: #edeadb;
   border-radius: 25px;
   margin-top: 10px;
   box-shadow: 0px 0px 30px 5px rgba(34, 60, 80, 0.2);
-  /*padding: 0 0 70px 20px;*/
 }
+.woocommerce-cart .cart-page .woocommerce {
+  flex-direction: column;
+}
+.woocommerce-cart .woocommerce-info {
+  width: max-content;
+  background-color: #d1dfd8;
+  color: #184e66;
+}
+.woocommerce-cart .wc-backward {
+  display: block;
+  width: 320px;
+  height: 68px;
+  margin: 40px 0;
+  padding: 17px 0;
+  border-radius: 34px;
+  background-color: var(--wild-willow-color);
+  font-size: 24px;
+  color: var(--mine-shaft-color);
+  text-align: center;
+}
+
+
 
 .filter-but {
   margin: 50px 0;

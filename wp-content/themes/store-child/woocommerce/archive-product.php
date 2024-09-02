@@ -28,35 +28,36 @@ get_header( 'shop' );
  */
 do_action( 'woocommerce_before_main_content' ); ?>
 
-<div class="archive-product single__prod">
-  <div class="catalog inside">
-    <div class="catalog-section-title">Каталог</div>
-    <div class="curved violet violet-white v2">
-      <div class="one"></div>
-      <div class="two"></div>
-      <div class="three"></div>
-    </div>
+<?php
+if (is_shop()) {
+  get_template_part( 'templates/content', 'shop' );
+} else { ?>
 
-    <div class="archive-product-content">
-      <div class="catalog_inside">
-        <div class="container">
-          <div class="category-title"><?php echo woocommerce_page_title(); ?></div>        
+  <div class="archive-product single__prod">
+    <div class="catalog inside">
+      <div class="catalog-section-title">Каталог</div>
+      <div class="curved violet violet-white v2">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+      </div>
+
+      <div class="archive-product-content">
+        <div class="catalog_inside">
+          <div class="container">
+            <div class="category-title"><?php echo woocommerce_page_title(); ?></div>        
+          </div>
+        </div>
+        <div class="catalog_inside desc">
+          <div class="container">
+            <?php do_action( 'woocommerce_archive_description' );?>
+          </div>
         </div>
       </div>
-      <div class="catalog_inside desc">
-        <div class="container">
-          <?php do_action( 'woocommerce_archive_description' );?>
-        </div>
-      </div>
+
     </div>
 
-  </div>
-
-  <div class="container">
-    <?php
-    if (is_shop()) {
-      get_template_part( 'templates/content', 'catalog' );
-    } else { ?>
+    <div class="container">
 
       <?php
       $parentid = get_queried_object_id(); // id родительской категории
@@ -237,10 +238,11 @@ do_action( 'woocommerce_before_main_content' ); ?>
                  */
                 do_action( 'woocommerce_no_products_found' );
               } ?>
-    <?php } ?>
-  </div>
+    
+    </div>
 
-</div>
+  </div>
+<?php } ?>
 
 <div id="to-top" class="to-top hidden-mobile">
   <div class="container">
