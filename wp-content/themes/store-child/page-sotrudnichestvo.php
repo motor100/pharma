@@ -34,24 +34,24 @@
   <div class="frames-section">
     <div class="container">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-xl-8 col-md-7">
           <div class="frames-item">
             <div class="frames-item__title">Мы создаем индивидуальные лекарства и комплексы</div>
             <div class="frames-item__text">на основе природных компонентов высочайшего качества согласно российской и европейской фармакопеям.</div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-xl-4 col-md-5">
           <div class="frames-item">
             <div class="frames-item__title">Препараты изготавливаются вручную сертифицированными фармацевтами из сырья высокого качества</div>
           </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-xl-8 col-md-7">
           <div class="frames-item">
             <div class="frames-item__title">Все наши рецептуры основаны на разработках российских и европейских практикующих врачей</div>
             <div class="frames-item__text">не содержат консервантов, красителей и других небезопасных вспомогательных веществ.</div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-xl-4 col-md-5">
           <div class="frames-item">
             <div class="frames-item__title">Имеем большой опыт работы с биологическими препаратами</div>
           </div>
@@ -62,12 +62,17 @@
   <div class="partnership-section">
     <div class="container">
       <div class="row">
-        <div class="col-md-8">
-          <div class="partnership-text">По вопросам сотрудничества<br>Ознакомьтесь с документацией</div>
+        <div class="col-xl-8 col-md-7">
+          <div class="partnership-text">По вопросам сотрудничества</div>
         </div>
-        <div class="col-md-4">
-          <div class="partnership-btn">Заполнить анкету</div>
-          <div class="partnership-btn">Читать документ по сотрудничеству</div>
+        <div class="col-xl-4 col-md-5">
+          <a href="#" class="partnership-btn">Заполнить анкету</a>
+        </div>
+        <div class="col-xl-8 col-md-7">
+          <div class="partnership-text">Ознакомьтесь с документацией</div>
+        </div>
+        <div class="col-xl-4 col-md-5">
+          <a href="#" class="partnership-btn">Читать документ по сотрудничеству</a>
         </div>
       </div>
     </div>
