@@ -35,7 +35,7 @@
         while( $query->have_posts() ){
           $query->the_post();
       ?>
-        <div class="col-md-4">
+        <div class="col-lg-4 col-sm-6">
           <div class="bo-item">
             <div class="bo-item__content">
               <div class="bo-item__title"><?php the_title(); ?></div>

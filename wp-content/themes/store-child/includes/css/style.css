@@ -1392,6 +1392,9 @@ a {
   color: var(--voodoo-color);
   text-decoration: underline;
 }
+.single-page h2 {
+  line-height: 1.3;
+}
 .single-page .lead-form-section {
   margin: 80px 0 0 0;
 }
@@ -1662,8 +1665,21 @@ a {
     border-radius: 18px;
     font-size: 18px;
   }
+  
+}
+@media only screen and (max-width : 480px) {
+  .pagination {
+    flex-wrap: wrap;
+  }
+  .pagination .page-numbers {
+    min-width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
 }
 
+/* agreement text галочка соглашения */
 .agreement-text {
   margin: 15px 0;
   font-size: 14px;
@@ -4977,6 +4993,12 @@ h1.sec-title {
     min-height: auto;
   }
 
+  /* рекомендуемые товары в карточке блога */
+  .single-page .wc-block-grid.has-4-columns .wc-block-grid__product {
+    flex: 1 0 33%;
+    max-width: 33%;
+  }
+
   .subcategories .subcategories-item {
     margin: 0 10px 15px 0;
   }
@@ -5219,6 +5241,12 @@ h1.sec-title {
   .sotrudnichestvo-page .partnership-section .partnership-text {
     font-size: 19px;
     line-height: 2.2;
+  }
+
+  /* рекомендуемые товары в карточке блога */
+  .single-page .wc-block-grid.has-4-columns .wc-block-grid__product {
+    flex: 1 0 50%;
+    max-width: 50%;
   }
 
 
@@ -5645,12 +5673,12 @@ h1.sec-title {
     font-size: 28px;
   }
 
-  /* pagination */
-  .pagination .page-numbers {
-    min-width: 30px;
-    height: 30px;
-    font-size: 14px;
+  /* рекомендуемые товары в карточке блога */
+  .single-page .wc-block-grid.has-4-columns .wc-block-grid__product {
+    max-width: 90%;
   }
+
+  
 
 
   /* we use cookie */
