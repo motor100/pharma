@@ -33,7 +33,7 @@
   <div class="addresses">
     <div class="container">
       <div class="row">
-        <div class="col-md-3" data-name="moskva">
+        <div class="col-lg-3 col-md-4 col-sm-6 js-a-item" data-name="moskva">
           <div class="addresses-item">
             <div class="addresses-item__image">
               <img src="/wp-content/themes/store-child/includes/images/moskva-almaatinskaya.jpg" alt="">
@@ -47,7 +47,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3" data-name="moskva">
+        <div class="col-lg-3 col-md-4 col-sm-6 js-a-item" data-name="moskva">
           <div class="addresses-item">
             <div class="addresses-item__image">
               <img src="/wp-content/themes/store-child/includes/images/moskva-borovskoe.jpg" alt="">
@@ -63,7 +63,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3" data-name="bryansk">
+        <div class="col-lg-3 col-md-4 col-sm-6 js-a-item" data-name="bryansk">
           <div class="addresses-item">
             <div class="addresses-item__image">
               <img src="/wp-content/themes/store-child/includes/images/moskva-borovskoe.jpg" alt="">
@@ -79,7 +79,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3" data-name="simferopol">
+        <div class="col-lg-3 col-md-4 col-sm-6 js-a-item" data-name="simferopol">
           <div class="addresses-item">
             <div class="addresses-item__image">
               <img src="/wp-content/themes/store-child/includes/images/moskva-borovskoe.jpg" alt="">
@@ -95,7 +95,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3" data-name="sochi">
+        <div class="col-lg-3 col-md-4 col-sm-6 js-a-item" data-name="sochi">
           <div class="addresses-item">
             <div class="addresses-item__image">
               <img src="/wp-content/themes/store-child/includes/images/moskva-borovskoe.jpg" alt="">
@@ -111,7 +111,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3" data-name="cheboksary">
+        <div class="col-lg-3 col-md-4 col-sm-6 js-a-item" data-name="cheboksary">
           <div class="addresses-item">
             <div class="addresses-item__image">
               <img src="/wp-content/themes/store-child/includes/images/moskva-borovskoe.jpg" alt="">
@@ -127,7 +127,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3" data-name="kazan">
+        <div class="col-lg-3 col-md-4 col-sm-6 js-a-item" data-name="kazan">
           <div class="addresses-item">
             <div class="addresses-item__image">
               <img src="/wp-content/themes/store-child/includes/images/moskva-borovskoe.jpg" alt="">

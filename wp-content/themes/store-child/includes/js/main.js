@@ -306,14 +306,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (wherebuyPage) {
     const cityBtns = document.querySelectorAll('.js-city-btn');
-    const addressesItems = document.querySelectorAll('.col-md-3');
+    const aItems = document.querySelectorAll('.js-a-item');
 
     cityBtns.forEach((item) => {
       item.onclick = function() {
-        for (var i = 0; i < addressesItems.length; i++) {
-          addressesItems[i].classList.remove('hidden');
-          if (item.dataset.name !== addressesItems[i].dataset.name) {
-            addressesItems[i].classList.add('hidden');
+
+        // удаление active у всех кнопок
+        const citiesItems = document.querySelectorAll('.cities-item');
+        for (var i = 0; i < citiesItems.length; i++) {
+          citiesItems[i].classList.remove('active');
+        }
+
+        // добавление active у текущей кнопки
+        item.classList.add('active');
+
+        item.classList.add('active');
+
+        for (var i = 0; i < aItems.length; i++) {
+          aItems[i].classList.remove('hidden');
+          if (item.dataset.name !== aItems[i].dataset.name) {
+            aItems[i].classList.add('hidden');
           }
         }
       }
