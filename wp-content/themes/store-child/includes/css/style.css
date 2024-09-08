@@ -4393,6 +4393,17 @@ h1.sec-title {
     margin: 0 0 70px 0;
   }
 
+  /* partnery page */
+  .partnery-page .partners-section .partner-item-title {
+    font-size: 30px;
+  }
+  .partnery-page .partners-section .contacts-title {
+    font-size: 30px;
+  }
+  .partnery-page .partners-section .contacts-text {
+    font-size: 22px;
+  }
+
 
 }
 
@@ -4739,6 +4750,17 @@ h1.sec-title {
     margin: 0 0 20px 0;
   }
   .dostavka-i-oplata-page .dostavka-i-oplata-text {
+    font-size: 20px;
+  }
+
+  /* partnery page */
+  .partnery-page .partners-section .partner-item-title {
+    font-size: 28px;
+  }
+  .partnery-page .partners-section .contacts-title {
+    font-size: 28px;
+  }
+  .partnery-page .partners-section .contacts-text {
     font-size: 20px;
   }
 
@@ -5394,6 +5416,21 @@ h1.sec-title {
   .dostavka-i-oplata-page .dostavka-i-oplata-list .list-item {
     font-size: 18px;
   }
+
+  /* partnery page */
+  .partnery-page .partners-section .partner-item-title {
+    margin: 0 0 15px 0;
+    font-size: 26px;
+  }
+  .partnery-page .partners-section .contacts-title {
+    font-size: 26px;
+  }
+  .partnery-page .partners-section .contacts-text {
+    font-size: 18px;
+  }
+  .partnery-page .partners-section .contacts-link {
+    font-size: 22px;
+  }
   
 
 
@@ -5825,6 +5862,20 @@ h1.sec-title {
     max-width: 90%;
   }
 
+  /* partnery page */
+  .partnery-page .partners-section .partner-item-title {
+    font-size: 22px;
+  }
+  .partnery-page .partners-section .contacts-title {
+    font-size: 22px;
+  }
+  .partnery-page .partners-section .contacts-text {
+    font-size: 16px;
+  }
+  .partnery-page .partners-section .contacts-link {
+    font-size: 20px;
+  }
+
   
 
 
@@ -5899,6 +5950,17 @@ h1.sec-title {
   }
   .dostavka-i-oplata-page .dostavka-i-oplata-text {
     font-size: 16px;
+  }
+
+  /* partnery page */
+  .partnery-page .partners-section .partner-item-title {
+    font-size: 20px;
+  }
+  .partnery-page .partners-section .contacts-title {
+    font-size: 20px;
+  }
+  .partnery-page .partners-section .contacts-link {
+    font-size: 18px;
   }
 
 }
