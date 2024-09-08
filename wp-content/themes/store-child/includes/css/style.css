@@ -4404,6 +4404,23 @@ h1.sec-title {
     font-size: 22px;
   }
 
+  /* razreshitelnaya dokumentaciya page */
+  .razreshitelnaya-dokumentaciya-page .text-medium {
+    font-size: 22px;
+  }
+  .razreshitelnaya-dokumentaciya-page .razreshitelnaya-dokumentaciya-subtitle-big {
+    font-size: 40px;
+  }
+  .razreshitelnaya-dokumentaciya-page .official-info-section .company-info {
+    font-size: 22px;
+  }
+  .razreshitelnaya-dokumentaciya-page .razreshitelnaya-dokumentaciya-subtitle-small {
+    font-size: 30px;
+  }
+  .razreshitelnaya-dokumentaciya-page .services-section .list-item {
+    font-size: 22px;
+  }
+
 
 }
 
@@ -4761,6 +4778,24 @@ h1.sec-title {
     font-size: 28px;
   }
   .partnery-page .partners-section .contacts-text {
+    font-size: 20px;
+  }
+
+  /* razreshitelnaya dokumentaciya page */
+  .razreshitelnaya-dokumentaciya-page .text-medium {
+    font-size: 20px;
+  }
+  .razreshitelnaya-dokumentaciya-page .razreshitelnaya-dokumentaciya-subtitle-big {
+    font-size: 36px;
+  }
+  .razreshitelnaya-dokumentaciya-page .official-info-section .company-info {
+    font-size: 20px;
+  }
+  .razreshitelnaya-dokumentaciya-page .razreshitelnaya-dokumentaciya-subtitle-small {
+    font-size: 28px;
+  }
+  .razreshitelnaya-dokumentaciya-page .services-section .list-item {
+    margin: 0 0 15px 0;
     font-size: 20px;
   }
 
@@ -5134,6 +5169,27 @@ h1.sec-title {
     margin: 0 0 30px 0;
   }
 
+  /* razreshitelnaya dokumentaciya page */
+  .razreshitelnaya-dokumentaciya-page .text-medium {
+    font-size: 18px;
+  }
+  .razreshitelnaya-dokumentaciya-page .razreshitelnaya-dokumentaciya-subtitle-big {
+    font-size: 34px;
+  }
+  .razreshitelnaya-dokumentaciya-page .official-info-section .company-info {
+    font-size: 16px;
+  }
+  .razreshitelnaya-dokumentaciya-page .razreshitelnaya-dokumentaciya-subtitle-small {
+    font-size: 26px;
+  }
+  .razreshitelnaya-dokumentaciya-page .services-section .list-item {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+  }
+  .razreshitelnaya-dokumentaciya-page .rd-section {
+    margin: 0 0 20px 0;
+  }
+
   /* we use cookie */
   .we-use-cookie-wrapper {
     margin: 0 0 0 12px;
@@ -5431,8 +5487,24 @@ h1.sec-title {
   .partnery-page .partners-section .contacts-link {
     font-size: 22px;
   }
-  
 
+  /* razreshitelnaya dokumentaciya page */
+  .razreshitelnaya-dokumentaciya-page .text-medium {
+    font-size: 16px;
+  }
+  .razreshitelnaya-dokumentaciya-page .razreshitelnaya-dokumentaciya-subtitle-big {
+    font-size: 30px;
+  }
+  .razreshitelnaya-dokumentaciya-page .razreshitelnaya-dokumentaciya-subtitle-small {
+    font-size: 22px;
+  }
+  .razreshitelnaya-dokumentaciya-page .services-section .list {
+    padding: 0 0 0 20px;
+  }
+  .razreshitelnaya-dokumentaciya-page .services-section .list-item {
+    font-size: 16px;
+  }
+  
 
   .subcategories {
     margin: 0;
@@ -5876,6 +5948,19 @@ h1.sec-title {
     font-size: 20px;
   }
 
+  /* razreshitelnaya dokumentaciya page */
+  .razreshitelnaya-dokumentaciya-page .razreshitelnaya-dokumentaciya-subtitle-big {
+    font-size: 28px;
+  }
+  .razreshitelnaya-dokumentaciya-page .razreshitelnaya-dokumentaciya-subtitle-small {
+    font-size: 20px;
+  }
+  .razreshitelnaya-dokumentaciya-page .documents-section .download-btn {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    font-size: 18px;
+  }
   
 
 
