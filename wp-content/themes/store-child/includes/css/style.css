@@ -4375,6 +4375,24 @@ h1.sec-title {
     font-size: 30px;
   }
 
+  /* dostavka i oplata page */
+  .dostavka-i-oplata-page .dostavka-i-oplata-description {
+    font-size: 22px;
+  }
+  .dostavka-i-oplata-page .dostavka-i-oplata-subtitle-small {
+    font-size: 28px;
+  }
+  .dostavka-i-oplata-page .dostavka-i-oplata-text {
+    font-size: 22px;
+  }
+  .dostavka-i-oplata-page .dostavka-i-oplata-list .list-item {
+    margin: 0 0 15px 0;
+    font-size: 22px;
+  }
+  .dostavka-i-oplata-page .dio-section {
+    margin: 0 0 70px 0;
+  }
+
 
 }
 
@@ -4696,6 +4714,32 @@ h1.sec-title {
   }
   .kontakty-page .contacts-section .working-time-item {
     font-size: 22px;
+  }
+
+  /* dostavka i oplata page */
+  .dostavka-i-oplata-page .our-office-section .our-office-link {
+    display: block;
+    margin: 0 0 20px 0;
+    font-size: 22px;
+  }
+  .dostavka-i-oplata-page .dostavka-i-oplata-frame {
+    padding: 30px;
+  }
+  .dostavka-i-oplata-page .dio-section {
+    margin: 0 0 50px 0;
+  }
+  .dostavka-i-oplata-page .dostavka-i-oplata-subtitle-small {
+    font-size: 26px;
+  }
+  .dostavka-i-oplata-page .dostavka-i-oplata-list .list-item {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+  }
+  .dostavka-i-oplata-page .dostavka-i-oplata-list {
+    margin: 0 0 20px 0;
+  }
+  .dostavka-i-oplata-page .dostavka-i-oplata-text {
+    font-size: 20px;
   }
 
 
@@ -5049,6 +5093,25 @@ h1.sec-title {
     font-size: 20px;
   }
 
+  /* dostavka i oplata page */
+   .dostavka-i-oplata-page .dostavka-i-oplata-description {
+    margin: 0 0 30px 0;
+    font-size: 20px;
+  }
+  .dostavka-i-oplata-page .dostavka-i-oplata-frame {
+    padding: 20px;
+    font-size: 18px;
+  }
+  .dostavka-i-oplata-page .dostavka-i-oplata-subtitle-small {
+    font-size: 24px;
+  }
+  .dostavka-i-oplata-page .dostavka-i-oplata-text {
+    font-size: 18px;
+  }
+  .dostavka-i-oplata-page .dio-section {
+    margin: 0 0 30px 0;
+  }
+
   /* we use cookie */
   .we-use-cookie-wrapper {
     margin: 0 0 0 12px;
@@ -5319,6 +5382,19 @@ h1.sec-title {
   .kontakty-page .contacts-section .contacts-section__email {
     font-size: 18px;
   }
+
+
+  /* dostavka i oplata page */
+  .dostavka-i-oplata-page .dostavka-i-oplata-subtitle-small {
+    font-size: 22px;
+  }
+  .dostavka-i-oplata-page .dio-section {
+    margin: 0 0 20px 0;
+  }
+  .dostavka-i-oplata-page .dostavka-i-oplata-list .list-item {
+    font-size: 18px;
+  }
+  
 
 
   .subcategories {
@@ -5802,6 +5878,27 @@ h1.sec-title {
   /* kontakty page */
   .kontakty-page .contacts-section .contacts-section__text {
     font-size: 17px;
+  }
+
+  /* dostavka i oplata page */
+  .dostavka-i-oplata-page .dostavka-i-oplata-description {
+    font-size: 18px;
+  }
+  .dostavka-i-oplata-page .dostavka-i-oplata-subtitle-small {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+  }
+  .dostavka-i-oplata-page .dostavka-i-oplata-frame {
+    font-size: 16px;
+  }
+  .dostavka-i-oplata-page .dostavka-i-oplata-list {
+    padding: 0 0 0 20px;
+  }
+  .dostavka-i-oplata-page .dostavka-i-oplata-list .list-item {
+    font-size: 16px;
+  }
+  .dostavka-i-oplata-page .dostavka-i-oplata-text {
+    font-size: 16px;
   }
 
 }
