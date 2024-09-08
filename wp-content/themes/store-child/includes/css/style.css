@@ -4367,6 +4367,14 @@ h1.sec-title {
     font-size: 18px;
   }
 
+  /* kontakty page */
+  .kontakty-page .contacts-section .contacts-section-subtitle {
+    font-size: 30px;
+  }
+  .kontakty-page .contacts-section .contacts-section__phone {
+    font-size: 30px;
+  }
+
 
 }
 
@@ -4672,6 +4680,22 @@ h1.sec-title {
   /* wherebuy page */
   .wherebuy-page .addresses-item {
     margin: 0 0 30px 0;
+  }
+
+  /* kontakty page */
+  .kontakty-page .contacts-section .contacts-section-subtitle {
+    margin: 0 0 15px 0;
+    font-size: 28px;
+  }
+  .kontakty-page .contacts-section .contacts-section__phone {
+    margin: 0 0 30px 0;
+    font-size: 28px;
+  }
+  .kontakty-page .contacts-section .contacts-section__email {
+    margin: 0 0 30px 0;
+  }
+  .kontakty-page .contacts-section .working-time-item {
+    font-size: 22px;
   }
 
 
@@ -5003,6 +5027,28 @@ h1.sec-title {
     margin: 0 10px 15px 0;
   }
 
+  /* kontakty page */
+  .kontakty-page .contacts-section .contacts-section-subtitle {
+    font-size: 24px;
+  }
+  .kontakty-page .contacts-section .contacts-section__phone {
+    font-size: 24px;
+  }
+  .kontakty-page .contacts-section .contacts-section__text {
+    display: block;
+    font-size: 20px;
+  }
+  .kontakty-page .contacts-section .contacts-section__email {
+    margin: 0 0 20px 0;
+  }
+  .kontakty-page .contacts-section .working-time-item {
+    font-size: 18px;
+  }
+  .kontakty-page .contacts-section .contacts-section__address,
+  .kontakty-page .contacts-section .contacts-section__email {
+    font-size: 20px;
+  }
+
   /* we use cookie */
   .we-use-cookie-wrapper {
     margin: 0 0 0 12px;
@@ -5247,6 +5293,31 @@ h1.sec-title {
   .single-page .wc-block-grid.has-4-columns .wc-block-grid__product {
     flex: 1 0 50%;
     max-width: 50%;
+  }
+
+  /* kontakty page */
+  .kontakty-page .contacts-section .contacts-section-subtitle {
+    margin: 0 0 10px 0;
+    font-size: 22px;
+  }
+  .kontakty-page .contacts-section .phone-wrapper {
+    margin: 0 0 20px 0;
+  }
+  .kontakty-page .contacts-section .contacts-section__phone {
+    font-size: 22px;
+  }
+  .kontakty-page .contacts-section .contacts-section__text {
+    font-size: 18px;
+  }
+  .kontakty-page .contacts-section .contacts-section__email {
+    margin: 0 0 15px 0;
+  }
+  .kontakty-page .contacts-section .working-time-item {
+    font-size: 16px;
+  }
+  .kontakty-page .contacts-section .contacts-section__address,
+  .kontakty-page .contacts-section .contacts-section__email {
+    font-size: 18px;
   }
 
 
@@ -5726,6 +5797,11 @@ h1.sec-title {
   }
   .sotrudnichestvo-page .partnership-section .partnership-btn {
     font-size: 15px;
+  }
+
+  /* kontakty page */
+  .kontakty-page .contacts-section .contacts-section__text {
+    font-size: 17px;
   }
 
 }
