@@ -251,56 +251,6 @@ document.addEventListener("DOMContentLoaded", () => {
   checkCookies();
 
 
-  // Замена селекторов при ширине более 1400px
-  /*
-  const ulProducts = document.querySelector('.single__prod ul.products');
-
-  if (ulProducts) {
-
-    /**
-     * Функция замены селекторов
-    */
-  /*
-    function replaceColumnClass() {
-      const liProducts = ulProducts.querySelectorAll('li.product');
-
-      if (window.innerWidth > 1400) {
-        // Замена селектора columns-3 на columns-4
-        if (ulProducts.classList.contains('columns-3')) {
-          ulProducts.classList.replace('columns-3', 'columns-4');
-        }
-
-        // Удаление селектора last
-        for (let i = 0; i < liProducts.length; i++) {
-          liProducts[i].classList.remove('last');
-          if (i % 4 == 3) {
-            liProducts[i].classList.add('last');
-          }
-        }
-
-      } else {
-        // Замена селектора columns-4 на columns-3
-        if (ulProducts.classList.contains('columns-4')) {
-          ulProducts.classList.replace('columns-4', 'columns-3');
-        }
-
-        // Добавление селектора last
-        for (let i = 0; i < liProducts.length; i++) {
-          liProducts[i].classList.remove('last');
-          if (i % 3 == 2) {
-            liProducts[i].classList.add('last');
-          }
-        }
-      }
-    }
-
-    replaceColumnClass();
-
-    window.addEventListener('resize', replaceColumnClass);
-  }
-  */
-
-
   // Фильтр городов на странице Где купить
   const wherebuyPage = document.querySelector('.wherebuy-page');
 
