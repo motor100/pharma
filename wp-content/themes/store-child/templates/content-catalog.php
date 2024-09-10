@@ -110,7 +110,8 @@
               </div>
             </div>
             <div class="catalog-tabs-content">
-              <div class="cat-wrapper">
+              <?php get_template_part( 'templates/content', 'vebinary' ); ?>
+              <!-- <div class="cat-wrapper">
                 <?php
                 $args = array(
                 'tax_query' => array(
@@ -138,7 +139,7 @@
                 </div>
                 <?php endwhile; ?>
                 <?php wp_reset_query(); ?>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -225,7 +226,7 @@
       </div>
     </div>
 
-    <div class="learning-materials-section green-bg-section">
+    <div class="learning-materials-section catalog-section green-bg-section">
       <div class="curved green">
         <div class="one"></div>
         <div class="two"></div>
@@ -233,39 +234,8 @@
       </div>
       <div class="container">
         <div class="section-title">НАШИ обучающие материалы и курсы</div>
-        <div class="row">
-          <div class="col-lg-3 col-sm-4 col-6">
-            <div class="learning-materials-section-item">
-              <div class="learning-materials-section-item__image">
-                <img src="/wp-content/themes/store-child/includes/images/test-learning-materials1.jpg" alt="">
-              </div>
-              <div class="learning-materials-section-item__title">Базовый курс школы «Natura»</div>              
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-4 col-6">
-            <div class="learning-materials-section-item">
-              <div class="learning-materials-section-item__image">
-                <img src="/wp-content/themes/store-child/includes/images/test-learning-materials2.jpg" alt="">
-              </div>
-              <div class="learning-materials-section-item__title">Интегративный подход с использованием клеточных соков и олеолитов</div>              
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-4 col-6">
-            <div class="learning-materials-section-item">
-              <div class="learning-materials-section-item__image">
-                <img src="/wp-content/themes/store-child/includes/images/test-learning-materials3.jpg" alt="">
-              </div>
-              <div class="learning-materials-section-item__title">Курс обучения Соли Шюсслера</div>              
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-4 col-6">
-            <div class="learning-materials-section-item">
-              <div class="learning-materials-section-item__image">
-                <img src="/wp-content/themes/store-child/includes/images/test-learning-materials4.jpg" alt="">
-              </div>
-              <div class="learning-materials-section-item__title">Флоротерапия Эдварда Баха</div>              
-            </div>
-          </div>
+        <div class="catalog-tabs-contents">
+          <?php get_template_part( 'templates/content', 'vebinary' ); ?>
         </div>
       </div>
       <div class="left-bg">

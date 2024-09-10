@@ -84,7 +84,7 @@
                 <div class="header-cart__content">
                   <div class="header-cart__counter">
                     <span class="text">Количество товаров: </span>
-                    <span class="counter"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                    <span class="counter cart-count menu__cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
                   </div>
                   <div class="header-cart__total">
                     <span class="text">Сумма: </span>
