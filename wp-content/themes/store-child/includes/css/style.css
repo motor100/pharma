@@ -349,7 +349,7 @@ a {
   color: var(--rare-grey-color);
   line-height: 1.1;
 }
-.header-desktop .header-content .header-cart__content .counter {
+.header-desktop .header-content .header-cart__content .number {
   font-family: 'Roboto-Medium';
   color: var(--voodoo-color);
 }

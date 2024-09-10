@@ -660,6 +660,21 @@ function get_specialists_from_city() {
 }
 
 
+// AJAX обновление количество товара у значка корзины в хэдере и нижнем мобильном меню
+add_action( 'wp_ajax_set_cart_counters', 'set_counters' ); // хук wp_ajax
+add_action( 'wp_ajax_nopriv_set_cart_counters', 'set_counters' ); // хук wp_ajax для незалогиненных пользователей
+
+function set_counters() {
+
+    echo json_encode([
+        'count' => WC()->cart->get_cart_contents_count(),
+        'total' => WC()->cart->get_cart_contents_total()
+    ]);
+    
+    wp_die(); // выход нужен для того, чтобы в ответе не было ничего лишнего (0), только то что возвращает функция
+}
+
+
 // Вывод кастомного нижнего меню. Разделение на части
 function custom_nav_menu($start = 0, $end = NULL) {
 
