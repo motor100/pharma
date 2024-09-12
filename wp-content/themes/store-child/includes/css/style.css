@@ -678,8 +678,12 @@ a {
 .offer-of-week-section .big-offer .big-offer-frame {
   height: 100%;
   padding: 20px;
-  border: 4px solid var(--wild-willow-color);
+  border: 4px solid transparent;
   border-radius: 30px;
+  transition: border .3s;
+}
+.offer-of-week-section .big-offer .big-offer-frame:hover {
+  border: 4px solid var(--wild-willow-color);
 }
 .offer-of-week-section .big-offer .big-offer-image {
   border-radius: 30px;
@@ -707,6 +711,8 @@ a {
   font-family: 'Roboto-light';
   font-size: 18px;
   color: var(--mine-shaft-color);
+}
+.offer-of-week-section .big-offer .big-offer-info .info-title:hover {
   text-decoration: underline;
 }
 .offer-of-week-section .big-offer .big-offer-info .full-price {
@@ -1988,9 +1994,6 @@ a {
   line-height: 2;
 }
 
-
-
-
 /* breadcrumb */
 .storefront-breadcrumb {
   margin-bottom: 0;
@@ -2003,6 +2006,10 @@ a {
   font-family: 'Roboto-light';
   color: var(--oslo-grey-color);
   text-decoration: underline;
+  transition: color .3s;
+}
+.storefront-breadcrumb .woocommerce-breadcrumb a:hover {
+  color: var(--terracota-color);
 }
 .storefront-breadcrumb .woocommerce-breadcrumb a:first-of-type::before {
   content: '';
