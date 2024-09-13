@@ -47,7 +47,7 @@ if (isset($_POST["name"]) &&
     }
 
     // Тема письма
-    $mail->Subject = 'Запись к специалисту с сайта natura-pharma.ru';
+    $mail->Subject = 'Сообщение с сайта natura-pharma.ru';
 
     $mail->isHTML(true);
 

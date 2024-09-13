@@ -291,9 +291,9 @@
     <div class="order-text">Заказать натуральные препараты и продукты на их основе в NaturaPharma очень просто</div>
     <div class="order-phone">наш телефон +7 (495) 927-4 -928</div>
     <div class="flex-container">
-      <div class="callback-btn" data-fancybox="dialog-form1" data-src="#contact-form">
-        <img src="/wp-content/themes/store-child/includes/images/svg/phone-call.svg" class="callback-btn__image" alt="">
-        <span class="callback-btn__text">заказать звонок</span>
+      <div class="callback-form-btn">
+        <img src="/wp-content/themes/store-child/includes/images/svg/phone-call.svg" class="callback-form-btn__image" alt="">
+        <span class="callback-form-btn__text">заказать звонок</span>
       </div>
       <a href="/o-nas" class="detailed-about-us-btn">подробнее о нас</a>
     </div>

@@ -18,12 +18,8 @@ get_header(); ?>
 
 	    if(get_the_ID() == 2):
 	      get_template_part( 'templates/content', 'main' );
-			elseif(get_the_ID() == 39):
-			  get_template_part( 'templates/content', 'medicine' );
 			elseif(get_the_ID() == 9333):
 			  get_template_part( 'templates/content', 'blog' );		  
-			elseif(get_the_ID() == 579):
-			  get_template_part( 'templates/content', 'contacts' );
 			elseif(get_the_ID() == 7):
 				get_template_part( 'templates/content', 'cart' );
 	    else:

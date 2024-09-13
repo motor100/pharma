@@ -176,7 +176,9 @@
       <div class="container">
         <div class="section-title">НАШИ обучающие материалы и курсы</div>
         <div class="catalog-tabs-contents">
-          <?php get_template_part( 'templates/content', 'vebinary' ); ?>
+          <div class="cat-wrapper">
+            <?php get_template_part( 'templates/content', 'vebinary' ); ?>
+          </div>
         </div>
       </div>
       <div class="left-bg">
@@ -194,9 +196,9 @@
         <p class="p">В каталоге NaturaPharma вы найдете большой выбор натуропатических комплексов и индивидуальных лекарств, которые можно использовать в тех или иных случаях. Цель наших лекарств - регуляция энергетических и биохимических процессов без замещения или подавления. Мы предлагаем лекарства в виде капель, таблеток, порошков (тритураций), глицериновых экстрактов, созданных из высококачественного сырья, собранного нами самостоятельно, или купленных в экологически чистых уголках нашей планеты, в соответствии со знанием природных циклов, планетарных ритмов, с большим уважением к природе и всему тому, что она даёт человеку.</p>
         <p class="p">Наши продукты – это результат многолетних исследований и личного опыта врачей и фармацевтов в области натуропатии и психосоматики. Мы создаем культуру здоровой и осознанной жизни. В аптеке натуральных лекарств NaturaPharma каждый найдет именно то, что нужно лично ему для повышения уровня здоровья и ресурсности организма.</p>
         <p class="p p-last"><span class="text-bold">Позвоните нам сегодня по телефону +7 (495) 927-49-28</span>, чтобы узнать больше о наших продуктах и сделать шаг навстречу своему здоровью. Купите натуральные лекарства в NaturaPharma и откройте новую страницу в своей жизни.</p>
-        <div class="callback-btn" data-fancybox="dialog-form1" data-src="#contact-form">
-          <img src="/wp-content/themes/store-child/includes/images/svg/phone-call.svg" class="callback-btn__image" alt="">
-          <span class="callback-btn__text">заказать звонок</span>
+        <div class="callback-form-btn">
+          <img src="/wp-content/themes/store-child/includes/images/svg/phone-call.svg" class="callback-form-btn__image" alt="">
+          <span class="callback-form-btn__text">заказать звонок</span>
         </div>
       </div>
     </div>

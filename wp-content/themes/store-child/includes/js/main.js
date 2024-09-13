@@ -143,8 +143,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
   });
-  
 
+
+  // AJAX catalog tabs. Переключение вкладок на главной странице, странице каталог и странице магазина
+  const catalogTabsButons = document.querySelectorAll('.catalog-tabs-button');
+
+  if (catalogTabsButons) {
+    const catalogTabsContent = document.querySelectorAll('.catalog-tabs-content');
+
+    for (let i = 0; i < catalogTabsButons.length; i++) {
+      catalogTabsButons[i].onclick = function() {
+        for (let j = 0; j < catalogTabsButons.length; j++) {
+          catalogTabsButons[j].classList.remove('active');
+          catalogTabsContent[j].classList.remove('active');
+        }
+        catalogTabsButons[i].classList.add('active');
+        catalogTabsContent[i].classList.add('active');
+
+        const catWrapper = catalogTabsContent[i].querySelector('.cat-wrapper');
+
+        // Если catWrapper.innerText пустая строка, то вставляю
+        console.log(catWrapper.innerText);
+        if (catWrapper.innerText == '') {
+
+          // Лоадер. селекторы от плагина load more products
+          catWrapper.innerHTML += '<span class="lmp_products_loading"><i class="fa fa-spinner lmp_rotate"></i></span>';
+
+          fetch(Myscrt.ajaxurl, {
+            method: 'POST',
+            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+            cache: 'no-cache',
+            body: 'action=select_catalog_tabs&id=' + catalogTabsButons[i].dataset.id,
+          })
+          .then((response) => response.text())
+          .then((html) => {
+            // если пришел html, то вставляю, иначе "Не найдено"
+            catWrapper.innerHTML = (html ? html : '<div class="no-found-product-text">Не найдено</div>');
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+        }
+      }
+    }
+  }
+  
 
   // Sticky top menu
   /*
@@ -192,50 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  // Сatalog tabs. Переключение вкладок на главной странице, странице каталог и странице магазина
-  const catalogTabsButons = document.querySelectorAll('.catalog-tabs-button');
-
-  if (catalogTabsButons) {
-    const catalogTabsContent = document.querySelectorAll('.catalog-tabs-content');
-
-    for (let i = 0; i < catalogTabsButons.length; i++) {
-      catalogTabsButons[i].onclick = function() {
-        for (let j = 0; j < catalogTabsButons.length; j++) {
-          catalogTabsButons[j].classList.remove('active');
-          catalogTabsContent[j].classList.remove('active');
-        }
-        catalogTabsButons[i].classList.add('active');
-        catalogTabsContent[i].classList.add('active');
-
-        const catWrapper = catalogTabsContent[i].querySelector('.cat-wrapper');
-
-        // Если catWrapper.innerText пустая строка, то вставляю
-        console.log(catWrapper.innerText);
-        if (catWrapper.innerText == '') {
-
-          // Лоадер. селекторы от плагина load more products
-          catWrapper.innerHTML += '<span class="lmp_products_loading"><i class="fa fa-spinner lmp_rotate"></i></span>';
-
-          fetch(Myscrt.ajaxurl, {
-            method: 'POST',
-            headers: {'Content-Type':'application/x-www-form-urlencoded'},
-            cache: 'no-cache',
-            body: 'action=select_catalog_tabs&id=' + catalogTabsButons[i].dataset.id,
-          })
-          .then((response) => response.text())
-          .then((html) => {
-            // если пришел html, то вставляю, иначе "Не найдено"
-            catWrapper.innerHTML = (html ? html : '<div class="no-found-product-text">Не найдено</div>');
-          })
-          .catch((error) => {
-            console.log(error);
-          })
-        }
-      }
-    }
-  }
-
-
   // Mobile menu
   const body = document.querySelector('body');
   const burgerMenuWrapper = document.querySelector('.burger-menu-wrapper');
@@ -273,6 +272,77 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 500);
     }
   }
+
+
+
+
+  // Окна
+  const modalWindows = document.querySelectorAll('.modal-window');
+  const callbackFormBtns = document.querySelectorAll('.callback-form-btn');
+  const callbackModal = document.querySelector('#callback-modal');
+  // const callbackBtns = document.querySelectorAll('.js-callback-btn');
+  // const callbackModal = document.querySelector('#callback-modal');
+  // const testimonialsBtn = document.querySelector('.testimonials-btn');
+  // const testimonialsModal = document.querySelector('#testimonials-modal');
+  const modalCloseBtns = document.querySelectorAll('.modal-window .modal-close');
+
+  callbackFormBtns.forEach((item) => {
+    item.onclick = function () {
+      modalWindowOpen(callbackModal);
+    }
+  });
+  
+  /*
+  callbackBtns.forEach((item) => {
+    item.onclick = function () {
+      modalWindowOpen(callbackModal);
+    }
+  });
+
+  if (testimonialsBtn) {
+    testimonialsBtn.onclick = function () {
+      modalWindowOpen(testimonialsModal);
+    }
+  }
+  */
+  
+  function modalWindowOpen(win) {
+    // Закрытие мобильного меню
+    // closeAllMobileMenu();
+
+    // Открытие окна
+    body.classList.add('overflow-hidden');
+    win.classList.add('active');
+    setTimeout(function(){
+      win.childNodes[1].classList.add('active');
+    }, 200);
+  }
+
+  for (let i=0; i < modalCloseBtns.length; i++) {
+    modalCloseBtns[i].onclick = function() {
+      modalWindowClose(modalWindows[i]);
+    }
+  }
+
+  for (let i = 0; i < modalWindows.length; i++) {
+    modalWindows[i].onclick = function(event) {
+      let classList = event.target.classList;
+      for (let j = 0; j < classList.length; j++) {
+        if (classList[j] == "modal" || classList[j] == "modal-wrapper" || classList[j] == "modal-window") {
+          modalWindowClose(modalWindows[i])
+        }
+      }
+    }
+  }
+
+  function modalWindowClose(win) {
+    body.classList.remove('overflow-hidden');
+    win.childNodes[1].classList.remove('active');
+    setTimeout(() => {
+      win.classList.remove('active');
+    }, 300);
+  }
+
 
 
   // Set cookie
@@ -361,6 +431,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // AJAX отправка формы Записаться на консультацию на странице специалиста
   const lfsForm = document.getElementById('lfs-form');
   const lfsSubmitBtn = document.getElementById('lfs-submit-btn');
+  const callbackForm = document.getElementById('callback-modal-form');
+  const callbackSubmitBtn = document.getElementById('callback-modal-btn');
 
   function ajaxCallback(form) {
 
@@ -426,6 +498,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (lfsSubmitBtn) {
     lfsSubmitBtn.onclick = function() {
       ajaxCallback(lfsForm);
+    }
+  }
+
+  if (callbackSubmitBtn) {
+    callbackSubmitBtn.onclick = function() {
+      ajaxCallback(callbackForm);
     }
   }
 

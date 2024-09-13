@@ -112,6 +112,17 @@ body {
 * {
   box-sizing: border-box;
 }
+a:focus {
+  outline: none;
+}
+input:active,
+input:focus {
+  outline: none;
+}
+button:active,
+button:focus {
+  outline: none;
+}
 a {
   text-decoration: none;
 }
@@ -132,6 +143,9 @@ a {
   height: 100%;
   z-index: 1;
 }
+.terracota-color {
+  color: var(--terracota-color);
+}
 
 .link-button,
 .wpb-pcf-btn {
@@ -150,10 +164,10 @@ a {
 .wpb-pcf-btn:hover {
   outline: none;
 }
-.link-button:focus,
+/*.link-button:focus,
 .wpb-pcf-btn:focus {
   outline: none;
-}
+}*/
 .link-button.red,
 .link-button.wpb-pcf-form-fire,
 .wpb-pcf-btn.red,
@@ -681,12 +695,9 @@ a {
 .offer-of-week-section .big-offer .big-offer-frame {
   height: 100%;
   padding: 20px;
-  border: 4px solid transparent;
+  border: 4px solid var(--wild-willow-color);
   border-radius: 30px;
   transition: border .3s;
-}
-.offer-of-week-section .big-offer .big-offer-frame:hover {
-  border: 4px solid var(--wild-willow-color);
 }
 .offer-of-week-section .big-offer .big-offer-image {
   border-radius: 30px;
@@ -866,9 +877,10 @@ a {
   margin: 0 0 20px 0;
   border-radius: 34px;
   background-color: var(--wild-willow-color);
+  cursor: pointer;
   gap: 15px;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
 }
 .footer .callback-form-btn .callback-form-btn__text {
   font-size: 24px;
@@ -1439,9 +1451,6 @@ a {
 .single-page .lead-form-section .label {
   display: block;
 }
-.single-page .lead-form-section .label .terracota-color {
-  color: var(--terracota-color);
-}
 .single-page .lead-form-section .textarea {
   height: 246px;
   resize: none;
@@ -1705,7 +1714,7 @@ a {
   line-height: 1.6;
 }
 .agreement-text a {
-  margin: 15px 0;
+/*  margin: 15px 0;*/
   font-size: 14px;
   color: var(--mine-shaft-color);
 }
@@ -1987,9 +1996,9 @@ a {
   -o-transition: color 0.2s;
   transition: color 0.2s;
 }
-.aside-menu .cat_name:focus {
+/*.aside-menu .cat_name:focus {
   outline: none;
-}
+}*/
 .aside-menu .cat_name:hover {
   color: #1b4b22;
 }
@@ -3000,7 +3009,7 @@ ul.products li.product .added_to_cart:hover {
 .text-section .flex-container {
   display: flex;
 }
-.text-section .callback-btn {
+.text-section .callback-form-btn {
   display: flex;
   width: 270px;
   height: 68px;
@@ -3012,11 +3021,11 @@ ul.products li.product .added_to_cart:hover {
   align-items: center;
   justify-content: space-between;
 }
-.text-section .callback-btn .callback-btn__image {
+.text-section .callback-form-btn .callback-form-btn__image {
   width: 20px;
   height: 24px;
 }
-.text-section .callback-btn .callback-btn__text {
+.text-section .callback-form-btn .callback-form-btn__text {
   font-size: 20px;
   color: var(--mine-shaft-color);
   font-weight: 600;
@@ -3037,16 +3046,6 @@ ul.products li.product .added_to_cart:hover {
   justify-content: center;
 }
 
-
-/*:focus,
-a:focus {
-  outline-color: transparent !important;
-}*/
-/*.ui-tabs-anchor:active,
-.ui-tabs-anchor:focus {
-  outline: none;
-}
-*/
 
 /* single product page */
 .single-product .single-product-content {
@@ -3242,10 +3241,10 @@ a:focus {
   text-align: center;
 }
 /* https://stackoverflow.com/questions/14144426/remove-outline-from-active-jquery-ui-tab */
-.single-product .product .wc-tabs li a:focus,
+/*.single-product .product .wc-tabs li a:focus,
 .ui-state-focus:focus {
   outline: none !important;
-}
+}*/
 
 /* quantity */
 .quantity {
@@ -3266,9 +3265,9 @@ a:focus {
   -moz-appearance: textfield;
   appearance: textfield;
 }
-.quantity .qty:active {
+/*.quantity .qty:active {
   outline: none;
-}
+}*/
 .quantity .qty::-webkit-inner-spin-button,
 .quantity .qty::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -3898,6 +3897,135 @@ h1.sec-title {
   align-items: center;
 }
 
+/* modal */
+.modal-window {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.8);
+  top: 0;
+  left: 0;
+  z-index: 10004;
+}
+.modal-window.active {
+  display: block;
+}
+.modal-window .modal-wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 5%;
+  padding: 0 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+}
+.modal-window .modal-wrapper.active {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-window .modal-area {
+  position: relative;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+}
+.modal-window .modal-close {
+  position: absolute;
+  top: 35px;
+  right: 28px;
+  cursor: pointer;
+}
+.modal-window .close {
+  position: relative;
+  width: 21px;
+  height: 21px;
+  border-radius: 3px;
+}
+.modal-window .close:before,
+.modal-window .close:after { 
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 9px;
+  width: 2px;
+  height: 20px;
+  border-radius: 2px;
+  background-color: #A9A9A9;
+  transition: background-color .3s;
+}
+.modal-window .close:before {
+  transform: rotate(45deg);
+}
+.modal-window .close:after {
+  transform: rotate(-45deg);
+}
+.modal-window .modal-title {
+  margin: 0 0 20px 0;
+  font-family: 'roboto-medium';
+  font-size: 20px;
+  line-height: 1.3;
+  text-align: center;
+}
+.modal-window .label {
+  display: block;
+  margin-bottom: 5px;
+}
+.modal-window .input-field {
+  display: block;
+  width: 100%;
+  height: 50px;
+  margin: 0 0 10px 0;
+  padding: 15px 20px;
+  border: 1px solid var(--white-rock-color);
+  border-radius: 25px;
+  font-family: inherit;
+}
+.modal-window .required {
+  border-bottom: 1px solid #FF7272;
+}
+.modal-window .checkbox-text {
+  display: block;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.modal-window .privacy-policy-btn {
+  color: #3E3E3E;
+  text-decoration: underline;
+}
+.modal-window .submit-btn {
+  display: block;
+  width: 100%;
+  height: 56px;
+  margin: 30px 0 0 0;
+  padding: 0;
+  border: none;  
+  border-radius: 28px;
+  background-color: var(--wild-willow-color);
+  font-family: 'roboto-medium';
+  font-size: 20px;
+  cursor: pointer;
+}
+/*.modal-window .checkbox-wrapper {
+  display: flex;
+}
+.modal-window .custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}*/
+
+/* callback modal */
+.callback-modal .form {
+  margin: 30px 0 0 0;
+}
+
+
 /* we use cookie */
 .we-use-cookie {
   position: fixed;
@@ -4429,10 +4557,10 @@ h1.sec-title {
   .text-section .order-phone {
     font-size: 22px;
   }
-  .text-section .callback-btn {
+  .text-section .callback-form-btn {
     width: 250px;
   }
-  .text-section .callback-btn .callback-btn__text {
+  .text-section .callback-form-btn .callback-form-btn__text {
     font-size: 18px;
   }
   .text-section .detailed-about-us-btn {
@@ -5511,7 +5639,7 @@ h1.sec-title {
   .text-section .flex-container {
     display: block;
   }
-  .text-section .callback-btn {
+  .text-section .callback-form-btn {
     margin: 0 0 15px 0;
   }
 
@@ -5724,7 +5852,7 @@ h1.sec-title {
   .text-section .text-section-title {
     margin: 0 0 10px 0;
   }
-  .text-section .callback-btn {
+  .text-section .callback-form-btn {
     width: 100%;
     gap: 15px;
     justify-content: center;

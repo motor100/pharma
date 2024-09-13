@@ -51,10 +51,10 @@
         <div class="col-lg-3">
           <div class="flex-container">
             <div class="footer-buttons">
-              <a href="#" class="callback-form-btn" data-fancybox="dialog-form1" data-src="#contact-form">
+              <div class="callback-form-btn">
                 <img src="/wp-content/themes/store-child/includes/images/svg/circle-call.svg" class="callback-form-btn__image" alt="">
                 <span class="callback-form-btn__text">Заказать звонок</span>
-              </a>
+              </div>
               <div class="search-btn" onclick="window.scrollTo(0,0)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="search-btn__image" viewBox="0 0 16 16">
                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -172,14 +172,31 @@
   </div>
 </div>
 
-<div id="contact-form" style="display:none;max-width: calc(100vw - 50px);">
-  <?php echo do_shortcode('[contact-form-7 id="5357fd9" title="Заказать звонок"]');  ?>
-</div>
-<div id="contact-form2" style="display:none;max-width: calc(100vw - 50px);">
-  <?php echo do_shortcode('[contact-form-7 id="b0981bb" title="Подписаться на рассылку"]');  ?>
-</div>
-<div id="contact-form3" style="display:none;max-width: calc(100vw - 50px);">
-  <?php echo do_shortcode('[contact-form-7 id="b528218" title="Сотрудничество"]');  ?>
+<div id="callback-modal" class="modal-window callback-modal">
+  <div class="modal-wrapper">
+    <div class="modal-area">
+      <div class="modal-close">
+        <div class="close"></div>
+      </div>
+      <div class="modal-title">Заказать звонок</div>
+      <form id="callback-modal-form" class="form" method="post">
+        <!-- <form id="callback-modal-form" class="form" method="post" action="/wp-content/themes/store-child/phpmailer/mailer.php"> -->
+        <label for="name-callback-modal" class="label">Имя<span class="terracota-color">*</span></label>
+        <input type="text" id="name-callback-modal" class="input-field js-required-name" name="name" required minlength="3" maxlength="20" placeholder="">
+        <label for="phone-callback-modal" class="label">Телефон<span class="terracota-color">*</span></label>
+        <input type="text" id="phone-callback-modal" class="input-field js-required-phone js-input-phone-mask" name="phone" required maxlength="18">
+        <input type="hidden" name="surname" class="js-required-surname" value="нет">
+        <input type="hidden" name="email" class="js-required-email" value="нет">
+        <input type="button" id="callback-modal-btn" class="submit-btn" value="Отправить">
+        <!-- <input type="submit" id="callback-modal-btn" class="submit-btn" value="Отправить"> -->
+        <div class="agreement-text">
+          <input type="checkbox" id="cb-checkbox-input" name="checkbox" class="custom-checkbox js-required-checkbox" checked onchange="document.getElementById('callback-modal-btn').disabled = !this.checked;">
+          <label for="lfs-checkbox-input" class="custom-checkbox-label"></label>
+          <span>Нажимая кнопку вы соглашаетесь с <a href="/politika-v-otnoshenii-obrabotki-personalnyh-dannyh">политикой обработки данных</a></span>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 
 </div>
