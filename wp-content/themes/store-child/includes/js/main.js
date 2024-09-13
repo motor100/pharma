@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const products = document.querySelector('ul.products');
       
       // лоадер. селекторы от плагина load more products
-      products.innerHTML = '<span class="lmp_products_loading"><i class="fa fa-spinner lmp_rotate"></i></span>';    
+      products.innerHTML = '<span class="lmp_products_loading"><i class="fa fa-spinner lmp_rotate"></i></span>';
 
       fetch(Myscrt.ajaxurl, {
         method: 'POST',
@@ -192,20 +192,45 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  // Сatalog tabs. Home page and catalog page
-  const catalogTabs = document.querySelectorAll('.catalog-tabs-button');
+  // Сatalog tabs. Переключение вкладок на главной странице, странице каталог и странице магазина
+  const catalogTabsButons = document.querySelectorAll('.catalog-tabs-button');
 
-  if (catalogTabs) {
+  if (catalogTabsButons) {
     const catalogTabsContent = document.querySelectorAll('.catalog-tabs-content');
 
-    for (let i = 0; i < catalogTabs.length; i++) {
-      catalogTabs[i].onclick = function() {
-        for (let j = 0; j < catalogTabs.length; j++) {
-          catalogTabs[j].classList.remove('active');
+    for (let i = 0; i < catalogTabsButons.length; i++) {
+      catalogTabsButons[i].onclick = function() {
+        for (let j = 0; j < catalogTabsButons.length; j++) {
+          catalogTabsButons[j].classList.remove('active');
           catalogTabsContent[j].classList.remove('active');
         }
-        catalogTabs[i].classList.add('active');
+        catalogTabsButons[i].classList.add('active');
         catalogTabsContent[i].classList.add('active');
+
+        const catWrapper = catalogTabsContent[i].querySelector('.cat-wrapper');
+
+        // Если catWrapper.innerText пустая строка, то вставляю
+        console.log(catWrapper.innerText);
+        if (catWrapper.innerText == '') {
+
+          // Лоадер. селекторы от плагина load more products
+          catWrapper.innerHTML += '<span class="lmp_products_loading"><i class="fa fa-spinner lmp_rotate"></i></span>';
+
+          fetch(Myscrt.ajaxurl, {
+            method: 'POST',
+            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+            cache: 'no-cache',
+            body: 'action=select_catalog_tabs&id=' + catalogTabsButons[i].dataset.id,
+          })
+          .then((response) => response.text())
+          .then((html) => {
+            // если пришел html, то вставляю, иначе "Не найдено"
+            catWrapper.innerHTML = (html ? html : '<div class="no-found-product-text">Не найдено</div>');
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+        }
       }
     }
   }

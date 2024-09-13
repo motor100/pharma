@@ -615,6 +615,9 @@ a {
   gap: 50px 35px;
   grid-template-columns: repeat(4, 1fr);
 }
+.catalog-section .catalog-tabs-contents .lmp_products_loading {
+  display: block;
+}
 /*.catalog-section .catalog-tabs-contents .children__item {
   padding: 30px 20px 20px;
 }*/
@@ -2736,7 +2739,6 @@ a.white:hover {
 }
 .green-b:hover {
   color: #fff;
-  /*background-color: rgba(194,210,121,0.9);*/
 }
 
 .w70 {
@@ -2747,6 +2749,11 @@ a.white:hover {
 }
 .w110px {
   max-width: 110px;
+}
+.ww100 {
+  max-height: 100%;
+  max-width: 100%;
+  o-object-fit: contain;
 }
 
 ul.clear {
@@ -3068,7 +3075,7 @@ a:focus {
   background: url(../images/magnifying-glass-plus.jpg) center no-repeat;
 }
 .single-product .product .summary {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 /*.single-product div.product .woocommerce-product-gallery {
   position: relative;
@@ -3101,7 +3108,7 @@ a:focus {
   font-weight: bold;
 }
 .single-product .product .price {
-  margin: 0 0 30px 0;
+  margin: 0 0 20px 0;
   font-family: 'Roboto-Medium';
   font-size: 32px;
 }
@@ -3111,7 +3118,7 @@ a:focus {
 .single-product .product .sku_wrapper,
 .single-product .product .posted_in {
   display: block;
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   font-size: 20px;
   color: #999999;
 }
@@ -3123,16 +3130,13 @@ a:focus {
   text-decoration: underline;
 }
 .single-product .product .product_meta .meta-subtitle {
-  margin: 0 0 20px 0;
+  margin: 0 0 15px 0;
   font-family: 'Roboto-Medium';
   font-size: 24px;
   color: var(--mine-shaft-color);
 }
-.single-product .product .label {
-  margin: 0 0 15px 0;
-}
 .single-product .product .lbl {
-  font-size: 24px;
+  font-size: 18px;
 }
 .single-product .product .variations th,
 .single-product .product .variations td {
@@ -3141,6 +3145,29 @@ a:focus {
   text-align: left;
   list-style: none;
   background-color: rgba(0, 0, 0, 0);
+}
+.single-product .product .variations-select {
+  margin: 0 30px 10px 0;
+}
+.single-product .product .reset_variations {
+  color: var(--shark-color);
+  text-decoration: underline;
+}
+.single-product .product .woocommerce-variation-price {
+  margin: 0 0 10px 0;
+  line-height: 1.0;
+}
+.single-product .product .single_add_to_cart_button {
+  display: block;
+  width: 160px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 30px;
+  background-color: var(--wild-willow-color);
+  font-family: Roboto-Medium;
+  font-size: 18px;
+  line-height: 1;
 }
 .single-product .product .flex-control-thumbs {
   list-style: none;
@@ -3154,26 +3181,21 @@ a:focus {
   overflow: hidden;
 }
 .single-product .product .wc-tabs-wrapper {
-  /*display: flex;
-  flex-direction: column;*/
   margin: 0 0 60px 0;
 }
 .single-product .product .woocommerce-tabs .panel h2:first-of-type {
   display: none;
 }
 .single-product .product .woocommerce-tabs .tabs {
-  width: 100%;
-  float: none;
-  margin-right: 5.8823529412%;
-  border-top: 0;
-  border-bottom: 4px solid var(--white-rock-color);
-}
-.single-product .product .woocommerce-tabs .tabs {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 0;
   position: relative;
   display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: none;
+  border-top: 0;
+  border-bottom: 4px solid var(--white-rock-color);
   justify-content: center;
   justify-content: space-evenly;
 }
@@ -3209,18 +3231,6 @@ a:focus {
   font-size: 18px;
   line-height: 1;
 }
-/*
-.related > h2:first-child,
-.upsells > h2:first-child {
-  font-size: 2em;
-  margin-bottom: 1em;
-  background-color: #44324c;
-  color: #fff;
-  padding: 20px 0;
-  font-family: "Roboto-CondensedSemiBold";
-  text-transform: uppercase;
-}
-*/
 .single-product .related .related-products-title {
   margin: 0 0 40px 0;
   padding: 20px 0;
@@ -3231,22 +3241,33 @@ a:focus {
   text-transform: uppercase;
   text-align: center;
 }
-
 /* https://stackoverflow.com/questions/14144426/remove-outline-from-active-jquery-ui-tab */
 .single-product .product .wc-tabs li a:focus,
 .ui-state-focus:focus {
   outline: none !important;
 }
 
+/* quantity */
+.quantity {
+  margin: 0 0 10px 0;
+}
 .quantity .qty {
-  width: 4.235801032em;
-  text-align: center;
-  background-color: var(--wild-willow-color);
-  border: 0;
+  width: 70px;
+  height: 30px;
+  padding: 0 10px;
+  background-color: var(--nero-color);
+  border: 1px solid var(--wild-willow-color);
   border-radius: 30px;
+  font-size: 17px;
+  text-align: center;
+  line-height: 1;
+  outline: none;
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
+}
+.quantity .qty:active {
+  outline: none;
 }
 .quantity .qty::-webkit-inner-spin-button,
 .quantity .qty::-webkit-outer-spin-button {
@@ -3255,15 +3276,20 @@ a:focus {
   appearance: none;
   margin: 0;
 }
-.summary.entry-summary .cart button {
+/*.summary.entry-summary .cart button {
   background-color: var(--wild-willow-color);
   color: #4f424f;
   border-radius: 30px;
-}
-.ww100 {
-  max-height: 100%;
-  max-width: 100%;
-  o-object-fit: contain;
+}*/
+.quantity button {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--wild-willow-color);
+  border-radius: 15px;
+  background-color: var(--nero-color);
+  font-size: 17px;
+  line-height: 1;
 }
 
 /* рекомендуемые товары в карточке блога */
@@ -3379,6 +3405,12 @@ background-color: #edeadb;
   background: #edeadb url(../images/beg_bg.jpg);
 }
  */
+
+
+
+
+
+
 .resp-tabs-container {
   padding: 0;
 }
@@ -3402,9 +3434,19 @@ background-color: #edeadb;
 .resp-tabs-container a {
   font-family: "Akrobat";
 }
+
+
+
+
+
+
 .single-product .woocommerce-product-details__short-description {
   margin-top: 30px;
 }
+
+
+
+
 
 /* archive product страница категории */
 .archive-product .archive-product-content {
@@ -5106,6 +5148,9 @@ h1.sec-title {
   .swiper-pagination-bullet {
     width: 15px;
     height: 15px;
+  }
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 6px;
   }
   .swiper-pagination-bullets.swiper-pagination-horizontal {
     left: 0;

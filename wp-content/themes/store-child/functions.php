@@ -675,6 +675,30 @@ function set_counters() {
 }
 
 
+// AJAX Переключение вкладок на главной странице, странице каталог и странице магазина
+add_action( 'wp_ajax_select_catalog_tabs', 'catalog_tabs' );
+add_action( 'wp_ajax_nopriv_select_catalog_tabs', 'catalog_tabs' );
+
+function catalog_tabs() {
+    // Получение id вкладки (табов)
+    $id = ! empty( $_POST['id'] ) ? esc_attr( $_POST['id'] ) : false;
+
+    switch ($id) {
+        case 2:
+            echo render__catalog('96');
+            break;
+        case 3:
+            require ( get_stylesheet_directory() . '/templates/content-selection.php' );
+            break;
+        case 4:
+            require ( get_stylesheet_directory() . '/templates/content-vebinary.php' );
+            break;
+    }
+
+    wp_die();
+}
+
+
 // Вывод кастомного нижнего меню. Разделение на части
 function custom_nav_menu($start = 0, $end = NULL) {
 
