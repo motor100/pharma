@@ -24,8 +24,14 @@ global $product;
  *
  * @hooked woocommerce_output_all_notices - 10
  */
-do_action( 'woocommerce_before_single_product' );
+?>
+<div class="wc-notices">
+  <div class="container">
+    <?php do_action( 'woocommerce_before_single_product' ); ?>
+  </div>
+</div>
 
+<?php
 if ( post_password_required() ) {
   echo get_the_password_form(); // WPCS: XSS ok.
   return;
@@ -41,8 +47,12 @@ if ( post_password_required() ) {
        * @hooked woocommerce_show_product_sale_flash - 10
        * @hooked woocommerce_show_product_images - 20
        */
-      do_action( 'woocommerce_before_single_product_summary' );
       ?>
+
+      <?php global $product; ?>
+      <h1 class="product_title entry-title hidden-desktop"><?php echo $product->get_name(); ?></h1>
+
+      <?php do_action( 'woocommerce_before_single_product_summary' ); ?>
 
       <div class="summary entry-summary">
         <?php

@@ -495,6 +495,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return false;
   }
 
+  /*
   if (lfsSubmitBtn) {
     lfsSubmitBtn.onclick = function() {
       ajaxCallback(lfsForm);
@@ -506,5 +507,6 @@ document.addEventListener("DOMContentLoaded", () => {
       ajaxCallback(callbackForm);
     }
   }
+  */
 
 });

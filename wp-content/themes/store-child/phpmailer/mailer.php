@@ -28,7 +28,7 @@ if (isset($_POST["name"]) &&
     // Настройки SMTP
     $mail->isSMTP();
     $mail->SMTPAuth = true;
-    $mail->SMTPDebug = 0;
+    $mail->SMTPDebug = 1;
 
     $mail->Host = $Host ;
     $mail->Port = 465;
