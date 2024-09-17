@@ -72,11 +72,11 @@
       </div>
     </div>
   </div>
-  <div class="footer-bottom">
+  <!-- <div class="footer-bottom">
     <div class="container">
       <div class="footer-bottom__text">все что представлено на сайте не является рекомендациями и мы не отвечаем за самоназначения, где то правильно написанная фраза у нас была</div>
     </div>
-  </div>
+  </div> -->
 </footer>
 
 <div class="burger-menu-wrapper">

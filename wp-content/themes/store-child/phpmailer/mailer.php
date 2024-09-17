@@ -17,10 +17,12 @@ if (isset($_POST["name"]) &&
     $cc = htmlspecialchars($_POST["cc"]);
     $checkbox = $_POST["checkbox"];
 
-
     require 'PHPMailer.php';
     require 'SMTP.php';
     require 'config.php';
+
+    // Главная строчка: 
+    // $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  //Без которой письмо на 587й порт по tls не уходит.
 
     $mail = new PHPMailer();
     $mail->CharSet = 'UTF-8';
@@ -30,17 +32,34 @@ if (isset($_POST["name"]) &&
     $mail->SMTPAuth = true;
     $mail->SMTPDebug = 1;
 
-    $mail->Host = $Host ;
+    // $mail->Host = $Host ;
+    // $mail->Port = 465;
+    // $mail->Username = $Username;
+    // $mail->Password = $Password;
+
+    //другие параметры:
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    // $mail->isSMTP();    
+    // $mail->Mailer = 'tls';
+    // $mail->Mailer = 'smtp';
+    $mail->Host = 'ssl://smtp.yandex.ru';
+    // $mail->SMTPAuth = true;
+    $mail->Username = 'olryabov';  
+    $mail->Password = 'fyoiusgwmbnkkpuj';
+    $mail->CharSet = 'UTF-8';
+
+    // fyoiusgwmbnkkpuj
+
+    // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    // $mail->SMTPSecure = 'TLS';
     $mail->Port = 465;
-    $mail->Username = $Username;
-    $mail->Password = $Password;
 
     // От кого
-    $mail->From = $From;
-    $mail->FromName = 'admin';
+    $mail->From = 'olryabov@yandex.ru';
+    $mail->FromName = 'olryabov@yandex.ru';
 
     // Кому
-    $mail->addAddress($To, 'admin');
+    $mail->addAddress($To);
 
     if ($cc) {
       $mail->addCC($cc);
