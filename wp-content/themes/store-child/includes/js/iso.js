@@ -1,5 +1,9 @@
-jQuery(document).ready(function($) {
+// jQuery(document).ready(function($) {
 
+	// Сортировка товаров на странице Главная->По сериям->Гомеопатические монопрепараты
+	// /catalog/product-category/series/gomeopaticheskie-monopreparaty/
+
+	/*
   var $grid = $('.termbox-18').isotope({
     itemSelector: '.product',
   	layoutMode: 'fitRows',
@@ -18,5 +22,6 @@ jQuery(document).ready(function($) {
 			$( this ).addClass('is-checked');
 		});
 	});
+	*/
 
-});
+// });

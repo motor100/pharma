@@ -697,6 +697,57 @@ function catalog_tabs() {
 }
 
 
+// AJAX фильтр товаров в категории Гомеопатические монопрепараты term-id=18
+add_action( 'wp_ajax_get_products_term18', 'get_term18_products' );
+add_action( 'wp_ajax_nopriv_get_products_term18', 'get_term18_products' );
+
+function get_term18_products() {
+
+    // Получение letter из запроса
+    $letter = ! empty( $_POST['letter'] ) ? esc_attr( $_POST['letter'] ) : false;
+
+    // Если нет letter, то return false
+    if ( ! $letter ) {
+        return false;
+    }
+
+    // Запрос
+    $query = new WP_Query( array (
+        'post_type'      => 'product',
+        'post_status'    => 'publish',
+        'posts_per_page' => '-1',
+        'tax_query' => array( array (
+                'taxonomy' => 'product_cat',
+                'field'    => 'term_id',
+                'terms'    => 18,
+        ) ),
+    ) );
+
+    // Вывод записей
+    if ( $query->have_posts() ) {
+
+        while ( $query->have_posts() ) {
+            $query->the_post();
+
+            // Получение первой буквы названия товара
+            $title = get_the_title();
+            $first_letter = mb_strtolower(mb_substr($title, 0, 1));
+
+            // Вывод товаров у которых первая буква названия как буква из запроса
+            if ($first_letter == $letter) {
+                // Подключение шаблона product loop
+                require ( get_stylesheet_directory() . '/woocommerce/content-product.php' );
+            }
+        }
+
+        wp_reset_postdata();
+
+    }
+    
+    wp_die(); // выход нужен для того, чтобы в ответе не было ничего лишнего (0), только то что возвращает функция
+}
+
+
 // Вывод кастомного нижнего меню. Разделение на части
 function custom_nav_menu($start = 0, $end = NULL) {
 

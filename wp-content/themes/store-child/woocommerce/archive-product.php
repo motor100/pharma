@@ -87,7 +87,7 @@ if (is_shop()) {
           $posts = get_posts($args);
         
           if ($posts) { ?>
-            <div class="">
+            <div class="cp-dropdown-wrapper">
             <select class="category-posts-dropdown" onchange="location = this.value;">
               <option value="">Быстрый переход</option>
             
@@ -103,8 +103,9 @@ if (is_shop()) {
           
         </div>
 
-        <?php if ($term_childs) {
+        <?php if ($term_childs) {  ?>
 
+          <?php
           // Вывод подкатегорий
           $args = array(
             'parent' => $parentid, // id родительской категории
@@ -127,69 +128,68 @@ if (is_shop()) {
 
         <?php } ?>
 
-          <?php 
-          $cat=get_queried_object();
-          if ($cat->term_id == 18): ?>
+          <?php $cat = get_queried_object(); ?>
+          <?php if ($cat->term_id == 18): ?>
             <div class="filter-but">
               <div class="button-group filters-button-group">
                 <div class="eng-letters">
-                  <button class="filtered-button is-checked" data-filter="*">Все</button>
-                  <button class="filtered-button" data-filter=".a">A</button>
-                  <button class="filtered-button" data-filter=".b">B</button>
-                  <button class="filtered-button" data-filter=".c">C</button>
-                  <button class="filtered-button" data-filter=".d">D</button>
-                  <button class="filtered-button" data-filter=".e">E</button>
-                  <button class="filtered-button" data-filter=".f">F</button>
-                  <button class="filtered-button" data-filter=".g">G</button>
-                  <button class="filtered-button" data-filter=".h">H</button>
-                  <button class="filtered-button" data-filter=".i">I</button>
-                  <button class="filtered-button" data-filter=".j">J</button>
-                  <button class="filtered-button" data-filter=".k">K</button>
-                  <button class="filtered-button" data-filter=".l">L</button>
-                  <button class="filtered-button" data-filter=".m">M</button>
-                  <button class="filtered-button" data-filter=".n">N</button>
-                  <button class="filtered-button" data-filter=".o">O</button>
-                  <button class="filtered-button" data-filter=".p">P</button>
-                  <button class="filtered-button" data-filter=".q">Q</button>
-                  <button class="filtered-button" data-filter=".r">R</button>
-                  <button class="filtered-button" data-filter=".s">S</button>
-                  <button class="filtered-button" data-filter=".t">T</button>
-                  <button class="filtered-button" data-filter=".u">U</button>
-                  <button class="filtered-button" data-filter=".v">V</button>
-                  <button class="filtered-button" data-filter=".w">W</button>
-                  <button class="filtered-button" data-filter=".x">X</button>
-                  <button class="filtered-button" data-filter=".y">Y</button>
-                  <button class="filtered-button" data-filter=".z">Z</button>
+                  <button class="filtered-button active" onclick="location = this.value;">Все</button>
+                  <button class="filtered-button js-filtered-button" value="a">A</button>
+                  <button class="filtered-button js-filtered-button" value="b">B</button>
+                  <button class="filtered-button js-filtered-button" value="c">C</button>
+                  <button class="filtered-button js-filtered-button" value="d">D</button>
+                  <button class="filtered-button js-filtered-button" value="e">E</button>
+                  <button class="filtered-button js-filtered-button" value="f">F</button>
+                  <button class="filtered-button js-filtered-button" value="g">G</button>
+                  <button class="filtered-button js-filtered-button" value="h">H</button>
+                  <button class="filtered-button js-filtered-button" value="i">I</button>
+                  <button class="filtered-button js-filtered-button" value="j">J</button>
+                  <button class="filtered-button js-filtered-button" value="k">K</button>
+                  <button class="filtered-button js-filtered-button" value="l">L</button>
+                  <button class="filtered-button js-filtered-button" value="m">M</button>
+                  <button class="filtered-button js-filtered-button" value="n">N</button>
+                  <button class="filtered-button js-filtered-button" value="o">O</button>
+                  <button class="filtered-button js-filtered-button" value="p">P</button>
+                  <button class="filtered-button js-filtered-button" value="q">Q</button>
+                  <button class="filtered-button js-filtered-button" value="r">R</button>
+                  <button class="filtered-button js-filtered-button" value="s">S</button>
+                  <button class="filtered-button js-filtered-button" value="t">T</button>
+                  <button class="filtered-button js-filtered-button" value="u">U</button>
+                  <button class="filtered-button js-filtered-button" value="v">V</button>
+                  <button class="filtered-button js-filtered-button" value="w">W</button>
+                  <button class="filtered-button js-filtered-button" value="x">X</button>
+                  <button class="filtered-button js-filtered-button" value="y">Y</button>
+                  <button class="filtered-button js-filtered-button" value="z">Z</button>
                 </div>
                 <div class="ru-letters">
-                  <button class="filtered-button" data-filter=".а">А</button>
-                  <button class="filtered-button" data-filter=".б">Б</button>
-                  <button class="filtered-button" data-filter=".в">В</button>
-                  <button class="filtered-button" data-filter=".г">Г</button>
-                  <button class="filtered-button" data-filter=".д">Д</button>
-                  <button class="filtered-button" data-filter=".е">Е</button>
-                  <button class="filtered-button" data-filter=".ж">Ж</button>
-                  <button class="filtered-button" data-filter=".з">З</button>
-                  <button class="filtered-button" data-filter=".и">И</button>
-                  <button class="filtered-button" data-filter=".к">К</button>
-                  <button class="filtered-button" data-filter=".л">Л</button>
-                  <button class="filtered-button" data-filter=".м">М</button>
-                  <button class="filtered-button" data-filter=".н">Н</button>
-                  <button class="filtered-button" data-filter=".о">О</button>
-                  <button class="filtered-button" data-filter=".п">П</button>
-                  <button class="filtered-button" data-filter=".р">Р</button>
-                  <button class="filtered-button" data-filter=".с">С</button>
-                  <button class="filtered-button" data-filter=".т">Т</button>
-                  <button class="filtered-button" data-filter=".у">У</button>
-                  <button class="filtered-button" data-filter=".ф">Ф</button>
-                  <button class="filtered-button" data-filter=".х">Х</button>
-                  <button class="filtered-button" data-filter=".ц">Ц</button>
-                  <button class="filtered-button" data-filter=".ч">Ч</button>
-                  <button class="filtered-button" data-filter=".ш">Ш</button>
-                  <button class="filtered-button" data-filter=".щ">Щ</button>
-                  <button class="filtered-button" data-filter=".э">Э</button>
-                  <button class="filtered-button" data-filter=".ю">Ю</button>
-                  <button class="filtered-button" data-filter=".я">Я</button>
+                  <button class="filtered-button js-filtered-button" value="а">А</button>
+                  <button class="filtered-button js-filtered-button" value="б">Б</button>
+                  <button class="filtered-button js-filtered-button" value="в">В</button>
+                  <button class="filtered-button js-filtered-button" value="г">Г</button>
+                  <button class="filtered-button js-filtered-button" value="д">Д</button>
+                  <button class="filtered-button js-filtered-button" value="е">Е</button>
+                  <button class="filtered-button js-filtered-button" value="ж">Ж</button>
+                  <button class="filtered-button js-filtered-button" value="з">З</button>
+                  <button class="filtered-button js-filtered-button" value="и">И</button>
+                  <button class="filtered-button js-filtered-button" value="к">К</button>
+                  <button class="filtered-button js-filtered-button" value="л">Л</button>
+                  <button class="filtered-button js-filtered-button" value="м">М</button>
+                  <button class="filtered-button js-filtered-button" value="н">Н</button>
+                  <button class="filtered-button js-filtered-button" value="о">О</button>
+                  <button class="filtered-button js-filtered-button" value="п">П</button>
+                  <button class="filtered-button js-filtered-button" value="р">Р</button>
+                  <button class="filtered-button js-filtered-button" value="с">С</button>
+                  <button class="filtered-button js-filtered-button" value="т">Т</button>
+                  <button class="filtered-button js-filtered-button" value="у">У</button>
+                  <button class="filtered-button js-filtered-button" value="ф">Ф</button>
+                  <button class="filtered-button js-filtered-button" value="х">Х</button>
+                  <button class="filtered-button js-filtered-button" value="ц">Ц</button>
+                  <button class="filtered-button js-filtered-button" value="ч">Ч</button>
+                  <button class="filtered-button js-filtered-button" value="ш">Ш</button>
+                  <button class="filtered-button js-filtered-button" value="щ">Щ</button>
+                  <button class="filtered-button js-filtered-button" value="э">Э</button>
+                  <button class="filtered-button js-filtered-button" value="ю">Ю</button>
+                  <button class="filtered-button js-filtered-button" value="я">Я</button>
                 </div>
               </div>
             </div>

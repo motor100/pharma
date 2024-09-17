@@ -123,6 +123,11 @@ button:active,
 button:focus {
   outline: none;
 }
+input[type="search"],
+input[type="button"],
+button {
+  cursor: pointer;
+}
 a {
   text-decoration: none;
 }
@@ -305,7 +310,6 @@ a {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  cursor: pointer;
 }
 .header-desktop .header-content .catalog-btn__image {
   width: 32px;
@@ -1466,7 +1470,6 @@ a {
   background-color: var(--wild-willow-color);
   font-family: 'roboto-medium';
   font-size: 20px;
-  cursor: pointer;
 }
 
 /* where buy page */
@@ -2451,68 +2454,12 @@ a {
   display: none;
 }
 
-/*.woocommerce-loop-product__link {
-  text-decoration: none;
-}*/
-
-.eng-letters {
-  display: grid;
-  grid-template-columns: repeat(27, 1fr);
-  grid-template-rows: 1fr;
-  gap: 0 10px;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.eng-letters::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  height: 1px;
-  background-color: grey;
-  width: 100%;
-}
-
-.filtered-button {
-  display: inline;
-  padding: 0;
-  background: none;
-  font-size: 16px;
-}
-
-.filtered-button:hover,
-.filtered-button.is-checked {
-  color: var(--wild-willow-color);
-  background: none;
-}
-
-.ru-letters {
-  display: grid;
-  grid-template-columns: repeat(28, 1fr);
-  grid-template-rows: 1fr;
-  gap: 0px 10px;
-  margin-bottom: 50px;
-}
-
-@media screen and (max-width: 992px) {
-  .eng-letters {
-    grid-template-columns: repeat(14, 1fr);
-    gap: 10px;
-  }
-
-  .ru-letters {
-    grid-template-columns: repeat(14, 1fr);
-    gap: 10px;
-  }
-}
-
-.filter-but {
-  margin-top: -50px;
-}
 
 
 
-.termbox-18 {
+
+
+/*.termbox-18 {
   padding: 0;
   transition-duration: 0.8s;
 }
@@ -2522,7 +2469,7 @@ a {
   margin: 10px 10px 30px 10px;
   float: none;
   height: auto;
-}
+}*/
 
 /*r.kolobaev*/
 /*.main_menu {
@@ -2812,13 +2759,14 @@ ul.products li.product .woocommerce-loop-product__link {
   display: block;
 }
 ul.products li.product .attachment-woocommerce_thumbnail,
-ul.products li.product .woocommerce-placeholder  {
+ul.products li.product .woocommerce-placeholder {
   display: block;
   width: 100%;
-  height: auto;
+  height: 297px;
   margin: 0 0 20px 0;
   border-radius: 30px;
   border: 2px solid var(--white-rock-color);
+  object-fit: contain;
   transition: border .3s;
 }
 ul.products li.product .attachment-woocommerce_thumbnail:hover {
@@ -3248,6 +3196,29 @@ ul.products li.product .added_to_cart:hover {
   text-transform: uppercase;
   text-align: center;
 }
+.single-product .woocommerce-product-details__short-description {
+  margin-top: 30px;
+}
+.single-product .resp-tabs-container {
+  padding: 0;
+}
+.single-product .resp-tabs-container .resp-accordion {
+  background-color: var(--wild-willow-color);
+  padding: 16px 12px;
+  border-bottom: 3px solid #44324c;
+  margin-bottom: 5px;
+}
+.single-product .resp-tabs-container .resp-arrow {
+  border-top: 8px solid #44324c;
+  margin-top: 10px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+.single-product .resp-tabs-container .resp-tab-active span.resp-arrow {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 8px solid #44324c;
+}
 /* https://stackoverflow.com/questions/14144426/remove-outline-from-active-jquery-ui-tab */
 /*.single-product .product .wc-tabs li a:focus,
 .ui-state-focus:focus {
@@ -3384,10 +3355,8 @@ ul.products li.product .added_to_cart:hover {
   align-items: center;
   justify-content: center;
 }
-
-
-.wc-block-grid__product-onsale,
-.onsale {
+.single-page .wc-block-grid__product-onsale,
+.single-page .onsale {
   position: absolute;
   top: 16px;
   margin-left: auto;
@@ -3402,58 +3371,9 @@ ul.products li.product .added_to_cart:hover {
   border-radius: 0px 0px 12px 12px;
   padding: 5px 20px;
 }
-.single-product .onsale {
+.single-page .onsale {
   display: none;
 }
-
-/*  
-.single-prod-tab-bg {
-background-color: #edeadb;
-  background: #edeadb url(../images/beg_bg.jpg);
-}
- */
-
-
-
-
-
-
-.resp-tabs-container {
-  padding: 0;
-}
-.resp-tabs-container .resp-accordion {
-  background-color: var(--wild-willow-color);
-  padding: 16px 12px;
-  border-bottom: 3px solid #44324c;
-  margin-bottom: 5px;
-}
-.resp-tabs-container .resp-arrow {
-  border-top: 8px solid #44324c;
-  margin-top: 10px;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-}
-.resp-tabs-container .resp-tab-active span.resp-arrow {
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-bottom: 8px solid #44324c;
-}
-.resp-tabs-container a {
-  font-family: "Akrobat";
-}
-
-
-
-
-
-
-.single-product .woocommerce-product-details__short-description {
-  margin-top: 30px;
-}
-
-
-
-
 
 /* archive product страница категории */
 .archive-product .archive-product-content {
@@ -3461,6 +3381,54 @@ background-color: #edeadb;
 }
 .archive-product .category-title {
   font-size: 30px;
+}
+.archive-product .filter-but {
+  margin: 50px 0;
+  padding: 20px;
+  border: 2px solid #44324c;
+  border-radius: 12px;
+}
+/*.archive-product .filter-but {
+  margin-top: -50px;
+}*/
+.archive-product .ru-letters {
+  margin-bottom: 0;
+}
+.archive-product .eng-letters {
+  display: grid;
+  grid-template-columns: repeat(27, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.archive-product .eng-letters::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  height: 1px;
+  background-color: grey;
+  width: 100%;
+}
+.archive-product .filtered-button {
+  display: inline;
+  padding: 0;
+  border: none;
+  background-color: var(--nero-color);
+  font-size: 16px;
+  font-weight: 500;
+}
+.archive-product .filtered-button:hover,
+.archive-product .filtered-button.active {
+  color: var(--wild-willow-color);
+  background-color: var(--nero-color);
+}
+.archive-product .ru-letters {
+  display: grid;
+  grid-template-columns: repeat(28, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0px 10px;
+/*  margin-bottom: 50px;*/
 }
 
 /* cart page */
@@ -3508,16 +3476,8 @@ background-color: #edeadb;
 
 
 
-.filter-but {
-  margin: 50px 0;
-  padding: 20px;
-  border: 2px solid #44324c;
-  border-radius: 12px;
-}
-.ru-letters {
-  margin-bottom: 0;
-}
-.wpsisac-slick-slider.design-1 .slick-dots {
+
+/*.wpsisac-slick-slider.design-1 .slick-dots {
   position: absolute;
   bottom: -30px !important;
 }
@@ -3544,7 +3504,7 @@ background-color: #edeadb;
   .wpsisac-slide-wrap {
     height: auto;
   }
-}
+}*/
 table.wpr-shop-table {
   border-spacing: 10px;
   empty-cells: hide;
@@ -3729,32 +3689,20 @@ h1.sec-title {
   object-fit: contain;
 }
 
-
-
-
-
+/* chaty widget */
 #chaty-widget-0 .chaty-widget {
   bottom: 70px !important;
 }
 
-
-
 /* Cекция elementor Наши партнеры */
-.elementor-element-4fa5bfa {
+/*.elementor-element-4fa5bfa {
   display: none !important;
-}
+}*/
 
 /* Cекция elementor слайдер */
-.elementor-element-fddb202 {
+/*.elementor-element-fddb202 {
   display: none !important;
-}
-
-/* Из плагина Simple Custom CSS and JS */
-/*
-.text-page .entry-content ul li::before{
-  display:none;
-}
-*/
+}*/
 
 /* Page 404 */
 .page-404 {
@@ -4017,7 +3965,6 @@ h1.sec-title {
   background-color: var(--wild-willow-color);
   font-family: 'roboto-medium';
   font-size: 20px;
-  cursor: pointer;
 }
 /*.modal-window .checkbox-wrapper {
   display: flex;
@@ -4292,6 +4239,10 @@ h1.sec-title {
   ul.products li.product .button {
     padding: 11px 20px;
     font-size: 16px;
+  }
+  ul.products li.product .attachment-woocommerce_thumbnail,
+  ul.products li.product .woocommerce-placeholder {
+    height: 252px;
   }
 
   /* catalog page */
@@ -4628,6 +4579,10 @@ h1.sec-title {
   }
   ul.products li.product .price {
     font-size: 22px;
+  }
+  ul.products li.product .attachment-woocommerce_thumbnail,
+  ul.products li.product .woocommerce-placeholder {
+    height: 207px;
   }
 
 
@@ -5071,6 +5026,10 @@ h1.sec-title {
   ul.products li.product .button {
     font-size: 15px;
   }
+  ul.products li.product .attachment-woocommerce_thumbnail,
+  ul.products li.product .woocommerce-placeholder {
+    height: 215px;
+  }
 
   /* catalog page */
   .catalog-page .catalog-subcategories .flex-container {
@@ -5283,6 +5242,16 @@ h1.sec-title {
     line-height: 1.2;
   }
 
+  /* archive product страница категории */
+  .archive-product .eng-letters {
+    grid-template-columns: repeat(14, 1fr);
+    gap: 10px;
+  }
+  .archive-product .ru-letters {
+    grid-template-columns: repeat(14, 1fr);
+    gap: 10px;
+  }
+
   /* we use cookie */
   .we-use-cookie-wrapper {
     margin: 0 0 0 12px;
@@ -5412,6 +5381,10 @@ h1.sec-title {
   }
    ul.products li.product .price {
     font-size: 18px;
+  }
+  ul.products li.product .attachment-woocommerce_thumbnail,
+  ul.products li.product .woocommerce-placeholder {
+    height: 252px;
   }
 
   /* have contraindications полоса имеются противопоказания */
@@ -5610,7 +5583,8 @@ h1.sec-title {
     margin: 0 10px 10px 0;
   }
 
-  .filter-but {
+  /* archive product страница категории */
+  .archive-product .filter-but {
     margin-top: 0;
   }
 
@@ -5817,6 +5791,12 @@ h1.sec-title {
     font-size: 28px;
   }
 
+  /* products card ul.products */
+  ul.products li.product .attachment-woocommerce_thumbnail,
+  ul.products li.product .woocommerce-placeholder {
+    height: 222px;
+  }
+
 
   .catalog_inside .term-description p:not(:last-child) {
     margin-bottom: 10px;
@@ -5975,6 +5955,10 @@ h1.sec-title {
   /* products card ul.products */
   ul.products {
     grid-template-columns: repeat(1, 1fr);
+  }
+  ul.products li.product .attachment-woocommerce_thumbnail,
+  ul.products li.product .woocommerce-placeholder {
+    height: auto;
   }
 
   /* catalog page */
