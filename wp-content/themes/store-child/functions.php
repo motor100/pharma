@@ -242,12 +242,12 @@ function add_close_wrapper_to_product() {
 
 
 // откл сортировку
-// add_action( 'wp', 'bbloomer_remove_default_sorting_storefront' );
+add_action( 'wp', 'bbloomer_remove_default_sorting_storefront' );
 
-// function bbloomer_remove_default_sorting_storefront() {
-//   remove_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10 );
-//   remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 );
-// }
+function bbloomer_remove_default_sorting_storefront() {
+  remove_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10 );
+  remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 );
+}
 
 /**
  *

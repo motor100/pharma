@@ -894,10 +894,6 @@ a {
   z-index: 1;
   transform: translate(-50%, -50%); /*mix-blend-mode:multiply;*/
 }
-.storefront-sorting,
-.woocommerce-result-count {
-  display: none;
-}
 .aside-menu .cat_item:not(:last-child) {
   margin-bottom: 10px;
 }
@@ -949,6 +945,12 @@ a {
   }
 }
 */
+
+/* Скрыть сортировку */
+.storefront-sorting,
+.woocommerce-result-count {
+  display: none;
+}
 
 .m-select {
   margin-top: 20px;
