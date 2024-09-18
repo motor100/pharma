@@ -21,42 +21,23 @@ if (isset($_POST["name"]) &&
     require 'SMTP.php';
     require 'config.php';
 
-    // Главная строчка: 
-    // $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  //Без которой письмо на 587й порт по tls не уходит.
-
     $mail = new PHPMailer();
     $mail->CharSet = 'UTF-8';
 
     // Настройки SMTP
     $mail->isSMTP();
     $mail->SMTPAuth = true;
-    $mail->SMTPDebug = 1;
+    $mail->SMTPDebug = 0;
 
-    // $mail->Host = $Host ;
-    // $mail->Port = 465;
-    // $mail->Username = $Username;
-    // $mail->Password = $Password;
+    $mail->Host = $Host;
+    $mail->Username = $Username; // Для Яндекс почты должно быть одинаковым
+    $mail->Password = $Password;
 
-    //другие параметры:
-    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-    // $mail->isSMTP();    
-    // $mail->Mailer = 'tls';
-    // $mail->Mailer = 'smtp';
-    $mail->Host = 'ssl://smtp.yandex.ru';
-    // $mail->SMTPAuth = true;
-    $mail->Username = 'olryabov';  
-    $mail->Password = 'fyoiusgwmbnkkpuj';
-    $mail->CharSet = 'UTF-8';
-
-    // fyoiusgwmbnkkpuj
-
-    // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    // $mail->SMTPSecure = 'TLS';
     $mail->Port = 465;
 
     // От кого
-    $mail->From = 'olryabov@yandex.ru';
-    $mail->FromName = 'olryabov@yandex.ru';
+    $mail->From = $Username; // Для Яндекс почты должно быть одинаковым
+    $mail->FromName = $Username; // Для Яндекс почты должно быть одинаковым
 
     // Кому
     $mail->addAddress($To);
