@@ -50,7 +50,9 @@
           <div class="col-lg-4 col-md-6">
             <div class="specialists-item">
               <div class="specialists-item__image">
-                <?php the_post_thumbnail(); ?>
+                <a href="<?php the_permalink(); ?>" class="item-link">
+                  <?php the_post_thumbnail(); ?>
+                </a>
               </div>
               <div class="specialists-item__content">
                 <div class="specialists-item__title"><?php the_title(); ?></div>

@@ -82,7 +82,7 @@
               </div>
             </div>
           </div>
-          <input type="hidden" name="cc" value="<?php rwmb_the_value( 'expert_email' ) ?></p>">
+          <input type="hidden" name="cc" value="<?php rwmb_the_value( 'expert_email' ); ?>">
         </form>
       </div>
     </div>
