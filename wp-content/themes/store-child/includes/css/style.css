@@ -454,8 +454,9 @@ a {
   text-align: center;
 }
 .main-section .main-section-about .company-title {
+  display: block;
   width: 282px;
-  margin: 0 0 20px 0;
+  margin: 0 auto 20px auto;
 }
 .main-section .main-section-about .fl-text {
   font-family: 'Roboto-CondensedBold';
@@ -725,16 +726,17 @@ a {
 }
 .offer-of-week-section .big-offer .big-offer-info .info-title {
   display: block;
-  margin: 0 0 16px 0;
+  margin: 0 0 12px 0;
   font-family: 'Roboto-light';
   font-size: 18px;
   color: var(--mine-shaft-color);
+  line-height: 1.3;
 }
 .offer-of-week-section .big-offer .big-offer-info .info-title:hover {
   text-decoration: underline;
 }
 .offer-of-week-section .big-offer .big-offer-info .full-price {
-  margin: 0 0 16px 0;
+  margin: 0 0 5px 0;
   font-family: 'Roboto-light';
   font-size: 18px;
   text-decoration: line-through;
@@ -790,7 +792,7 @@ a {
   color: var(--nero-color);
 }
 .footer .footer-top {
-  padding: 0 0 20px 0;
+  padding: 0 0 60px 0;
 }
 .footer .menu {
   display: block;
@@ -913,6 +915,7 @@ a {
   margin-left: auto;
 }
 .footer .payment-system__icon {
+  display: inline-block;
   width: 45px;
 }
 .footer .footer-bottom {
@@ -2056,27 +2059,9 @@ a {
   height: 14px;
   background: url(../images/breadcrumb-arrow-right.jpg) center no-repeat;
   color: var(--oslo-grey-color);
+  opacity: 1;
+  transform: none;
 }
-
-
-
-
-/*.site-content p:not(:last-child) {
-  margin-bottom: 20px;
-}*/
-/*
-@media (max-width: 767.98px) {
-  .single-product .col-9 {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    width: 100%;
-  }
-  .single-product .col-3 {
-    display: none;
-  }
-}
-*/
 
 .m-select {
   margin-top: 20px;
@@ -2734,6 +2719,7 @@ ul.clear {
 /* products card ul.products */
 ul.products {
   display: grid;
+  margin: 20px 0;
   padding: 0;
   list-style: none;
   gap: 60px 35px;
