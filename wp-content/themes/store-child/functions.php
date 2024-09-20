@@ -917,7 +917,6 @@ add_action( 'pre_get_posts', 'tg_include_custom_post_types_in_search_results' );
 // Добавление галереи для типа поста home_page_slider
 add_post_type_support( 'home_page_slider', 'thumbnail' );
 
-
 // Добавление кастомных полей
 add_filter( 'rwmb_meta_boxes', 'register_meta_boxes' );
 

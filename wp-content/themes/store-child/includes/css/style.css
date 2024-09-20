@@ -3514,32 +3514,6 @@ ul.products li.product .added_to_cart:hover {
 .cart-page .woocommerce-cart-form__contents .actions {
   position: relative;
 }
-.cart-page .woocommerce-cart-form__contents .actions .coupon .input-text {
-  display: inline-block;
-  width: 226px;
-  height: 46px;
-  margin: 0 20px 0 0;
-  padding: 8px 20px;
-  border: 1px solid #D9D9D9;
-  border-radius: 23px;
-  font-family: 'Roboto-Condensed';
-  font-size: 20px;
-  color: var(--voodoo-color);
-}
-.cart-page .woocommerce-cart-form__contents .actions .coupon .input-text:placeholder {
-  color: #D9D9D9;
-}
-.cart-page .woocommerce-cart-form__contents .actions .coupon .button {
-  display: inline-block;
-  width: 226px;
-  height: 46px;
-  border: 1px solid var(--voodoo-color);
-  border-radius: 23px;
-  background-color: var(--nero-color);
-  font-family: 'Roboto-Condensed';
-  font-size: 20px;
-  color: var(--voodoo-color);
-}
 .cart-page .woocommerce-cart-form__contents .actions .update-cart-btn {
   position: absolute;
   top: 0;
@@ -3632,11 +3606,122 @@ ul.products li.product .added_to_cart:hover {
   margin: 5px 0;
 }
 
+/* coupon корзина и оформление заказа */
+.coupon .input-text {
+  display: inline-block;
+  width: 226px;
+  height: 46px;
+  margin: 0 20px 0 0;
+  padding: 8px 20px;
+  border: 1px solid #D9D9D9;
+  border-radius: 23px;
+  font-family: 'Roboto-Condensed';
+  font-size: 20px;
+  color: var(--voodoo-color);
+}
+.coupon .input-text:placeholder {
+  color: #D9D9D9;
+}
+.coupon .button {
+  display: inline-block;
+  width: 226px;
+  height: 46px;
+  border: 1px solid var(--voodoo-color);
+  border-radius: 23px;
+  background-color: var(--nero-color);
+  font-family: 'Roboto-Condensed';
+  font-size: 20px;
+  color: var(--voodoo-color);
+}
 
 /* checkout page */
 .checkout-page .checkout-content {
   padding: 40px 0 0 0;
 }
+.checkout-page .woocommerce-form-coupon-toggle {
+  margin: 0 0 30px 0;
+  padding: 30px 36px;
+  border-radius: 30px;
+  background-color: var(--rare-beige-color);
+  font-family: 'Roboto-Condensed';
+  font-size: 22px;
+  font-weight: 100;
+}
+.checkout-page .woocommerce-form-coupon-toggle .showcoupon {
+  color: var(--voodoo-color);
+  text-decoration: underline;
+}
+.checkout-page .checkout_coupon .have-coupon-text {
+  font-family: 'Roboto-Condensed';
+  font-size: 22px;
+  font-weight: 100;
+}
+.checkout-page .checkout {
+  margin: 40px 0;
+}
+.checkout-page .checkout .billing-title {
+  margin: 0 0 20px 0;
+  font-family: 'Roboto-CondensedSemiBold';
+  font-size: 56px;
+  color: var(--voodoo-color);
+  text-transform: uppercase;
+}
+.checkout-page .woocommerce-billing-fields__field-wrapper {
+  display: grid;
+  gap: 20px 35px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.checkout-page .woocommerce-billing-fields__field-wrapper label {
+  display: block;
+  margin: 0 0 5px 0;
+  font-size: 14px;
+}
+.checkout-page .woocommerce-billing-fields__field-wrapper.woocommerce-input-wrapper {
+  display: block;
+  width: 100%;
+}
+.checkout-page .woocommerce-billing-fields__field-wrapper input {
+  display: block;
+  width: 100%;
+  height: 46px;
+  padding: 0 18px;
+  border: 1px solid #D9D9D9;
+  border-radius: 23px;
+  font-family: 'Roboto-Regular';
+  font-size: 15px;
+}
+.checkout-page .woocommerce-billing-fields__field-wrapper abbr {
+  color: var(--terracota-color );
+  text-decoration: none;
+}
+.checkout-page .select2-container--default .select2-selection--single {
+  border-radius: 20px;
+}
+.checkout-page .woocommerce-billing-fields__field-wrapper textarea {
+  display: block;
+  width: 100%;
+  height: 100px;
+  padding: 10px 18px;
+  border: 1px solid #D9D9D9;
+  border-radius: 23px;
+  font-family: 'Roboto-Regular';
+  font-size: 15px;
+  resize: none;
+}
+.checkout-page .woocommerce-checkout-review-order {
+  margin: 60px 0 30px 0;
+  padding: 50px 60px;
+  border-radius: 30px;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.10);
+}
+.checkout-page .woocommerce-checkout-review-order .order_review_heading {
+  margin: 0 0 20px 0;
+  font-family: 'Roboto-CondensedSemiBold';
+  font-size: 56px;
+  color: var(--voodoo-color);
+  text-transform: uppercase;
+}
+
 
 
 
@@ -4968,22 +5053,24 @@ h1.sec-title {
     height: 28px;
     font-size: 18px;
   }
-  .cart-page .woocommerce-cart-form__contents .actions .coupon .input-text {
-    height: 40px;
-    margin: 0 20px 0 0;
-    padding: 5px 20px;
-    font-size: 18px;
-  }
-  .cart-page .woocommerce-cart-form__contents .actions .coupon .button {
-    height: 40px;
-    font-size: 18px;
-  }
   .cart-page .woocommerce-cart-form__contents .actions .update-cart-btn {
     height: 40px;
     font-size: 18px;
   }
   .cart-page .cart-collaterals {
     padding: 40px 50px;
+  }
+
+  /* coupon корзина и оформление заказа */
+  .coupon .input-text {
+    height: 40px;
+    margin: 0 20px 0 0;
+    padding: 5px 20px;
+    font-size: 18px;
+  }
+  .coupon .button {
+    height: 40px;
+    font-size: 18px;
   }
 
   /* we use cookie */
@@ -5462,14 +5549,6 @@ h1.sec-title {
     height: 23px;
     font-size: 14px;
   }
-  .cart-page .woocommerce-cart-form__contents .actions .coupon .input-text {
-    width: 190px;
-    font-size: 16px;
-  }
-  .cart-page .woocommerce-cart-form__contents .actions .coupon .button {
-    width: 190px;
-    font-size: 16px;
-  }
   .cart-page .woocommerce-cart-form__contents .actions .update-cart-btn {
     width: 190px;
     font-size: 16px;
@@ -5486,6 +5565,16 @@ h1.sec-title {
   .cart-page .cart-collaterals .checkout-button {
     width: 195px;
     font-size: 18px;
+  }
+
+  /* coupon корзина и оформление заказа */
+  .coupon .input-text {
+    width: 190px;
+    font-size: 16px;
+  }
+  .coupon .button {
+    width: 190px;
+    font-size: 16px;
   }
 
   /* we use cookie */
@@ -5938,14 +6027,6 @@ h1.sec-title {
     position: static;
     margin: 10px 0;
   }
-  .cart-page .woocommerce-cart-form__contents .actions .coupon .input-text {
-    width: 170px;
-    font-size: 15px;
-  }
-  .cart-page .woocommerce-cart-form__contents .actions .coupon .button {
-    width: 170px;
-    font-size: 15px;
-  }
   .cart-page .woocommerce-cart-form__contents .actions .update-cart-btn {
     width: 170px;
     font-size: 15px;
@@ -5970,7 +6051,15 @@ h1.sec-title {
     font-size: 16px;
   }
 
-
+  /* coupon корзина и оформление заказа */
+  .coupon .input-text {
+    width: 170px;
+    font-size: 15px;
+  }
+  .coupon .button {
+    width: 170px;
+    font-size: 15px;
+  }
 
   .burger-menu-wrapper {
     display: block;
@@ -6456,7 +6545,9 @@ h1.sec-title {
   .cart-page .cart-collaterals .cart-totals-tbl th {
     width: 37%;
   }
-  .cart-page .woocommerce-cart-form__contents .actions .coupon .input-text {
+
+  /* coupon корзина и оформление заказа */
+  .coupon .input-text {
     margin: 0 20px 10px 0;
   }
 
