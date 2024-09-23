@@ -4709,7 +4709,7 @@ h1.sec-title {
   }
   .main-section .main-section-about .company-title {
     width: 220px;
-    margin: 0 0 10px 0;
+    margin: 0 auto 10px auto;
   }
   .main-section .main-section-about .fl-text {
     margin: 0;
@@ -6222,7 +6222,7 @@ h1.sec-title {
     height: 337px;
     height: 0;
     position: relative;
-    padding: 0 0 65% 0;
+    padding: 0 0 60.5% 0;
   }
 
   /* advantages section */
@@ -6425,6 +6425,10 @@ h1.sec-title {
 
   .custom-page .page-title {
     font-size: 40px;
+  }
+
+  .main-section .main-section-slider .main-slider-item {
+    padding: 0 0 57.2% 0;
   }
 
   /* catalog section */
