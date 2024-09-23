@@ -3549,7 +3549,7 @@ ul.products li.product .added_to_cart:hover {
   display: flex;
   width: 205px;
   height: 56px;
-  padding: 5px 0;
+  padding: 0;
   border: none;
   border-radius: 28px;
   background-color: var(--wild-willow-color);
@@ -3721,7 +3721,35 @@ ul.products li.product .added_to_cart:hover {
   color: var(--voodoo-color);
   text-transform: uppercase;
 }
-
+.checkout-page .woocommerce-checkout-review-order-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 10px 20px;
+}
+.checkout-page .woocommerce-checkout-review-order-table th {
+  font-family: 'Roboto-CondensedSemiBold';
+  font-size: 22px;
+  color: var(--voodoo-color);
+  text-align: left;
+}
+.checkout-page .woocommerce-terms-and-conditions-wrapper a {
+  color: var(--voodoo-color);
+  text-decoration: underline;
+}
+.checkout-page .place-order .button {
+  display: flex;
+  width: 235px;
+  height: 56px;
+  padding: 0;
+  border: none;
+  border-radius: 28px;
+  background-color: var(--wild-willow-color);
+  font-family: 'Roboto-CondensedSemiBold';
+  font-size: 20px;
+  color: var(--mine-shaft-color);
+  align-items: center;
+  justify-content: center;
+}
 
 
 
@@ -4631,6 +4659,17 @@ h1.sec-title {
   .cart-page .woocommerce-cart-form__contents .product-quantity {
     width: 150px;
   }
+
+  /* checkout page */
+  .checkout-page .checkout .billing-title {
+    font-size: 54px;
+  }
+  .checkout-page .woocommerce-checkout-review-order .order_review_heading {
+    font-size: 54px;
+  }
+  .checkout-page .woocommerce-checkout-review-order {
+    padding: 45px 55px;
+  }
 }
 
 @media only screen and (max-width : 1200px) {
@@ -5071,6 +5110,20 @@ h1.sec-title {
   .coupon .button {
     height: 40px;
     font-size: 18px;
+  }
+
+  /* checkout page */
+  .checkout-page .checkout .billing-title {
+    font-size: 50px;
+  }
+  .checkout-page .woocommerce-checkout-review-order .order_review_heading {
+    font-size: 50px;
+  }
+  .checkout-page .woocommerce-checkout-review-order {
+    padding: 40px 50px;
+  }
+  .checkout-page .woocommerce-billing-fields__field-wrapper {
+    gap: 10px 25px;
   }
 
   /* we use cookie */
@@ -5577,6 +5630,20 @@ h1.sec-title {
     font-size: 16px;
   }
 
+  /* checkout page */
+  .checkout-page .checkout .billing-title {
+    font-size: 46px;
+  }
+  .checkout-page .woocommerce-checkout-review-order .order_review_heading {
+    font-size: 46px;
+  }
+  .checkout-page .woocommerce-checkout-review-order {
+    padding: 30px 40px;
+  }
+  .checkout-page .woocommerce-billing-fields__field-wrapper {
+    gap: 0 15px;
+  }
+
   /* we use cookie */
   .we-use-cookie-wrapper {
     margin: 0 0 0 12px;
@@ -6061,6 +6128,31 @@ h1.sec-title {
     font-size: 15px;
   }
 
+  /* checkout page */
+  .checkout-page .woocommerce-form-coupon-toggle {
+    margin: 0 0 20px 0;
+    padding: 20px 26px;
+    font-size: 20px;
+  }
+  .checkout-page .checkout_coupon .have-coupon-text {
+    font-size: 20px;
+  }
+  .checkout-page .checkout {
+    margin: 30px 0;
+  }
+  .checkout-page .checkout .billing-title {
+    font-size: 40px;
+  }
+  .checkout-page .woocommerce-checkout-review-order .order_review_heading {
+    font-size: 40px;
+  }
+  .checkout-page .woocommerce-checkout-review-order {
+    padding: 20px 30px;
+  }
+  .checkout-page .woocommerce-billing-fields__field-wrapper {
+    display: block;
+  }
+
   .burger-menu-wrapper {
     display: block;
   }
@@ -6079,9 +6171,6 @@ h1.sec-title {
     margin: 0 0 10px 0;
     font-size: 12px;
   }
-
-
-
 
   /* breadcrumb */
   .storefront-breadcrumb {
@@ -6232,6 +6321,39 @@ h1.sec-title {
     height: 222px;
   }
 
+  /* checkout page */
+  .checkout-page .woocommerce-form-coupon-toggle {
+    font-size: 18px;
+  }
+  .checkout-page .checkout_coupon .have-coupon-text {
+    font-size: 18px;
+  }
+  .checkout-page .checkout {
+    margin: 20px 0;
+  }
+  .checkout-page .checkout .billing-title {
+    font-size: 36px;
+  }
+  .checkout-page .woocommerce-checkout-review-order .order_review_heading {
+    font-size: 36px;
+  }
+  .checkout-page .woocommerce-checkout-review-order {
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .checkout-page .woocommerce-billing-fields__field-wrapper {
+    display: block;
+  }
+  .checkout-page .place-order .button {
+    margin: 20px 0;
+  }
+  .checkout-page .woocommerce-checkout-review-order {
+    margin: 30px 0;
+  }
+  .checkout-page .woocommerce-checkout-review-order-table th {
+    font-size: 20px;
+  }
 
   .catalog_inside .term-description p:not(:last-child) {
     margin-bottom: 10px;
@@ -6549,6 +6671,17 @@ h1.sec-title {
   /* coupon корзина и оформление заказа */
   .coupon .input-text {
     margin: 0 20px 10px 0;
+  }
+
+  /* checkout page */
+  .checkout-page .checkout .billing-title {
+    font-size: 30px;
+  }
+  .checkout-page .woocommerce-checkout-review-order .order_review_heading {
+    font-size: 30px;
+  }
+  .checkout-page .woocommerce-checkout-review-order-table th {
+    font-size: 18px;
   }
 
   /* we use cookie */
