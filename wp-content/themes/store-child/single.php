@@ -82,7 +82,8 @@
               </div>
             </div>
           </div>
-          <input type="hidden" name="cc" value="<?php rwmb_the_value( 'expert_email' ); ?>">
+          <?php $expert_email = get_post_meta( $post->ID, 'expert_email', true ); ?>
+          <input type="hidden" name="cc" value="<?php echo $expert_email ? $expert_email : ""; ?>">
         </form>
       </div>
     </div>

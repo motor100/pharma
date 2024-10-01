@@ -884,31 +884,26 @@ function slider_register_cpt() {
         'menu_icon' => 'dashicons-airplane',
         'publicly_queryable' => false,
         'supports' => ['title', 'thumbnail', 'custom-fields'],
-        // 'register_meta_box_cb' => 'register_meta_boxes'
-
     );
     register_post_type( 'home_page_slider', $args );
 }
 
 
-
-add_action( 'add_meta_boxes', 'true_add_metabox' );
+// Добавление метабокса product_link на кастомный тип постов home_page_slider
+add_action( 'add_meta_boxes', 'home_page_slider_add_metabox' );
  
-function true_add_metabox() {
- 
+function home_page_slider_add_metabox() {
     add_meta_box(
         'product_link', // ID нашего метабокса
         'Ссылка на препараты', // заголовок
-        'link_metabox_callback', // функция, которая будет выводить поля в мета боксе
+        'home_page_slider_metabox_callback', // функция, которая будет выводить поля в мета боксе
         'home_page_slider', // типы постов, для которых его подключим
         'normal', // расположение (normal, side, advanced)
         'default' // приоритет (default, low, high, core)
     );
- 
 }
  
-function link_metabox_callback( $post ) {
- 
+function home_page_slider_metabox_callback( $post ) {
     // сначала получаем значения этих полей
     // ссылка на товар
     $product_link = get_post_meta( $post->ID, 'product_link', true );
@@ -924,12 +919,11 @@ function link_metabox_callback( $post ) {
             </tr>
         </tbody>
     </table>';
- 
 }
 
-add_action( 'save_post', 'true_save_meta', 10, 2 );
+add_action( 'save_post', 'home_page_slider_save_metabox', 10, 2 );
  
-function true_save_meta( $post_id, $post ) {
+function home_page_slider_save_metabox( $post_id, $post ) {
  
     // проверка одноразовых полей
     if ( ! isset( $_POST[ '_truenonce' ] ) || ! wp_verify_nonce( $_POST[ '_truenonce' ], 'seopostsettingsupdate-' . $post->ID ) ) {
@@ -971,10 +965,73 @@ function true_save_meta( $post_id, $post ) {
 }
 
 
+// Добавление метабокса expert_email на тип поля post
+add_action( 'add_meta_boxes', 'post_add_metabox' );
+ 
+function post_add_metabox() {
+    add_meta_box(
+        'expert_email', // ID нашего метабокса
+        'Email специалиста', // заголовок
+        'expert_email_metabox_callback', // функция, которая будет выводить поля в мета боксе
+        'post', // типы постов, для которых его подключим
+        'normal', // расположение (normal, side, advanced)
+        'default' // приоритет (default, low, high, core)
+    );
+}
+ 
+function expert_email_metabox_callback( $post ) {
+    // сначала получаем значения этих полей
+    // Email специалиста
+    $expert_email = get_post_meta( $post->ID, 'expert_email', true );
+ 
+    // одноразовые числа, кстати тут нет супер-большой необходимости их использовать
+    wp_nonce_field( 'seopostsettingsupdate-' . $post->ID, '_truenonce' );
+ 
+    echo '<table class="form-table">
+        <tbody>
+            <tr>
+                <th><label for="seo_title">Email</label></th>
+                <td><input type="text" id="expert_email" name="expert_email" value="' . esc_attr( $expert_email ) . '" class="regular-text"></td>
+            </tr>
+        </tbody>
+    </table>';
+}
 
-
-
-
+add_action( 'save_post', 'expert_email_save_metabox', 10, 2 );
+ 
+function expert_email_save_metabox( $post_id, $post ) {
+ 
+    // проверка одноразовых полей
+    if ( ! isset( $_POST[ '_truenonce' ] ) || ! wp_verify_nonce( $_POST[ '_truenonce' ], 'seopostsettingsupdate-' . $post->ID ) ) {
+        return $post_id;
+    }
+ 
+    // проверяем, может ли текущий юзер редактировать пост
+    $post_type = get_post_type_object( $post->post_type );
+ 
+    if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+        return $post_id;
+    }
+ 
+    // ничего не делаем для автосохранений
+    if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
+        return $post_id;
+    }
+ 
+    // проверяем тип записи
+    if( 'post' !== $post->post_type ) {
+        return $post_id;
+    }
+ 
+    if( isset( $_POST[ 'expert_email' ] ) ) {
+        $email = $_POST[ 'expert_email' ];
+        update_post_meta( $post_id, 'expert_email', sanitize_text_field( $email ) );
+    } else {
+        delete_post_meta( $post_id, 'expert_email' );
+    }
+ 
+    return $post_id;
+}
 
 
 // Добавление post_type post в результаты поска 
@@ -1002,49 +1059,3 @@ function tg_include_custom_post_types_in_search_results( $query ) {
 }
 add_action( 'pre_get_posts', 'tg_include_custom_post_types_in_search_results' );
 
-
-// Добавление галереи для типа поста home_page_slider
-// add_post_type_support( 'home_page_slider', ['title', 'editor', 'thumbnail', 'file_pdf', 'Email'] );
-
-// Добавление кастомных полей
-// add_filter( 'rwmb_meta_boxes', 'register_meta_boxes' );
-
-function register_meta_boxes( $meta_boxes ) {
-    $meta_boxes = [
-
-        array(
-          'id'       => 'file_pdf',
-          'title'    => 'Документы PDF',
-          'post_type' => 'home_page_slider',
-          'context'  => 'normal',
-          'priority' => 'high',
-          'fields' => array(
-            array(
-              'name'  => 'pdf',
-              'id'    => 'file_pdf',
-              'type'  => 'file_advanced',
-              'max_file_uploads' => 1,
-              'mime_type' => 'application/pdf',
-            )
-          )
-        ),
-
-        array(
-          'id'       => 'email',
-          'title'    => 'Email специалиста',
-          'post_type' => 'home_page_slider',
-          'context'  => 'normal',
-          'priority' => 'high',
-          'fields' => array(
-            array(
-              'name'  => 'Email',
-              'id'    => 'expert_email',
-              'type'  => 'email',
-            )
-          )
-        ),
-
-    ];
-
-  return $meta_boxes;
-}

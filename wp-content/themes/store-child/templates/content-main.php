@@ -30,11 +30,10 @@
 
                 <div class="main-slider-item swiper-slide">
                   <div class="slider-item-image">
-                    <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" alt="">
+                    <a href="<?php echo $product_link ? $product_link : "#"; ?>">
+                      <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" alt="">
+                    </a>
                   </div>
-                  <?php if($product_link) : ?>
-                    <a href="<?php echo $product_link; ?>"><?php echo $product_link; ?></a>
-                  <?php endif; ?>
                 </div>
 
               <?php
