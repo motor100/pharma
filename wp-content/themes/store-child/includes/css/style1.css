@@ -3006,7 +3006,7 @@ ul.products li.product .added_to_cart:hover {
   z-index: 1;
 }
 .single-product .product .woocommerce-product-gallery__trigger::before {
-  content: '';
+  content: '' !important;
   position: absolute;
   width: 42px;
   height: 42px;
@@ -3338,7 +3338,7 @@ ul.products li.product .added_to_cart:hover {
 }
 
 /* Скрыть слово Распродажа */
-/*.wc-block-grid__product-onsale,
+.wc-block-grid__product-onsale,
 .onsale {
   position: absolute;
   top: 16px;
@@ -3353,8 +3353,7 @@ ul.products li.product .added_to_cart:hover {
   color: #fff;
   border-radius: 0px 0px 12px 12px;
   padding: 5px 20px;
-}*/
-
+}
 
 /* archive product страница категории */
 .archive-product .archive-product-content {
