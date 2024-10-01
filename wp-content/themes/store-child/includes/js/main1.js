@@ -231,34 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
   });
-  
 
-  // Sticky top menu
-  /*
-  if (window.innerWidth >= 991) {
-
-    // Get the header
-    var header = document.getElementById("myHeader");
-
-    // Get the offset position of the navbar
-    var sticky = header.offsetTop;
-
-    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-    function setStickyMenu() {
-      if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
-      } else {
-        header.classList.remove("sticky");
-      }
-    }
-
-    // When the user scrolls the page, execute setStickyMenu function
-    window.onscroll = function() {
-      setStickyMenu();
-    };
-
-  }
-  */
 
   // Swiper slider
   const mainSlider = document.querySelector('.main-slider')
@@ -274,6 +247,9 @@ document.addEventListener("DOMContentLoaded", () => {
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
+      },
+      autoplay: {
+        delay: 5000,
       },
     });
   }

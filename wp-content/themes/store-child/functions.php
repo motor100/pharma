@@ -338,8 +338,8 @@ function rk_remove_product_tabs( $tabs ) {
 add_filter( 'woocommerce_product_tabs', 'ql_reorder_product_tabs', 98 );
 
 function ql_reorder_product_tabs( $tabs ) {
-$tabs['description']['priority'] = 0; // Description first
-return $tabs;
+    $tabs['description']['priority'] = 0; // Description first
+    return $tabs;
 }
 
 
@@ -883,9 +883,98 @@ function slider_register_cpt() {
         'public' => true,
         'menu_icon' => 'dashicons-airplane',
         'publicly_queryable' => false,
+        'supports' => ['title', 'thumbnail', 'custom-fields'],
+        // 'register_meta_box_cb' => 'register_meta_boxes'
+
     );
     register_post_type( 'home_page_slider', $args );
 }
+
+
+
+add_action( 'add_meta_boxes', 'true_add_metabox' );
+ 
+function true_add_metabox() {
+ 
+    add_meta_box(
+        'product_link', // ID нашего метабокса
+        'Ссылка на препараты', // заголовок
+        'link_metabox_callback', // функция, которая будет выводить поля в мета боксе
+        'home_page_slider', // типы постов, для которых его подключим
+        'normal', // расположение (normal, side, advanced)
+        'default' // приоритет (default, low, high, core)
+    );
+ 
+}
+ 
+function link_metabox_callback( $post ) {
+ 
+    // сначала получаем значения этих полей
+    // ссылка на товар
+    $product_link = get_post_meta( $post->ID, 'product_link', true );
+ 
+    // одноразовые числа, кстати тут нет супер-большой необходимости их использовать
+    wp_nonce_field( 'seopostsettingsupdate-' . $post->ID, '_truenonce' );
+ 
+    echo '<table class="form-table">
+        <tbody>
+            <tr>
+                <th><label for="seo_title">Ссылка</label></th>
+                <td><input type="text" id="product_link" name="product_link" value="' . esc_attr( $product_link ) . '" class="regular-text"></td>
+            </tr>
+        </tbody>
+    </table>';
+ 
+}
+
+add_action( 'save_post', 'true_save_meta', 10, 2 );
+ 
+function true_save_meta( $post_id, $post ) {
+ 
+    // проверка одноразовых полей
+    if ( ! isset( $_POST[ '_truenonce' ] ) || ! wp_verify_nonce( $_POST[ '_truenonce' ], 'seopostsettingsupdate-' . $post->ID ) ) {
+        return $post_id;
+    }
+ 
+    // проверяем, может ли текущий юзер редактировать пост
+    $post_type = get_post_type_object( $post->post_type );
+ 
+    if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+        return $post_id;
+    }
+ 
+    // ничего не делаем для автосохранений
+    if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
+        return $post_id;
+    }
+ 
+    // проверяем тип записи
+    if( 'home_page_slider' !== $post->post_type ) {
+        return $post_id;
+    }
+ 
+    if( isset( $_POST[ 'product_link' ] ) ) {
+
+        // Создание относительной ссылки
+        $link = $_POST[ 'product_link' ];
+        if( strpos($link,'//') === false ) {
+            $link='//'.$link;
+        }
+        $n_link = parse_url($link, PHP_URL_PATH);
+
+        update_post_meta( $post_id, 'product_link', sanitize_text_field( $n_link ) );
+    } else {
+        delete_post_meta( $post_id, 'product_link' );
+    }
+ 
+    return $post_id;
+}
+
+
+
+
+
+
 
 
 // Добавление post_type post в результаты поска 
@@ -915,14 +1004,14 @@ add_action( 'pre_get_posts', 'tg_include_custom_post_types_in_search_results' );
 
 
 // Добавление галереи для типа поста home_page_slider
-add_post_type_support( 'home_page_slider', 'thumbnail' );
+// add_post_type_support( 'home_page_slider', ['title', 'editor', 'thumbnail', 'file_pdf', 'Email'] );
 
 // Добавление кастомных полей
-add_filter( 'rwmb_meta_boxes', 'register_meta_boxes' );
+// add_filter( 'rwmb_meta_boxes', 'register_meta_boxes' );
 
 function register_meta_boxes( $meta_boxes ) {
     $meta_boxes = [
-        /*
+
         array(
           'id'       => 'file_pdf',
           'title'    => 'Документы PDF',
@@ -939,11 +1028,11 @@ function register_meta_boxes( $meta_boxes ) {
             )
           )
         ),
-        */
+
         array(
           'id'       => 'email',
           'title'    => 'Email специалиста',
-          'post_type' => 'post',
+          'post_type' => 'home_page_slider',
           'context'  => 'normal',
           'priority' => 'high',
           'fields' => array(

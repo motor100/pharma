@@ -15,36 +15,36 @@
       <div class="main-section-slider">
         <div class="main-slider swiper">
           <div class="swiper-wrapper">
-            <div class="main-slider-item swiper-slide">
-              <div class="slider-item-image">
-                <img src="/wp-content/themes/store-child/includes/images/main-slide1.jpg" alt="">
-              </div>
-              <a href="#" class="slider-item-link"></a>
-            </div>
-            <div class="main-slider-item swiper-slide">
-              <div class="slider-item-image">
-                <img src="/wp-content/themes/store-child/includes/images/main-slide2.jpg" alt="">
-              </div>
-              <a href="#" class="slider-item-link"></a>
-            </div>
-            <div class="main-slider-item swiper-slide">
-              <div class="slider-item-image">
-                <img src="/wp-content/themes/store-child/includes/images/main-slide3.jpg" alt="">
-              </div>
-              <a href="#" class="slider-item-link"></a>
-            </div>
-            <div class="main-slider-item swiper-slide">
-              <div class="slider-item-image">
-                <img src="/wp-content/themes/store-child/includes/images/main-slide4.jpg" alt="">
-              </div>
-              <a href="#" class="slider-item-link"></a>
-            </div>
-            <div class="main-slider-item swiper-slide">
-              <div class="slider-item-image">
-                <img src="/wp-content/themes/store-child/includes/images/main-slide5.jpg" alt="">
-              </div>
-              <a href="#" class="slider-item-link"></a>
-            </div>
+
+            <?php
+            $args = array(
+              'post_type' => 'home_page_slider',
+              'posts_per_page' => 5,
+              'nopaging' => false,
+            );
+            $query = new WP_Query( $args );
+            if( $query->have_posts() ) :
+              while( $query->have_posts() ) :
+                $query->the_post();
+                $product_link = get_post_meta( $post->ID, 'product_link', true ); ?>
+
+                <div class="main-slider-item swiper-slide">
+                  <div class="slider-item-image">
+                    <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" alt="">
+                  </div>
+                  <?php if($product_link) : ?>
+                    <a href="<?php echo $product_link; ?>"><?php echo $product_link; ?></a>
+                  <?php endif; ?>
+                </div>
+
+              <?php
+              endwhile;
+              wp_reset_postdata();
+            else :
+              echo 'Записей нет.';
+            endif;
+            ?>
+            
           </div>
         </div>
         <div class="swiper-button-next"></div>
