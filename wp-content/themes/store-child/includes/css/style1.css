@@ -2752,9 +2752,9 @@ ul.products li.product .attachment-woocommerce_thumbnail:hover {
 }
 ul.products li.product .woocommerce-loop-product__title {
   display: -webkit-box;
-  height: 48px;
+  height: 44px;
   margin: 0 0 10px 0;
-  font-size: 20px;
+  font-size: 18px;
   color: var(--shark-color);
   font-weight: 400;
   line-height: 1.2;
@@ -4847,8 +4847,8 @@ h1.sec-title {
 
   /* products card ul.products */
   ul.products li.product .woocommerce-loop-product__title {
-    height: 43px;
-    font-size: 18px;
+    height: 40px;
+    font-size: 16px;
   }
   ul.products li.product .price {
     font-size: 22px;
@@ -5768,7 +5768,7 @@ h1.sec-title {
   }
   ul.products li.product .woocommerce-loop-product__title {
     height: 38px;
-    font-size: 16px;
+    font-size: 15px;
   }
    ul.products li.product .price {
     font-size: 18px;
