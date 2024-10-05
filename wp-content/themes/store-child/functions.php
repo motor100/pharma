@@ -62,7 +62,7 @@ function artabr_script() {
         wp_enqueue_script( 'swiper', get_stylesheet_directory_uri() . '/includes/js/swiper-bundle.min.js' );
     }
     wp_enqueue_script( 'imask', get_stylesheet_directory_uri() . '/includes/js/imask.min.js' );
-    wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/includes/js/main1.js','',$ver);
+    wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/includes/js/main.js','',$ver);
 
     // включение файла admin-ajax.php для front
     wp_localize_script('main', 'Myscrt', array(
@@ -79,8 +79,7 @@ function add_styles() {
     if ( is_front_page() ) {
         wp_enqueue_style( 'swiper', get_stylesheet_directory_uri() . '/includes/css/swiper-bundle.min.css' );
     }
-    // wp_enqueue_style( 'fancybox', get_stylesheet_directory_uri() . '/includes/css/fancybox.min.css' );
-    wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/includes/css/style1.css','',$ver );
+    wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/includes/css/style.css','',$ver );
 }
 
 
