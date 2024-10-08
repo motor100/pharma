@@ -868,7 +868,7 @@ function the_excerpt_max_charlength( $charlength ){
 * Disable pagination
 * Priority=11 to go after the Storefront's hook.
 */
-add_filter( 'theme_mod_storefront_product_pagination', '__return_false', 11 );
+// add_filter( 'theme_mod_storefront_product_pagination', '__return_false', 11 );
 
 
 // Регистрация нового типа поста home_page_slider для слайдера на главной странице

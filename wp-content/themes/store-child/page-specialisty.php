@@ -16,7 +16,7 @@
     <div class="page-title">Специалисты</div>
   </div>
 
-  <?php $cats = [393, 392, 391, 186, 187, 188, 190, 128, 122, 124, 123, 125, 126]; ?>
+  <?php $cats = [393, 392, 391, 186, 187, 188, 190, 128, 122, 124, 123, 125, 126, 412]; ?>
 
   <div class="cities">
     <div class="container">
@@ -37,7 +37,7 @@
         // получаем номер страницы пагинации
         $current = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
         $args = array(
-          'cat' => array(393, 392, 391, 186, 187, 188, 190, 128, 122, 124, 123, 125, 126),
+          'cat' => $cats,
           'posts_per_page' => 9,
           'nopaging' => false,
           'paged' => $current,

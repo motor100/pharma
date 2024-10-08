@@ -30,7 +30,7 @@
       </div>
     </div>
     
-    <?php if( in_category( [393, 392, 391, 186, 187, 188, 190, 128, 122, 124, 123, 125, 126] ) ) { // специалисты ?>
+    <?php if( in_category( [393, 392, 391, 186, 187, 188, 190, 128, 122, 124, 123, 125, 126, 412] ) ) { // специалисты ?>
     <div class="lead-form-section">
       <div class="container">
         <div class="lead-form-section-title">ЗАПИСАТЬСЯ НА КОНСУЛЬТАЦИЮ</div> 
