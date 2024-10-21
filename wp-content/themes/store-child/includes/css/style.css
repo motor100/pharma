@@ -3063,6 +3063,10 @@ a.remove {
   align-items: center;
   justify-content: center;
 }
+.cart-page .cart-collaterals .checkout-button::after {
+  content: '';
+  display: none;
+}
 .cart-page .return-to-shop .button {
   display: flex;
   width: 226px;
