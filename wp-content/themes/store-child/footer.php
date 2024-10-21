@@ -13,6 +13,8 @@
 </div>
 
 <footer class="footer">
+  <!-- lk login -->
+<?php // my_account_loginout_link(); ?>
   <div class="curved m-b-30">
     <div class="one"></div>
     <div class="two"></div>
@@ -45,6 +47,16 @@
           <a href="/politika-v-otnoshenii-obrabotki-personalnyh-dannyh" class="privacy-policy footer-pa">Политика конфиденциальности</a>
           <a href="/soglasie-posetitelya-sajta-na-obrabotku-personalnyh-dannyh" class="agreement footer-pa">Согласие на обработку персональных данных</a>
           <div class="copyright">© 2016—<?php echo date("Y"); ?> Все права принадлежат ООО «Здоровье»</div>
+
+          <div class="developer">
+            <div class="author">
+              <a href="https://nhfuture.ru/" target="_blank">Дизайн Andrewwebnh</a>
+            </div>
+            <div class="author">
+              <a href="https://mybutton.ru/" target="_blank">Поддержка Button</a>
+            </div>
+          </div>
+
         </div>
         <div class="col-lg-2 d-lg-block d-none"><?php echo custom_nav_menu(0, 4); ?></div>
         <div class="col-lg-3 d-lg-block d-none"><?php echo custom_nav_menu(5); ?></div>
@@ -72,11 +84,6 @@
       </div>
     </div>
   </div>
-  <!-- <div class="footer-bottom">
-    <div class="container">
-      <div class="footer-bottom__text">все что представлено на сайте не является рекомендациями и мы не отвечаем за самоназначения, где то правильно написанная фраза у нас была</div>
-    </div>
-  </div> -->
 </footer>
 
 <div class="burger-menu-wrapper">
@@ -189,7 +196,7 @@
         <input type="button" id="callback-modal-btn" class="submit-btn" value="Отправить">
         <div class="agreement-text">
           <input type="checkbox" id="cb-checkbox-input" name="checkbox" class="custom-checkbox js-required-checkbox" checked onchange="document.getElementById('callback-modal-btn').disabled = !this.checked;">
-          <label for="lfs-checkbox-input" class="custom-checkbox-label"></label>
+          <label for="cb-checkbox-input" class="custom-checkbox-label"></label>
           <span>Нажимая кнопку вы соглашаетесь с <a href="/politika-v-otnoshenii-obrabotki-personalnyh-dannyh">политикой обработки данных</a></span>
         </div>
       </form>

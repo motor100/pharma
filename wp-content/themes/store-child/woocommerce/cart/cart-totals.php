@@ -100,7 +100,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
 		
 		<tr class="">
-			<th class="achtung">!</th>
+			<th class="delivery-price">Стоимость доставки</th>
 			<td>Доставка от 7000 бесплатно до пункта выдачи Boxberry.</td>
 		</tr>
 

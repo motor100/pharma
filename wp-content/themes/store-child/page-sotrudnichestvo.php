@@ -66,7 +66,7 @@
           <div class="partnership-text">По вопросам сотрудничества</div>
         </div>
         <div class="col-xl-4 col-md-5">
-          <a href="#" class="partnership-btn">Заполнить анкету</a>
+          <a href="https://docs.google.com/forms/d/1Wry8A04nUhU-9HZJI1pZGSFZ2PROh7RRYkmgi8MiXUg/viewform?edit_requested=true&pli=1" class="partnership-btn" target="_blank">Заполнить анкету</a>
         </div>
         <div class="col-xl-8 col-md-7">
           <div class="partnership-text">Ознакомьтесь с документацией</div>
