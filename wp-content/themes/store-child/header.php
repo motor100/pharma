@@ -84,11 +84,11 @@
                 <div class="header-cart__content">
                   <div class="header-cart__counter">
                     <span class="text">Количество товаров: </span>
-                    <span class="number"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                    <span class="number"><?php global $woocommerce; echo $woocommerce->cart->get_cart_contents_count(); ?></span>
                   </div>
                   <div class="header-cart__total">
                     <span class="text">Сумма: </span>
-                    <span class="number"><?php echo WC()->cart->get_cart_contents_total(); ?></span>
+                    <span class="number"><?php global $woocommerce; echo $woocommerce->cart->get_cart_contents_total(); ?></span>
                   </div>
                   <a href="/cart" class="full-link"></a>
                 </div>

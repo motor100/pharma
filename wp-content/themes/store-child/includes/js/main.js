@@ -443,6 +443,13 @@ document.addEventListener("DOMContentLoaded", () => {
     elementPhone.forEach((item) => {
       const mask = IMask(item, maskOptionsPhone);
     });
+
+    // Маска номера телефона на странице оформления заказа checkout billing billing_phone
+    const billingPhone = document.getElementById('billing_phone');
+
+    if (billingPhone) {
+      const maskBillingPhone = IMask(billingPhone, maskOptionsPhone);
+    }
   }
 
   inputPhoneMask();

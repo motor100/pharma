@@ -14,7 +14,7 @@
 
 <footer class="footer">
   <!-- lk login -->
-<?php // my_account_loginout_link(); ?>
+<?php  //my_account_loginout_link(); ?>
   <div class="curved m-b-30">
     <div class="one"></div>
     <div class="two"></div>
@@ -188,9 +188,9 @@
       <div class="modal-title">Заказать звонок</div>
       <form id="callback-modal-form" class="form" method="post">
         <label for="name-callback-modal" class="label">Имя<span class="terracota-color">*</span></label>
-        <input type="text" id="name-callback-modal" class="input-field js-required-name" name="name" required minlength="3" maxlength="20" placeholder="">
+        <input type="text" id="name-callback-modal" class="input-field js-required-name" name="name" required minlength="3" maxlength="20" autocomplete="on" placeholder="">
         <label for="phone-callback-modal" class="label">Телефон<span class="terracota-color">*</span></label>
-        <input type="text" id="phone-callback-modal" class="input-field js-required-phone js-input-phone-mask" name="phone" required maxlength="18">
+        <input type="text" id="phone-callback-modal" class="input-field js-required-phone js-input-phone-mask" name="phone" required maxlength="18" autocomplete="on">
         <input type="hidden" name="surname" class="js-required-surname" value="нет">
         <input type="hidden" name="email" class="js-required-email" value="нет">
         <input type="button" id="callback-modal-btn" class="submit-btn" value="Отправить">

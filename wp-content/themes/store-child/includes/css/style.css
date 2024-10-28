@@ -2923,13 +2923,6 @@ ul.products li.product .added_to_cart:hover {
 .cart-page .woocommerce-error li {
   list-style: none;
 }
-.cart-page .woocommerce-message {
-  margin: 0 0 10px 0;
-}
-.cart-page .woocommerce-message a {
-  color: var(--voodoo-color);
-  text-decoration: underline;
-}
 .cart-page .wc-empty-cart-message {
   margin: 0 0 20px 0;
 }
@@ -3079,6 +3072,18 @@ a.remove {
   color: var(--voodoo-color);
   align-items: center;
   justify-content: center;
+}
+
+/* woocommerce message */
+.woocommerce-message {
+  margin: 0 0 10px 0;
+}
+.woocommerce-message:focus-visible {
+  outline: none !important;
+}
+.woocommerce-message a {
+  color: var(--voodoo-color);
+  text-decoration: underline;
 }
 
 /* custom radio */
