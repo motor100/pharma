@@ -30,7 +30,11 @@
       </div>
     </div>
     
-    <?php if( in_category( [393, 392, 391, 186, 187, 188, 190, 128, 122, 124, 123, 125, 126, 412] ) ) { // специалисты ?>
+    <?php
+    $category = get_the_category();
+    if ($category[0]->parent == 414) { // ID категории Специалисты local = 413, production = 414
+    ?>
+
     <div class="lead-form-section">
       <div class="container">
         <div class="lead-form-section-title">ЗАПИСАТЬСЯ НА КОНСУЛЬТАЦИЮ</div> 

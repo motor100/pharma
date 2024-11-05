@@ -86,7 +86,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // удаление пагинации
       const pagination = document.querySelector('.specialisty-page .pagination');
-      pagination.innerHTML = '';
+      if (pagination) {
+        pagination.innerHTML = '';
+      }
 
       const specialists = document.querySelector('.specialisty-page .js-insert-specialists');
       
