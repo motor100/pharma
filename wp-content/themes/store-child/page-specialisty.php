@@ -16,7 +16,7 @@
     <div class="page-title">Специалисты</div>
   </div>
 
-  <?php $specialisty_cat_id = 413; // ID категории Специалисты loc = 413, prod = 414 ?>
+  <?php $specialisty_cat_id = 413; // ID категории Специалисты local = 413, production = 414 ?>
 
   <?php
 
@@ -66,12 +66,11 @@
         <?php
 
         // Номер страницы пагинации
-        $current = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
+        // $current = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
         $args2 = array(
           'cat' => $specialisty_cat_id,
-          'posts_per_page' => 9,
-          'nopaging' => false,
-          'paged' => $current,
+          'posts_per_page' => -1,
+          // 'paged' => $current,
         );
         
         $query2 = new WP_Query( $args2 );
@@ -105,22 +104,6 @@
     </div>
   </div>
 
-  <div class="pagination-section">
-    <div class="container">
-      <div class="pagination">
-        <?php 
-        echo wp_kses_post(
-          paginate_links(
-            [
-              'total'   => $query->max_num_pages, // количество берем из дефолтной опции запроса
-              'current' => $current, // текущая страница
-            ]
-          )
-        );
-        ?>
-      </div>
-    </div>
-  </div>
 </div>
 
 <?php get_footer(); ?>
