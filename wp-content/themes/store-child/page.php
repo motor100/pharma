@@ -13,21 +13,21 @@
 get_header(); ?>
 
 <?php
-    while ( have_posts() ) :
-      the_post();
+while ( have_posts() ) :
+  the_post();
 
-	    if(get_the_ID() == 2):
-	      get_template_part( 'templates/content', 'main' );
-			elseif(get_the_ID() == 9333):
-			  get_template_part( 'templates/content', 'blog' );		  
-			elseif(get_the_ID() == 7):
-				get_template_part( 'templates/content', 'cart' );
-			elseif(get_the_ID() == 8):
-				get_template_part( 'templates/content', 'checkout' );
-	    else:
-	      get_template_part( 'templates/content', 'catalog' );
-	    endif;
-    endwhile;
+  if(get_the_ID() == 2):
+    get_template_part( 'templates/content', 'main' );
+	elseif(get_the_ID() == 9333):
+	  get_template_part( 'templates/content', 'blog' );		  
+	elseif(get_the_ID() == 7):
+		get_template_part( 'templates/content', 'cart' );
+	elseif(get_the_ID() == 8):
+		get_template_part( 'templates/content', 'checkout' );
+  else:
+    get_template_part( 'templates/content', 'catalog' );
+  endif;
+endwhile;
 ?>
 
 <?php

@@ -311,8 +311,9 @@ a {
   top: -3px;
   right: -3px;
   z-index: 1;
-  width: 24px;
+  width: max-content;
   height: 24px;
+  padding: 0 7px;
   border-radius: 12px;
   background-color: var(--wild-willow-color);
   font-size: 15px;
@@ -755,11 +756,12 @@ a {
 /* footer */
 .footer {
   margin: 100px 0 0 0;
+  padding: 0 0 80px 0;
   background-color: #43314b;
   color: var(--nero-color);
 }
 .footer .footer-top {
-  padding: 0 0 80px 0;
+/*  padding: 0 0 80px 0;*/
 }
 .footer .menu {
   display: block;
@@ -5139,9 +5141,12 @@ h1.sec-title {
   }
 
   /* footer */
-  .footer .footer-top {
+  .footer {
     padding: 0 0 180px 0;
   }
+  /*.footer .footer-top {
+    padding: 0 0 180px 0;
+  }*/
 
   /* products card ul.products */
   ul.products {
