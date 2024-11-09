@@ -61,7 +61,6 @@ if (is_shop()) {
 
       <?php
       $parentid = get_queried_object_id(); // id родительской категории
-
       $term_childs = get_term_children( $parentid, 'product_cat' ); // получить массив с id вложенных подкатегорий
       ?>
 
@@ -248,7 +247,7 @@ if (is_shop()) {
   <div class="container">
     <div class="circle">
       <div class="image">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/arrow-top.svg" class="arrow-top" alt="">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/svg/arrow-top.svg" class="arrow-top" alt="">
       </div>
     </div>
   </div>

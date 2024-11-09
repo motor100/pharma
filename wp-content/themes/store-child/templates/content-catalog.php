@@ -1,4 +1,3 @@
-<?php //if($_SERVER['REQUEST_URI'] != '/catalog/') { ?>
 <?php if ( !is_page('catalog') ) { ?>
 
   <section class="text-page">

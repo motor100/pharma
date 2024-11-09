@@ -16,6 +16,7 @@ add_action( 'wp_enqueue_scripts', 'sf_child_theme_dequeue_style', 999 );
  */
 function sf_child_theme_dequeue_style() {
     wp_dequeue_style( 'storefront-style' );
+    wp_dequeue_style( 'storefront-icons' );
     wp_dequeue_style( 'storefront-woocommerce-style' );
 }
 
@@ -44,9 +45,9 @@ if ($temp_debug) {
 
 
 // Scripts
-add_action( 'wp_enqueue_scripts', 'artabr_script' );
+add_action( 'wp_footer', 'add_scripts' );
 
-function artabr_script() {
+function add_scripts() {
     global $ver;
     // wp_enqueue_script( 'jquery-ui', get_stylesheet_directory_uri() . '/includes/js/jquery-ui.min.js' );
 	// wp_enqueue_script( 'fancy', get_stylesheet_directory_uri() . '/includes/js/fancy.js' );
@@ -1070,4 +1071,207 @@ function my_account_loginout_link() {
         echo '<a class="nav-link" href="' . get_permalink( wc_get_page_id( 'myaccount' ) ) . '">Авторизация/Регистрация</a>';
     }
 
+}
+
+
+// Отключение скриптов и стилей плагина Contact Form 7
+// На страницах Главная, Каталог, Карточка товара, Блог, Специалисты
+add_action( 'wp_enqueue_scripts', 'disable_contact_form_css_and_js', 999 );
+ 
+function disable_contact_form_css_and_js() {
+ 
+    if( is_home() || 
+        is_front_page() || 
+        is_page( 'contacts' ) || 
+        is_page( 'blog' ) || 
+        is_page( 'specialisty' ) || 
+        is_page( 'catalog' ) ) {
+        
+        wp_dequeue_style( 'contact-form-7' );
+        wp_dequeue_script( 'contact-form-7' );
+    }
+
+    return; 
+}
+
+
+/*WooCommerce - убираем WooC Generator tag, стили, и скрипты для страниц, не относящихся к плагину*/
+add_action( 'wp_enqueue_scripts', 'my_on_woocommerce_scripts', 999 );
+
+function my_on_woocommerce_scripts() {
+    remove_action( 'wp_head', array( $GLOBALS['woocommerce'], 'generator' ) ); //убираем generator meta tag
+    if ( function_exists( 'is_woocommerce' ) ) { //проверяем, активен ли WooCommerce - исключим ошибеи
+        if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() ) { //отменяем загрузку скриптов/стилей
+            wp_dequeue_style( 'woocommerce_frontend_styles' ); // стили
+            wp_dequeue_style( 'woocommerce_fancybox_styles' );
+            wp_dequeue_style( 'woocommerce_chosen_styles' );
+            wp_dequeue_style( 'woocommerce_prettyPhoto_css' );
+            wp_dequeue_script( 'wc_price_slider' );
+            wp_dequeue_script( 'wc-single-product' );
+            //wp_dequeue_script( 'wc-add-to-cart' ); //этот скрипт ДЛЯ отработки кнопки Добавить в корзину
+            // подключаются: plugins/woocommerce/assets/js/frontend/add-to-cart.min.js И ещё: plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js
+            wp_dequeue_script( 'wc-cart-fragments' );
+            wp_dequeue_script( 'wc-checkout' );
+            wp_dequeue_script( 'wc-add-to-cart-variation' );
+            wp_dequeue_script( 'wc-single-product' );
+            wp_dequeue_script( 'wc-cart' );
+            wp_dequeue_script( 'wc-chosen' );
+            wp_dequeue_script( 'woocommerce' );
+            wp_dequeue_script( 'prettyPhoto' );
+            wp_dequeue_script( 'prettyPhoto-init' );
+            wp_dequeue_script( 'jquery-blockui' );
+            //wp_dequeue_script( 'jquery-placeholder' );
+            wp_dequeue_script( 'fancybox' );
+            wp_dequeue_script( 'jqueryui' );
+        }
+    }
+}
+/*оптимизируем работу Woocommerce*/
+
+
+// Disable global styles
+add_action( 'wp_enqueue_scripts', 'remove_global_styles', 999 );
+
+function remove_global_styles(){
+    wp_dequeue_style( 'global-styles' );
+}
+
+
+// Disable gutenberg frontend styles @ https://m0n.co/15
+function disable_gutenberg_wp_enqueue_scripts() {
+    
+    wp_dequeue_style('wp-block-library');
+    wp_dequeue_style('wp-block-library-theme');
+
+    wp_dequeue_style('wc-block-style'); // disable woocommerce frontend block styles
+    wp_dequeue_style('storefront-gutenberg-blocks'); // disable storefront frontend block styles
+    
+}
+add_filter('wp_enqueue_scripts', 'disable_gutenberg_wp_enqueue_scripts', 999);
+
+
+// Disable classic theme styles
+add_action( 'wp_enqueue_scripts', 'disable_classic_theme_styles', 999);
+
+function disable_classic_theme_styles() {
+    wp_dequeue_style( 'classic-theme-styles' );
+}
+
+
+// Disable wp blocks
+function disable_wp_blocks() {
+    $wstyles = array(
+        'wp-block-library',
+        'wc-blocks-style',
+        'wc-blocks-style-active-filters',
+        'wc-blocks-style-add-to-cart-form',
+        'wc-blocks-packages-style',
+        'wc-blocks-style-all-products',
+        'wc-blocks-style-all-reviews',
+        'wc-blocks-style-attribute-filter',
+        'wc-blocks-style-breadcrumbs',
+        'wc-blocks-style-catalog-sorting',
+        'wc-blocks-style-customer-account',
+        'wc-blocks-style-featured-category',
+        'wc-blocks-style-featured-product',
+        'wc-blocks-style-mini-cart',
+        'wc-blocks-style-price-filter',
+        'wc-blocks-style-product-add-to-cart',
+        'wc-blocks-style-product-button',
+        'wc-blocks-style-product-categories',
+        'wc-blocks-style-product-image',
+        'wc-blocks-style-product-image-gallery',
+        'wc-blocks-style-product-query',
+        'wc-blocks-style-product-results-count',
+        'wc-blocks-style-product-reviews',
+        'wc-blocks-style-product-sale-badge',
+        'wc-blocks-style-product-search',
+        'wc-blocks-style-product-sku',
+        'wc-blocks-style-product-stock-indicator',
+        'wc-blocks-style-product-summary',
+        'wc-blocks-style-product-title',
+        'wc-blocks-style-rating-filter',
+        'wc-blocks-style-reviews-by-category',
+        'wc-blocks-style-reviews-by-product',
+        'wc-blocks-style-product-details',
+        'wc-blocks-style-single-product',
+        'wc-blocks-style-stock-filter',
+        'wc-blocks-style-cart',
+        'wc-blocks-style-checkout',
+        'wc-blocks-style-mini-cart-contents',
+        'classic-theme-styles-inline'
+    );
+
+    if (!is_admin()) {
+        foreach ( $wstyles as $wstyle ) {
+            wp_deregister_style( $wstyle );
+        }
+    }
+
+    $wscripts = array(
+        'wc-blocks-middleware',
+        'wc-blocks-data-store'
+    );
+
+    if (!is_admin()) {
+        foreach ( $wscripts as $wscript ) {
+            wp_deregister_script( $wscript );  
+        }
+    }
+}
+
+add_action( 'init', 'disable_wp_blocks', 100 );
+
+
+// Disable Heartbeat
+// Уменьшение количества запросов к admin-ajax.php
+add_action('init', 'stop_heartbeat', 1);
+
+function stop_heartbeat() {
+    wp_deregister_script('heartbeat');
+}
+
+
+// Отключение полей в комментариях
+add_filter( 'comment_form_fields', 'custom_comment_field' );
+function custom_comment_field( $fields ) {
+
+    unset($fields['url']);
+
+    unset($fields['cookies']);
+
+    return $fields;
+}
+
+// Переопределение полей комментарии
+add_filter('comment_form_fields', 'kama_reorder_comment_fields' );
+function kama_reorder_comment_fields( $fields ){
+  //die(print_r( $fields )); // посмотрим какие поля есть
+
+  $new_fields = array(); // сюда соберем поля в новом порядке
+
+  $myorder = array('author','email','comment'); // нужный порядок
+
+  foreach( $myorder as $key ){
+    $new_fields[ $key ] = $fields[ $key ];
+    unset( $fields[ $key ] );
+  }
+
+  // если остались еще какие-то поля добавим их в конец
+  if( $fields )
+    foreach( $fields as $key => $val )
+      $new_fields[ $key ] = $val;
+
+  return $new_fields;
+}
+
+
+// Добавление соглашения в форме комментариев
+add_filter('comment_form_submit_field', 'add_checkbox', 10, 2);
+function add_checkbox($submit_field, $args) {
+   return '<p class="comment-form-checkbox"><label>
+   <input type="checkbox" name="checkbox" value="" checked required="required">
+   Согласен с <a href="/politika-v-otnoshenii-obrabotki-personalnyh-dannyh/" target="_blank">политикой обработки персональных данных</a></label>
+   </p>'
+   . $submit_field;
 }
