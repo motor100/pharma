@@ -1045,6 +1045,15 @@ add_filter( 'dgwt/wcas/search_query/args', function ( $args ) {
 } );
 
 
+// Добавление post_type product в результаты поска
+add_filter( 'pre_get_posts', 'modified_pre_get_posts'); 
+function modified_pre_get_posts( $query ) { 
+  if ( $query->is_search() ) { 
+    $query->set( 'post_type', 'product' ); 
+  }
+  return $query;
+}
+
 
 /**
  * This function modifies the main WordPress query to include an array of 

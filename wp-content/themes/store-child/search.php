@@ -21,7 +21,8 @@
       <?php
       $s = get_search_query();
       $args = array(
-                's' =>$s
+                's' =>$s,
+                'posts_per_page' => -1
               );
       ?>
       <?php $query = new WP_Query( $args ); ?>
