@@ -456,7 +456,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   inputPhoneMask();
 
-
+  // AJAX отправка формы Заказать звонок
   // AJAX отправка формы Записаться на консультацию на странице специалиста
   const lfsForm = document.getElementById('lfs-form');
   const lfsSubmitBtn = document.getElementById('lfs-submit-btn');

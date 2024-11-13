@@ -96,6 +96,9 @@ body {
 a:focus {
   outline: none;
 }
+p {
+  margin: 0 0 1em 0;
+}
 input:active,
 input:focus {
   outline: none;
@@ -781,6 +784,7 @@ a {
   font-size: 18px;
   line-height: 25px;
   text-decoration: none;
+  transition: color .3s;
 }
 .footer .menu .menu-item a:hover {
   color: var(--wild-willow-color);
@@ -1229,14 +1233,14 @@ a {
   margin: 0 0 30px 0;
 }
 .specialisty-page .specialists-item .specialists-item__link {
-  display: block;
+  display: flex;
   width: 124px;
   height: 48px;
-  padding: 10px 0;
   border: 1px solid var(--wild-willow-color);
   border-radius: 24px;
   color: var(--mine-shaft-color);
-  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /* sotrudnichestvo page */
@@ -2157,7 +2161,7 @@ a.white:hover {
 .txt_r {
   text-align: right;
 }
-.green-b {
+/*.green-b {
   background-color: var(--wild-willow-color);
   display: inline-block;
   padding: 15px 20px;
@@ -2168,7 +2172,7 @@ a.white:hover {
 }
 .green-b:hover {
   color: #fff;
-}
+}*/
 
 .w70 {
   width: 70%;
@@ -2591,13 +2595,13 @@ ul.products li.product .added_to_cart:hover {
   position: relative;
   display: flex;
   width: 100%;
-  margin: 0;
+  margin: 0 0 15px 0;
   padding: 0;
   list-style: none;
   border-top: 0;
   border-bottom: 4px solid var(--wild-willow-color);
-  justify-content: center;
-  justify-content: space-evenly;
+  /*justify-content: center;
+  justify-content: space-evenly;*/
 }
 .single-product .product .woocommerce-tabs .tabs li {
   position: relative;
@@ -2619,9 +2623,9 @@ ul.products li.product .added_to_cart:hover {
 .single-product .product .woocommerce-tabs .tabs li a {
   display: block;
   height: 100%;
-  padding: 14px 0;
+  padding: 12px 0;
   font-family: Roboto-Medium;
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 900;
   line-height: 1;
   color: #4f424f;
@@ -2632,13 +2636,6 @@ ul.products li.product .added_to_cart:hover {
 .single-product .product .woocommerce-tabs .tabs li:hover a {
   color: var(--nero-color);
 }
-/*
-.woocommerce-tabs ul.tabs li.active::after {
-  content: '' !important;
-  display: none !important;
-  opacity: 0 !important;
-}
-*/
 .single-product .related .related-products-title {
   margin: 0 0 40px 0;
   padding: 20px 0;
@@ -3384,7 +3381,13 @@ h1.sec-title {
   display: block;
   width: 100%;
   max-width: 390px;
+  height: 50px;
   margin: 0 auto;
+  padding: 13px 0;
+  border-radius: 25px;
+  background-color: var(--wild-willow-color);
+  color: var(--nero-color);
+  text-align: center;
   text-decoration: none;
 }
 
@@ -3402,7 +3405,7 @@ h1.sec-title {
   z-index: 10003;
   transition: background-color .5s;
 }
-.burger-menu-wrapper  .burger-menu {
+.burger-menu-wrapper .burger-menu {
   position: relative;
   height: 100%;
 }
@@ -3741,16 +3744,15 @@ h1.sec-title {
 }
 
 @media only screen and (max-width : 1550px) {
+  /* to top */
   .to-top .circle {
-    position: relative;
-    width: 50px;
-    height: 50px;
-  }
-  .to-top .image {
-    position: absolute;
     width: 50px;
     height: 50px;
     left: -60px;
+  }
+  .to-top .image {
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -3764,6 +3766,7 @@ h1.sec-title {
     font-size: 14px;
   }
   
+  /* subcategories фильтр подкатегорий */
   .subcategories .subcategories-item {
     height: 53px;
   }
@@ -4013,12 +4016,12 @@ h1.sec-title {
     font-size: 16px !important;
   }
 
-  /* single product */
+  /* single product page */
   .single-product .product .product_title {
     font-size: 30px;
   }
   .single-product .product .woocommerce-tabs .tabs li a {
-    padding: 12px 0;
+    padding: 10px 0;
     font-size: 18px;
     font-weight: 400;
   }
@@ -4240,6 +4243,7 @@ h1.sec-title {
     height: 207px;
   }
 
+  /* subcategories фильтр подкатегорий */
   .subcategories .subcategories-item {
     height: 47px;
   }
@@ -4348,7 +4352,7 @@ h1.sec-title {
     font-size: 16px;
   }
 
-  /* wherebuy page */
+  /* where buy page */
   .wherebuy-page .addresses-item {
     margin: 0 0 30px 0;
   }
@@ -4433,7 +4437,7 @@ h1.sec-title {
     font-size: 22px;
   }
 
-  /* single product */
+  /* single product page */
   .single-product .product .product_title {
     font-size: 28px;
   }
@@ -4577,6 +4581,7 @@ h1.sec-title {
   /* header search */
   .dgwt-wcas-style-pirx .dgwt-wcas-sf-wrapp input[type="search"].dgwt-wcas-search-input {
     padding: 13px 17px 13px 45px !important;
+    font-size: 15px;
   }
   .dgwt-wcas-style-pirx .dgwt-wcas-sf-wrapp {
     padding: 0 10px;
@@ -4601,11 +4606,6 @@ h1.sec-title {
   }
   .main-section .main-section-slider .main-slider-item {
     height: 269px;
-  }
-
-  /* header search */
-  .dgwt-wcas-style-pirx .dgwt-wcas-sf-wrapp input[type="search"].dgwt-wcas-search-input {
-    font-size: 15px;
   }
 
   /* swiper slider */
@@ -4825,11 +4825,12 @@ h1.sec-title {
     line-height: 2.7;
   }
 
-  /* wherebuy page */
+  /* where buy page */
   .wherebuy-page .addresses-item__description {
     min-height: auto;
   }
 
+  /* subcategories фильтр подкатегорий */
   .subcategories .subcategories-item {
     margin: 0 10px 15px 0;
   }
@@ -4906,7 +4907,7 @@ h1.sec-title {
     font-size: 18px;
   }
 
-  /* single product */
+  /* single product page */
   .single-product .product .woocommerce-product-gallery {
     width: 50%;
     flex-shrink: 0;
@@ -4950,7 +4951,7 @@ h1.sec-title {
     margin: 0 0 40px 0;
   }
   .single-product .product .woocommerce-tabs .tabs li a {
-    padding: 10px;
+    padding: 8px;
     font-size: 15px;
   }
   .single-product .related .related-products-title {
@@ -5041,6 +5042,7 @@ h1.sec-title {
     margin: 0 0 0 12px;
   }
 
+  /* to top */
   .to-top {
     display: none;
   }
@@ -5350,6 +5352,7 @@ h1.sec-title {
     font-size: 16px;
   }
   
+  /* subcategories фильтр подкатегорий */
   .subcategories {
     margin: 0;
   }
@@ -5389,7 +5392,7 @@ h1.sec-title {
     font-size: 16px;
   }
 
-  /* single-product  */
+  /* single-product page */
   .single-product .woocommerce_single_product_wrapper {
     display: block;
   }
@@ -6101,6 +6104,7 @@ h1.sec-title {
     font-size: 38px;
   }
 
+  /* subcategories фильтр подкатегорий */
   .subcategories .subcategories-item {
     height: 34px;
   }

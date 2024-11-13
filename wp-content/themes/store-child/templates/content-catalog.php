@@ -69,7 +69,7 @@
           <div class="container">
             <div class="catalog-tabs-content active" data-id="1">
               <div class="cat-wrapper">
-                <?php render__catalog('183'); ?>
+                <?php echo render__catalog('183'); ?>
               </div>
             </div>
             <div class="catalog-tabs-content" data-id="2">
@@ -91,7 +91,7 @@
       <div class="catalog-subcategories">
         <div class="container">
           <div class="flex-container">
-            <?php render__catalog('96'); ?>
+            <?php echo render__catalog('96'); ?>
           </div>
         </div>
       </div>

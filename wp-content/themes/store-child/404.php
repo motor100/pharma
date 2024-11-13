@@ -15,7 +15,7 @@ get_header(); ?>
           <img src="<?php echo get_stylesheet_directory_uri(); ?>/includes/images/404-not-found.jpg" alt="">
         </div>
         <div class="page-404-text">Упс, что-то пошло не так. Такой страницы нет, попробуйте вернуться назад и найти другую страницу или товар!</div>
-        <a href="/#catalog-section" class="to-catalog-btn green-b">Вернуться в каталог</a>
+        <a href="/#catalog-section" class="to-catalog-btn">Вернуться в каталог</a>
       </div>
     </div>
   </div>

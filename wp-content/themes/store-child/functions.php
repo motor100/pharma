@@ -187,7 +187,7 @@ function render_catalog() {
   }
 }
 
-//Каталог продукции r.kolobaev
+// Каталог продукции
 function render__catalog($id_gr) {
     $taxonomy     = 'product_cat';
     $orderby      = 'ID';
@@ -207,7 +207,11 @@ function render__catalog($id_gr) {
         'exclude'      => '15',
         'hide_empty'   => $empty
     );
+
     $all_categories = get_categories( $args );
+
+    $html = '';
+
     foreach ($all_categories as $cat) {
         $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
         if ($id_gr == '96') {
@@ -216,15 +220,18 @@ function render__catalog($id_gr) {
             $css_w = 'img';
         }
         $image = wp_get_attachment_url( $thumbnail_id );
-    	echo '<div class="children__item">';
-        echo '<div class="children__image">';
-        echo '<a href="' . get_term_link($cat->term_id) . '">';
-        echo '<img class="' . $css_w . '" src="' . $image . '" alt="' . $cat->name . '">';
-        echo '</a>';
-        echo '</div>';
-        echo '<a class="children__title" href="' . get_term_link($cat->term_id) . '">' . $cat->name . '</a>';
-        echo '</div>';
+        $img = $image ? $image : 'http://biosalts.loc/wp-content/uploads/woocommerce-placeholder.png';
+        $html .= '<div class="children__item">';
+        $html .= '<div class="children__image">';
+        $html .= '<a href="' . get_term_link($cat->term_id) . '">';
+        $html .= '<img class="' . $css_w . '" src="' . $img . '" alt="' . $cat->name . '">';
+        $html .= '</a>';
+        $html .= '</div>';
+        $html .= '<a class="children__title" href="' . get_term_link($cat->term_id) . '">' . $cat->name . '</a>';
+        $html .= '</div>';
     }
+
+    return $html;
 }
 
 // обертка для категорий
@@ -751,35 +758,35 @@ function get_term18_products() {
 // Вывод кастомного нижнего меню. Разделение на части
 function custom_nav_menu($start = 0, $end = NULL) {
 
-  $menu_name = 'secondary'; // поставить галочку Дополнительное меню для footer_menu
-  $locations = get_nav_menu_locations();
+    $menu_name = 'secondary'; // поставить галочку Дополнительное меню для footer_menu
+    $locations = get_nav_menu_locations();
 
-  if( $locations && isset( $locations[ $menu_name ] ) ) {
+    if ( $locations && isset( $locations[ $menu_name ] ) ) {
 
-    // получаю элементы меню
-    $menu_items = wp_get_nav_menu_items( $locations[ $menu_name ] );
+        // получаю элементы меню
+        $menu_items = wp_get_nav_menu_items( $locations[ $menu_name ] );
 
-    // создаю список
-    $menu_list = '<ul class="menu">';
+        // создаю список
+        $menu_list = '<ul class="menu">';
 
-    if (!$end) {
-      $end = count($menu_items);
+        if (!$end) {
+          $end = count($menu_items);
+        }
+
+        foreach ( $menu_items as $key => $menu_item ){
+          
+          if ($key >= $start && $key <= $end) {
+            $menu_list .= '<li class="menu-item"><a href="' . $menu_item->url . '">' . $menu_item->title . '</a></li>';
+          }
+        }
+
+        $menu_list .= '</ul>';
+
+    } else {
+        $menu_list = '<p>Меню "' . $menu_name . '" не определено.</p>';
     }
 
-    foreach ( $menu_items as $key => $menu_item ){
-      
-      if ($key >= $start && $key <= $end) {
-        $menu_list .= '<li class="menu-item"><a href="' . $menu_item->url . '">' . $menu_item->title . '</a></li>';
-      }
-    }
-
-    $menu_list .= '</ul>';
-    
-  } else {
-    $menu_list = '<p>Меню "' . $menu_name . '" не определено.</p>';
-  }
-  
-  return $menu_list;
+    return $menu_list;
 }
 
 
@@ -838,13 +845,13 @@ function the_excerpt_max_charlength( $charlength ){
         $exwords = explode( ' ', $subex );
         $excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
         if ( $excut < 0 ) {
-            echo mb_substr( $subex, 0, $excut );
+            return mb_substr( $subex, 0, $excut );
         } else {
-            echo $subex;
+            return $subex;
         }
-        echo '...';
+        return '...';
     } else {
-        echo $excerpt;
+        return $excerpt;
     }
 }
 
