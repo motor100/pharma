@@ -1,6 +1,6 @@
 <?php if ( !is_page('catalog') ) { ?>
 
-  <section class="text-page">
+  <div class="text-page">
     <div class="container">
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <?php
@@ -16,7 +16,7 @@
 
       </article>
     </div>
-  </section>
+  </div>
 
 <?php } else { ?>
 

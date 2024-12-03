@@ -16,7 +16,7 @@
     <div class="page-title">Специалисты</div>
   </div>
 
-  <?php $specialisty_cat_id = 413; // ID категории Специалисты local = 413, production = 414 ?>
+  <?php $specialisty_cat_id = 414; // ID категории Специалисты local = 413, production = 414 ?>
 
   <?php
 

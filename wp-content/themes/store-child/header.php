@@ -48,7 +48,7 @@
                 </a>
               </div>
               <div class="phone-wrapper">
-                <a href="#" class="social-icons__link" rel="nofollow noopener" target="_blank">
+                <a href="https://wa.me/79629880861" class="social-icons__link" rel="nofollow noopener" target="_blank">
                   <img src="/wp-content/themes/store-child/includes/images/svg/circle-wa.svg" class="social-icons__image social-icons__wa" alt="ватсап">
                 </a>
                 <a href="tel:+74959274928" class="social-icons__link" rel="nofollow noopener" target="_blank">

@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  // AJAX обновление количество товара у значка корзины в хэдере и нижнем мобильном меню
+  // AJAX обновление количество товара у значка корзины в хэдере и нижнем мобильном меню add to cart
   jQuery(document).ready(function($) {
     /**
      * jquery событие 'added_to_cart' в контексте woocommerce

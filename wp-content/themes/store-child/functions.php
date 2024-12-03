@@ -880,8 +880,6 @@ function the_excerpt_max_charlength( $charlength ){
 
 
 // Регистрация нового типа поста home_page_slider для слайдера на главной странице
-add_action( 'init', 'slider_register_cpt' );
-
 function slider_register_cpt() {
     $args = array(
         'labels' => array(
@@ -895,10 +893,9 @@ function slider_register_cpt() {
     register_post_type( 'home_page_slider', $args );
 }
 
+add_action( 'init', 'slider_register_cpt' );
 
 // Добавление метабокса product_link на кастомный тип постов home_page_slider
-add_action( 'add_meta_boxes', 'home_page_slider_add_metabox' );
- 
 function home_page_slider_add_metabox() {
     add_meta_box(
         'product_link', // ID нашего метабокса
@@ -909,6 +906,8 @@ function home_page_slider_add_metabox() {
         'default' // приоритет (default, low, high, core)
     );
 }
+
+add_action( 'add_meta_boxes', 'home_page_slider_add_metabox' );
  
 function home_page_slider_metabox_callback( $post ) {
     // сначала получаем значения этих полей
@@ -928,8 +927,7 @@ function home_page_slider_metabox_callback( $post ) {
     </table>';
 }
 
-add_action( 'save_post', 'home_page_slider_save_metabox', 10, 2 );
- 
+// Сохранение кастомного типа постов home_page_slider
 function home_page_slider_save_metabox( $post_id, $post ) {
  
     // проверка одноразовых полей
@@ -970,6 +968,8 @@ function home_page_slider_save_metabox( $post_id, $post ) {
  
     return $post_id;
 }
+
+add_action( 'save_post', 'home_page_slider_save_metabox', 10, 2 );
 
 
 // Добавление метабокса expert_email на тип поля post
@@ -1053,10 +1053,10 @@ add_filter( 'dgwt/wcas/search_query/args', function ( $args ) {
 
 
 // Добавление post_type product в результаты поска
-add_filter( 'pre_get_posts', 'modified_pre_get_posts'); 
+// add_filter( 'pre_get_posts', 'modified_pre_get_posts'); 
 function modified_pre_get_posts( $query ) { 
   if ( $query->is_search() ) { 
-    $query->set( 'post_type', 'product' ); 
+    $query->set( 'post_type', 'product' );
   }
   return $query;
 }
