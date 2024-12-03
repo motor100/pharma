@@ -54,6 +54,51 @@
   </div>
 </div>
 
+<div class="info-section">
+  <?php
+  $args = array(
+    'cat' => 424, // Категория объявления production id 424
+    'posts_per_page' => 1,
+  );
+
+  $query = new WP_Query( $args );
+
+  if( $query->have_posts() ) : ?>
+    <div class="content-wrapper">
+      <div class="container">
+        <?php while( $query->have_posts() ) :
+          $query->the_post(); ?>
+
+          <div class="row">
+            <div class="col-xl-6 col-md-5">
+              <div class="info-image">
+                <a href="<?php echo the_permalink(); ?>" class="info-link">
+                  <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="col-xl-6 col-md-7">
+              <div class="info-content">
+                <a href="<?php echo the_permalink(); ?>" class="info-title"><?php echo the_text_max_charlength( get_the_title(), 40); ?></a>
+                <div class="info-text">
+                  <?php echo the_text_max_charlength( get_the_excerpt(), 400); ?>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <?php
+        endwhile;
+        wp_reset_postdata();
+        ?>
+      </div>
+    </div>
+
+  <?php
+  endif;
+  ?>
+</div>
+
 <div id="catalog-section" class="catalog-section">
   <div class="catalog-section-title">Каталог</div>
   <div class="curved violet v2">
@@ -298,4 +343,3 @@
     </div>
   </div>
 </div>
-
