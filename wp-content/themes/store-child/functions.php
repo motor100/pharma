@@ -879,8 +879,12 @@ function the_text_max_charlength( $text, $charlength ) {
 /*
 * Disable pagination
 * Priority=11 to go after the Storefront's hook.
+* Отключение пагинации в карточке товаров
+* С включенной пагинацией некоторые товары выдают ошибку
+* https://natura-pharma.ru/catalog/series/ht/digestiv-formula-pishhevarenie/
+* https://natura-pharma.ru/catalog/series/ht/drainage-formula-drenazhnyj/
 */
-// add_filter( 'theme_mod_storefront_product_pagination', '__return_false', 11 );
+add_filter( 'theme_mod_storefront_product_pagination', '__return_false', 11 );
 
 
 // Регистрация нового типа поста home_page_slider для слайдера на главной странице
@@ -1245,7 +1249,7 @@ add_action( 'init', 'disable_wp_blocks', 100 );
 
 // Disable Heartbeat
 // Уменьшение количества запросов к admin-ajax.php
-add_action('init', 'stop_heartbeat', 1);
+// add_action('init', 'stop_heartbeat', 1);
 
 function stop_heartbeat() {
     wp_deregister_script('heartbeat');

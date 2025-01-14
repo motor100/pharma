@@ -31,6 +31,7 @@
       </ul>
     </div>
   </div>
+
   <div class="frames-section">
     <div class="container">
       <div class="row">
@@ -59,6 +60,7 @@
       </div>
     </div>
   </div>
+  
   <div class="partnership-section">
     <div class="container">
       <div class="row">
@@ -78,7 +80,6 @@
     </div>
   </div>
 
-  </div>
 </div>
 
 <?php get_footer(); ?>

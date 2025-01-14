@@ -50,7 +50,7 @@
         </div>
         
         <?php
-          }
+          }z
           wp_reset_postdata();
         }
         else

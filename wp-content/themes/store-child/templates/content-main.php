@@ -100,7 +100,7 @@
 </div>
 
 <div id="catalog-section" class="catalog-section">
-  <div class="catalog-section-title">Каталог</div>
+  <div id="catalog" class="catalog-section-title">Каталог</div>
   <div class="curved violet v2">
     <div class="one"></div>
     <div class="two"></div>
