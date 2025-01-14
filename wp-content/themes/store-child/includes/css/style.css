@@ -2574,7 +2574,7 @@ ul.products li.product .added_to_cart:hover {
   font-size: 24px;
   color: var(--mine-shaft-color);
 }
-.single-product .product .lbl {
+.single-product .product th.label label {
   font-size: 18px;
 }
 .single-product .product .variations th,
@@ -2585,7 +2585,7 @@ ul.products li.product .added_to_cart:hover {
   list-style: none;
   background-color: rgba(0, 0, 0, 0);
 }
-.single-product .product .variations-select {
+.single-product .product td.value select {
   margin: 0 30px 10px 0;
 }
 .single-product .product .reset_variations {
@@ -6144,7 +6144,7 @@ a.remove {
   .single-product .product .product_meta .meta-subtitle {
     font-size: 18px;
   }
-  .single-product .product .lbl {
+  .single-product .product th.label label {
     font-size: 16px;
   }
   .single-product .related .related-products-title {
