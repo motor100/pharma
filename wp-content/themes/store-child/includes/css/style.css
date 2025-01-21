@@ -1241,6 +1241,9 @@ a {
 }
 
 /* specialisty page */
+.specialisty-page .filter-by-doctors {
+  margin: 0 0 30px 0;
+}
 .specialisty-page .specialists-item {
   margin: 0 0 30px 0;
   border: 1px solid var(--white-rock-color);
@@ -1883,12 +1886,6 @@ a {
   justify-content: center;
 }
 
-/*
-.woocommerce-Tabs-panel--description {
-  line-height: 2;
-}
-*/
-
 /* breadcrumb */
 .storefront-breadcrumb {
   margin-bottom: 0;
@@ -2009,9 +2006,6 @@ a {
   text-align: center;
   text-transform: uppercase;
 }
-
-
-
 
 @media (max-width: 767.98px) {
   .products {
@@ -2206,18 +2200,6 @@ a.white:hover {
 .txt_r {
   text-align: right;
 }
-/*.green-b {
-  background-color: var(--wild-willow-color);
-  display: inline-block;
-  padding: 15px 20px;
-  border-radius: 30px;
-  text-align: center;
-  font-weight: 500;
-  line-height: 1;
-}
-.green-b:hover {
-  color: #fff;
-}*/
 
 .w70 {
   width: 70%;
@@ -2645,8 +2627,6 @@ ul.products li.product .added_to_cart:hover {
   list-style: none;
   border-top: 0;
   border-bottom: 4px solid var(--wild-willow-color);
-  /*justify-content: center;
-  justify-content: space-evenly;*/
 }
 .single-product .product .woocommerce-tabs .tabs li {
   position: relative;
@@ -2773,9 +2753,6 @@ ul.products li.product .added_to_cart:hover {
   .storefront-product-pagination a[rel=next] img {
     margin-right: 1.41575em;
   }
-  /*.storefront-product-pagination a[rel=next] .storefront-product-pagination__title {
-    margin-left: auto;
-  }*/
 }
 
 /* quantity */
@@ -3207,7 +3184,6 @@ a.remove {
 .coupon .coupon-error-notice {
   display: block;
 }
-
 
 /* checkout page */
 .checkout-page .checkout-content {
@@ -5836,25 +5812,11 @@ a.remove {
     font-size: 20px;
   }
 
-  /*
-  .catalog_inside .term-description p:not(:last-child) {
-    margin-bottom: 10px;
-  }
-  */
-
   .related > h2:first-child,
   .upsells > h2:first-child {
     text-align: center;
     font-size: 1.5em;
   }
-  /*.woocommerce div.product .woocommerce-tabs ul.tabs {
-    display: none;
-  }*/
-  /*
-  .woocommerce-cart .woocommerce {
-    display: block;
-  }
-  */
 
   .wpr-shop-table td.product-price {
     display: none;

@@ -16,12 +16,20 @@
     <div class="page-title">Специалисты</div>
   </div>
 
-  <?php $specialisty_cat_id = 414; // ID категории Специалисты local = 413, production = 414 ?>
+  <?php
+  $specialisty_cat_id = 414; // ID категории Специалисты local = 413, production = 414
+  $doctors_cat_id = 426; // ID дочерней категории Врачи local = 000 prod = 426
+  $private_experts_cat_id = 427; // ID дочерней категории Частнопрактикующие специалисты local = 000 prod = 427
+  ?>
 
   <?php
 
   $args1 = array(
-    'cat' => $specialisty_cat_id,
+    'cat' => [
+      $specialisty_cat_id,
+      -$doctors_cat_id, // исключить дочернюю категорию
+      -$private_experts_cat_id // исключить дочернюю категорию
+    ],
     'posts_per_page' => -1,
   );
   
@@ -32,7 +40,13 @@
 
   <div class="cities">
     <div class="container">
-      <div class="flex-container">
+
+      <div class="flex-container filter-by-doctors">
+        <div class="cities-item js-city-btn" data-term-id="<?php echo $doctors_cat_id; ?>">Врачи</div>
+        <div class="cities-item js-city-btn" data-term-id="<?php echo $private_experts_cat_id; ?>">Частнопрактикующие специалисты</div>
+      </div>
+
+      <div class="flex-container filter-by-cities">
         <a href="/specialisty" class="cities-item active">Все города</a>
 
         <?php
