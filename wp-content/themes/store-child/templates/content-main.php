@@ -57,7 +57,7 @@
 <div class="info-section">
   <?php
   $args = array(
-    'cat' => 424, // Категория объявления production id 424
+    'cat' => 424, // Категория Объявление local = 415  prod = 424
     'posts_per_page' => 1,
   );
 
@@ -81,7 +81,8 @@
               <div class="info-content">
                 <a href="<?php echo the_permalink(); ?>" class="info-title"><?php echo the_text_max_charlength( get_the_title(), 40); ?></a>
                 <div class="info-text">
-                  <?php echo the_text_max_charlength( get_the_excerpt(), 400); ?>
+                  <?php $content = apply_filters( 'the_content', get_the_content() ); ?>
+                  <?php echo the_text_max_charlength( $content, 900); ?>
                 </div>
               </div>
             </div>

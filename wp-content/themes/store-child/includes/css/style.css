@@ -587,17 +587,19 @@ a {
 }
 .info-section .info-title {
   display: block;
-  margin: 25px 0 15px 0;
+  margin: 0 0 15px 0;
   font-family: "Roboto-CondensedSemiBold";
-  font-size: 42px;
+  font-size: 40px;
   color: var(--mine-shaft-color);
+  line-height: 1.1;
   text-transform: uppercase;
 }
 .info-section .info-text {
-  font-size: 22px;
+  font-size: 18px;
   color: var(--mine-shaft-color);
+  line-height: 1.3;
 }
-.info-section .info-text p:last-child {
+.info-section .info-text p {
   margin: 0;
 }
 
@@ -3840,11 +3842,10 @@ a.remove {
 
   /* info section */
   .info-section .info-title {
-    margin: 20px 0 15px 0;
-    font-size: 40px;
+    font-size: 38px;
   }
   .info-section .info-text {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   /* catalog section */
@@ -4143,11 +4144,7 @@ a.remove {
 
   /* info section */
   .info-section .info-title {
-    margin: 10px 0;
-    font-size: 36px;
-  }
-  .info-section .info-text {
-    font-size: 18px;
+    font-size: 32px;
   }
 
   /* swiper slider */
