@@ -1312,3 +1312,44 @@ function custom_attribute_label( $label, $name, $product ) {
     return $label;
 }
 add_filter( 'woocommerce_attribute_label', 'custom_attribute_label', 10, 3 );
+
+
+// Добавление количества товаров
+function action_woocommerce_review_order_before_shipping() {
+    $tr = '<tr class="cart-subtotal">';
+    $tr .= '<th>Всего товаров</th>';
+    $tr .= '<td data-title="Всего товаров:">';
+    $tr .= WC()->cart->get_cart_contents_count();
+    $tr .= '</td>';
+    $tr .= '</tr>';
+    echo $tr;
+}
+
+add_action( 'woocommerce_cart_totals_before_shipping', 'action_woocommerce_review_order_before_shipping' );
+
+
+// Добавление текста о бесплатной доставке
+function action_woocommerce_review_order_after_shipping() {
+    $tr = '<tr class="cart-subtotal">';
+    $tr .= '<th>Стоимость доставки</th>';
+    $tr .= '<td data-title="Стоимость доставки:">Доставка от 7000 бесплатно до пункта выдачи</td>';
+    $tr .= '</tr>';
+    echo $tr;
+}
+
+add_action( 'woocommerce_cart_totals_after_shipping', 'action_woocommerce_review_order_after_shipping' );
+
+
+// Добавление обертки container single product related и pagination
+function open_div_class_container(){
+    echo '<div class="container">';
+}
+
+add_action( 'woocommerce_after_single_product_summary', 'open_div_class_container', 15 );
+
+
+function close_div_class_container(){
+    echo '</div>';
+}
+
+add_action( 'woocommerce_after_single_product', 'close_div_class_container', 15 );

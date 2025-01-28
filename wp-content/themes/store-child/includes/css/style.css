@@ -2663,7 +2663,7 @@ ul.products li.product .added_to_cart:hover {
 .single-product .product .woocommerce-tabs .tabs li:hover a {
   color: var(--nero-color);
 }
-.single-product .related .related-products-title {
+.single-product .related > h2 {
   margin: 0 0 40px 0;
   padding: 20px 0;
   background-color: #44324c;
@@ -3065,13 +3065,13 @@ a.remove {
   border-radius: 30px;
   box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.10);
 }
-.cart-page .cart-collaterals .cart-totals-tbl {
+.cart-page .cart-collaterals .shop_table {
   width: 100%;
   margin: 0 0 50px 0;
   border-collapse:separate;
   border-spacing: 0 15px;
 }
-.cart-page .cart-collaterals .cart-totals-tbl th {
+.cart-page .cart-collaterals .shop_table th {
   width: 150px;
   font-family: 'Roboto-CondensedSemiBold';
   font-size: 19px;
@@ -3095,6 +3095,9 @@ a.remove {
 }
 .cart-page .cart-collaterals .checkout-button::after {
   content: '';
+  display: none;
+}
+.cart-page .cart-collaterals .cart_totals h2 {
   display: none;
 }
 .cart-page .return-to-shop .button {
@@ -3154,6 +3157,22 @@ a.remove {
 }
 .custom-radio-page .woocommerce-shipping-destination {
   margin: 5px 0;
+}
+
+/* Переопределение стилей storefront-icons  wp-content/themes/storefront/assets/css/base/icons.css */
+#payment .payment_methods li.woocommerce-PaymentMethod>input[type=radio]:first-child:checked+label::before,
+#payment .payment_methods li.wc_payment_method>input[type=radio]:first-child:checked+label::before {
+  content: '';
+}
+p.order-again .button::after {
+  content: '';
+  display: none;
+}
+a.reset_variations::before {
+  content: '';
+}
+.woocommerce-tabs ul.tabs li.active::after {
+  content: '';
 }
 
 /* coupon корзина и оформление заказа */
@@ -4060,7 +4079,7 @@ a.remove {
     font-size: 18px;
     font-weight: 400;
   }
-  .single-product .related .related-products-title {
+  .single-product .related > h2 {
     padding: 18px 0;
   }
   .single-product ul.products li.product .woocommerce-loop-product__title {
@@ -4497,7 +4516,7 @@ a.remove {
   .single-product .product .woocommerce-tabs .tabs li a {
     font-size: 16px;
   }
-  .single-product .related .related-products-title {
+  .single-product .related > h2 {
     padding: 16px 0;
     font-size: 50px;
   }
@@ -5012,7 +5031,7 @@ a.remove {
     padding: 8px;
     font-size: 15px;
   }
-  .single-product .related .related-products-title {
+  .single-product .related > h2 {
     padding: 12px 0;
     font-size: 42px;
     line-height: 1.2;
@@ -5063,7 +5082,7 @@ a.remove {
   .cart-page .cart-collaterals {
     padding: 30px 40px;
   }
-  .cart-page .cart-collaterals .cart-totals-tbl th {
+  .cart-page .cart-collaterals .shop_table th {
     font-size: 18px;
   }
   .cart-page .cart-collaterals .checkout-button {
@@ -5495,7 +5514,7 @@ a.remove {
   .single-product .woocommerce-Tabs-panel--description ul {
     padding: 0 0 0 20px;
   }
-  .single-product .related .related-products-title {
+  .single-product .related > h2 {
     padding: 8px 10px;
     font-size: 34px;
   }
@@ -5570,11 +5589,11 @@ a.remove {
   .cart-page .cart-collaterals {
     padding: 15px 30px;
   }
-  .cart-page .cart-collaterals .cart-totals-tbl {
+  .cart-page .cart-collaterals .shop_table {
     margin: 0 0 30px 0;
     font-size: 15px;
   }
-  .cart-page .cart-collaterals .cart-totals-tbl th {
+  .cart-page .cart-collaterals .shop_table th {
     font-size: 15px;
   }
   .custom-radio-page .woocommerce li input + label::before {
@@ -5765,7 +5784,7 @@ a.remove {
   .single-product .product .woocommerce-Tabs-panel {
     display: block;
   }
-  .single-product .related .related-products-title {
+  .single-product .related > h2 {
     font-size: 28px;
   }
 
@@ -6106,7 +6125,7 @@ a.remove {
   .single-product .product th.label label {
     font-size: 16px;
   }
-  .single-product .related .related-products-title {
+  .single-product .related > h2 {
     font-size: 24px;
   }
   .single-product ul.products li.product .woocommerce-loop-product__title {
@@ -6118,10 +6137,10 @@ a.remove {
   .cart-page .cart-collaterals {
     padding: 10px 20px;
   }
-  .cart-page .cart-collaterals .cart-totals-tbl {
+  .cart-page .cart-collaterals .shop_table {
     font-size: 13px;
   }
-  .cart-page .cart-collaterals .cart-totals-tbl th {
+  .cart-page .cart-collaterals .shop_table th {
     width: 37%;
   }
 
