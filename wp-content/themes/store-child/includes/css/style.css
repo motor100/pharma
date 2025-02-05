@@ -6255,3 +6255,10 @@ a.reset_variations::before {
     font-size: 22px;
   }
 }
+
+
+/* Скрытие вкладок для в карточке товара для категори Книги и методические пособия, Тестовые наборы для кинезиологов */
+.single-product .product_cat-knigi-i-metodicheskie-posobiya .woocommerce-tabs .tabs,
+.single-product .product_cat-testovye-nabory-dlya-kineziologov .woocommerce-tabs .tabs {
+  display: none;
+}
