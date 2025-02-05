@@ -220,7 +220,7 @@ function render__catalog($id_gr) {
             $css_w = 'img';
         }
         $image = wp_get_attachment_url( $thumbnail_id );
-        $img = $image ? $image : 'http://biosalts.loc/wp-content/uploads/woocommerce-placeholder.png';
+        $img = $image ? $image : '/wp-content/uploads/woocommerce-placeholder.png';
         $html .= '<div class="children__item">';
         $html .= '<div class="children__image">';
         $html .= '<a href="' . get_term_link($cat->term_id) . '">';
@@ -907,7 +907,7 @@ add_action( 'init', 'slider_register_cpt' );
 function home_page_slider_add_metabox() {
     add_meta_box(
         'product_link', // ID нашего метабокса
-        'Ссылка на препараты', // заголовок
+        'Ссылка', // заголовок
         'home_page_slider_metabox_callback', // функция, которая будет выводить поля в мета боксе
         'home_page_slider', // типы постов, для которых его подключим
         'normal', // расположение (normal, side, advanced)
@@ -919,7 +919,7 @@ add_action( 'add_meta_boxes', 'home_page_slider_add_metabox' );
  
 function home_page_slider_metabox_callback( $post ) {
     // сначала получаем значения этих полей
-    // ссылка на товар
+    // ссылка
     $product_link = get_post_meta( $post->ID, 'product_link', true );
  
     // одноразовые числа, кстати тут нет супер-большой необходимости их использовать
@@ -962,14 +962,17 @@ function home_page_slider_save_metabox( $post_id, $post ) {
  
     if( isset( $_POST[ 'product_link' ] ) ) {
 
-        // Создание относительной ссылки
+        // Если ссылка из текущего домена, то сокращаю ее до относительной
+        // Если ссылка на другой домен, то оставляю без изменений
         $link = $_POST[ 'product_link' ];
-        if( strpos($link,'//') === false ) {
-            $link='//'.$link;
-        }
-        $n_link = parse_url($link, PHP_URL_PATH);
+        $host = get_home_url();
 
-        update_post_meta( $post_id, 'product_link', sanitize_text_field( $n_link ) );
+        if( strpos($link, $host) !== false ) {
+            // $link = $host . $link;
+            $link = parse_url($link, PHP_URL_PATH);
+        }
+
+        update_post_meta( $post_id, 'product_link', sanitize_text_field( $link ) );
     } else {
         delete_post_meta( $post_id, 'product_link' );
     }
