@@ -26,6 +26,7 @@
         <div class="cities-item js-city-btn" data-name="sochi">Сочи</div>
         <div class="cities-item js-city-btn" data-name="cheboksary">Чебоксары</div>
         <div class="cities-item js-city-btn" data-name="kazan">Казань</div>
+        <div class="cities-item js-city-btn" data-name="sankt-peterburg">Санкт-Петербург</div>
       </div>
     </div>
   </div>
@@ -140,6 +141,62 @@
               <p class="p">+7(939)376-58-35</p>
               <p class="p">пн.-пт. с 08.00 до 19.00</p>
               <p class="p">сб. с 09.00 до 16.00</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 js-a-item" data-name="sankt-peterburg">
+          <div class="addresses-item">
+            <div class="addresses-item__image">
+              <img src="/wp-content/themes/store-child/includes/images/moskow.jpg" alt="">
+            </div>
+            <div class="addresses-item__title">Санкт-Петербург, Садовая</div>
+            <div class="addresses-item__description">
+              <p class="p">Cream Shop</p>
+              <p class="p">ул. Садовая, 22/2</p>
+              <p class="p">+7 (812) 922-32-86</p>
+              <p class="p">пн.-вс. с 10.00 до 21.00</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 js-a-item" data-name="sankt-peterburg">
+          <div class="addresses-item">
+            <div class="addresses-item__image">
+              <img src="/wp-content/themes/store-child/includes/images/moskow.jpg" alt="">
+            </div>
+            <div class="addresses-item__title">Санкт-Петербург, 24-я линия В.О</div>
+            <div class="addresses-item__description">
+              <p class="p">Cream Shop</p>
+              <p class="p">24-я линия В.О., д. 25</p>
+              <p class="p">+7 (911) 150-26-45</p>
+              <p class="p">пн.-вс. с 10.00 до 22.00</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 js-a-item" data-name="sankt-peterburg">
+          <div class="addresses-item">
+            <div class="addresses-item__image">
+              <img src="/wp-content/themes/store-child/includes/images/moskow.jpg" alt="">
+            </div>
+            <div class="addresses-item__title">Санкт-Петербург, ул. Нахимова</div>
+            <div class="addresses-item__description">
+              <p class="p">Cream Shop</p>
+              <p class="p">24-я линия В.О., д. 25</p>
+              <p class="p">+7 (812) 924-53-28</p>
+              <p class="p">пн.-вс. с 10.00 до 21.00</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 js-a-item" data-name="sankt-peterburg">
+          <div class="addresses-item">
+            <div class="addresses-item__image">
+              <img src="/wp-content/themes/store-child/includes/images/moskow.jpg" alt="">
+            </div>
+            <div class="addresses-item__title">Санкт-Петербург, Оптиков</div>
+            <div class="addresses-item__description">
+              <p class="p">Cream Shop</p>
+              <p class="p">ул. Оптиков, д. 34, к. 1, ЖК «Легенда»</p>
+              <p class="p">+7 (812) 455-43-23</p>
+              <p class="p">пн.-вс. с 11.00 до 22.00</p>
             </div>
           </div>
         </div>
