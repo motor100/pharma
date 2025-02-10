@@ -884,7 +884,7 @@ function the_text_max_charlength( $text, $charlength ) {
 * https://natura-pharma.ru/catalog/series/ht/digestiv-formula-pishhevarenie/
 * https://natura-pharma.ru/catalog/series/ht/drainage-formula-drenazhnyj/
 */
-add_filter( 'theme_mod_storefront_product_pagination', '__return_false', 11 );
+// add_filter( 'theme_mod_storefront_product_pagination', '__return_false', 11 );
 
 
 // Регистрация нового типа поста home_page_slider для слайдера на главной странице
