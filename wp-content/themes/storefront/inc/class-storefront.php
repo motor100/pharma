@@ -214,7 +214,7 @@ if ( ! class_exists( 'Storefront' ) ) :
 			/**
 			 * Enqueue editor styles.
 			 */
-			// add_editor_style( array( 'assets/css/base/gutenberg-editor.css', $this->google_fonts() ) );
+			add_editor_style( array( 'assets/css/base/gutenberg-editor.css', $this->google_fonts() ) );
 
 			/**
 			 * Add support for responsive embedded content.
@@ -333,13 +333,13 @@ if ( ! class_exists( 'Storefront' ) ) :
 			wp_enqueue_style( 'storefront-style', get_template_directory_uri() . '/style.css', '', $storefront_version );
 			wp_style_add_data( 'storefront-style', 'rtl', 'replace' );
 
-			// wp_enqueue_style( 'storefront-icons', get_template_directory_uri() . '/assets/css/base/icons.css', '', $storefront_version );
+			wp_enqueue_style( 'storefront-icons', get_template_directory_uri() . '/assets/css/base/icons.css', '', $storefront_version );
 			wp_style_add_data( 'storefront-icons', 'rtl', 'replace' );
 
 			/**
 			 * Fonts
 			 */
-			// wp_enqueue_style( 'storefront-fonts', $this->google_fonts(), array(), $storefront_version );
+			wp_enqueue_style( 'storefront-fonts', $this->google_fonts(), array(), $storefront_version );
 
 			/**
 			 * Scripts
@@ -374,7 +374,6 @@ if ( ! class_exists( 'Storefront' ) ) :
 		 * @since 2.4.0
 		 * @return string Google fonts URL for the theme.
 		 */
-		/*
 		public function google_fonts() {
 			$google_fonts = apply_filters(
 				'storefront_google_font_families',
@@ -392,7 +391,6 @@ if ( ! class_exists( 'Storefront' ) ) :
 
 			return $fonts_url;
 		}
-		*/
 
 		/**
 		 * Enqueue block assets.
@@ -503,7 +501,7 @@ if ( ! class_exists( 'Storefront' ) ) :
 		public function print_embed_styles() {
 			global $storefront_version;
 
-			// wp_enqueue_style( 'source-sans-pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700,900', array(), $storefront_version );
+			wp_enqueue_style( 'source-sans-pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700,900', array(), $storefront_version );
 			$accent_color     = get_theme_mod( 'storefront_accent_color' );
 			$background_color = storefront_get_content_background_color();
 			?>

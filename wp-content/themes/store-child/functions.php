@@ -37,7 +37,7 @@ function my_dequeue_style(){
 * $temp_debug = false добавляется версия wp
 */
 
-$temp_debug = false;
+$temp_debug = true;
 $ver = '';
 if ($temp_debug) {
   $ver = date('dis');
@@ -1086,7 +1086,7 @@ function tg_include_custom_post_types_in_search_results( $query ) {
 }
 add_action( 'pre_get_posts', 'tg_include_custom_post_types_in_search_results' );
 
-
+// Личный кабинет my account
 // Ссылка входа в личный кабинет
 function my_account_loginout_link() {    
 
@@ -1099,6 +1099,87 @@ function my_account_loginout_link() {
     }
 
 }
+
+// Переимнование элементов меню
+add_filter( 'woocommerce_account_menu_items', 'lk_rename_menu', 25 );
+ 
+function lk_rename_menu( $menu_links ) {
+    unset( $menu_links[ 'customer-logout' ] ); // Удаление ссылки из меню
+    unset( $menu_links[ 'payment-methods' ] ); // Удаление ссылки из меню
+    $menu_links[ 'dashboard' ] = 'Главная';
+    $menu_links[ 'downloads' ] = 'Загрузки';
+    $menu_links[ 'edit-address' ] = 'Адреса';
+    $menu_links[ 'edit-account' ] = 'Профиль';
+    $menu_links[ 'knowledge-base' ] = 'База знаний'; // Добавление нового элемента меню База знаний
+    $menu_links[ 'support' ] = 'Поддержка'; // Добавление нового элемента меню Поддержка
+    $menu_links[ 'customer-logout' ] = 'Выйти'; // Добавление ссылки в меню
+    return $menu_links;
+}
+
+
+// Удаление заголовка страницы
+add_action( 'wp', 'remove_storefront_title' );
+
+function remove_storefront_title() {
+    if ( is_account_page() ) {
+        remove_action( 'storefront_page', 'storefront_page_header', 10 );
+    }
+}
+
+
+// Добавление новой страницы База знаний
+function add_endpoint_knowledge_base() {
+    add_rewrite_endpoint( 'knowledge-base', EP_PAGES );
+}
+add_action( 'init', 'add_endpoint_knowledge_base', 20 );
+ 
+function knowledge_base_content() {
+    echo '<h2 class="tr-title">База знаний</h2>';
+    echo '<p>Описание базы знаний</p>';
+    echo '<p><a href="#">Ссылка на базу знаний</a></p>';
+}
+add_action( 'woocommerce_account_knowledge-base_endpoint', 'knowledge_base_content', 20 );
+
+
+// Добавление новой страницы Поддержка
+add_action( 'init', 'add_endpoint_support', 25 );
+function add_endpoint_support() {
+    add_rewrite_endpoint( 'support', EP_PAGES );
+}
+ 
+add_action( 'woocommerce_account_support_endpoint', 'support_content', 25 );
+function support_content() {
+    echo '<h2 class="tr-title">Поддержка</h2>';
+    echo '<p>Описание поддержки</p>';
+    echo '<p>Телефон: +7 (495) 927-4-928</p>';
+    echo '<p>Whatsapp: +7 (495) 927-4-928</p>';
+    echo '<p>Почта: info@naturapharma.ru</p>';
+}
+
+
+add_action( 'woocommerce_account_content', 'action_woocommerce_account_content', 5 );
+function action_woocommerce_account_content(  ) {
+    if (is_wc_endpoint_url( 'downloads' ) ) {
+        $title = "Загрузки";
+    }
+    elseif ( is_wc_endpoint_url( 'orders' ) ) {
+        $title = "Заказы";
+    }
+    elseif ( is_wc_endpoint_url( 'edit-address' ) ) {
+        $title = "Адреса";
+    }
+    elseif ( is_wc_endpoint_url( 'edit-account' ) ) {
+        $title = "Профиль";
+    }
+    elseif ( is_wc_endpoint_url( 'payment-methods' ) ) {
+        $title = "Способ оплаты";
+    }
+
+    if (isset ($title)) {
+        echo '<h2 class="tr-title">' . $title . '</h2>';
+    }
+    return;
+};
 
 
 // Отключение скриптов и стилей плагина Contact Form 7

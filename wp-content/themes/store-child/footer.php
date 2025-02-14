@@ -13,8 +13,7 @@
 </div>
 
 <footer class="footer">
-  <!-- lk login -->
-<?php  //my_account_loginout_link(); ?>
+  <?php  //my_account_loginout_link(); ?>
   <div class="curved m-b-30">
     <div class="one"></div>
     <div class="two"></div>
