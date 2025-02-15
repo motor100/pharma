@@ -37,7 +37,7 @@ function my_dequeue_style(){
 * $temp_debug = false добавляется версия wp
 */
 
-$temp_debug = true;
+$temp_debug = false;
 $ver = '';
 if ($temp_debug) {
   $ver = date('dis');

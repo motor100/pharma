@@ -3098,9 +3098,6 @@ a.remove {
   content: '';
   display: none;
 }
-.cart-page .cart-collaterals .cart_totals h2 {
-  display: none;
-}
 .cart-page .return-to-shop .button {
   display: flex;
   width: 226px;
@@ -3796,7 +3793,8 @@ a.reset_variations::before {
 
 /* Личный кабинет */
 .post-9 #customer_login h1,
-.post-9 #customer_login h2 {
+.post-9 #customer_login h2,
+.post-9 .woocommerce h2 {
   text-align: center;
   font-weight: 400;
 }
@@ -3808,7 +3806,9 @@ a.reset_variations::before {
   width: 100%;
 }
 .post-9 #customer_login .u-column1,
-.post-9 #customer_login .u-column2 {
+.post-9 #customer_login .u-column2,
+.post-9 .woocommerce-form-login,
+.post-9 .woocommerce-form-register {
   width: 400px;
   margin: 0 auto;
 }
