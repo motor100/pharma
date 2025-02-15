@@ -3047,7 +3047,8 @@ a.remove {
 .cart-page .woocommerce-cart-form__contents .actions {
   position: relative;
 }
-.cart-page .woocommerce-cart-form__contents .actions .update-cart-btn {
+/*.cart-page .woocommerce-cart-form__contents .actions .update-cart-btn {*/
+.cart-page .woocommerce-cart-form__contents .actions .button[name="update_cart"] {
   position: absolute;
   top: 0;
   right: 0;
@@ -5047,7 +5048,8 @@ a.reset_variations::before {
     height: 28px;
     font-size: 18px;
   }
-  .cart-page .woocommerce-cart-form__contents .actions .update-cart-btn {
+/*  .cart-page .woocommerce-cart-form__contents .actions .update-cart-btn {*/
+  .cart-page .woocommerce-cart-form__contents .actions .button[name="update_cart"] {
     height: 40px;
     font-size: 18px;
   }
@@ -5583,7 +5585,8 @@ a.reset_variations::before {
     height: 23px;
     font-size: 14px;
   }
-  .cart-page .woocommerce-cart-form__contents .actions .update-cart-btn {
+/*  .cart-page .woocommerce-cart-form__contents .actions .update-cart-btn {*/
+  .cart-page .woocommerce-cart-form__contents .actions .button[name="update_cart"] {
     width: 190px;
     font-size: 16px;
   }
@@ -6089,12 +6092,11 @@ a.reset_variations::before {
     top: 0;
     right: 0;
   }
-  .cart-page .woocommerce-cart-form__contents .actions .update-cart-btn {
+/*  .cart-page .woocommerce-cart-form__contents .actions .update-cart-btn {*/
+  .cart-page .woocommerce-cart-form__contents .actions .button[name="update_cart"] {
     position: static;
-    margin: 10px 0;
-  }
-  .cart-page .woocommerce-cart-form__contents .actions .update-cart-btn {
     width: 170px;
+    margin: 10px 0;
     font-size: 15px;
   }
   .cart-page .cart-collaterals {
